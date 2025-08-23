@@ -1,0 +1,3 @@
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/main.dir
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/edit_cache.dir
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/rebuild_cache.dir

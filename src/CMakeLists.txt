@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.5.0)
+Project(NiloScript)
+set (CMAKE_BUID_TYPE Debug)
+set(CMAKE_CXX_STANDARD 17)
+set(SOURCE_FILES main.cpp)
+add_executable(main ${SOURCE_FILES})
