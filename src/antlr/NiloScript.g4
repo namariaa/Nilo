@@ -13,3 +13,6 @@ print: 'print' '(' expression ')';
 INT : [0-9]+;
 VAR: [a-z]+;
 STRING: '"' ~('"')* '"'; 
+TAB: [ \t]+ -> skip;
+ENTER: [\r\n]+ -> skip;
+WHITESPACE: [ \t\u000C\r\n]+ -> skip;
