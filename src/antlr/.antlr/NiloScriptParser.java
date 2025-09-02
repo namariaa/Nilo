@@ -16,8 +16,8 @@ public class NiloScriptParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, INT=9, 
-		VAR=10, STRING=11, TAB=12, ENTER=13, WHITESPACE=14;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, INT=8, VAR=9, 
+		STRING=10, TAB=11, ENTER=12, WHITESPACE=13;
 	public static final int
 		RULE_expression = 0, RULE_term = 1, RULE_fact = 2, RULE_print = 3;
 	private static String[] makeRuleNames() {
@@ -29,13 +29,13 @@ public class NiloScriptParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'+'", "'-'", "'*'", "'/'", "'('", "') '", "'print'", "')'"
+			null, "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'print'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, "INT", "VAR", "STRING", 
+			null, null, null, null, null, null, null, null, "INT", "VAR", "STRING", 
 			"TAB", "ENTER", "WHITESPACE"
 		};
 	}
@@ -352,7 +352,7 @@ public class NiloScriptParser extends Parser {
 			setState(46);
 			expression(0);
 			setState(47);
-			match(T__7);
+			match(T__5);
 			}
 		}
 		catch (RecognitionException re) {
@@ -395,7 +395,7 @@ public class NiloScriptParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u000e2\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\r2\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0001\u0000\u0001\u0000\u0001"+
 		"\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001"+
 		"\u0000\u0005\u0000\u0012\b\u0000\n\u0000\f\u0000\u0015\t\u0000\u0001\u0001"+
@@ -422,11 +422,11 @@ public class NiloScriptParser extends Parser {
 		"\u0000\u0000!\u001f\u0001\u0000\u0000\u0000!\"\u0001\u0000\u0000\u0000"+
 		"\"\u0003\u0001\u0000\u0000\u0000#!\u0001\u0000\u0000\u0000$%\u0005\u0005"+
 		"\u0000\u0000%&\u0003\u0000\u0000\u0000&\'\u0005\u0006\u0000\u0000\'+\u0001"+
-		"\u0000\u0000\u0000(+\u0005\t\u0000\u0000)+\u0005\n\u0000\u0000*$\u0001"+
+		"\u0000\u0000\u0000(+\u0005\b\u0000\u0000)+\u0005\t\u0000\u0000*$\u0001"+
 		"\u0000\u0000\u0000*(\u0001\u0000\u0000\u0000*)\u0001\u0000\u0000\u0000"+
 		"+\u0005\u0001\u0000\u0000\u0000,-\u0005\u0007\u0000\u0000-.\u0005\u0005"+
-		"\u0000\u0000./\u0003\u0000\u0000\u0000/0\u0005\b\u0000\u00000\u0007\u0001"+
-		"\u0000\u0000\u0000\u0005\u0011\u0013\u001f!*";
+		"\u0000\u0000./\u0003\u0000\u0000\u0000/0\u0005\u0006\u0000\u00000\u0007"+
+		"\u0001\u0000\u0000\u0000\u0005\u0011\u0013\u001f!*";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
