@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-P;/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4_runtime/src/antlr4_runtime-stamp/download-antlr4_runtime.cmake;COMMAND;/usr/bin/cmake;-P;/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4_runtime/src/antlr4_runtime-stamp/verify-antlr4_runtime.cmake;COMMAND;/usr/bin/cmake;-P;/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4_runtime/src/antlr4_runtime-stamp/extract-antlr4_runtime.cmake
+source_dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4_runtime/src/antlr4_runtime
+work_dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4_runtime/src
+url(s)=https://github.com/antlr/antlr4/archive/refs/tags/4.9.2.zip
+hash=
+no_extract=
+

@@ -117,24 +117,63 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named antlr4_runtime
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+antlr4_runtime: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 antlr4_runtime
+.PHONY : antlr4_runtime
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+antlr4_runtime/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime.dir/build.make CMakeFiles/antlr4_runtime.dir/build
+.PHONY : antlr4_runtime/fast
+
+#=============================================================================
+# Target rules for targets named antlr4_runtime-build_static
+
+# Build rule for target.
+antlr4_runtime-build_static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 antlr4_runtime-build_static
+.PHONY : antlr4_runtime-build_static
+
+# fast build rule for target.
+antlr4_runtime-build_static/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_static.dir/build.make CMakeFiles/antlr4_runtime-build_static.dir/build
+.PHONY : antlr4_runtime-build_static/fast
+
+#=============================================================================
+# Target rules for targets named antlr4_runtime-build_shared
+
+# Build rule for target.
+antlr4_runtime-build_shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 antlr4_runtime-build_shared
+.PHONY : antlr4_runtime-build_shared
+
+# fast build rule for target.
+antlr4_runtime-build_shared/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_shared.dir/build.make CMakeFiles/antlr4_runtime-build_shared.dir/build
+.PHONY : antlr4_runtime-build_shared/fast
+
+#=============================================================================
+# Target rules for targets named demo
+
+# Build rule for target.
+demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo
+.PHONY : demo
+
+# fast build rule for target.
+demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
+.PHONY : demo/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +181,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +189,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -161,7 +200,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... antlr4_runtime"
+	@echo "... antlr4_runtime-build_shared"
+	@echo "... antlr4_runtime-build_static"
+	@echo "... demo"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

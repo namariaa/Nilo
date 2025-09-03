@@ -1,3 +1,6 @@
-/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/main.dir
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/antlr4_runtime.dir
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/antlr4_runtime-build_static.dir
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/antlr4_runtime-build_shared.dir
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/demo.dir
 /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/edit_cache.dir
 /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/rebuild_cache.dir

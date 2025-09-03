@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/demo.dir/main.cpp.o -o demo  antlr4_runtime/src/antlr4_runtime/runtime/Cpp/dist/libantlr4-runtime.a 

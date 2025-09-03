@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/namaria/Gram-tica-com-ANTLR/src/debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/demo.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,115 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/antlr4_runtime.dir/clean
+clean: CMakeFiles/antlr4_runtime-build_static.dir/clean
+clean: CMakeFiles/antlr4_runtime-build_shared.dir/clean
+clean: CMakeFiles/demo.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/antlr4_runtime.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=1,2 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/antlr4_runtime.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime.dir/build.make CMakeFiles/antlr4_runtime.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime.dir/build.make CMakeFiles/antlr4_runtime.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target antlr4_runtime"
+.PHONY : CMakeFiles/antlr4_runtime.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+CMakeFiles/antlr4_runtime.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/antlr4_runtime.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/antlr4_runtime.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
-.PHONY : main
+antlr4_runtime: CMakeFiles/antlr4_runtime.dir/rule
+.PHONY : antlr4_runtime
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/antlr4_runtime.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime.dir/build.make CMakeFiles/antlr4_runtime.dir/clean
+.PHONY : CMakeFiles/antlr4_runtime.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/antlr4_runtime-build_static.dir
+
+# All Build rule for target.
+CMakeFiles/antlr4_runtime-build_static.dir/all: CMakeFiles/antlr4_runtime.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_static.dir/build.make CMakeFiles/antlr4_runtime-build_static.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_static.dir/build.make CMakeFiles/antlr4_runtime-build_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=10 "Built target antlr4_runtime-build_static"
+.PHONY : CMakeFiles/antlr4_runtime-build_static.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/antlr4_runtime-build_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/antlr4_runtime-build_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 0
+.PHONY : CMakeFiles/antlr4_runtime-build_static.dir/rule
+
+# Convenience name for target.
+antlr4_runtime-build_static: CMakeFiles/antlr4_runtime-build_static.dir/rule
+.PHONY : antlr4_runtime-build_static
+
+# clean rule for target.
+CMakeFiles/antlr4_runtime-build_static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_static.dir/build.make CMakeFiles/antlr4_runtime-build_static.dir/clean
+.PHONY : CMakeFiles/antlr4_runtime-build_static.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/antlr4_runtime-build_shared.dir
+
+# All Build rule for target.
+CMakeFiles/antlr4_runtime-build_shared.dir/all: CMakeFiles/antlr4_runtime.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_shared.dir/build.make CMakeFiles/antlr4_runtime-build_shared.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_shared.dir/build.make CMakeFiles/antlr4_runtime-build_shared.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=9 "Built target antlr4_runtime-build_shared"
+.PHONY : CMakeFiles/antlr4_runtime-build_shared.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/antlr4_runtime-build_shared.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/antlr4_runtime-build_shared.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 0
+.PHONY : CMakeFiles/antlr4_runtime-build_shared.dir/rule
+
+# Convenience name for target.
+antlr4_runtime-build_shared: CMakeFiles/antlr4_runtime-build_shared.dir/rule
+.PHONY : antlr4_runtime-build_shared
+
+# clean rule for target.
+CMakeFiles/antlr4_runtime-build_shared.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/antlr4_runtime-build_shared.dir/build.make CMakeFiles/antlr4_runtime-build_shared.dir/clean
+.PHONY : CMakeFiles/antlr4_runtime-build_shared.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/demo.dir
+
+# All Build rule for target.
+CMakeFiles/demo.dir/all: CMakeFiles/antlr4_runtime-build_static.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=11,12 "Built target demo"
+.PHONY : CMakeFiles/demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 0
+.PHONY : CMakeFiles/demo.dir/rule
+
+# Convenience name for target.
+demo: CMakeFiles/demo.dir/rule
+.PHONY : demo
+
+# clean rule for target.
+CMakeFiles/demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/clean
+.PHONY : CMakeFiles/demo.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
