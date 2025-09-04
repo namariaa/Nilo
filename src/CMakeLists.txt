@@ -1,48 +1,21 @@
-cmake_minimum_required(VERSION 3.5.0)
-Project(NiloScript)
-set (CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_STANDARD 17)
-set(SOURCE_FILES main.cpp)
+cmake_minimum_required(VERSION 3.30)
 
-#Configurações que segui da documentação para o antlr
+project(SimpleLanguage LANGUAGES CXX)
 
-#Usa biblioteca estática ele é bom para ambientes que não tem o antlr instalado mas cria um runtime pesado
-add_definitions(-DANTLR4CPP_STATIC)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-#Definindo a versão do ANTLR que estou usando
-set(ANTLR4_TAG 4.9.2)
-set(ANTLR4_ZIP_REPOSITORY https://github.com/antlr/antlr4/archive/refs/tags/4.9.2.zip)
+if (NOT CMAKE_BUILD_TYPE)
+  message(STATUS "No build type selected, defaulting to Release")
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+endif()
 
-#Por que o arquivo ExternalAntlr4Cpp tá em um diretório diferente 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/antlr)
+option(ANTLR_BUILD_CPP_TESTS "Build C++ tests for ANTLR4." OFF)
+option(TRACE_ATN "Trace ATN simulation" OFF)
+option(ANTLR_BUILD_SHARED "Build the shared library of the ANTLR runtime" OFF)
+option(ANTLR_BUILD_STATIC "Build the static library of the ANTLR runtime" ON)
 
-#Importa o ExternalAntlr4Cpp.cmake que sabe como baixar, configurar e compilar ANTLR em c++
-include(${CMAKE_CURRENT_SOURCE_DIR}/antlr/ExternalAntlr4Cpp.cmake)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/antlr4-cpp-runtime-4.13.2-source ${CMAKE_CURRENT_BINARY_DIR}/antlr4-cpp-runtime-4.13.2-souce EXCLUDE_FROM_ALL)
 
-#Inclui no projeto os diretórios com os headers da runtime do ANTLR
-include_directories(${ANTLR4_INCLUDE_DIRS})
-
-#Informa onde está o jar do ANTLR4 é usado pelo antlr para gerar os .cpp e .h
-set(ANTLR_EXECUTABLE ${CMAKE_CURRENT_SOURCE_DIR}/antlr/antlr-4.9.2-complete.jar)
-
-#Marca o ANTLR como dependência obrigatória.
-include(${CMAKE_CURRENT_SOURCE_DIR}/antlr/FindANTLR.cmake)
-
-#Gera o lexer e parser a partir da gramática do Nilo
-antlr_target(NiloScript NiloScript.g4
-             PACKAGE antlrcpptest
-             LISTENER
-             VISITOR
-             COMPILE_FLAGS -lib ${ANTLR_NiloScript_OUTPUT_DIR})
-
-#Inclui os diretórios onde o ANTLR colocou os arquivos .h/.cpp gerados para lexer e parser
-include_directories(${ANTLR_SampleGrammarLexer_OUTPUT_DIR})
-include_directories(${ANTLR_SampleGrammarParser_OUTPUT_DIR})
-
-#Cria o executável chamado demo. Ele é formado pelo seu main.cpp + os arquivos .cpp do lexer e parser gerados automaticamente
-add_executable(demo main.cpp
-               ${ANTLR_SampleGrammarLexer_CXX_OUTPUTS}
-               ${ANTLR_SampleGrammarParser_CXX_OUTPUTS})
-
-# Garante que o executável demo possa usar as classes base (Parser, Lexer, CommonTokenStream, etc.)
-target_link_libraries(demo antlr4_static)
+# add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/debug/antlr4-cpp-runtime-4.13.2-bin ${CMAKE_CURRENT_BINARY_DIR}/bin )
