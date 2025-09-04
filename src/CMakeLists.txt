@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5.0)
 Project(NiloScript)
-set (CMAKE_BUID_TYPE Debug)
+set (CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_STANDARD 17)
 set(SOURCE_FILES main.cpp)
 
@@ -13,26 +13,27 @@ add_definitions(-DANTLR4CPP_STATIC)
 set(ANTLR4_TAG 4.9.2)
 set(ANTLR4_ZIP_REPOSITORY https://github.com/antlr/antlr4/archive/refs/tags/4.9.2.zip)
 
+#Por que o arquivo ExternalAntlr4Cpp tá em um diretório diferente 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/antlr)
+
 #Importa o ExternalAntlr4Cpp.cmake que sabe como baixar, configurar e compilar ANTLR em c++
-include(ExternalAntlr4Cpp)
+include(${CMAKE_CURRENT_SOURCE_DIR}/antlr/ExternalAntlr4Cpp.cmake)
 
 #Inclui no projeto os diretórios com os headers da runtime do ANTLR
 include_directories(${ANTLR4_INCLUDE_DIRS})
 
 #Informa onde está o jar do ANTLR4 é usado pelo antlr para gerar os .cpp e .h
-set(ANTLR_EXECUTABLE /home/namaria/Gram-tica-com-ANTLR/src/antlr-4.9.2-complete.jar)
+set(ANTLR_EXECUTABLE ${CMAKE_CURRENT_SOURCE_DIR}/antlr/antlr-4.9.2-complete.jar)
 
 #Marca o ANTLR como dependência obrigatória.
-find_package(ANTLR REQUIRED)
+include(${CMAKE_CURRENT_SOURCE_DIR}/antlr/FindANTLR.cmake)
 
-#Gera o lexer a partir da gramática do Nilo
-antlr_target(SampleGrammarLexer NiloScript.g4 LEXER PACKAGE antlrcpptest)
-
-#Gera o parser a partir da gramática do Nilo
-antlr_target(SampleGrammarParser NiloScript.g4 PARSER
-            PACKAGE antlrcpptest
-            DEPENDS_ANTLR SampleGrammarLexer
-            COMPILE_FLAGS -lib ${ANTLR_SampleGrammarLexer_OUTPUT_DIR})
+#Gera o lexer e parser a partir da gramática do Nilo
+antlr_target(NiloScript NiloScript.g4
+             PACKAGE antlrcpptest
+             LISTENER
+             VISITOR
+             COMPILE_FLAGS -lib ${ANTLR_NiloScript_OUTPUT_DIR})
 
 #Inclui os diretórios onde o ANTLR colocou os arquivos .h/.cpp gerados para lexer e parser
 include_directories(${ANTLR_SampleGrammarLexer_OUTPUT_DIR})
