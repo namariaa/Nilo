@@ -1,8 +1,15 @@
 grammar NiloScript;
 
 //DO PARSER
-root : expression 
-       | print;
+
+program : code EOF;
+
+code : expression 
+       | print
+       | assignment;
+
+assignment : VAR '=' expression;
+
 expression : expression '+' term 
             | expression '-' term 
             | term; 
@@ -13,7 +20,7 @@ fact : '('expression')'
         | INT 
         | VAR
         | STRING;
-print: 'print' '(' expression ')';
+print : 'print' '(' expression ')';
 
 //DO LEXER
 INT : [0-9]+;
