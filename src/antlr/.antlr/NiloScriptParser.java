@@ -17,7 +17,7 @@ public class NiloScriptParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		INT=10, VAR=11, STRING=12, COMMENT=13, TAB=14, ENTER=15, WHITESPACE=16;
+		INT=10, VAR=11, STRING=12, COMMENT=13, TAB=14, ENTER=15, SPACE=16, WHITESPACE=17;
 	public static final int
 		RULE_program = 0, RULE_code = 1, RULE_assignment = 2, RULE_expression = 3, 
 		RULE_term = 4, RULE_fact = 5, RULE_print = 6, RULE_inCase = 7;
@@ -38,7 +38,7 @@ public class NiloScriptParser extends Parser {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, "INT", "VAR", 
-			"STRING", "COMMENT", "TAB", "ENTER", "WHITESPACE"
+			"STRING", "COMMENT", "TAB", "ENTER", "SPACE", "WHITESPACE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -583,7 +583,7 @@ public class NiloScriptParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0010M\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u0011M\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
 		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0001"+
 		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+

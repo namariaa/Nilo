@@ -14,7 +14,7 @@ public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
     T__7 = 8, T__8 = 9, INT = 10, VAR = 11, STRING = 12, COMMENT = 13, TAB = 14, 
-    ENTER = 15, WHITESPACE = 16
+    ENTER = 15, SPACE = 16, WHITESPACE = 17
   };
 
   explicit NiloScriptLexer(antlr4::CharStream *input);

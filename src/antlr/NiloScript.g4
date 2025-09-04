@@ -26,9 +26,10 @@ inCase : 'case' '(' expression ')' ;
 
 //DO LEXER
 INT : [0-9]+;
-VAR: [a-zA-Z_]+;
-STRING: '"' ~('"')* '"';  
-COMMENT: ':)' ~[\r\n]+ -> skip;
-TAB: [ \t]+ -> skip;
-ENTER: [\r\n]+ -> skip;
-WHITESPACE: [ \t\u000C\r\n]+ -> skip;
+VAR : [a-zA-Z_]+;
+STRING : '"' ~('"')* '"';  
+COMMENT : ':)' ~[\r\n]+ -> skip;
+TAB : [\t]+ -> skip;
+ENTER : [\r\n]+ -> skip;
+SPACE : [ \t\r\n] -> skip;
+WHITESPACE : [\t\u000C\r\n]+ -> skip;
