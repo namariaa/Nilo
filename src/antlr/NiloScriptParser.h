@@ -13,11 +13,13 @@ class  NiloScriptParser : public antlr4::Parser {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
-    INT = 8, VAR = 9, STRING = 10, TAB = 11, ENTER = 12, WHITESPACE = 13
+    T__7 = 8, T__8 = 9, INT = 10, VAR = 11, STRING = 12, COMMENT = 13, TAB = 14, 
+    ENTER = 15, WHITESPACE = 16
   };
 
   enum {
-    RuleExpression = 0, RuleTerm = 1, RuleFact = 2, RulePrint = 3
+    RuleProgram = 0, RuleCode = 1, RuleAssignment = 2, RuleExpression = 3, 
+    RuleTerm = 4, RuleFact = 5, RulePrint = 6, RuleInCase = 7
   };
 
   explicit NiloScriptParser(antlr4::TokenStream *input);
@@ -30,10 +32,64 @@ public:
   virtual antlr4::dfa::Vocabulary& getVocabulary() const override;
 
 
+  class ProgramContext;
+  class CodeContext;
+  class AssignmentContext;
   class ExpressionContext;
   class TermContext;
   class FactContext;
-  class PrintContext; 
+  class PrintContext;
+  class InCaseContext; 
+
+  class  ProgramContext : public antlr4::ParserRuleContext {
+  public:
+    ProgramContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    CodeContext *code();
+    antlr4::tree::TerminalNode *EOF();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  ProgramContext* program();
+
+  class  CodeContext : public antlr4::ParserRuleContext {
+  public:
+    CodeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpressionContext *expression();
+    PrintContext *print();
+    AssignmentContext *assignment();
+    InCaseContext *inCase();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  CodeContext* code();
+
+  class  AssignmentContext : public antlr4::ParserRuleContext {
+  public:
+    AssignmentContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *VAR();
+    ExpressionContext *expression();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  AssignmentContext* assignment();
 
   class  ExpressionContext : public antlr4::ParserRuleContext {
   public:
@@ -74,6 +130,7 @@ public:
     ExpressionContext *expression();
     antlr4::tree::TerminalNode *INT();
     antlr4::tree::TerminalNode *VAR();
+    antlr4::tree::TerminalNode *STRING();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -98,6 +155,21 @@ public:
   };
 
   PrintContext* print();
+
+  class  InCaseContext : public antlr4::ParserRuleContext {
+  public:
+    InCaseContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpressionContext *expression();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  InCaseContext* inCase();
 
 
   virtual bool sempred(antlr4::RuleContext *_localctx, size_t ruleIndex, size_t predicateIndex) override;

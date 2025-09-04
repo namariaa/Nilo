@@ -16,6 +16,15 @@
 class  NiloScriptBaseListener : public NiloScriptListener {
 public:
 
+  virtual void enterProgram(NiloScriptParser::ProgramContext * /*ctx*/) override { }
+  virtual void exitProgram(NiloScriptParser::ProgramContext * /*ctx*/) override { }
+
+  virtual void enterCode(NiloScriptParser::CodeContext * /*ctx*/) override { }
+  virtual void exitCode(NiloScriptParser::CodeContext * /*ctx*/) override { }
+
+  virtual void enterAssignment(NiloScriptParser::AssignmentContext * /*ctx*/) override { }
+  virtual void exitAssignment(NiloScriptParser::AssignmentContext * /*ctx*/) override { }
+
   virtual void enterExpression(NiloScriptParser::ExpressionContext * /*ctx*/) override { }
   virtual void exitExpression(NiloScriptParser::ExpressionContext * /*ctx*/) override { }
 
@@ -27,6 +36,9 @@ public:
 
   virtual void enterPrint(NiloScriptParser::PrintContext * /*ctx*/) override { }
   virtual void exitPrint(NiloScriptParser::PrintContext * /*ctx*/) override { }
+
+  virtual void enterInCase(NiloScriptParser::InCaseContext * /*ctx*/) override { }
+  virtual void exitInCase(NiloScriptParser::InCaseContext * /*ctx*/) override { }
 
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
