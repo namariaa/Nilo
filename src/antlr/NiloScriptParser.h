@@ -131,6 +131,7 @@ public:
     antlr4::tree::TerminalNode *INT();
     antlr4::tree::TerminalNode *VAR();
     antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *COMMENT();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;

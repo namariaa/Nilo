@@ -20,7 +20,8 @@ term :  term '*' fact
 fact : '('expression')'
         | INT 
         | VAR
-        | STRING;
+        | STRING
+        | COMMENT;
 print : 'print' '(' expression ')';
 inCase : 'case' '(' expression ')' ;
 
