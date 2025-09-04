@@ -19,6 +19,8 @@ public:
   /**
    * Visit parse trees produced by NiloScriptParser.
    */
+    virtual antlrcpp::Any visitRoot(NiloScriptParser::RootContext *context) = 0;
+
     virtual antlrcpp::Any visitExpression(NiloScriptParser::ExpressionContext *context) = 0;
 
     virtual antlrcpp::Any visitTerm(NiloScriptParser::TermContext *context) = 0;

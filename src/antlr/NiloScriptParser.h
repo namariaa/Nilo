@@ -17,7 +17,7 @@ public:
   };
 
   enum {
-    RuleExpression = 0, RuleTerm = 1, RuleFact = 2, RulePrint = 3
+    RuleRoot = 0, RuleExpression = 1, RuleTerm = 2, RuleFact = 3, RulePrint = 4
   };
 
   explicit NiloScriptParser(antlr4::TokenStream *input);
@@ -30,10 +30,27 @@ public:
   virtual antlr4::dfa::Vocabulary& getVocabulary() const override;
 
 
+  class RootContext;
   class ExpressionContext;
   class TermContext;
   class FactContext;
   class PrintContext; 
+
+  class  RootContext : public antlr4::ParserRuleContext {
+  public:
+    RootContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpressionContext *expression();
+    PrintContext *print();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual antlrcpp::Any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  RootContext* root();
 
   class  ExpressionContext : public antlr4::ParserRuleContext {
   public:
@@ -74,6 +91,7 @@ public:
     ExpressionContext *expression();
     antlr4::tree::TerminalNode *INT();
     antlr4::tree::TerminalNode *VAR();
+    antlr4::tree::TerminalNode *STRING();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;

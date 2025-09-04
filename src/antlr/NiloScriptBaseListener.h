@@ -16,6 +16,9 @@
 class  NiloScriptBaseListener : public NiloScriptListener {
 public:
 
+  virtual void enterRoot(NiloScriptParser::RootContext * /*ctx*/) override { }
+  virtual void exitRoot(NiloScriptParser::RootContext * /*ctx*/) override { }
+
   virtual void enterExpression(NiloScriptParser::ExpressionContext * /*ctx*/) override { }
   virtual void exitExpression(NiloScriptParser::ExpressionContext * /*ctx*/) override { }
 

@@ -15,6 +15,10 @@
 class  NiloScriptBaseVisitor : public NiloScriptVisitor {
 public:
 
+  virtual antlrcpp::Any visitRoot(NiloScriptParser::RootContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual antlrcpp::Any visitExpression(NiloScriptParser::ExpressionContext *ctx) override {
     return visitChildren(ctx);
   }

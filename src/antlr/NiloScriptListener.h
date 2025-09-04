@@ -14,6 +14,9 @@
 class  NiloScriptListener : public antlr4::tree::ParseTreeListener {
 public:
 
+  virtual void enterRoot(NiloScriptParser::RootContext *ctx) = 0;
+  virtual void exitRoot(NiloScriptParser::RootContext *ctx) = 0;
+
   virtual void enterExpression(NiloScriptParser::ExpressionContext *ctx) = 0;
   virtual void exitExpression(NiloScriptParser::ExpressionContext *ctx) = 0;
 

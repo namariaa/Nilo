@@ -1,16 +1,18 @@
 grammar NiloScript;
 
 //DO PARSER
+root : expression 
+       | print;
 expression : expression '+' term 
             | expression '-' term 
-            | term
-            | print; 
+            | term; 
 term :  term '*' fact 
         | term '/' fact
         | fact;
 fact : '('expression')'
         | INT 
-        | VAR;
+        | VAR
+        | STRING;
 print: 'print' '(' expression ')';
 
 //DO LEXER
