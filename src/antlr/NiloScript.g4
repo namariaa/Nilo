@@ -6,7 +6,8 @@ program : code EOF;
 
 code : expression 
        | print
-       | assignment;
+       | assignment
+       | inCase;
 
 assignment : VAR '=' expression;
 
@@ -21,11 +22,13 @@ fact : '('expression')'
         | VAR
         | STRING;
 print : 'print' '(' expression ')';
+inCase : 'case' '(' expression ')' ;
 
 //DO LEXER
 INT : [0-9]+;
-VAR: [a-z]+;
+VAR: [a-zA-Z_]+;
 STRING: '"' ~('"')* '"';  
+COMMENT: ':)' ~[\r\n]+ -> skip;
 TAB: [ \t]+ -> skip;
 ENTER: [\r\n]+ -> skip;
 WHITESPACE: [ \t\u000C\r\n]+ -> skip;

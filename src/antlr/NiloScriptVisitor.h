@@ -19,7 +19,11 @@ public:
   /**
    * Visit parse trees produced by NiloScriptParser.
    */
-    virtual antlrcpp::Any visitRoot(NiloScriptParser::RootContext *context) = 0;
+    virtual antlrcpp::Any visitProgram(NiloScriptParser::ProgramContext *context) = 0;
+
+    virtual antlrcpp::Any visitCode(NiloScriptParser::CodeContext *context) = 0;
+
+    virtual antlrcpp::Any visitAssignment(NiloScriptParser::AssignmentContext *context) = 0;
 
     virtual antlrcpp::Any visitExpression(NiloScriptParser::ExpressionContext *context) = 0;
 
@@ -28,6 +32,8 @@ public:
     virtual antlrcpp::Any visitFact(NiloScriptParser::FactContext *context) = 0;
 
     virtual antlrcpp::Any visitPrint(NiloScriptParser::PrintContext *context) = 0;
+
+    virtual antlrcpp::Any visitInCase(NiloScriptParser::InCaseContext *context) = 0;
 
 
 };
