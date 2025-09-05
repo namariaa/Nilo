@@ -8,8 +8,8 @@
 using namespace std;
 using namespace antlr4;
 
-int main(int qArgumentos, const char *codigoFonte[]){
-    ifstream readFile(codigoFonte[1]);
+int main(int nArguments, const char *sourceCode[]){
+    ifstream readFile(sourceCode[1]);
     if (!readFile){
         cerr << "Cannot open the file you uploaded" << endl;
     }
