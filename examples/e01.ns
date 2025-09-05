@@ -1,0 +1,2 @@
+first_test = 2 + 5 - 7
+print(first_test)
