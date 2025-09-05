@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "iosfwd": "cpp"
     },
     "cmake.sourceDirectory": "/home/namaria/Gram-tica-com-ANTLR/src"
 }
