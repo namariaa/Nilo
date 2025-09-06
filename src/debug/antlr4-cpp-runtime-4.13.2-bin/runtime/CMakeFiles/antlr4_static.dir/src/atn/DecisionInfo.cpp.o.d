@@ -1,9 +1,9 @@
 antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.o: \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/DecisionInfo.cpp \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/DecisionInfo.cpp \
  /usr/include/stdc-predef.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ErrorInfo.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/DecisionEventInfo.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ErrorInfo.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/DecisionEventInfo.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -245,10 +245,10 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/atn/Decis
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LookaheadEventInfo.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/DecisionInfo.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ContextSensitivityInfo.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/AmbiguityInfo.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/BitSet.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredicateEvalInfo.h
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LookaheadEventInfo.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/DecisionInfo.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ContextSensitivityInfo.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/AmbiguityInfo.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/BitSet.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredicateEvalInfo.h

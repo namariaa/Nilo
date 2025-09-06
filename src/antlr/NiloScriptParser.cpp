@@ -1,5 +1,5 @@
 
-// Generated from NiloScript.g4 by ANTLR 4.9.2
+// Generated from NiloScript.g4 by ANTLR 4.13.2
 
 
 #include "NiloScriptListener.h"
@@ -9,14 +9,116 @@
 
 
 using namespace antlrcpp;
+
 using namespace antlr4;
 
-NiloScriptParser::NiloScriptParser(TokenStream *input) : Parser(input) {
-  _interpreter = new atn::ParserATNSimulator(this, _atn, _decisionToDFA, _sharedContextCache);
+namespace {
+
+struct NiloScriptParserStaticData final {
+  NiloScriptParserStaticData(std::vector<std::string> ruleNames,
+                        std::vector<std::string> literalNames,
+                        std::vector<std::string> symbolicNames)
+      : ruleNames(std::move(ruleNames)), literalNames(std::move(literalNames)),
+        symbolicNames(std::move(symbolicNames)),
+        vocabulary(this->literalNames, this->symbolicNames) {}
+
+  NiloScriptParserStaticData(const NiloScriptParserStaticData&) = delete;
+  NiloScriptParserStaticData(NiloScriptParserStaticData&&) = delete;
+  NiloScriptParserStaticData& operator=(const NiloScriptParserStaticData&) = delete;
+  NiloScriptParserStaticData& operator=(NiloScriptParserStaticData&&) = delete;
+
+  std::vector<antlr4::dfa::DFA> decisionToDFA;
+  antlr4::atn::PredictionContextCache sharedContextCache;
+  const std::vector<std::string> ruleNames;
+  const std::vector<std::string> literalNames;
+  const std::vector<std::string> symbolicNames;
+  const antlr4::dfa::Vocabulary vocabulary;
+  antlr4::atn::SerializedATNView serializedATN;
+  std::unique_ptr<antlr4::atn::ATN> atn;
+};
+
+::antlr4::internal::OnceFlag niloscriptParserOnceFlag;
+#if ANTLR4_USE_THREAD_LOCAL_CACHE
+static thread_local
+#endif
+std::unique_ptr<NiloScriptParserStaticData> niloscriptParserStaticData = nullptr;
+
+void niloscriptParserInitialize() {
+#if ANTLR4_USE_THREAD_LOCAL_CACHE
+  if (niloscriptParserStaticData != nullptr) {
+    return;
+  }
+#else
+  assert(niloscriptParserStaticData == nullptr);
+#endif
+  auto staticData = std::make_unique<NiloScriptParserStaticData>(
+    std::vector<std::string>{
+      "program", "code", "assignment", "expression", "term", "fact", "print", 
+      "inCase"
+    },
+    std::vector<std::string>{
+      "", "'='", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'print'", "'case'", 
+      "'):'"
+    },
+    std::vector<std::string>{
+      "", "", "", "", "", "", "", "", "", "", "", "INT", "VAR", "STRING", 
+      "OPERATOR", "COMMENT", "TAB", "ENTER", "SPACE", "WHITESPACE"
+    }
+  );
+  static const int32_t serializedATNSegment[] = {
+  	4,1,19,83,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
+  	7,7,1,0,1,0,1,0,1,1,1,1,1,1,1,1,3,1,24,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,
+  	3,1,3,1,3,1,3,1,3,1,3,1,3,5,3,39,8,3,10,3,12,3,42,9,3,1,4,1,4,1,4,1,4,
+  	1,4,1,4,1,4,1,4,1,4,5,4,53,8,4,10,4,12,4,56,9,4,1,5,1,5,1,5,1,5,1,5,1,
+  	5,1,5,1,5,3,5,66,8,5,1,6,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,7,1,7,
+  	1,7,1,7,1,7,1,7,0,2,6,8,8,0,2,4,6,8,10,12,14,0,0,85,0,16,1,0,0,0,2,23,
+  	1,0,0,0,4,25,1,0,0,0,6,29,1,0,0,0,8,43,1,0,0,0,10,65,1,0,0,0,12,67,1,
+  	0,0,0,14,72,1,0,0,0,16,17,3,2,1,0,17,18,5,0,0,1,18,1,1,0,0,0,19,24,3,
+  	6,3,0,20,24,3,12,6,0,21,24,3,4,2,0,22,24,3,14,7,0,23,19,1,0,0,0,23,20,
+  	1,0,0,0,23,21,1,0,0,0,23,22,1,0,0,0,24,3,1,0,0,0,25,26,5,12,0,0,26,27,
+  	5,1,0,0,27,28,3,6,3,0,28,5,1,0,0,0,29,30,6,3,-1,0,30,31,3,8,4,0,31,40,
+  	1,0,0,0,32,33,10,3,0,0,33,34,5,2,0,0,34,39,3,8,4,0,35,36,10,2,0,0,36,
+  	37,5,3,0,0,37,39,3,8,4,0,38,32,1,0,0,0,38,35,1,0,0,0,39,42,1,0,0,0,40,
+  	38,1,0,0,0,40,41,1,0,0,0,41,7,1,0,0,0,42,40,1,0,0,0,43,44,6,4,-1,0,44,
+  	45,3,10,5,0,45,54,1,0,0,0,46,47,10,3,0,0,47,48,5,4,0,0,48,53,3,10,5,0,
+  	49,50,10,2,0,0,50,51,5,5,0,0,51,53,3,10,5,0,52,46,1,0,0,0,52,49,1,0,0,
+  	0,53,56,1,0,0,0,54,52,1,0,0,0,54,55,1,0,0,0,55,9,1,0,0,0,56,54,1,0,0,
+  	0,57,58,5,6,0,0,58,59,3,6,3,0,59,60,5,7,0,0,60,66,1,0,0,0,61,66,5,11,
+  	0,0,62,66,5,12,0,0,63,66,5,13,0,0,64,66,5,15,0,0,65,57,1,0,0,0,65,61,
+  	1,0,0,0,65,62,1,0,0,0,65,63,1,0,0,0,65,64,1,0,0,0,66,11,1,0,0,0,67,68,
+  	5,8,0,0,68,69,5,6,0,0,69,70,3,6,3,0,70,71,5,7,0,0,71,13,1,0,0,0,72,73,
+  	5,9,0,0,73,74,5,6,0,0,74,75,3,6,3,0,75,76,5,14,0,0,76,77,3,6,3,0,77,78,
+  	5,10,0,0,78,79,5,17,0,0,79,80,5,16,0,0,80,81,3,2,1,0,81,15,1,0,0,0,6,
+  	23,38,40,52,54,65
+  };
+  staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
+
+  antlr4::atn::ATNDeserializer deserializer;
+  staticData->atn = deserializer.deserialize(staticData->serializedATN);
+
+  const size_t count = staticData->atn->getNumberOfDecisions();
+  staticData->decisionToDFA.reserve(count);
+  for (size_t i = 0; i < count; i++) { 
+    staticData->decisionToDFA.emplace_back(staticData->atn->getDecisionState(i), i);
+  }
+  niloscriptParserStaticData = std::move(staticData);
+}
+
+}
+
+NiloScriptParser::NiloScriptParser(TokenStream *input) : NiloScriptParser(input, antlr4::atn::ParserATNSimulatorOptions()) {}
+
+NiloScriptParser::NiloScriptParser(TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options) : Parser(input) {
+  NiloScriptParser::initialize();
+  _interpreter = new atn::ParserATNSimulator(this, *niloscriptParserStaticData->atn, niloscriptParserStaticData->decisionToDFA, niloscriptParserStaticData->sharedContextCache, options);
 }
 
 NiloScriptParser::~NiloScriptParser() {
   delete _interpreter;
+}
+
+const atn::ATN& NiloScriptParser::getATN() const {
+  return *niloscriptParserStaticData->atn;
 }
 
 std::string NiloScriptParser::getGrammarFileName() const {
@@ -24,11 +126,15 @@ std::string NiloScriptParser::getGrammarFileName() const {
 }
 
 const std::vector<std::string>& NiloScriptParser::getRuleNames() const {
-  return _ruleNames;
+  return niloscriptParserStaticData->ruleNames;
 }
 
-dfa::Vocabulary& NiloScriptParser::getVocabulary() const {
-  return _vocabulary;
+const dfa::Vocabulary& NiloScriptParser::getVocabulary() const {
+  return niloscriptParserStaticData->vocabulary;
+}
+
+antlr4::atn::SerializedATNView NiloScriptParser::getSerializedATN() const {
+  return niloscriptParserStaticData->serializedATN;
 }
 
 
@@ -64,7 +170,7 @@ void NiloScriptParser::ProgramContext::exitRule(tree::ParseTreeListener *listene
 }
 
 
-antlrcpp::Any NiloScriptParser::ProgramContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::ProgramContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitProgram(this);
   else
@@ -139,7 +245,7 @@ void NiloScriptParser::CodeContext::exitRule(tree::ParseTreeListener *listener) 
 }
 
 
-antlrcpp::Any NiloScriptParser::CodeContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::CodeContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitCode(this);
   else
@@ -235,7 +341,7 @@ void NiloScriptParser::AssignmentContext::exitRule(tree::ParseTreeListener *list
 }
 
 
-antlrcpp::Any NiloScriptParser::AssignmentContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::AssignmentContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitAssignment(this);
   else
@@ -304,7 +410,7 @@ void NiloScriptParser::ExpressionContext::exitRule(tree::ParseTreeListener *list
 }
 
 
-antlrcpp::Any NiloScriptParser::ExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::ExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitExpression(this);
   else
@@ -426,7 +532,7 @@ void NiloScriptParser::TermContext::exitRule(tree::ParseTreeListener *listener) 
 }
 
 
-antlrcpp::Any NiloScriptParser::TermContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::TermContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitTerm(this);
   else
@@ -560,7 +666,7 @@ void NiloScriptParser::FactContext::exitRule(tree::ParseTreeListener *listener) 
 }
 
 
-antlrcpp::Any NiloScriptParser::FactContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::FactContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitFact(this);
   else
@@ -663,7 +769,7 @@ void NiloScriptParser::PrintContext::exitRule(tree::ParseTreeListener *listener)
 }
 
 
-antlrcpp::Any NiloScriptParser::PrintContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::PrintContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitPrint(this);
   else
@@ -708,8 +814,28 @@ NiloScriptParser::InCaseContext::InCaseContext(ParserRuleContext *parent, size_t
   : ParserRuleContext(parent, invokingState) {
 }
 
-NiloScriptParser::ExpressionContext* NiloScriptParser::InCaseContext::expression() {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(0);
+std::vector<NiloScriptParser::ExpressionContext *> NiloScriptParser::InCaseContext::expression() {
+  return getRuleContexts<NiloScriptParser::ExpressionContext>();
+}
+
+NiloScriptParser::ExpressionContext* NiloScriptParser::InCaseContext::expression(size_t i) {
+  return getRuleContext<NiloScriptParser::ExpressionContext>(i);
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::OPERATOR() {
+  return getToken(NiloScriptParser::OPERATOR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::ENTER() {
+  return getToken(NiloScriptParser::ENTER, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::TAB() {
+  return getToken(NiloScriptParser::TAB, 0);
+}
+
+NiloScriptParser::CodeContext* NiloScriptParser::InCaseContext::code() {
+  return getRuleContext<NiloScriptParser::CodeContext>(0);
 }
 
 
@@ -730,7 +856,7 @@ void NiloScriptParser::InCaseContext::exitRule(tree::ParseTreeListener *listener
 }
 
 
-antlrcpp::Any NiloScriptParser::InCaseContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::InCaseContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
     return parserVisitor->visitInCase(this);
   else
@@ -757,7 +883,17 @@ NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
     setState(74);
     expression(0);
     setState(75);
-    match(NiloScriptParser::T__6);
+    match(NiloScriptParser::OPERATOR);
+    setState(76);
+    expression(0);
+    setState(77);
+    match(NiloScriptParser::T__9);
+    setState(78);
+    match(NiloScriptParser::ENTER);
+    setState(79);
+    match(NiloScriptParser::TAB);
+    setState(80);
+    code();
    
   }
   catch (RecognitionException &e) {
@@ -771,8 +907,8 @@ NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
 
 bool NiloScriptParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
   switch (ruleIndex) {
-    case 3: return expressionSempred(dynamic_cast<ExpressionContext *>(context), predicateIndex);
-    case 4: return termSempred(dynamic_cast<TermContext *>(context), predicateIndex);
+    case 3: return expressionSempred(antlrcpp::downCast<ExpressionContext *>(context), predicateIndex);
+    case 4: return termSempred(antlrcpp::downCast<TermContext *>(context), predicateIndex);
 
   default:
     break;
@@ -802,114 +938,10 @@ bool NiloScriptParser::termSempred(TermContext *_localctx, size_t predicateIndex
   return true;
 }
 
-// Static vars and initialization.
-std::vector<dfa::DFA> NiloScriptParser::_decisionToDFA;
-atn::PredictionContextCache NiloScriptParser::_sharedContextCache;
-
-// We own the ATN which in turn owns the ATN states.
-atn::ATN NiloScriptParser::_atn;
-std::vector<uint16_t> NiloScriptParser::_serializedATN;
-
-std::vector<std::string> NiloScriptParser::_ruleNames = {
-  "program", "code", "assignment", "expression", "term", "fact", "print", 
-  "inCase"
-};
-
-std::vector<std::string> NiloScriptParser::_literalNames = {
-  "", "'='", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'print'", "'case'"
-};
-
-std::vector<std::string> NiloScriptParser::_symbolicNames = {
-  "", "", "", "", "", "", "", "", "", "", "INT", "VAR", "STRING", "COMMENT", 
-  "TAB", "ENTER", "SPACE", "WHITESPACE"
-};
-
-dfa::Vocabulary NiloScriptParser::_vocabulary(_literalNames, _symbolicNames);
-
-std::vector<std::string> NiloScriptParser::_tokenNames;
-
-NiloScriptParser::Initializer::Initializer() {
-	for (size_t i = 0; i < _symbolicNames.size(); ++i) {
-		std::string name = _vocabulary.getLiteralName(i);
-		if (name.empty()) {
-			name = _vocabulary.getSymbolicName(i);
-		}
-
-		if (name.empty()) {
-			_tokenNames.push_back("<INVALID>");
-		} else {
-      _tokenNames.push_back(name);
-    }
-	}
-
-  static const uint16_t serializedATNSegment0[] = {
-    0x3, 0x608b, 0xa72a, 0x8133, 0xb9ed, 0x417c, 0x3be7, 0x7786, 0x5964, 
-       0x3, 0x13, 0x50, 0x4, 0x2, 0x9, 0x2, 0x4, 0x3, 0x9, 0x3, 0x4, 0x4, 
-       0x9, 0x4, 0x4, 0x5, 0x9, 0x5, 0x4, 0x6, 0x9, 0x6, 0x4, 0x7, 0x9, 
-       0x7, 0x4, 0x8, 0x9, 0x8, 0x4, 0x9, 0x9, 0x9, 0x3, 0x2, 0x3, 0x2, 
-       0x3, 0x2, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x5, 0x3, 0x1a, 
-       0xa, 0x3, 0x3, 0x4, 0x3, 0x4, 0x3, 0x4, 0x3, 0x4, 0x3, 0x5, 0x3, 
-       0x5, 0x3, 0x5, 0x3, 0x5, 0x3, 0x5, 0x3, 0x5, 0x3, 0x5, 0x3, 0x5, 
-       0x3, 0x5, 0x7, 0x5, 0x29, 0xa, 0x5, 0xc, 0x5, 0xe, 0x5, 0x2c, 0xb, 
-       0x5, 0x3, 0x6, 0x3, 0x6, 0x3, 0x6, 0x3, 0x6, 0x3, 0x6, 0x3, 0x6, 
-       0x3, 0x6, 0x3, 0x6, 0x3, 0x6, 0x7, 0x6, 0x37, 0xa, 0x6, 0xc, 0x6, 
-       0xe, 0x6, 0x3a, 0xb, 0x6, 0x3, 0x7, 0x3, 0x7, 0x3, 0x7, 0x3, 0x7, 
-       0x3, 0x7, 0x3, 0x7, 0x3, 0x7, 0x3, 0x7, 0x5, 0x7, 0x44, 0xa, 0x7, 
-       0x3, 0x8, 0x3, 0x8, 0x3, 0x8, 0x3, 0x8, 0x3, 0x8, 0x3, 0x9, 0x3, 
-       0x9, 0x3, 0x9, 0x3, 0x9, 0x3, 0x9, 0x3, 0x9, 0x2, 0x4, 0x8, 0xa, 
-       0xa, 0x2, 0x4, 0x6, 0x8, 0xa, 0xc, 0xe, 0x10, 0x2, 0x2, 0x2, 0x52, 
-       0x2, 0x12, 0x3, 0x2, 0x2, 0x2, 0x4, 0x19, 0x3, 0x2, 0x2, 0x2, 0x6, 
-       0x1b, 0x3, 0x2, 0x2, 0x2, 0x8, 0x1f, 0x3, 0x2, 0x2, 0x2, 0xa, 0x2d, 
-       0x3, 0x2, 0x2, 0x2, 0xc, 0x43, 0x3, 0x2, 0x2, 0x2, 0xe, 0x45, 0x3, 
-       0x2, 0x2, 0x2, 0x10, 0x4a, 0x3, 0x2, 0x2, 0x2, 0x12, 0x13, 0x5, 0x4, 
-       0x3, 0x2, 0x13, 0x14, 0x7, 0x2, 0x2, 0x3, 0x14, 0x3, 0x3, 0x2, 0x2, 
-       0x2, 0x15, 0x1a, 0x5, 0x8, 0x5, 0x2, 0x16, 0x1a, 0x5, 0xe, 0x8, 0x2, 
-       0x17, 0x1a, 0x5, 0x6, 0x4, 0x2, 0x18, 0x1a, 0x5, 0x10, 0x9, 0x2, 
-       0x19, 0x15, 0x3, 0x2, 0x2, 0x2, 0x19, 0x16, 0x3, 0x2, 0x2, 0x2, 0x19, 
-       0x17, 0x3, 0x2, 0x2, 0x2, 0x19, 0x18, 0x3, 0x2, 0x2, 0x2, 0x1a, 0x5, 
-       0x3, 0x2, 0x2, 0x2, 0x1b, 0x1c, 0x7, 0xd, 0x2, 0x2, 0x1c, 0x1d, 0x7, 
-       0x3, 0x2, 0x2, 0x1d, 0x1e, 0x5, 0x8, 0x5, 0x2, 0x1e, 0x7, 0x3, 0x2, 
-       0x2, 0x2, 0x1f, 0x20, 0x8, 0x5, 0x1, 0x2, 0x20, 0x21, 0x5, 0xa, 0x6, 
-       0x2, 0x21, 0x2a, 0x3, 0x2, 0x2, 0x2, 0x22, 0x23, 0xc, 0x5, 0x2, 0x2, 
-       0x23, 0x24, 0x7, 0x4, 0x2, 0x2, 0x24, 0x29, 0x5, 0xa, 0x6, 0x2, 0x25, 
-       0x26, 0xc, 0x4, 0x2, 0x2, 0x26, 0x27, 0x7, 0x5, 0x2, 0x2, 0x27, 0x29, 
-       0x5, 0xa, 0x6, 0x2, 0x28, 0x22, 0x3, 0x2, 0x2, 0x2, 0x28, 0x25, 0x3, 
-       0x2, 0x2, 0x2, 0x29, 0x2c, 0x3, 0x2, 0x2, 0x2, 0x2a, 0x28, 0x3, 0x2, 
-       0x2, 0x2, 0x2a, 0x2b, 0x3, 0x2, 0x2, 0x2, 0x2b, 0x9, 0x3, 0x2, 0x2, 
-       0x2, 0x2c, 0x2a, 0x3, 0x2, 0x2, 0x2, 0x2d, 0x2e, 0x8, 0x6, 0x1, 0x2, 
-       0x2e, 0x2f, 0x5, 0xc, 0x7, 0x2, 0x2f, 0x38, 0x3, 0x2, 0x2, 0x2, 0x30, 
-       0x31, 0xc, 0x5, 0x2, 0x2, 0x31, 0x32, 0x7, 0x6, 0x2, 0x2, 0x32, 0x37, 
-       0x5, 0xc, 0x7, 0x2, 0x33, 0x34, 0xc, 0x4, 0x2, 0x2, 0x34, 0x35, 0x7, 
-       0x7, 0x2, 0x2, 0x35, 0x37, 0x5, 0xc, 0x7, 0x2, 0x36, 0x30, 0x3, 0x2, 
-       0x2, 0x2, 0x36, 0x33, 0x3, 0x2, 0x2, 0x2, 0x37, 0x3a, 0x3, 0x2, 0x2, 
-       0x2, 0x38, 0x36, 0x3, 0x2, 0x2, 0x2, 0x38, 0x39, 0x3, 0x2, 0x2, 0x2, 
-       0x39, 0xb, 0x3, 0x2, 0x2, 0x2, 0x3a, 0x38, 0x3, 0x2, 0x2, 0x2, 0x3b, 
-       0x3c, 0x7, 0x8, 0x2, 0x2, 0x3c, 0x3d, 0x5, 0x8, 0x5, 0x2, 0x3d, 0x3e, 
-       0x7, 0x9, 0x2, 0x2, 0x3e, 0x44, 0x3, 0x2, 0x2, 0x2, 0x3f, 0x44, 0x7, 
-       0xc, 0x2, 0x2, 0x40, 0x44, 0x7, 0xd, 0x2, 0x2, 0x41, 0x44, 0x7, 0xe, 
-       0x2, 0x2, 0x42, 0x44, 0x7, 0xf, 0x2, 0x2, 0x43, 0x3b, 0x3, 0x2, 0x2, 
-       0x2, 0x43, 0x3f, 0x3, 0x2, 0x2, 0x2, 0x43, 0x40, 0x3, 0x2, 0x2, 0x2, 
-       0x43, 0x41, 0x3, 0x2, 0x2, 0x2, 0x43, 0x42, 0x3, 0x2, 0x2, 0x2, 0x44, 
-       0xd, 0x3, 0x2, 0x2, 0x2, 0x45, 0x46, 0x7, 0xa, 0x2, 0x2, 0x46, 0x47, 
-       0x7, 0x8, 0x2, 0x2, 0x47, 0x48, 0x5, 0x8, 0x5, 0x2, 0x48, 0x49, 0x7, 
-       0x9, 0x2, 0x2, 0x49, 0xf, 0x3, 0x2, 0x2, 0x2, 0x4a, 0x4b, 0x7, 0xb, 
-       0x2, 0x2, 0x4b, 0x4c, 0x7, 0x8, 0x2, 0x2, 0x4c, 0x4d, 0x5, 0x8, 0x5, 
-       0x2, 0x4d, 0x4e, 0x7, 0x9, 0x2, 0x2, 0x4e, 0x11, 0x3, 0x2, 0x2, 0x2, 
-       0x8, 0x19, 0x28, 0x2a, 0x36, 0x38, 0x43, 
-  };
-
-  _serializedATN.insert(_serializedATN.end(), serializedATNSegment0,
-    serializedATNSegment0 + sizeof(serializedATNSegment0) / sizeof(serializedATNSegment0[0]));
-
-
-  atn::ATNDeserializer deserializer;
-  _atn = deserializer.deserialize(_serializedATN);
-
-  size_t count = _atn.getNumberOfDecisions();
-  _decisionToDFA.reserve(count);
-  for (size_t i = 0; i < count; i++) { 
-    _decisionToDFA.emplace_back(_atn.getDecisionState(i), i);
-  }
+void NiloScriptParser::initialize() {
+#if ANTLR4_USE_THREAD_LOCAL_CACHE
+  niloscriptParserInitialize();
+#else
+  ::antlr4::internal::call_once(niloscriptParserOnceFlag, niloscriptParserInitialize);
+#endif
 }
-
-NiloScriptParser::Initializer NiloScriptParser::_init;

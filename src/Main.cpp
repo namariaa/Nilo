@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include "antlr4-runtime.h"
-#include "NiloScriptLexer.h"
-#include "NiloScriptParser.h"
+#include "./antlr/NiloScriptParser.h"
+#include "./antlr/NiloScriptLexer.h"
 
 
 using namespace std;

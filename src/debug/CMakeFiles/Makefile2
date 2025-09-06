@@ -54,7 +54,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/namaria/Gram-tica-com-ANTLR/src
+CMAKE_SOURCE_DIR = /home/namaria/Gram-tica-com-ANTLR
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/namaria/Gram-tica-com-ANTLR/src/debug
@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = /home/namaria/Gram-tica-com-ANTLR/src/debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: CMakeFiles/sl.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen:
+codegen: CMakeFiles/sl.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,78 +75,111 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: antlr4-cpp-runtime-4.13.2-souce/clean
+clean: CMakeFiles/sl.dir/clean
+clean: antlr4-cpp-runtime-4.13.2-bin/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory antlr4-cpp-runtime-4.13.2-souce
+# Directory level rules for directory antlr4-cpp-runtime-4.13.2-bin
 
 # Recursive "all" directory target.
-antlr4-cpp-runtime-4.13.2-souce/all: antlr4-cpp-runtime-4.13.2-souce/runtime/all
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/all
+antlr4-cpp-runtime-4.13.2-bin/all: antlr4-cpp-runtime-4.13.2-bin/runtime/all
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/all
 
 # Recursive "codegen" directory target.
-antlr4-cpp-runtime-4.13.2-souce/codegen: antlr4-cpp-runtime-4.13.2-souce/runtime/codegen
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/codegen
+antlr4-cpp-runtime-4.13.2-bin/codegen: antlr4-cpp-runtime-4.13.2-bin/runtime/codegen
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/codegen
 
 # Recursive "preinstall" directory target.
-antlr4-cpp-runtime-4.13.2-souce/preinstall: antlr4-cpp-runtime-4.13.2-souce/runtime/preinstall
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/preinstall
+antlr4-cpp-runtime-4.13.2-bin/preinstall: antlr4-cpp-runtime-4.13.2-bin/runtime/preinstall
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/preinstall
 
 # Recursive "clean" directory target.
-antlr4-cpp-runtime-4.13.2-souce/clean: antlr4-cpp-runtime-4.13.2-souce/runtime/clean
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/clean
+antlr4-cpp-runtime-4.13.2-bin/clean: antlr4-cpp-runtime-4.13.2-bin/runtime/clean
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/clean
 
 #=============================================================================
-# Directory level rules for directory antlr4-cpp-runtime-4.13.2-souce/runtime
+# Directory level rules for directory antlr4-cpp-runtime-4.13.2-bin/runtime
 
 # Recursive "all" directory target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/all: antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/all
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/all
+antlr4-cpp-runtime-4.13.2-bin/runtime/all: antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/all
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/all
 
 # Recursive "codegen" directory target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/codegen: antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/codegen
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/codegen
+antlr4-cpp-runtime-4.13.2-bin/runtime/codegen: antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/codegen
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/codegen
 
 # Recursive "preinstall" directory target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/preinstall:
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/preinstall
+antlr4-cpp-runtime-4.13.2-bin/runtime/preinstall:
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/preinstall
 
 # Recursive "clean" directory target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/clean: antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/clean
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/clean
+antlr4-cpp-runtime-4.13.2-bin/runtime/clean: antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/clean
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/clean
 
 #=============================================================================
-# Target rules for target antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir
+# Target rules for target CMakeFiles/sl.dir
 
 # All Build rule for target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/all:
-	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/depend
-	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target antlr4_static"
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/all
+CMakeFiles/sl.dir/all: antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=95,96,97,98,99,100 "Built target sl"
+.PHONY : CMakeFiles/sl.dir/all
 
 # Build rule for subdir invocation for target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/rule: cmake_check_build_system
+CMakeFiles/sl.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 100
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 0
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/rule
+.PHONY : CMakeFiles/sl.dir/rule
 
 # Convenience name for target.
-antlr4_static: antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/rule
+sl: CMakeFiles/sl.dir/rule
+.PHONY : sl
+
+# codegen rule for target.
+CMakeFiles/sl.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=95,96,97,98,99,100 "Finished codegen for target sl"
+.PHONY : CMakeFiles/sl.dir/codegen
+
+# clean rule for target.
+CMakeFiles/sl.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/clean
+.PHONY : CMakeFiles/sl.dir/clean
+
+#=============================================================================
+# Target rules for target antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir
+
+# All Build rule for target.
+antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/all:
+	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/depend
+	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94 "Built target antlr4_static"
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/all
+
+# Build rule for subdir invocation for target.
+antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 94
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 0
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/rule
+
+# Convenience name for target.
+antlr4_static: antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/rule
 .PHONY : antlr4_static
 
 # codegen rule for target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Finished codegen for target antlr4_static"
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/codegen
+antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94 "Finished codegen for target antlr4_static"
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/codegen
 
 # clean rule for target.
-antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/clean:
-	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/clean
-.PHONY : antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/clean
+antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/build.make antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/clean
+.PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

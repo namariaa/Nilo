@@ -1,5 +1,5 @@
 antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.o: \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Utf8.cpp \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Utf8.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/cassert \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -22,7 +22,7 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/support/U
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Utf8.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Utf8.h \
  /usr/include/c++/13/optional /usr/include/c++/13/type_traits \
  /usr/include/c++/13/exception /usr/include/c++/13/bits/exception.h \
  /usr/include/c++/13/bits/exception_ptr.h \
@@ -138,7 +138,7 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/support/U
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
@@ -245,5 +245,5 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/support/U
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Unicode.h
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Unicode.h

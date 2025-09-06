@@ -1,11 +1,11 @@
 antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.o: \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContextWithAltNum.cpp \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContextWithAltNum.cpp \
  /usr/include/stdc-predef.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATN.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContext.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTree.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Any.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATN.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContext.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTree.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Any.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -247,13 +247,13 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/RuleConte
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTreeType.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/internal/Synchronization.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTreeType.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/internal/Synchronization.h \
  /usr/include/c++/13/mutex /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/shared_mutex \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContextWithAltNum.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/ParserRuleContext.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/CPPUtils.h
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContextWithAltNum.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ParserRuleContext.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/CPPUtils.h

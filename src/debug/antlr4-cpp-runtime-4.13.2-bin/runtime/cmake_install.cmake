@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime
+# Install script for directory: /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,10 +43,16 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/workspaces/namaria/Downloads/simple-language/build/antlr4-cpp-runtime-4.13.2-bin/runtime/libantlr4-runtime.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-bin/runtime/libantlr4-runtime.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "dev" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/antlr4-runtime" TYPE DIRECTORY FILES "/workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/antlr4-runtime" TYPE DIRECTORY FILES "/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+if(CMAKE_INSTALL_LOCAL_ONLY)
+  file(WRITE "/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-bin/runtime/install_local_manifest.txt"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()
