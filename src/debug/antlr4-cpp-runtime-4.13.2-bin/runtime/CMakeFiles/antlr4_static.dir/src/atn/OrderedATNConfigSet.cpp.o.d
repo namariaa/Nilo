@@ -1,8 +1,8 @@
 antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.o: \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/OrderedATNConfigSet.cpp \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/OrderedATNConfigSet.cpp \
  /usr/include/stdc-predef.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/OrderedATNConfigSet.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNConfigSet.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/OrderedATNConfigSet.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNConfigSet.h \
  /usr/include/c++/13/cassert \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -15,8 +15,8 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/atn/Order
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
  /usr/include/c++/13/pstl/pstl_config.h /usr/include/assert.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/BitSet.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/BitSet.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/antlr4-common.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algobase.h \
  /usr/include/c++/13/bits/functexcept.h \
  /usr/include/c++/13/bits/exception_defines.h \
@@ -246,38 +246,38 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/src/atn/Order
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredictionContext.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/Recognizer.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/ProxyErrorListener.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorListener.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/RecognitionException.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/Exceptions.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Casts.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SerializedATNView.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Declarations.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredictionContext.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Recognizer.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ProxyErrorListener.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorListener.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RecognitionException.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Exceptions.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Casts.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SerializedATNView.h \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/MurmurHash.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/internal/Synchronization.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/MurmurHash.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/internal/Synchronization.h \
  /usr/include/c++/13/mutex /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/shared_mutex \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATN.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContext.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTree.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Any.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTreeType.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNState.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/IntervalSet.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/Interval.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/Transition.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/TransitionType.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNStateType.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredictionContextType.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNConfig.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SemanticContext.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/CPPUtils.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SemanticContextType.h \
- /workspaces/namaria/Downloads/simple-language/antlr4-cpp-runtime-4.13.2-source/runtime/src/FlatHashSet.h
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATN.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContext.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTree.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Any.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTreeType.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNState.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/IntervalSet.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/Interval.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/Transition.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/TransitionType.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNStateType.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredictionContextType.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNConfig.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SemanticContext.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/CPPUtils.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SemanticContextType.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/FlatHashSet.h

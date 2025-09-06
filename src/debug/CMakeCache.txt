@@ -36,7 +36,7 @@ CMAKE_BUILD_TYPE:STRING=Release
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:STRING=/usr/bin/c++
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -62,7 +62,7 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler
-CMAKE_C_COMPILER:STRING=/usr/bin/cc
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -159,7 +159,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SimpleLanguage
+CMAKE_PROJECT_NAME:STATIC=Nilocript
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=
@@ -209,23 +209,23 @@ CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
 //If set, runtime paths are not added when using shared libraries.
 CMAKE_SKIP_RPATH:BOOL=NO
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during all build types.
 CMAKE_STATIC_LINKER_FLAGS:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during DEBUG builds.
 CMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during MINSIZEREL builds.
 CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during RELEASE builds.
 CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
@@ -293,7 +293,7 @@ CPACK_SOURCE_ZIP:BOOL=OFF
 DISABLE_WARNINGS:BOOL=OFF
 
 //Value Computed by CMake
-LIBANTLR4_BINARY_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-souce
+LIBANTLR4_BINARY_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-bin
 
 //Value Computed by CMake
 LIBANTLR4_IS_TOP_LEVEL:STATIC=OFF
@@ -302,22 +302,13 @@ LIBANTLR4_IS_TOP_LEVEL:STATIC=OFF
 LIBANTLR4_SOURCE_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source
 
 //Value Computed by CMake
-NiloScript_BINARY_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src/debug
+Nilocript_BINARY_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src/debug
 
 //Value Computed by CMake
-NiloScript_IS_TOP_LEVEL:STATIC=ON
+Nilocript_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-NiloScript_SOURCE_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src
-
-//Value Computed by CMake
-SimpleLanguage_BINARY_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src/debug
-
-//Value Computed by CMake
-SimpleLanguage_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-SimpleLanguage_SOURCE_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR/src
+Nilocript_SOURCE_DIR:STATIC=/home/namaria/Gram-tica-com-ANTLR
 
 //Trace ATN simulation
 TRACE_ATN:BOOL=OFF
@@ -420,7 +411,7 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/namaria/Gram-tica-com-ANTLR/src
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/namaria/Gram-tica-com-ANTLR
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
@@ -521,6 +512,4 @@ CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//linker supports push/pop state
-_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 

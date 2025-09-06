@@ -2,8 +2,8 @@
 	"InstallScripts" : 
 	[
 		"/home/namaria/Gram-tica-com-ANTLR/src/debug/cmake_install.cmake",
-		"/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-souce/cmake_install.cmake",
-		"/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-souce/runtime/cmake_install.cmake"
+		"/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-bin/cmake_install.cmake",
+		"/home/namaria/Gram-tica-com-ANTLR/src/debug/antlr4-cpp-runtime-4.13.2-bin/runtime/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

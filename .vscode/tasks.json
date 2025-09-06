@@ -25,14 +25,18 @@
         {
             "type": "shell",
             "label": "cmake",
-            "command": "cmake",
-            "args": [
-               "../"
-            ],
+            "command": "cmake ../..",
             "options": {
                 "cwd": "${workspaceFolder}/src/debug"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "${workspaceFolder}/src/execute/sl ${workspaceFolder}/examples/teste.ns",
+            "problemMatcher": []
         }
+
     ]
 }

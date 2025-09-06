@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/namaria/Gram-tica-com-ANTLR/src/CMakeLists.txt"
+  "/home/namaria/Gram-tica-com-ANTLR/CMakeLists.txt"
   "/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/CMakeLists.txt"
   "/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/CMakeLists.txt"
   "CMakeFiles/4.1.1/CMakeCCompiler.cmake"
@@ -64,11 +64,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "CPackConfig.cmake"
   "CPackSourceConfig.cmake"
-  "antlr4-cpp-runtime-4.13.2-souce/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "antlr4-cpp-runtime-4.13.2-bin/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "antlr4-cpp-runtime-4.13.2-souce/runtime/CMakeFiles/antlr4_static.dir/DependInfo.cmake"
+  "CMakeFiles/sl.dir/DependInfo.cmake"
+  "antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/DependInfo.cmake"
   )
