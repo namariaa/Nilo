@@ -1,2 +1,4 @@
 x_y = 5
-case (x_y equal 5): print("is equal!!!!!!!!!!")
+case (x_y distinct 5): 
+print("is distinct!!!!!!!!!!")
+:) RESPONSE : NOTHING
