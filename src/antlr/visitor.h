@@ -51,19 +51,23 @@ class Visitor : public NiloScriptVisitor{
         if (context->term() && !context->expression()){
             return visitTerm(context->term());
         }else if (context -> expression()){
-            string s2;
+            string s1, s2;
             int lhs, rhs;
+            cout << "TERM" << context->term()->getText()<< endl;
             if (context->term()->getText().length() == 1 && context->expression()->getText().length() == 1){
                 lhs = stoi(context->expression()->getText());
                 rhs = stoi(context->term()->getText());
             }
             else{
                 if (context -> expression()->getText().length() == 1){
-                    return context->expression()->getText();
+                    s1 = context -> expression()->getText();
+                    lhs = stoi(s1); 
                 }
-                lhs = any_cast<int>(visitExpression(context->expression())); //2 + 5 como text
-                string s2 = any_cast<string>(visitTerm(context->term()));
-                rhs = stoi(s2);
+                else{
+                    lhs = any_cast<int>(visitExpression(context->expression())); 
+                }
+                cout << "EXPRESSSION" << context->expression()->getText() << endl;
+                rhs = any_cast<int>(visitTerm(context->term()));
             }
             int result;
             if (context->children[1]->getText() == "+"){
@@ -71,6 +75,7 @@ class Visitor : public NiloScriptVisitor{
             }else{
                 result = lhs - rhs;
             }
+            cout << "RESULT EXPR: " << result << endl;
             return result;
         }
         return nullptr;
@@ -80,14 +85,32 @@ class Visitor : public NiloScriptVisitor{
         if (context->fact() && !context->term()){
             return visitFact(context->fact());
         }else if (context -> fact()){
-            int lhs = any_cast<int>(visitTerm(context->term()));
-            int rhs = any_cast<int>(visitFact(context->fact()));
+            cout << "TEXT TERM" << context->getText() << endl;
+            cout << " TERM MESMO" << context->term()->getText() << endl;
+            cout << " FACT MESMO" << context->fact()->getText() << endl;
+            string s1, s2;
+            int lhs, rhs;
+            if (context->term()->getText().length() == 1 && context->fact()->getText().length() == 1){
+                lhs = stoi(context->term()->getText());
+                rhs = stoi(context->fact()->getText());
+            }
+            else{
+                if (context -> term()->getText().length() == 1){
+                    s1 = context -> term()->getText();
+                    lhs = stoi(s1); 
+                }
+                else{
+                    lhs = any_cast<int>(visitTerm(context->term())); 
+                }
+                rhs = any_cast<int>(visitFact(context->fact()));
+            }
             int result;
             if (context->children[1]->getText() == "*"){
                 result = lhs * rhs;
             }else{
                 result = lhs / rhs;
             }
+            cout << "RESULT term: " << result << endl;
             return result;
         }
         return nullptr;
@@ -103,10 +126,11 @@ class Visitor : public NiloScriptVisitor{
                 return nullptr;
             }
         }else if (context->INT()){
-            return context->INT()->getText();
+            return stoi(context->INT()->getText());;
         }else if (context->STRING()){
             return context->STRING()->getText();
         }else if (context->COMMENT()){
+            cout << "COMMENT " << context->COMMENT()->getText() << endl;
             return context->COMMENT()->getText();
         }else if (context->expression()){
             return visitExpression(context->expression());
@@ -121,8 +145,8 @@ class Visitor : public NiloScriptVisitor{
         if (context->expression()){
             any value = visitExpression(context->expression());
             if (value.type() == typeid(int)){
-                int value = any_cast<int>(value);
-                cout << "PRINT: " << value << endl;
+                int v = any_cast<int>(value);
+                cout << "PRINT: " << v << endl;
             }
             else if (value.type() == typeid(string)){
                 string value = any_cast<string>(value);
