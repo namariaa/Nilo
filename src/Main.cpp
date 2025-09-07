@@ -3,6 +3,7 @@
 #include "antlr4-runtime.h"
 #include "./antlr/NiloScriptParser.h"
 #include "./antlr/NiloScriptLexer.h"
+#include "./antlr/visitor.h"
 
 
 using namespace std;
@@ -22,7 +23,9 @@ int main(int nArguments, const char *sourceCode[]){
 
     NiloScriptParser parser(&tokens);
 
-    //Add the visitor call
+    NiloScriptParser::ProgramContext* tree = parser.program();
+
+    Visitor visit(tree);
 
     return 0; 
 }

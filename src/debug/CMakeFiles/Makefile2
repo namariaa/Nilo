@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = /home/namaria/Gram-tica-com-ANTLR/src/debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/sl.dir/all
+all: CMakeFiles/ns.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/sl.dir/codegen
+codegen: CMakeFiles/ns.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,7 +75,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/sl.dir/clean
+clean: CMakeFiles/ns.dir/clean
 clean: antlr4-cpp-runtime-4.13.2-bin/clean
 .PHONY : clean
 
@@ -118,36 +118,36 @@ antlr4-cpp-runtime-4.13.2-bin/runtime/clean: antlr4-cpp-runtime-4.13.2-bin/runti
 .PHONY : antlr4-cpp-runtime-4.13.2-bin/runtime/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sl.dir
+# Target rules for target CMakeFiles/ns.dir
 
 # All Build rule for target.
-CMakeFiles/sl.dir/all: antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=95,96,97,98,99,100 "Built target sl"
-.PHONY : CMakeFiles/sl.dir/all
+CMakeFiles/ns.dir/all: antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=95,96,97,98,99,100 "Built target ns"
+.PHONY : CMakeFiles/ns.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/sl.dir/rule: cmake_check_build_system
+CMakeFiles/ns.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 100
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sl.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ns.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles 0
-.PHONY : CMakeFiles/sl.dir/rule
+.PHONY : CMakeFiles/ns.dir/rule
 
 # Convenience name for target.
-sl: CMakeFiles/sl.dir/rule
-.PHONY : sl
+ns: CMakeFiles/ns.dir/rule
+.PHONY : ns
 
 # codegen rule for target.
-CMakeFiles/sl.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=95,96,97,98,99,100 "Finished codegen for target sl"
-.PHONY : CMakeFiles/sl.dir/codegen
+CMakeFiles/ns.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles --progress-num=95,96,97,98,99,100 "Finished codegen for target ns"
+.PHONY : CMakeFiles/ns.dir/codegen
 
 # clean rule for target.
-CMakeFiles/sl.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/clean
-.PHONY : CMakeFiles/sl.dir/clean
+CMakeFiles/ns.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/clean
+.PHONY : CMakeFiles/ns.dir/clean
 
 #=============================================================================
 # Target rules for target antlr4-cpp-runtime-4.13.2-bin/runtime/CMakeFiles/antlr4_static.dir

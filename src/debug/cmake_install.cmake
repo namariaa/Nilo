@@ -42,30 +42,6 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/namaria/Gram-tica-com-ANTLR/src/execute/sl" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/namaria/Gram-tica-com-ANTLR/src/execute/sl")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/namaria/Gram-tica-com-ANTLR/src/execute/sl"
-         RPATH "")
-  endif()
-  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/namaria/Gram-tica-com-ANTLR/src/execute/sl")
-  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  file(INSTALL DESTINATION "/home/namaria/Gram-tica-com-ANTLR/src/execute" TYPE EXECUTABLE FILES "/home/namaria/Gram-tica-com-ANTLR/src/debug/sl")
-  if(EXISTS "$ENV{DESTDIR}/home/namaria/Gram-tica-com-ANTLR/src/execute/sl" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/namaria/Gram-tica-com-ANTLR/src/execute/sl")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/namaria/Gram-tica-com-ANTLR/src/execute/sl")
-    endif()
-  endif()
-endif()
-
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)

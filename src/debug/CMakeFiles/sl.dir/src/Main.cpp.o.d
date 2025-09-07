@@ -415,4 +415,6 @@ CMakeFiles/sl.dir/src/Main.cpp.o: \
  /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathWildcardAnywhereElement.h \
  /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathWildcardElement.h \
  /home/namaria/Gram-tica-com-ANTLR/src/./antlr/NiloScriptParser.h \
- /home/namaria/Gram-tica-com-ANTLR/src/./antlr/NiloScriptLexer.h
+ /home/namaria/Gram-tica-com-ANTLR/src/./antlr/NiloScriptLexer.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/./antlr/visitor.h \
+ /home/namaria/Gram-tica-com-ANTLR/src/./antlr/NiloScriptVisitor.h
