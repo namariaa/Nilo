@@ -1,5 +1,5 @@
 
-// Generated from NiloScript.g4 by ANTLR 4.9.2
+// Generated from NiloScript.g4 by ANTLR 4.13.2
 
 #pragma once
 
@@ -19,21 +19,21 @@ public:
   /**
    * Visit parse trees produced by NiloScriptParser.
    */
-    virtual antlrcpp::Any visitProgram(NiloScriptParser::ProgramContext *context) = 0;
+    virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) = 0;
 
-    virtual antlrcpp::Any visitCode(NiloScriptParser::CodeContext *context) = 0;
+    virtual std::any visitCode(NiloScriptParser::CodeContext *context) = 0;
 
-    virtual antlrcpp::Any visitAssignment(NiloScriptParser::AssignmentContext *context) = 0;
+    virtual std::any visitAssignment(NiloScriptParser::AssignmentContext *context) = 0;
 
-    virtual antlrcpp::Any visitExpression(NiloScriptParser::ExpressionContext *context) = 0;
+    virtual std::any visitExpression(NiloScriptParser::ExpressionContext *context) = 0;
 
-    virtual antlrcpp::Any visitTerm(NiloScriptParser::TermContext *context) = 0;
+    virtual std::any visitTerm(NiloScriptParser::TermContext *context) = 0;
 
-    virtual antlrcpp::Any visitFact(NiloScriptParser::FactContext *context) = 0;
+    virtual std::any visitFact(NiloScriptParser::FactContext *context) = 0;
 
-    virtual antlrcpp::Any visitPrint(NiloScriptParser::PrintContext *context) = 0;
+    virtual std::any visitPrint(NiloScriptParser::PrintContext *context) = 0;
 
-    virtual antlrcpp::Any visitInCase(NiloScriptParser::InCaseContext *context) = 0;
+    virtual std::any visitInCase(NiloScriptParser::InCaseContext *context) = 0;
 
 
 };

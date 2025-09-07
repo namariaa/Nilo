@@ -2,7 +2,7 @@
 
 using namespace std;
 
-map<string, any> symbolTable;
+map<string, int> symbolTable;
 
 class Visitor : public NiloScriptVisitor{
     public:
@@ -12,7 +12,8 @@ class Visitor : public NiloScriptVisitor{
 
     virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) override {
         for (NiloScriptParser::CodeContext* code : context->code()){
-            return visitCode(code);
+            cout << "CODE " <<  code->getText() << endl;
+            visitCode(code);
         }
         return nullptr;
     }
@@ -33,9 +34,11 @@ class Visitor : public NiloScriptVisitor{
     }
 
     virtual std::any visitAssignment(NiloScriptParser::AssignmentContext *context) override {
+        cout << "ASIGN: " << context->VAR()->getText() << endl;
         if (context->VAR()){
             string var = context->VAR()->getText();
-            any value = visitExpression(context->expression());
+            int value = any_cast<int>(visitExpression(context->expression()));
+            cout << "VALUE DO ASSIGN: " << value << endl;
             symbolTable[var] = value;
         }else{
             cerr << "ERROR: You must put a variable name :(" << endl;
@@ -44,11 +47,24 @@ class Visitor : public NiloScriptVisitor{
     }
 
     virtual std::any visitExpression(NiloScriptParser::ExpressionContext *context) override {
+        cout << "context->getText(): " << context->getText() << endl;
         if (context->term() && !context->expression()){
             return visitTerm(context->term());
         }else if (context -> expression()){
-            int lhs = any_cast<int>(visitExpression(context->expression()));
-            int rhs = any_cast<int>(visitTerm(context->term()));
+            string s2;
+            int lhs, rhs;
+            if (context->term()->getText().length() == 1 && context->expression()->getText().length() == 1){
+                lhs = stoi(context->expression()->getText());
+                rhs = stoi(context->term()->getText());
+            }
+            else{
+                if (context -> expression()->getText().length() == 1){
+                    return context->expression()->getText();
+                }
+                lhs = any_cast<int>(visitExpression(context->expression())); //2 + 5 como text
+                string s2 = any_cast<string>(visitTerm(context->term()));
+                rhs = stoi(s2);
+            }
             int result;
             if (context->children[1]->getText() == "+"){
                 result = lhs + rhs;
@@ -81,7 +97,7 @@ class Visitor : public NiloScriptVisitor{
         if (context->VAR()){
             string var = context->VAR()->getText();
             if (symbolTable.find(var) != symbolTable.end()){
-                return var;
+                return symbolTable[var];
             }else {
                 cerr << "ERROR: Cannot recognize the variable name :(" << endl;
                 return nullptr;
@@ -101,9 +117,19 @@ class Visitor : public NiloScriptVisitor{
     }
 
     virtual std::any visitPrint(NiloScriptParser::PrintContext *context) override {
+        cout << "PRINT: " << "ANTES" << context->expression()->getText() << endl;
         if (context->expression()){
-            string value = any_cast<string>(visitExpression(context->expression()));
-            cout << "PRINT: " << value << endl;
+            any value = visitExpression(context->expression());
+            if (value.type() == typeid(int)){
+                int value = any_cast<int>(value);
+                cout << "PRINT: " << value << endl;
+            }
+            else if (value.type() == typeid(string)){
+                string value = any_cast<string>(value);
+                cout << "PRINT: " << value << endl;
+            } else{
+                cerr << "ERROR: Unkown type :(" << endl;
+            }
             return nullptr;
         }else {
             cerr << "ERROR: You must put something to show :(" << endl;
