@@ -1,5 +1,5 @@
 
-// Generated from NiloScript.g4 by ANTLR 4.13.2
+// Generated from NiloScript.g4 by ANTLR 4.9.2
 
 #pragma once
 
@@ -15,35 +15,35 @@
 class  NiloScriptBaseVisitor : public NiloScriptVisitor {
 public:
 
-  virtual std::any visitProgram(NiloScriptParser::ProgramContext *ctx) override {
+  virtual antlrcpp::Any visitProgram(NiloScriptParser::ProgramContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitCode(NiloScriptParser::CodeContext *ctx) override {
+  virtual antlrcpp::Any visitCode(NiloScriptParser::CodeContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitAssignment(NiloScriptParser::AssignmentContext *ctx) override {
+  virtual antlrcpp::Any visitAssignment(NiloScriptParser::AssignmentContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitExpression(NiloScriptParser::ExpressionContext *ctx) override {
+  virtual antlrcpp::Any visitExpression(NiloScriptParser::ExpressionContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitTerm(NiloScriptParser::TermContext *ctx) override {
+  virtual antlrcpp::Any visitTerm(NiloScriptParser::TermContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitFact(NiloScriptParser::FactContext *ctx) override {
+  virtual antlrcpp::Any visitFact(NiloScriptParser::FactContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitPrint(NiloScriptParser::PrintContext *ctx) override {
+  virtual antlrcpp::Any visitPrint(NiloScriptParser::PrintContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitInCase(NiloScriptParser::InCaseContext *ctx) override {
+  virtual antlrcpp::Any visitInCase(NiloScriptParser::InCaseContext *ctx) override {
     return visitChildren(ctx);
   }
 

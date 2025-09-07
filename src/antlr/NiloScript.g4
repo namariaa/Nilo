@@ -2,7 +2,7 @@ grammar NiloScript;
 
 //DO PARSER
 
-program : code EOF;
+program : code+ EOF; 
 
 code : expression 
        | print
