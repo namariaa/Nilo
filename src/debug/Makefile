@@ -182,17 +182,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sl
+# Target rules for targets named ns
 
 # Build rule for target.
-sl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sl
-.PHONY : sl
+ns: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ns
+.PHONY : ns
 
 # fast build rule for target.
-sl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/build
-.PHONY : sl/fast
+ns/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/build
+.PHONY : ns/fast
 
 #=============================================================================
 # Target rules for targets named antlr4_static
@@ -212,7 +212,7 @@ src/Main.o: src/Main.cpp.o
 
 # target to build an object file
 src/Main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/Main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/Main.cpp.o
 .PHONY : src/Main.cpp.o
 
 src/Main.i: src/Main.cpp.i
@@ -220,7 +220,7 @@ src/Main.i: src/Main.cpp.i
 
 # target to preprocess a source file
 src/Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/Main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/Main.cpp.i
 .PHONY : src/Main.cpp.i
 
 src/Main.s: src/Main.cpp.s
@@ -228,7 +228,7 @@ src/Main.s: src/Main.cpp.s
 
 # target to generate assembly for a file
 src/Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/Main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
 src/antlr/NiloScriptBaseListener.o: src/antlr/NiloScriptBaseListener.cpp.o
@@ -236,7 +236,7 @@ src/antlr/NiloScriptBaseListener.o: src/antlr/NiloScriptBaseListener.cpp.o
 
 # target to build an object file
 src/antlr/NiloScriptBaseListener.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptBaseListener.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o
 .PHONY : src/antlr/NiloScriptBaseListener.cpp.o
 
 src/antlr/NiloScriptBaseListener.i: src/antlr/NiloScriptBaseListener.cpp.i
@@ -244,7 +244,7 @@ src/antlr/NiloScriptBaseListener.i: src/antlr/NiloScriptBaseListener.cpp.i
 
 # target to preprocess a source file
 src/antlr/NiloScriptBaseListener.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptBaseListener.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.i
 .PHONY : src/antlr/NiloScriptBaseListener.cpp.i
 
 src/antlr/NiloScriptBaseListener.s: src/antlr/NiloScriptBaseListener.cpp.s
@@ -252,7 +252,7 @@ src/antlr/NiloScriptBaseListener.s: src/antlr/NiloScriptBaseListener.cpp.s
 
 # target to generate assembly for a file
 src/antlr/NiloScriptBaseListener.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptBaseListener.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.s
 .PHONY : src/antlr/NiloScriptBaseListener.cpp.s
 
 src/antlr/NiloScriptBaseVisitor.o: src/antlr/NiloScriptBaseVisitor.cpp.o
@@ -260,7 +260,7 @@ src/antlr/NiloScriptBaseVisitor.o: src/antlr/NiloScriptBaseVisitor.cpp.o
 
 # target to build an object file
 src/antlr/NiloScriptBaseVisitor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptBaseVisitor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o
 .PHONY : src/antlr/NiloScriptBaseVisitor.cpp.o
 
 src/antlr/NiloScriptBaseVisitor.i: src/antlr/NiloScriptBaseVisitor.cpp.i
@@ -268,7 +268,7 @@ src/antlr/NiloScriptBaseVisitor.i: src/antlr/NiloScriptBaseVisitor.cpp.i
 
 # target to preprocess a source file
 src/antlr/NiloScriptBaseVisitor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptBaseVisitor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.i
 .PHONY : src/antlr/NiloScriptBaseVisitor.cpp.i
 
 src/antlr/NiloScriptBaseVisitor.s: src/antlr/NiloScriptBaseVisitor.cpp.s
@@ -276,7 +276,7 @@ src/antlr/NiloScriptBaseVisitor.s: src/antlr/NiloScriptBaseVisitor.cpp.s
 
 # target to generate assembly for a file
 src/antlr/NiloScriptBaseVisitor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptBaseVisitor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.s
 .PHONY : src/antlr/NiloScriptBaseVisitor.cpp.s
 
 src/antlr/NiloScriptLexer.o: src/antlr/NiloScriptLexer.cpp.o
@@ -284,7 +284,7 @@ src/antlr/NiloScriptLexer.o: src/antlr/NiloScriptLexer.cpp.o
 
 # target to build an object file
 src/antlr/NiloScriptLexer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptLexer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o
 .PHONY : src/antlr/NiloScriptLexer.cpp.o
 
 src/antlr/NiloScriptLexer.i: src/antlr/NiloScriptLexer.cpp.i
@@ -292,7 +292,7 @@ src/antlr/NiloScriptLexer.i: src/antlr/NiloScriptLexer.cpp.i
 
 # target to preprocess a source file
 src/antlr/NiloScriptLexer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptLexer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.i
 .PHONY : src/antlr/NiloScriptLexer.cpp.i
 
 src/antlr/NiloScriptLexer.s: src/antlr/NiloScriptLexer.cpp.s
@@ -300,7 +300,7 @@ src/antlr/NiloScriptLexer.s: src/antlr/NiloScriptLexer.cpp.s
 
 # target to generate assembly for a file
 src/antlr/NiloScriptLexer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptLexer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.s
 .PHONY : src/antlr/NiloScriptLexer.cpp.s
 
 src/antlr/NiloScriptListener.o: src/antlr/NiloScriptListener.cpp.o
@@ -308,7 +308,7 @@ src/antlr/NiloScriptListener.o: src/antlr/NiloScriptListener.cpp.o
 
 # target to build an object file
 src/antlr/NiloScriptListener.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptListener.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o
 .PHONY : src/antlr/NiloScriptListener.cpp.o
 
 src/antlr/NiloScriptListener.i: src/antlr/NiloScriptListener.cpp.i
@@ -316,7 +316,7 @@ src/antlr/NiloScriptListener.i: src/antlr/NiloScriptListener.cpp.i
 
 # target to preprocess a source file
 src/antlr/NiloScriptListener.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptListener.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.i
 .PHONY : src/antlr/NiloScriptListener.cpp.i
 
 src/antlr/NiloScriptListener.s: src/antlr/NiloScriptListener.cpp.s
@@ -324,7 +324,7 @@ src/antlr/NiloScriptListener.s: src/antlr/NiloScriptListener.cpp.s
 
 # target to generate assembly for a file
 src/antlr/NiloScriptListener.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptListener.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.s
 .PHONY : src/antlr/NiloScriptListener.cpp.s
 
 src/antlr/NiloScriptParser.o: src/antlr/NiloScriptParser.cpp.o
@@ -332,7 +332,7 @@ src/antlr/NiloScriptParser.o: src/antlr/NiloScriptParser.cpp.o
 
 # target to build an object file
 src/antlr/NiloScriptParser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptParser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o
 .PHONY : src/antlr/NiloScriptParser.cpp.o
 
 src/antlr/NiloScriptParser.i: src/antlr/NiloScriptParser.cpp.i
@@ -340,7 +340,7 @@ src/antlr/NiloScriptParser.i: src/antlr/NiloScriptParser.cpp.i
 
 # target to preprocess a source file
 src/antlr/NiloScriptParser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptParser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.i
 .PHONY : src/antlr/NiloScriptParser.cpp.i
 
 src/antlr/NiloScriptParser.s: src/antlr/NiloScriptParser.cpp.s
@@ -348,7 +348,7 @@ src/antlr/NiloScriptParser.s: src/antlr/NiloScriptParser.cpp.s
 
 # target to generate assembly for a file
 src/antlr/NiloScriptParser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptParser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.s
 .PHONY : src/antlr/NiloScriptParser.cpp.s
 
 src/antlr/NiloScriptVisitor.o: src/antlr/NiloScriptVisitor.cpp.o
@@ -356,7 +356,7 @@ src/antlr/NiloScriptVisitor.o: src/antlr/NiloScriptVisitor.cpp.o
 
 # target to build an object file
 src/antlr/NiloScriptVisitor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptVisitor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o
 .PHONY : src/antlr/NiloScriptVisitor.cpp.o
 
 src/antlr/NiloScriptVisitor.i: src/antlr/NiloScriptVisitor.cpp.i
@@ -364,7 +364,7 @@ src/antlr/NiloScriptVisitor.i: src/antlr/NiloScriptVisitor.cpp.i
 
 # target to preprocess a source file
 src/antlr/NiloScriptVisitor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptVisitor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.i
 .PHONY : src/antlr/NiloScriptVisitor.cpp.i
 
 src/antlr/NiloScriptVisitor.s: src/antlr/NiloScriptVisitor.cpp.s
@@ -372,7 +372,7 @@ src/antlr/NiloScriptVisitor.s: src/antlr/NiloScriptVisitor.cpp.s
 
 # target to generate assembly for a file
 src/antlr/NiloScriptVisitor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sl.dir/build.make CMakeFiles/sl.dir/src/antlr/NiloScriptVisitor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.s
 .PHONY : src/antlr/NiloScriptVisitor.cpp.s
 
 # Help Target
@@ -390,7 +390,7 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... antlr4_static"
-	@echo "... sl"
+	@echo "... ns"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"

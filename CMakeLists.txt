@@ -33,21 +33,13 @@ file(GLOB SOURCES
     src/antlr/NiloScript*.cpp  
 )
 
-# Cria o executável
-add_executable(sl ${SOURCES})
+# Cria o executável a partir dos fontes
+add_executable(ns ${SOURCES})
 
 # Linka com o ANTLR runtime estático
-target_link_libraries(sl PRIVATE antlr4_static)
+target_link_libraries(ns PRIVATE antlr4_static)
 
-# Define onde os executáveis finais vão ficar
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/execute)
-
-# Instalação (opcional)
-install(TARGETS sl
-    RUNTIME DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/src/execute
-    LIBRARY DESTINATION lib
-    ARCHIVE DESTINATION lib
+# Define onde o executável final será colocado
+set_target_properties(ns PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/execute
 )
-
-# Caso queira adicionar includes adicionais, descomente e ajuste
-# target_include_directories(sl PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)

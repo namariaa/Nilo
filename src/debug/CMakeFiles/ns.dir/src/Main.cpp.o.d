@@ -1,4 +1,4 @@
-CMakeFiles/sl.dir/src/Main.cpp.o: \
+CMakeFiles/ns.dir/src/Main.cpp.o: \
  /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \

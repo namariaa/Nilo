@@ -1,4 +1,4 @@
-/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/sl.dir
+/home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/ns.dir
 /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/package.dir
 /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/package_source.dir
 /home/namaria/Gram-tica-com-ANTLR/src/debug/CMakeFiles/edit_cache.dir
