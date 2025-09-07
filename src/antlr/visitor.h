@@ -11,7 +11,9 @@ class Visitor : public NiloScriptVisitor{
     }
 
     virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) override {
-        return visitCode(context->code());
+        for (NiloScriptParser::CodeContext* code : context->code()){
+            return visitCode(code);
+        }
         return nullptr;
     }
 
