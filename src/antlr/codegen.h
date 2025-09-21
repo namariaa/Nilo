@@ -21,24 +21,44 @@ map<string, llvm::Value> symbolTable;
 unique_ptr<llvm::LLVMContext> Conteiner;
 unique_ptr<llvm::Module> Executable;
 unique_ptr<llvm::IRBuilder<llvm::NoFolder>> Builder;
-
-//Constructor for LLVM stuctures
-void LlvmConstructor(){
-    Conteiner = make_unique<llvm::LLVMContext>();
-    Executable = make_unique<llvm::Module>();
-    Builder = make_unique<llvm::IRBuilder<llvm::NoFolder>>();
-}
 class CodeGen : public NiloScriptVisitor {
     private:
     llvm::Function *TheFunction;
-    llvm::BasicBlock *CurrentBasisBlock;
+    llvm::BasicBlock *CurrentBasicBlock;
 
     public:
     CodeGen(NiloScriptParser::ProgramContext* tree){
+        Conteiner = make_unique<llvm::LLVMContext>();
+        Executable = make_unique<llvm::Module>();
+        Builder = make_unique<llvm::IRBuilder<llvm::NoFolder>>();
         visitProgram(tree);
     }
 
-    virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) override {};
+    virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) override {
+        //Configure the module
+        Executable->setDataLayout(llvm::DataLayout("e-m:e-i64:64-f80:128-n8:16:32:64-S128"));
+        Executable->setTargetTriple("x86_64-unknown-linux-gnu");
+        
+        //Create main function
+        llvm::FunctionType *FT = llvm::FunctionType::get(llvm::Type::getInt32Ty(*Conteiner), false);
+        TheFunction = llvm::Function::Create(FT, llvm::Function::ExternalLinkage, "main", Executable.get());
+        CurrentBasicBlock = llvm::BasicBlock::Create(*Conteiner, "entry", TheFunction);
+        Builder->SetInsertPoint(CurrentBasicBlock);
+
+        //Loop and result of program
+        llvm::Value *resultOfProgram = nullptr;
+        for (NiloScriptParser::CodeContext *code : context->code()){
+            any r = visitCode(code);
+            if (r.has_value()){
+                resultOfProgram = any_cast<llvm::Value *>(r);
+            }
+        } 
+        
+        //Build return IR
+        Builder->CreateRet(resultOfProgram);
+
+        return nullptr;
+    };
 
     virtual std::any visitCode(NiloScriptParser::CodeContext *context) override {};
 
