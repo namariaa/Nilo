@@ -49,15 +49,19 @@ class CodeGen : public NiloScriptVisitor {
         llvm::Value *resultOfProgram = nullptr;
         for (NiloScriptParser::CodeContext *code : context->code()){
             any r = visitCode(code);
-            cout << "LOOP" << endl;
-            // if (r.has_value()){
-            //     resultOfProgram = any_cast<llvm::Value *>(r);
-            //     cout << "LOOP2" << endl;
-            // }
+            cout << "LOOP: type = " << r.type().name() << endl;
+            if (r.has_value()){
+                resultOfProgram = any_cast<llvm::Value *>(r);
+                cout << "LOOP2" << endl;
+            }
         } 
-        
+
         //Build return IR
         Builder->CreateRet(resultOfProgram);
+
+        //Print the executable file 
+        llvm::verifyFunction(*TheFunction);
+        Executable->print(llvm::outs(), nullptr);
 
         return nullptr;
     };
@@ -83,10 +87,12 @@ class CodeGen : public NiloScriptVisitor {
             string var = context->VAR()->getText();
             cout << "VALUE" << endl;
             llvm::Value *value = any_cast<llvm::Value *>(visitExpression(context->expression()));
-            symbolTable[var] = value;
+            return symbolTable[var] = value;
+            
         }else{
             cerr << "ERROR: You must put a variable name :(" << endl;
         }
+        cerr << "Vai retornar nullptr" << endl;
         return nullptr;
     };
 
@@ -176,6 +182,7 @@ class CodeGen : public NiloScriptVisitor {
         if (context->VAR()){
             string var = context->VAR()->getText();
             if (symbolTable.find(var) != symbolTable.end()){
+                cout << "ENTROU NO VAR " << var  << endl;
                 return symbolTable[var];
             }else {
                 cerr << "ERROR: Cannot recognize the variable name :(" << endl;
@@ -186,6 +193,7 @@ class CodeGen : public NiloScriptVisitor {
             return value; 
         }else if (context->STRING()){
             string text = context->STRING()->getText();
+            text = text.substr(1, text.size() - 2);
             llvm::Value *valueText = Builder->CreateGlobalStringPtr(text);
             return valueText; 
         }else if (context->COMMENT()){
@@ -202,17 +210,16 @@ class CodeGen : public NiloScriptVisitor {
         cout << "ENTROU NO PRINT " << context->getText() << endl;
         if (context->expression()){
             any value = visitExpression(context->expression());
-            if (value.type() == typeid(int)){
-                int v = any_cast<int>(value);
-                cout << "PRINT: " << v << endl;
-            }
-            else if (value.type() == typeid(string)){
-                string v = any_cast<string>(value);
-                cout << "PRINT: " << v << endl;
-            } else{
-                cerr << "ERROR: Unkown type :(" << endl;
-            }
-            return nullptr;
+            cout << "RESPOSTA PRINT " << value.type().name() << endl;
+            llvm::Value *v = any_cast<llvm::Value*>(value);
+            llvm::FunctionCallee Print = Executable->getOrInsertFunction("print",
+                llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
+        
+            //CreateCall is a function call
+            llvm::SmallVector<llvm::Value*, 1> Args;
+            Args.push_back(v);
+            Builder->CreateCall(Print, Args, "printCall");
+            return v;
         }else {
             cerr << "ERROR: You must put something to show :(" << endl;
             return nullptr;
