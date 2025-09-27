@@ -49,10 +49,8 @@ class CodeGen : public NiloScriptVisitor {
         llvm::Value *resultOfProgram = nullptr;
         for (NiloScriptParser::CodeContext *code : context->code()){
             any r = visitCode(code);
-            cout << "LOOP: type = " << r.type().name() << endl;
             if (r.has_value()){
                 resultOfProgram = any_cast<llvm::Value *>(r);
-                cout << "LOOP2" << endl;
             }
         } 
 
@@ -83,9 +81,7 @@ class CodeGen : public NiloScriptVisitor {
 
     virtual std::any visitAssignment(NiloScriptParser::AssignmentContext *context) override {
         if (context->VAR()){
-            cout << "ENTROU NO ASSIGMENT " << context->getText() << endl;
             string var = context->VAR()->getText();
-            cout << "VALUE" << endl;
             llvm::Value *value = any_cast<llvm::Value *>(visitExpression(context->expression()));
             return symbolTable[var] = value;
             
@@ -97,7 +93,6 @@ class CodeGen : public NiloScriptVisitor {
     };
 
     virtual std::any visitExpression(NiloScriptParser::ExpressionContext *context) override {
-        cout << "ENTROU NO EXPRESSION " << context->getText() << endl;
         if (context->term() && !context->expression()){
             return visitTerm(context->term());
         }else if (context -> expression()){
@@ -106,43 +101,31 @@ class CodeGen : public NiloScriptVisitor {
             if (context->term()->getText().length() == 1 && context->expression()->getText().length() == 1){
                 v1 = stoi(context->expression()->getText());
                 v2 = stoi(context->term()->getText());
-                cout << "AQUIIII " << v1 << " " << v2 << endl;
                 lhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v1);
                 rhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v2);
             }
             else{
-                cout << "ALIIII" << endl;
                 if (context -> expression()->getText().length() == 1){
                     v1 = stoi(context -> expression()->getText()); 
-                    cout << "PRIMIERO" << endl;
                     lhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v1);
                 }
                 else{
-                    cout << "SEGUNDO" << endl;
                     lhs = std::any_cast<llvm::Value*>(visitExpression(context->expression())); 
-                    cout << "SEGUNDO ..." << endl;
                 }
-                cout << "VISIT TERM " << endl;
                 rhs = std::any_cast<llvm::Value*>(visitTerm(context->term()));
-                cout << "FIM VISIT TERM " << endl;
             }
-            cout << "EXPRESSION " << endl;
             llvm::Value *result;
             if (context->children[1]->getText() == "+"){
-                cout << "AQUI 2 " << endl;
                 result = Builder->CreateAdd(lhs, std::any_cast<llvm::Value *>(rhs), "addtmp");
             }else{
-                cout << "ALI 2 " << endl;
                 result = Builder->CreateSub(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "subtmp");
             }
-            cout << "RESULT " << result->getValueName() << endl;
             return result;
         }
         return nullptr;
     }
 
     virtual std::any visitTerm(NiloScriptParser::TermContext *context) override {
-        cout << "ENTROU NO TERM " << context->getText() << endl;
         if (context->fact() && !context->term()){
             return visitFact(context->fact());
         }else if (context -> fact()){
@@ -151,7 +134,6 @@ class CodeGen : public NiloScriptVisitor {
             if (context->term()->getText().length() == 1 && context->fact()->getText().length() == 1){
                 v1 = stoi(context->term()->getText());
                 v2 = stoi(context->fact()->getText());
-                cout << "AQUIIII TERM " << v1 << " " << v2 << endl;
                 lhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v1);
                 rhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v2);
             }
@@ -171,18 +153,15 @@ class CodeGen : public NiloScriptVisitor {
             }else{
                 result = Builder->CreateFDiv(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "divtmp");
             }
-            cout << "RESULT TERM" << endl;
             return result;
         }
         return nullptr;
     }
 
     virtual std::any visitFact(NiloScriptParser::FactContext *context) override {
-        cout << "ENTROU NO FACT" << endl;
         if (context->VAR()){
             string var = context->VAR()->getText();
             if (symbolTable.find(var) != symbolTable.end()){
-                cout << "ENTROU NO VAR " << var  << endl;
                 return symbolTable[var];
             }else {
                 cerr << "ERROR: Cannot recognize the variable name :(" << endl;
@@ -207,10 +186,8 @@ class CodeGen : public NiloScriptVisitor {
     }
 
     virtual std::any visitPrint(NiloScriptParser::PrintContext *context) override {
-        cout << "ENTROU NO PRINT " << context->getText() << endl;
         if (context->expression()){
             any value = visitExpression(context->expression());
-            cout << "RESPOSTA PRINT " << value.type().name() << endl;
             llvm::Value *v = any_cast<llvm::Value*>(value);
             llvm::FunctionCallee Print = Executable->getOrInsertFunction("print",
                 llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
@@ -227,6 +204,31 @@ class CodeGen : public NiloScriptVisitor {
     }
 
     virtual std::any visitInCase(NiloScriptParser::InCaseContext *context) override {
-        return 0;
+        any opt1 = visitExpression(context->expression(0));
+        any opt2 =  visitExpression(context->expression(1));
+        llvm::Value *v1 = any_cast<llvm::Value *>(opt1);
+        llvm::Value *v2 = any_cast<llvm::Value *>(opt2);
+        string oper = context->OPERATOR()->getText();
+        llvm::BasicBlock *conditionalBlock = llvm::BasicBlock::Create(*Conteiner, "inCase", TheFunction);
+        llvm::Value *CondV;
+        any responseBlock;
+        if (oper == "equal"){
+                CondV = Builder->CreateICmpEQ(v1, v2, "inCaseCondicional");
+            } else if (oper == "distinct"){
+                CondV = Builder->CreateICmpNE(v1, v2, "inCaseCondicional");
+            } else if (oper == "bigger"){
+                CondV = Builder->CreateICmpUGT(v1, v2, "inCaseCondicional");
+            } else if (oper == "minor"){
+                CondV = Builder->CreateICmpULT(v1, v2, "inCaseCondicional");
+            } else {
+                cerr << "ERROR: Cannot recognize the operator :(" << endl;
+                return opt1;
+            }
+        Builder->SetInsertPoint(conditionalBlock);
+        responseBlock = visitCode(context->code());
+        Builder->CreateBr(CurrentBasicBlock);
+        Builder->SetInsertPoint(CurrentBasicBlock);
+        Builder->CreateCondBr(CondV, conditionalBlock, CurrentBasicBlock);
+        return opt1;
     }
 };

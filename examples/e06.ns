@@ -1,4 +1,4 @@
 x_y = 6
 case (x_y distinct 5): 
 print("is distinct!!!!!!!!!!")
-:) RESPONSE : NOTHING
+:) RESPONSE : is distinct!!!!!!!!!!
