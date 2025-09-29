@@ -226,6 +226,7 @@ class CodeGen : public NiloScriptVisitor {
             }
         Builder->SetInsertPoint(conditionalBlock);
         responseBlock = visitCode(context->code());
+        CurrentBasicBlock = llvm::BasicBlock::Create(*Conteiner, "main2", TheFunction);
         Builder->CreateBr(CurrentBasicBlock);
         Builder->SetInsertPoint(CurrentBasicBlock);
         Builder->CreateCondBr(CondV, conditionalBlock, CurrentBasicBlock);
