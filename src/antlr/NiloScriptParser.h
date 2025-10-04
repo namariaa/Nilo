@@ -13,8 +13,9 @@ class  NiloScriptParser : public antlr4::Parser {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
-    T__7 = 8, T__8 = 9, T__9 = 10, INT = 11, OPERATOR = 12, VAR = 13, STRING = 14, 
-    COMMENT = 15, TAB = 16, ENTER = 17, SPACE = 18, WHITESPACE = 19
+    T__7 = 8, T__8 = 9, T__9 = 10, T__10 = 11, INT = 12, OPERATOR = 13, 
+    VAR = 14, STRING = 15, COMMENT = 16, TAB = 17, ENTER = 18, SPACE = 19, 
+    WHITESPACE = 20
   };
 
   enum {
@@ -174,8 +175,10 @@ public:
     std::vector<ExpressionContext *> expression();
     ExpressionContext* expression(size_t i);
     antlr4::tree::TerminalNode *OPERATOR();
-    antlr4::tree::TerminalNode *ENTER();
-    CodeContext *code();
+    std::vector<CodeContext *> code();
+    CodeContext* code(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> ENTER();
+    antlr4::tree::TerminalNode* ENTER(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;

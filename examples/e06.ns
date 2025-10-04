@@ -1,6 +1,7 @@
 x_y = 6
 print("test before!!!!!!!!!!")
-case (x_y distinct 5): 
-    print("is distinct!!!!!!!!!!")
-print("block after!!!!!!!!!!")
+case (x_y distinct 5){
+    print("is distinct!!!!!!!!!!") 
+    print("block after!!!!!!!!!!")
+}
 :) RESPONSE : is distinct!!!!!!!!!!

@@ -23,7 +23,7 @@ fact : '('expression')'
         | STRING
         | COMMENT;
 print : 'print' '(' expression ')';
-inCase : 'case' '(' expression OPERATOR expression ')' ':' ENTER code;
+inCase : 'case' '(' expression OPERATOR expression ')' '{' ( ENTER* code)+ ENTER* '}';
 
 //DO LEXER
 INT : [0-9]+;

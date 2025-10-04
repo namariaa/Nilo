@@ -224,12 +224,15 @@ class CodeGen : public NiloScriptVisitor {
                 cerr << "ERROR: Cannot recognize the operator :(" << endl;
                 return opt1;
             }
-        Builder->SetInsertPoint(conditionalBlock);
-        responseBlock = visitCode(context->code());
         CurrentBasicBlock = llvm::BasicBlock::Create(*Conteiner, "main2", TheFunction);
+        Builder->CreateCondBr(CondV, conditionalBlock, CurrentBasicBlock); //Decide what path go depend of CondV response
+        Builder->SetInsertPoint(conditionalBlock);
+        for (NiloScriptParser::CodeContext *codes : context->code()){
+            responseBlock = visitCode(codes);
+        }
         Builder->CreateBr(CurrentBasicBlock);
         Builder->SetInsertPoint(CurrentBasicBlock);
-        Builder->CreateCondBr(CondV, conditionalBlock, CurrentBasicBlock);
         return opt1;
     }
 };
+
