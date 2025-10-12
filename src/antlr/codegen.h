@@ -61,6 +61,11 @@ class CodeGen : public NiloScriptVisitor {
         llvm::verifyFunction(*TheFunction);
         Executable->print(llvm::outs(), nullptr);
 
+        std::error_code EC;
+        llvm::raw_fd_ostream dest("output.ll", EC);
+        Executable->print(dest, nullptr);
+        dest.close();
+
         return nullptr;
     };
 
@@ -96,24 +101,9 @@ class CodeGen : public NiloScriptVisitor {
         if (context->term() && !context->expression()){
             return visitTerm(context->term());
         }else if (context -> expression()){
-            int v1, v2;
-            llvm::Value * lhs, *rhs;
-            if (context->term()->getText().length() == 1 && context->expression()->getText().length() == 1){
-                v1 = stoi(context->expression()->getText());
-                v2 = stoi(context->term()->getText());
-                lhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v1);
-                rhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v2);
-            }
-            else{
-                if (context -> expression()->getText().length() == 1){
-                    v1 = stoi(context -> expression()->getText()); 
-                    lhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v1);
-                }
-                else{
-                    lhs = std::any_cast<llvm::Value*>(visitExpression(context->expression())); 
-                }
-                rhs = std::any_cast<llvm::Value*>(visitTerm(context->term()));
-            }
+            llvm::Value *lhs = std::any_cast<llvm::Value*>(visitExpression(context->expression())); 
+            llvm::Value *rhs = std::any_cast<llvm::Value*>(visitTerm(context->term()));
+            
             llvm::Value *result;
             if (context->children[1]->getText() == "+"){
                 result = Builder->CreateAdd(lhs, std::any_cast<llvm::Value *>(rhs), "addtmp");
@@ -130,23 +120,9 @@ class CodeGen : public NiloScriptVisitor {
             return visitFact(context->fact());
         }else if (context -> fact()){
             int v1, v2;
-            llvm::Value* lhs, *rhs;
-            if (context->term()->getText().length() == 1 && context->fact()->getText().length() == 1){
-                v1 = stoi(context->term()->getText());
-                v2 = stoi(context->fact()->getText());
-                lhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v1);
-                rhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v2);
-            }
-            else{
-                if (context -> term()->getText().length() == 1){
-                    v1 = stoi(context->term()->getText());
-                    lhs = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), v1);
-                }
-                else{
-                    lhs = any_cast<llvm::Value *>(visitTerm(context->term())); 
-                }
-                rhs = any_cast<llvm::Value *>(visitFact(context->fact()));
-            }
+            llvm::Value* lhs = any_cast<llvm::Value *>(visitTerm(context->term()));
+            llvm::Value* rhs = any_cast<llvm::Value *>(visitFact(context->fact()));
+
             llvm::Value *result;
             if (context->children[1]->getText() == "*"){
                 result = Builder->CreateMul(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "multmp");
