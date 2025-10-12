@@ -53,51 +53,56 @@ void niloscriptParserInitialize() {
 #endif
   auto staticData = std::make_unique<NiloScriptParserStaticData>(
     std::vector<std::string>{
-      "program", "code", "assignment", "expression", "term", "fact", "print", 
-      "inCase"
+      "program", "code", "assignment", "expression", "term", "pot", "fact", 
+      "print", "inCase"
     },
     std::vector<std::string>{
-      "", "'='", "'+'", "'-'", "'*'", "'/'", "'('", "')'", "'print'", "'case'", 
-      "'{'", "'}'"
+      "", "'='", "'+'", "'-'", "'*'", "'/'", "'**'", "'('", "')'", "'print'", 
+      "'case'", "'{'", "'}'"
     },
     std::vector<std::string>{
-      "", "", "", "", "", "", "", "", "", "", "", "", "INT", "OPERATOR", 
+      "", "", "", "", "", "", "", "", "", "", "", "", "", "INT", "OPERATOR", 
       "VAR", "STRING", "COMMENT", "TAB", "ENTER", "SPACE", "WHITESPACE"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,20,109,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
-  	7,7,7,1,0,1,0,5,0,19,8,0,10,0,12,0,22,9,0,4,0,24,8,0,11,0,12,0,25,1,0,
-  	1,0,1,1,1,1,1,1,1,1,3,1,34,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,
-  	3,1,3,1,3,1,3,5,3,49,8,3,10,3,12,3,52,9,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,
-  	1,4,1,4,5,4,63,8,4,10,4,12,4,66,9,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,3,
-  	5,76,8,5,1,6,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,5,7,91,8,
-  	7,10,7,12,7,94,9,7,1,7,4,7,97,8,7,11,7,12,7,98,1,7,5,7,102,8,7,10,7,12,
-  	7,105,9,7,1,7,1,7,1,7,0,2,6,8,8,0,2,4,6,8,10,12,14,0,0,116,0,23,1,0,0,
-  	0,2,33,1,0,0,0,4,35,1,0,0,0,6,39,1,0,0,0,8,53,1,0,0,0,10,75,1,0,0,0,12,
-  	77,1,0,0,0,14,82,1,0,0,0,16,20,3,2,1,0,17,19,5,18,0,0,18,17,1,0,0,0,19,
-  	22,1,0,0,0,20,18,1,0,0,0,20,21,1,0,0,0,21,24,1,0,0,0,22,20,1,0,0,0,23,
-  	16,1,0,0,0,24,25,1,0,0,0,25,23,1,0,0,0,25,26,1,0,0,0,26,27,1,0,0,0,27,
-  	28,5,0,0,1,28,1,1,0,0,0,29,34,3,6,3,0,30,34,3,12,6,0,31,34,3,4,2,0,32,
-  	34,3,14,7,0,33,29,1,0,0,0,33,30,1,0,0,0,33,31,1,0,0,0,33,32,1,0,0,0,34,
-  	3,1,0,0,0,35,36,5,14,0,0,36,37,5,1,0,0,37,38,3,6,3,0,38,5,1,0,0,0,39,
-  	40,6,3,-1,0,40,41,3,8,4,0,41,50,1,0,0,0,42,43,10,3,0,0,43,44,5,2,0,0,
-  	44,49,3,8,4,0,45,46,10,2,0,0,46,47,5,3,0,0,47,49,3,8,4,0,48,42,1,0,0,
-  	0,48,45,1,0,0,0,49,52,1,0,0,0,50,48,1,0,0,0,50,51,1,0,0,0,51,7,1,0,0,
-  	0,52,50,1,0,0,0,53,54,6,4,-1,0,54,55,3,10,5,0,55,64,1,0,0,0,56,57,10,
-  	3,0,0,57,58,5,4,0,0,58,63,3,10,5,0,59,60,10,2,0,0,60,61,5,5,0,0,61,63,
-  	3,10,5,0,62,56,1,0,0,0,62,59,1,0,0,0,63,66,1,0,0,0,64,62,1,0,0,0,64,65,
-  	1,0,0,0,65,9,1,0,0,0,66,64,1,0,0,0,67,68,5,6,0,0,68,69,3,6,3,0,69,70,
-  	5,7,0,0,70,76,1,0,0,0,71,76,5,12,0,0,72,76,5,14,0,0,73,76,5,15,0,0,74,
-  	76,5,16,0,0,75,67,1,0,0,0,75,71,1,0,0,0,75,72,1,0,0,0,75,73,1,0,0,0,75,
-  	74,1,0,0,0,76,11,1,0,0,0,77,78,5,8,0,0,78,79,5,6,0,0,79,80,3,6,3,0,80,
-  	81,5,7,0,0,81,13,1,0,0,0,82,83,5,9,0,0,83,84,5,6,0,0,84,85,3,6,3,0,85,
-  	86,5,13,0,0,86,87,3,6,3,0,87,88,5,7,0,0,88,96,5,10,0,0,89,91,5,18,0,0,
-  	90,89,1,0,0,0,91,94,1,0,0,0,92,90,1,0,0,0,92,93,1,0,0,0,93,95,1,0,0,0,
-  	94,92,1,0,0,0,95,97,3,2,1,0,96,92,1,0,0,0,97,98,1,0,0,0,98,96,1,0,0,0,
-  	98,99,1,0,0,0,99,103,1,0,0,0,100,102,5,18,0,0,101,100,1,0,0,0,102,105,
-  	1,0,0,0,103,101,1,0,0,0,103,104,1,0,0,0,104,106,1,0,0,0,105,103,1,0,0,
-  	0,106,107,5,11,0,0,107,15,1,0,0,0,11,20,25,33,48,50,62,64,75,92,98,103
+  	4,1,21,122,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	7,7,7,2,8,7,8,1,0,1,0,5,0,21,8,0,10,0,12,0,24,9,0,4,0,26,8,0,11,0,12,
+  	0,27,1,0,1,0,1,1,1,1,1,1,1,1,3,1,36,8,1,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,
+  	3,1,3,1,3,1,3,1,3,1,3,5,3,51,8,3,10,3,12,3,54,9,3,1,4,1,4,1,4,1,4,1,4,
+  	1,4,1,4,1,4,1,4,5,4,65,8,4,10,4,12,4,68,9,4,1,5,1,5,1,5,1,5,1,5,1,5,5,
+  	5,76,8,5,10,5,12,5,79,9,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,3,6,89,8,6,
+  	1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,5,8,104,8,8,10,8,
+  	12,8,107,9,8,1,8,4,8,110,8,8,11,8,12,8,111,1,8,5,8,115,8,8,10,8,12,8,
+  	118,9,8,1,8,1,8,1,8,0,3,6,8,10,9,0,2,4,6,8,10,12,14,16,0,0,129,0,25,1,
+  	0,0,0,2,35,1,0,0,0,4,37,1,0,0,0,6,41,1,0,0,0,8,55,1,0,0,0,10,69,1,0,0,
+  	0,12,88,1,0,0,0,14,90,1,0,0,0,16,95,1,0,0,0,18,22,3,2,1,0,19,21,5,19,
+  	0,0,20,19,1,0,0,0,21,24,1,0,0,0,22,20,1,0,0,0,22,23,1,0,0,0,23,26,1,0,
+  	0,0,24,22,1,0,0,0,25,18,1,0,0,0,26,27,1,0,0,0,27,25,1,0,0,0,27,28,1,0,
+  	0,0,28,29,1,0,0,0,29,30,5,0,0,1,30,1,1,0,0,0,31,36,3,6,3,0,32,36,3,14,
+  	7,0,33,36,3,4,2,0,34,36,3,16,8,0,35,31,1,0,0,0,35,32,1,0,0,0,35,33,1,
+  	0,0,0,35,34,1,0,0,0,36,3,1,0,0,0,37,38,5,15,0,0,38,39,5,1,0,0,39,40,3,
+  	6,3,0,40,5,1,0,0,0,41,42,6,3,-1,0,42,43,3,8,4,0,43,52,1,0,0,0,44,45,10,
+  	3,0,0,45,46,5,2,0,0,46,51,3,8,4,0,47,48,10,2,0,0,48,49,5,3,0,0,49,51,
+  	3,8,4,0,50,44,1,0,0,0,50,47,1,0,0,0,51,54,1,0,0,0,52,50,1,0,0,0,52,53,
+  	1,0,0,0,53,7,1,0,0,0,54,52,1,0,0,0,55,56,6,4,-1,0,56,57,3,10,5,0,57,66,
+  	1,0,0,0,58,59,10,3,0,0,59,60,5,4,0,0,60,65,3,10,5,0,61,62,10,2,0,0,62,
+  	63,5,5,0,0,63,65,3,10,5,0,64,58,1,0,0,0,64,61,1,0,0,0,65,68,1,0,0,0,66,
+  	64,1,0,0,0,66,67,1,0,0,0,67,9,1,0,0,0,68,66,1,0,0,0,69,70,6,5,-1,0,70,
+  	71,3,12,6,0,71,77,1,0,0,0,72,73,10,2,0,0,73,74,5,6,0,0,74,76,3,12,6,0,
+  	75,72,1,0,0,0,76,79,1,0,0,0,77,75,1,0,0,0,77,78,1,0,0,0,78,11,1,0,0,0,
+  	79,77,1,0,0,0,80,81,5,7,0,0,81,82,3,6,3,0,82,83,5,8,0,0,83,89,1,0,0,0,
+  	84,89,5,13,0,0,85,89,5,15,0,0,86,89,5,16,0,0,87,89,5,17,0,0,88,80,1,0,
+  	0,0,88,84,1,0,0,0,88,85,1,0,0,0,88,86,1,0,0,0,88,87,1,0,0,0,89,13,1,0,
+  	0,0,90,91,5,9,0,0,91,92,5,7,0,0,92,93,3,6,3,0,93,94,5,8,0,0,94,15,1,0,
+  	0,0,95,96,5,10,0,0,96,97,5,7,0,0,97,98,3,6,3,0,98,99,5,14,0,0,99,100,
+  	3,6,3,0,100,101,5,8,0,0,101,109,5,11,0,0,102,104,5,19,0,0,103,102,1,0,
+  	0,0,104,107,1,0,0,0,105,103,1,0,0,0,105,106,1,0,0,0,106,108,1,0,0,0,107,
+  	105,1,0,0,0,108,110,3,2,1,0,109,105,1,0,0,0,110,111,1,0,0,0,111,109,1,
+  	0,0,0,111,112,1,0,0,0,112,116,1,0,0,0,113,115,5,19,0,0,114,113,1,0,0,
+  	0,115,118,1,0,0,0,116,114,1,0,0,0,116,117,1,0,0,0,117,119,1,0,0,0,118,
+  	116,1,0,0,0,119,120,5,12,0,0,120,17,1,0,0,0,12,22,27,35,50,52,64,66,77,
+  	88,105,111,116
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -211,28 +216,28 @@ NiloScriptParser::ProgramContext* NiloScriptParser::program() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(23); 
+    setState(25); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(16);
+      setState(18);
       code();
-      setState(20);
+      setState(22);
       _errHandler->sync(this);
       _la = _input->LA(1);
       while (_la == NiloScriptParser::ENTER) {
-        setState(17);
+        setState(19);
         match(NiloScriptParser::ENTER);
-        setState(22);
+        setState(24);
         _errHandler->sync(this);
         _la = _input->LA(1);
       }
-      setState(25); 
+      setState(27); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 119616) != 0));
-    setState(27);
+      ((1ULL << _la) & 239232) != 0));
+    setState(29);
     match(NiloScriptParser::EOF);
    
   }
@@ -304,33 +309,33 @@ NiloScriptParser::CodeContext* NiloScriptParser::code() {
     exitRule();
   });
   try {
-    setState(33);
+    setState(35);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 2, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(29);
+      setState(31);
       expression(0);
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(30);
+      setState(32);
       print();
       break;
     }
 
     case 3: {
       enterOuterAlt(_localctx, 3);
-      setState(31);
+      setState(33);
       assignment();
       break;
     }
 
     case 4: {
       enterOuterAlt(_localctx, 4);
-      setState(32);
+      setState(34);
       inCase();
       break;
     }
@@ -401,11 +406,11 @@ NiloScriptParser::AssignmentContext* NiloScriptParser::assignment() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(35);
-    match(NiloScriptParser::VAR);
-    setState(36);
-    match(NiloScriptParser::T__0);
     setState(37);
+    match(NiloScriptParser::VAR);
+    setState(38);
+    match(NiloScriptParser::T__0);
+    setState(39);
     expression(0);
    
   }
@@ -483,10 +488,10 @@ NiloScriptParser::ExpressionContext* NiloScriptParser::expression(int precedence
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(40);
+    setState(42);
     term(0);
     _ctx->stop = _input->LT(-1);
-    setState(50);
+    setState(52);
     _errHandler->sync(this);
     alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
@@ -494,18 +499,18 @@ NiloScriptParser::ExpressionContext* NiloScriptParser::expression(int precedence
         if (!_parseListeners.empty())
           triggerExitRuleEvent();
         previousContext = _localctx;
-        setState(48);
+        setState(50);
         _errHandler->sync(this);
         switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx)) {
         case 1: {
           _localctx = _tracker.createInstance<ExpressionContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpression);
-          setState(42);
+          setState(44);
 
           if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
-          setState(43);
+          setState(45);
           match(NiloScriptParser::T__1);
-          setState(44);
+          setState(46);
           term(0);
           break;
         }
@@ -513,12 +518,12 @@ NiloScriptParser::ExpressionContext* NiloScriptParser::expression(int precedence
         case 2: {
           _localctx = _tracker.createInstance<ExpressionContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpression);
-          setState(45);
+          setState(47);
 
           if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
-          setState(46);
+          setState(48);
           match(NiloScriptParser::T__2);
-          setState(47);
+          setState(49);
           term(0);
           break;
         }
@@ -527,7 +532,7 @@ NiloScriptParser::ExpressionContext* NiloScriptParser::expression(int precedence
           break;
         } 
       }
-      setState(52);
+      setState(54);
       _errHandler->sync(this);
       alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
     }
@@ -546,8 +551,8 @@ NiloScriptParser::TermContext::TermContext(ParserRuleContext *parent, size_t inv
   : ParserRuleContext(parent, invokingState) {
 }
 
-NiloScriptParser::FactContext* NiloScriptParser::TermContext::fact() {
-  return getRuleContext<NiloScriptParser::FactContext>(0);
+NiloScriptParser::PotContext* NiloScriptParser::TermContext::pot() {
+  return getRuleContext<NiloScriptParser::PotContext>(0);
 }
 
 NiloScriptParser::TermContext* NiloScriptParser::TermContext::term() {
@@ -605,10 +610,10 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(54);
-    fact();
+    setState(56);
+    pot(0);
     _ctx->stop = _input->LT(-1);
-    setState(64);
+    setState(66);
     _errHandler->sync(this);
     alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
@@ -616,32 +621,32 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
         if (!_parseListeners.empty())
           triggerExitRuleEvent();
         previousContext = _localctx;
-        setState(62);
+        setState(64);
         _errHandler->sync(this);
         switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx)) {
         case 1: {
           _localctx = _tracker.createInstance<TermContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleTerm);
-          setState(56);
+          setState(58);
 
           if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
-          setState(57);
+          setState(59);
           match(NiloScriptParser::T__3);
-          setState(58);
-          fact();
+          setState(60);
+          pot(0);
           break;
         }
 
         case 2: {
           _localctx = _tracker.createInstance<TermContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleTerm);
-          setState(59);
+          setState(61);
 
           if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
-          setState(60);
+          setState(62);
           match(NiloScriptParser::T__4);
-          setState(61);
-          fact();
+          setState(63);
+          pot(0);
           break;
         }
 
@@ -649,9 +654,108 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
           break;
         } 
       }
-      setState(66);
+      setState(68);
       _errHandler->sync(this);
       alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx);
+    }
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+  return _localctx;
+}
+
+//----------------- PotContext ------------------------------------------------------------------
+
+NiloScriptParser::PotContext::PotContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+NiloScriptParser::FactContext* NiloScriptParser::PotContext::fact() {
+  return getRuleContext<NiloScriptParser::FactContext>(0);
+}
+
+NiloScriptParser::PotContext* NiloScriptParser::PotContext::pot() {
+  return getRuleContext<NiloScriptParser::PotContext>(0);
+}
+
+
+size_t NiloScriptParser::PotContext::getRuleIndex() const {
+  return NiloScriptParser::RulePot;
+}
+
+void NiloScriptParser::PotContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterPot(this);
+}
+
+void NiloScriptParser::PotContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitPot(this);
+}
+
+
+std::any NiloScriptParser::PotContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitPot(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+
+NiloScriptParser::PotContext* NiloScriptParser::pot() {
+   return pot(0);
+}
+
+NiloScriptParser::PotContext* NiloScriptParser::pot(int precedence) {
+  ParserRuleContext *parentContext = _ctx;
+  size_t parentState = getState();
+  NiloScriptParser::PotContext *_localctx = _tracker.createInstance<PotContext>(_ctx, parentState);
+  NiloScriptParser::PotContext *previousContext = _localctx;
+  (void)previousContext; // Silence compiler, in case the context is not used by generated code.
+  size_t startState = 10;
+  enterRecursionRule(_localctx, 10, NiloScriptParser::RulePot, precedence);
+
+    
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    unrollRecursionContexts(parentContext);
+  });
+  try {
+    size_t alt;
+    enterOuterAlt(_localctx, 1);
+    setState(70);
+    fact();
+    _ctx->stop = _input->LT(-1);
+    setState(77);
+    _errHandler->sync(this);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 7, _ctx);
+    while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
+      if (alt == 1) {
+        if (!_parseListeners.empty())
+          triggerExitRuleEvent();
+        previousContext = _localctx;
+        _localctx = _tracker.createInstance<PotContext>(parentContext, parentState);
+        pushNewRecursionContext(_localctx, startState, RulePot);
+        setState(72);
+
+        if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
+        setState(73);
+        match(NiloScriptParser::T__5);
+        setState(74);
+        fact(); 
+      }
+      setState(79);
+      _errHandler->sync(this);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 7, _ctx);
     }
   }
   catch (RecognitionException &e) {
@@ -715,7 +819,7 @@ std::any NiloScriptParser::FactContext::accept(tree::ParseTreeVisitor *visitor) 
 
 NiloScriptParser::FactContext* NiloScriptParser::fact() {
   FactContext *_localctx = _tracker.createInstance<FactContext>(_ctx, getState());
-  enterRule(_localctx, 10, NiloScriptParser::RuleFact);
+  enterRule(_localctx, 12, NiloScriptParser::RuleFact);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -725,44 +829,44 @@ NiloScriptParser::FactContext* NiloScriptParser::fact() {
     exitRule();
   });
   try {
-    setState(75);
+    setState(88);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
-      case NiloScriptParser::T__5: {
+      case NiloScriptParser::T__6: {
         enterOuterAlt(_localctx, 1);
-        setState(67);
-        match(NiloScriptParser::T__5);
-        setState(68);
-        expression(0);
-        setState(69);
+        setState(80);
         match(NiloScriptParser::T__6);
+        setState(81);
+        expression(0);
+        setState(82);
+        match(NiloScriptParser::T__7);
         break;
       }
 
       case NiloScriptParser::INT: {
         enterOuterAlt(_localctx, 2);
-        setState(71);
+        setState(84);
         match(NiloScriptParser::INT);
         break;
       }
 
       case NiloScriptParser::VAR: {
         enterOuterAlt(_localctx, 3);
-        setState(72);
+        setState(85);
         match(NiloScriptParser::VAR);
         break;
       }
 
       case NiloScriptParser::STRING: {
         enterOuterAlt(_localctx, 4);
-        setState(73);
+        setState(86);
         match(NiloScriptParser::STRING);
         break;
       }
 
       case NiloScriptParser::COMMENT: {
         enterOuterAlt(_localctx, 5);
-        setState(74);
+        setState(87);
         match(NiloScriptParser::COMMENT);
         break;
       }
@@ -818,7 +922,7 @@ std::any NiloScriptParser::PrintContext::accept(tree::ParseTreeVisitor *visitor)
 
 NiloScriptParser::PrintContext* NiloScriptParser::print() {
   PrintContext *_localctx = _tracker.createInstance<PrintContext>(_ctx, getState());
-  enterRule(_localctx, 12, NiloScriptParser::RulePrint);
+  enterRule(_localctx, 14, NiloScriptParser::RulePrint);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -829,14 +933,14 @@ NiloScriptParser::PrintContext* NiloScriptParser::print() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(77);
-    match(NiloScriptParser::T__7);
-    setState(78);
-    match(NiloScriptParser::T__5);
-    setState(79);
-    expression(0);
-    setState(80);
+    setState(90);
+    match(NiloScriptParser::T__8);
+    setState(91);
     match(NiloScriptParser::T__6);
+    setState(92);
+    expression(0);
+    setState(93);
+    match(NiloScriptParser::T__7);
    
   }
   catch (RecognitionException &e) {
@@ -909,7 +1013,7 @@ std::any NiloScriptParser::InCaseContext::accept(tree::ParseTreeVisitor *visitor
 
 NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
   InCaseContext *_localctx = _tracker.createInstance<InCaseContext>(_ctx, getState());
-  enterRule(_localctx, 14, NiloScriptParser::RuleInCase);
+  enterRule(_localctx, 16, NiloScriptParser::RuleInCase);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -922,37 +1026,37 @@ NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(82);
-    match(NiloScriptParser::T__8);
-    setState(83);
-    match(NiloScriptParser::T__5);
-    setState(84);
-    expression(0);
-    setState(85);
-    match(NiloScriptParser::OPERATOR);
-    setState(86);
-    expression(0);
-    setState(87);
-    match(NiloScriptParser::T__6);
-    setState(88);
+    setState(95);
     match(NiloScriptParser::T__9);
-    setState(96); 
+    setState(96);
+    match(NiloScriptParser::T__6);
+    setState(97);
+    expression(0);
+    setState(98);
+    match(NiloScriptParser::OPERATOR);
+    setState(99);
+    expression(0);
+    setState(100);
+    match(NiloScriptParser::T__7);
+    setState(101);
+    match(NiloScriptParser::T__10);
+    setState(109); 
     _errHandler->sync(this);
     alt = 1;
     do {
       switch (alt) {
         case 1: {
-              setState(92);
+              setState(105);
               _errHandler->sync(this);
               _la = _input->LA(1);
               while (_la == NiloScriptParser::ENTER) {
-                setState(89);
+                setState(102);
                 match(NiloScriptParser::ENTER);
-                setState(94);
+                setState(107);
                 _errHandler->sync(this);
                 _la = _input->LA(1);
               }
-              setState(95);
+              setState(108);
               code();
               break;
             }
@@ -960,22 +1064,22 @@ NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
       default:
         throw NoViableAltException(this);
       }
-      setState(98); 
+      setState(111); 
       _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 9, _ctx);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 10, _ctx);
     } while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER);
-    setState(103);
+    setState(116);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == NiloScriptParser::ENTER) {
-      setState(100);
+      setState(113);
       match(NiloScriptParser::ENTER);
-      setState(105);
+      setState(118);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(106);
-    match(NiloScriptParser::T__10);
+    setState(119);
+    match(NiloScriptParser::T__11);
    
   }
   catch (RecognitionException &e) {
@@ -991,6 +1095,7 @@ bool NiloScriptParser::sempred(RuleContext *context, size_t ruleIndex, size_t pr
   switch (ruleIndex) {
     case 3: return expressionSempred(antlrcpp::downCast<ExpressionContext *>(context), predicateIndex);
     case 4: return termSempred(antlrcpp::downCast<TermContext *>(context), predicateIndex);
+    case 5: return potSempred(antlrcpp::downCast<PotContext *>(context), predicateIndex);
 
   default:
     break;
@@ -1013,6 +1118,16 @@ bool NiloScriptParser::termSempred(TermContext *_localctx, size_t predicateIndex
   switch (predicateIndex) {
     case 2: return precpred(_ctx, 3);
     case 3: return precpred(_ctx, 2);
+
+  default:
+    break;
+  }
+  return true;
+}
+
+bool NiloScriptParser::potSempred(PotContext *_localctx, size_t predicateIndex) {
+  switch (predicateIndex) {
+    case 4: return precpred(_ctx, 2);
 
   default:
     break;

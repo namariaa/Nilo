@@ -29,6 +29,8 @@ public:
 
     virtual std::any visitTerm(NiloScriptParser::TermContext *context) = 0;
 
+    virtual std::any visitPot(NiloScriptParser::PotContext *context) = 0;
+
     virtual std::any visitFact(NiloScriptParser::FactContext *context) = 0;
 
     virtual std::any visitPrint(NiloScriptParser::PrintContext *context) = 0;

@@ -116,12 +116,12 @@ class CodeGen : public NiloScriptVisitor {
     }
 
     virtual std::any visitTerm(NiloScriptParser::TermContext *context) override {
-        if (context->fact() && !context->term()){
-            return visitFact(context->fact());
-        }else if (context -> fact()){
+        if (context->pot() && !context->term()){
+            return visitPot(context->pot());
+        }else if (context -> pot()){
             int v1, v2;
             llvm::Value* lhs = any_cast<llvm::Value *>(visitTerm(context->term()));
-            llvm::Value* rhs = any_cast<llvm::Value *>(visitFact(context->fact()));
+            llvm::Value* rhs = any_cast<llvm::Value *>(visitPot(context->pot()));
 
             llvm::Value *result;
             if (context->children[1]->getText() == "*"){
@@ -133,6 +133,32 @@ class CodeGen : public NiloScriptVisitor {
         }
         return nullptr;
     }
+
+    virtual std::any visitPot(NiloScriptParser::PotContext *context) override {
+        if (context->fact() && !context->pot()){
+            return visitFact(context->fact());
+        }else if (context -> pot()){
+            int v1, v2;
+            llvm::Value* lhs = any_cast<llvm::Value *>(visitPot(context->pot()));
+            llvm::Value* rhs = any_cast<llvm::Value *>(visitFact(context->fact()));
+
+            auto *constExp = llvm::dyn_cast<llvm::ConstantInt>(rhs); //Detect contant
+            int value = constExp->getSExtValue(); //Get value 
+
+            llvm::Value *result = lhs; 
+            if (value > 1){
+                for (int i = 0; i < value; i++){
+                    result = Builder->CreateMul(std::any_cast<llvm::Value *>(result), std::any_cast<llvm::Value *>(lhs), "multmp");
+                }
+            }
+            if (value == 0){
+                result = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 1);
+            }
+
+            return result;
+        }
+        return nullptr;
+    };
 
     virtual std::any visitFact(NiloScriptParser::FactContext *context) override {
         if (context->VAR()){

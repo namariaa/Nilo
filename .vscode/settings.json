@@ -68,7 +68,8 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "*.def": "cpp"
     },
     "cmake.sourceDirectory": "/home/namaria/Gram-tica-com-ANTLR/src"
 }

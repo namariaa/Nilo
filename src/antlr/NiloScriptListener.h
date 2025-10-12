@@ -29,6 +29,9 @@ public:
   virtual void enterTerm(NiloScriptParser::TermContext *ctx) = 0;
   virtual void exitTerm(NiloScriptParser::TermContext *ctx) = 0;
 
+  virtual void enterPot(NiloScriptParser::PotContext *ctx) = 0;
+  virtual void exitPot(NiloScriptParser::PotContext *ctx) = 0;
+
   virtual void enterFact(NiloScriptParser::FactContext *ctx) = 0;
   virtual void exitFact(NiloScriptParser::FactContext *ctx) = 0;
 

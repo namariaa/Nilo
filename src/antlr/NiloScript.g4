@@ -14,9 +14,11 @@ assignment : VAR '=' expression;
 expression : expression '+' term 
             | expression '-' term 
             | term; 
-term :  term '*' fact 
-        | term '/' fact
-        | fact;
+term :  term '*' pot 
+        | term '/' pot
+        | pot;
+pot : pot '**' fact
+      | fact;
 fact : '('expression')'
         | INT 
         | VAR

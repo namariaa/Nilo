@@ -31,6 +31,9 @@ public:
   virtual void enterTerm(NiloScriptParser::TermContext * /*ctx*/) override { }
   virtual void exitTerm(NiloScriptParser::TermContext * /*ctx*/) override { }
 
+  virtual void enterPot(NiloScriptParser::PotContext * /*ctx*/) override { }
+  virtual void exitPot(NiloScriptParser::PotContext * /*ctx*/) override { }
+
   virtual void enterFact(NiloScriptParser::FactContext * /*ctx*/) override { }
   virtual void exitFact(NiloScriptParser::FactContext * /*ctx*/) override { }
 

@@ -35,6 +35,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitPot(NiloScriptParser::PotContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitFact(NiloScriptParser::FactContext *ctx) override {
     return visitChildren(ctx);
   }

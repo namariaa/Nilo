@@ -22,9 +22,6 @@ option(TRACE_ATN "Trace ATN simulation" OFF)
 option(ANTLR_BUILD_SHARED "Build the shared library of the ANTLR runtime" OFF)
 option(ANTLR_BUILD_STATIC "Build the static library of the ANTLR runtime" ON)
 
-# ===========================================================
-# SUPORTE A DIFERENTES VERSÕES DO RUNTIME DO ANTLR (4.13.2+)
-# ===========================================================
 set(ANTLR_RUNTIME_DIR "" CACHE PATH "Path to ANTLR4 C++ runtime source directory")
 
 if(NOT ANTLR_RUNTIME_DIR)
@@ -39,9 +36,6 @@ add_subdirectory(
     EXCLUDE_FROM_ALL
 )
 
-# ===========================================================
-# SUPORTE AO LLVM 19 OU MAIOR
-# ===========================================================
 find_package(LLVM REQUIRED CONFIG)
 
 if (LLVM_PACKAGE_VERSION VERSION_LESS 19.0.0)

@@ -13,14 +13,14 @@ class  NiloScriptParser : public antlr4::Parser {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
-    T__7 = 8, T__8 = 9, T__9 = 10, T__10 = 11, INT = 12, OPERATOR = 13, 
-    VAR = 14, STRING = 15, COMMENT = 16, TAB = 17, ENTER = 18, SPACE = 19, 
-    WHITESPACE = 20
+    T__7 = 8, T__8 = 9, T__9 = 10, T__10 = 11, T__11 = 12, INT = 13, OPERATOR = 14, 
+    VAR = 15, STRING = 16, COMMENT = 17, TAB = 18, ENTER = 19, SPACE = 20, 
+    WHITESPACE = 21
   };
 
   enum {
     RuleProgram = 0, RuleCode = 1, RuleAssignment = 2, RuleExpression = 3, 
-    RuleTerm = 4, RuleFact = 5, RulePrint = 6, RuleInCase = 7
+    RuleTerm = 4, RulePot = 5, RuleFact = 6, RulePrint = 7, RuleInCase = 8
   };
 
   explicit NiloScriptParser(antlr4::TokenStream *input);
@@ -45,6 +45,7 @@ public:
   class AssignmentContext;
   class ExpressionContext;
   class TermContext;
+  class PotContext;
   class FactContext;
   class PrintContext;
   class InCaseContext; 
@@ -122,7 +123,7 @@ public:
   public:
     TermContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    FactContext *fact();
+    PotContext *pot();
     TermContext *term();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -134,6 +135,22 @@ public:
 
   TermContext* term();
   TermContext* term(int precedence);
+  class  PotContext : public antlr4::ParserRuleContext {
+  public:
+    PotContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    FactContext *fact();
+    PotContext *pot();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  PotContext* pot();
+  PotContext* pot(int precedence);
   class  FactContext : public antlr4::ParserRuleContext {
   public:
     FactContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -194,6 +211,7 @@ public:
 
   bool expressionSempred(ExpressionContext *_localctx, size_t predicateIndex);
   bool termSempred(TermContext *_localctx, size_t predicateIndex);
+  bool potSempred(PotContext *_localctx, size_t predicateIndex);
 
   // By default the static state used to implement the parser is lazily initialized during the first
   // call to the constructor. You can call this function if you wish to initialize the static state
