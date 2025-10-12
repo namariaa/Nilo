@@ -14,16 +14,18 @@ assignment : VAR '=' expression;
 expression : expression '+' term 
             | expression '-' term 
             | term; 
-term :  term '*' fact 
-        | term '/' fact
-        | fact;
+term :  term '*' pot 
+        | term '/' pot
+        | pot;
+pot : pot '**' fact
+      | fact;
 fact : '('expression')'
         | INT 
         | VAR
         | STRING
         | COMMENT;
 print : 'print' '(' expression ')';
-inCase : 'case' '(' expression OPERATOR expression ')' ':' ENTER code;
+inCase : 'case' '(' expression OPERATOR expression ')' '{' ( ENTER* code)+ ENTER* '}';
 
 //DO LEXER
 INT : [0-9]+;

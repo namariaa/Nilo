@@ -3,7 +3,7 @@
 #include "antlr4-runtime.h"
 #include "./antlr/NiloScriptParser.h"
 #include "./antlr/NiloScriptLexer.h"
-#include "./antlr/visitor.h"
+#include "./antlr/codegen.h"
 
 
 using namespace std;
@@ -25,7 +25,7 @@ int main(int nArguments, const char *sourceCode[]){
 
     NiloScriptParser::ProgramContext* tree = parser.program();
 
-    Visitor visit(tree);
+    CodeGen visit(tree);
 
     return 0; 
 }

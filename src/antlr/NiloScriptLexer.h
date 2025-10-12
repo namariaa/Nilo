@@ -13,8 +13,9 @@ class  NiloScriptLexer : public antlr4::Lexer {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
-    T__7 = 8, T__8 = 9, T__9 = 10, INT = 11, OPERATOR = 12, VAR = 13, STRING = 14, 
-    COMMENT = 15, TAB = 16, ENTER = 17, SPACE = 18, WHITESPACE = 19
+    T__7 = 8, T__8 = 9, T__9 = 10, T__10 = 11, T__11 = 12, INT = 13, OPERATOR = 14, 
+    VAR = 15, STRING = 16, COMMENT = 17, TAB = 18, ENTER = 19, SPACE = 20, 
+    WHITESPACE = 21
   };
 
   explicit NiloScriptLexer(antlr4::CharStream *input);
