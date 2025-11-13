@@ -37,6 +37,10 @@ public:
 
     virtual std::any visitInCase(NiloScriptParser::InCaseContext *context) = 0;
 
+    virtual std::any visitInput(NiloScriptParser::InputContext *context) = 0;
+
+    virtual std::any visitLoop(NiloScriptParser::LoopContext *context) = 0;
+
 
 };
 
