@@ -41,6 +41,12 @@ public:
   virtual void enterInCase(NiloScriptParser::InCaseContext *ctx) = 0;
   virtual void exitInCase(NiloScriptParser::InCaseContext *ctx) = 0;
 
+  virtual void enterInput(NiloScriptParser::InputContext *ctx) = 0;
+  virtual void exitInput(NiloScriptParser::InputContext *ctx) = 0;
+
+  virtual void enterLoop(NiloScriptParser::LoopContext *ctx) = 0;
+  virtual void exitLoop(NiloScriptParser::LoopContext *ctx) = 0;
+
 
 };
 

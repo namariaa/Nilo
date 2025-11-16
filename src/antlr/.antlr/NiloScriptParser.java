@@ -16,32 +16,33 @@ public class NiloScriptParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, T__11=12, INT=13, OPERATOR=14, VAR=15, STRING=16, COMMENT=17, 
-		TAB=18, ENTER=19, SPACE=20, WHITESPACE=21;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, INT=6, FLOAT=7, VAR=8, STRING=9, 
+		PLUS=10, MINUS=11, MUL=12, DIV=13, POW=14, OPERATOR=15, EQUAL=16, OPAR=17, 
+		CPAR=18, READ=19, COMMENT=20, TAB=21, ENTER=22, SPACE=23, WHITESPACE=24;
 	public static final int
 		RULE_program = 0, RULE_code = 1, RULE_assignment = 2, RULE_expression = 3, 
-		RULE_term = 4, RULE_pot = 5, RULE_fact = 6, RULE_print = 7, RULE_inCase = 8;
+		RULE_term = 4, RULE_pot = 5, RULE_fact = 6, RULE_print = 7, RULE_inCase = 8, 
+		RULE_input = 9, RULE_loop = 10;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"program", "code", "assignment", "expression", "term", "pot", "fact", 
-			"print", "inCase"
+			"print", "inCase", "input", "loop"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'='", "'+'", "'-'", "'*'", "'/'", "'**'", "'('", "')'", "'print'", 
-			"'case'", "'{'", "'}'"
+			null, "'mostrar'", "'caso'", "'{'", "'}'", "'enquanto'", null, null, 
+			null, null, "'+'", "'-'", "'*'", "'/'", "'**'", null, "'='", "'('", "')'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, "INT", "OPERATOR", "VAR", "STRING", "COMMENT", "TAB", "ENTER", 
-			"SPACE", "WHITESPACE"
+			null, null, null, null, null, null, "INT", "FLOAT", "VAR", "STRING", 
+			"PLUS", "MINUS", "MUL", "DIV", "POW", "OPERATOR", "EQUAL", "OPAR", "CPAR", 
+			"READ", "COMMENT", "TAB", "ENTER", "SPACE", "WHITESPACE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -121,35 +122,35 @@ public class NiloScriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(25); 
+			setState(29); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(18);
-				code();
 				setState(22);
+				code();
+				setState(26);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				while (_la==ENTER) {
 					{
 					{
-					setState(19);
+					setState(23);
 					match(ENTER);
 					}
 					}
-					setState(24);
+					setState(28);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
 				}
 				}
-				setState(27); 
+				setState(31); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 239232L) != 0) );
-			setState(29);
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 1246054L) != 0) );
+			setState(33);
 			match(EOF);
 			}
 		}
@@ -175,6 +176,12 @@ public class NiloScriptParser extends Parser {
 		public AssignmentContext assignment() {
 			return getRuleContext(AssignmentContext.class,0);
 		}
+		public InputContext input() {
+			return getRuleContext(InputContext.class,0);
+		}
+		public LoopContext loop() {
+			return getRuleContext(LoopContext.class,0);
+		}
 		public InCaseContext inCase() {
 			return getRuleContext(InCaseContext.class,0);
 		}
@@ -188,34 +195,48 @@ public class NiloScriptParser extends Parser {
 		CodeContext _localctx = new CodeContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_code);
 		try {
-			setState(35);
+			setState(41);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(31);
+				setState(35);
 				expression(0);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(32);
+				setState(36);
 				print();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(33);
+				setState(37);
 				assignment();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(34);
+				setState(38);
+				input();
+				}
+				break;
+			case 5:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(39);
+				loop();
+				}
+				break;
+			case 6:
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(40);
 				inCase();
 				}
 				break;
@@ -235,6 +256,7 @@ public class NiloScriptParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class AssignmentContext extends ParserRuleContext {
 		public TerminalNode VAR() { return getToken(NiloScriptParser.VAR, 0); }
+		public TerminalNode EQUAL() { return getToken(NiloScriptParser.EQUAL, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -250,11 +272,11 @@ public class NiloScriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(37);
+			setState(43);
 			match(VAR);
-			setState(38);
-			match(T__0);
-			setState(39);
+			setState(44);
+			match(EQUAL);
+			setState(45);
 			expression(0);
 			}
 		}
@@ -277,6 +299,8 @@ public class NiloScriptParser extends Parser {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
+		public TerminalNode PLUS() { return getToken(NiloScriptParser.PLUS, 0); }
+		public TerminalNode MINUS() { return getToken(NiloScriptParser.MINUS, 0); }
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -299,11 +323,11 @@ public class NiloScriptParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(42);
+			setState(48);
 			term(0);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(52);
+			setState(58);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -311,18 +335,18 @@ public class NiloScriptParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(50);
+					setState(56);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(44);
+						setState(50);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(45);
-						match(T__1);
-						setState(46);
+						setState(51);
+						match(PLUS);
+						setState(52);
 						term(0);
 						}
 						break;
@@ -330,18 +354,18 @@ public class NiloScriptParser extends Parser {
 						{
 						_localctx = new ExpressionContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(47);
+						setState(53);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(48);
-						match(T__2);
-						setState(49);
+						setState(54);
+						match(MINUS);
+						setState(55);
 						term(0);
 						}
 						break;
 					}
 					} 
 				}
-				setState(54);
+				setState(60);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
@@ -366,6 +390,8 @@ public class NiloScriptParser extends Parser {
 		public TermContext term() {
 			return getRuleContext(TermContext.class,0);
 		}
+		public TerminalNode MUL() { return getToken(NiloScriptParser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(NiloScriptParser.DIV, 0); }
 		public TermContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -388,11 +414,11 @@ public class NiloScriptParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(56);
-			pot(0);
+			setState(62);
+			pot();
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(66);
+			setState(72);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -400,37 +426,37 @@ public class NiloScriptParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(64);
+					setState(70);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 					case 1:
 						{
 						_localctx = new TermContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_term);
-						setState(58);
+						setState(64);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(59);
-						match(T__3);
-						setState(60);
-						pot(0);
+						setState(65);
+						match(MUL);
+						setState(66);
+						pot();
 						}
 						break;
 					case 2:
 						{
 						_localctx = new TermContext(_parentctx, _parentState);
 						pushNewRecursionContext(_localctx, _startState, RULE_term);
-						setState(61);
+						setState(67);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(62);
-						match(T__4);
-						setState(63);
-						pot(0);
+						setState(68);
+						match(DIV);
+						setState(69);
+						pot();
 						}
 						break;
 					}
 					} 
 				}
-				setState(68);
+				setState(74);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 			}
@@ -452,6 +478,7 @@ public class NiloScriptParser extends Parser {
 		public FactContext fact() {
 			return getRuleContext(FactContext.class,0);
 		}
+		public TerminalNode POW() { return getToken(NiloScriptParser.POW, 0); }
 		public PotContext pot() {
 			return getRuleContext(PotContext.class,0);
 		}
@@ -462,49 +489,32 @@ public class NiloScriptParser extends Parser {
 	}
 
 	public final PotContext pot() throws RecognitionException {
-		return pot(0);
-	}
-
-	private PotContext pot(int _p) throws RecognitionException {
-		ParserRuleContext _parentctx = _ctx;
-		int _parentState = getState();
-		PotContext _localctx = new PotContext(_ctx, _parentState);
-		PotContext _prevctx = _localctx;
-		int _startState = 10;
-		enterRecursionRule(_localctx, 10, RULE_pot, _p);
+		PotContext _localctx = new PotContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_pot);
 		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			{
-			setState(70);
-			fact();
-			}
-			_ctx.stop = _input.LT(-1);
-			setState(77);
+			setState(80);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					if ( _parseListeners!=null ) triggerExitRuleEvent();
-					_prevctx = _localctx;
-					{
-					{
-					_localctx = new PotContext(_parentctx, _parentState);
-					pushNewRecursionContext(_localctx, _startState, RULE_pot);
-					setState(72);
-					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(73);
-					match(T__5);
-					setState(74);
-					fact();
-					}
-					} 
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(75);
+				fact();
+				{
+				setState(76);
+				match(POW);
+				setState(77);
+				pot();
 				}
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
 				setState(79);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
-			}
+				fact();
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -513,16 +523,18 @@ public class NiloScriptParser extends Parser {
 			_errHandler.recover(this, re);
 		}
 		finally {
-			unrollRecursionContexts(_parentctx);
+			exitRule();
 		}
 		return _localctx;
 	}
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class FactContext extends ParserRuleContext {
+		public TerminalNode OPAR() { return getToken(NiloScriptParser.OPAR, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
+		public TerminalNode CPAR() { return getToken(NiloScriptParser.CPAR, 0); }
 		public TerminalNode INT() { return getToken(NiloScriptParser.INT, 0); }
 		public TerminalNode VAR() { return getToken(NiloScriptParser.VAR, 0); }
 		public TerminalNode STRING() { return getToken(NiloScriptParser.STRING, 0); }
@@ -537,45 +549,45 @@ public class NiloScriptParser extends Parser {
 		FactContext _localctx = new FactContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_fact);
 		try {
-			setState(88);
+			setState(90);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__6:
+			case OPAR:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(80);
-				match(T__6);
-				setState(81);
-				expression(0);
 				setState(82);
-				match(T__7);
+				match(OPAR);
+				setState(83);
+				expression(0);
+				setState(84);
+				match(CPAR);
 				}
 				break;
 			case INT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(84);
+				setState(86);
 				match(INT);
 				}
 				break;
 			case VAR:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(85);
+				setState(87);
 				match(VAR);
 				}
 				break;
 			case STRING:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(86);
+				setState(88);
 				match(STRING);
 				}
 				break;
 			case COMMENT:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(87);
+				setState(89);
 				match(COMMENT);
 				}
 				break;
@@ -596,9 +608,11 @@ public class NiloScriptParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class PrintContext extends ParserRuleContext {
+		public TerminalNode OPAR() { return getToken(NiloScriptParser.OPAR, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
+		public TerminalNode CPAR() { return getToken(NiloScriptParser.CPAR, 0); }
 		public PrintContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -611,14 +625,14 @@ public class NiloScriptParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(90);
-			match(T__8);
-			setState(91);
-			match(T__6);
 			setState(92);
-			expression(0);
+			match(T__0);
 			setState(93);
-			match(T__7);
+			match(OPAR);
+			setState(94);
+			expression(0);
+			setState(95);
+			match(CPAR);
 			}
 		}
 		catch (RecognitionException re) {
@@ -634,6 +648,7 @@ public class NiloScriptParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class InCaseContext extends ParserRuleContext {
+		public TerminalNode OPAR() { return getToken(NiloScriptParser.OPAR, 0); }
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -641,15 +656,12 @@ public class NiloScriptParser extends Parser {
 			return getRuleContext(ExpressionContext.class,i);
 		}
 		public TerminalNode OPERATOR() { return getToken(NiloScriptParser.OPERATOR, 0); }
+		public TerminalNode CPAR() { return getToken(NiloScriptParser.CPAR, 0); }
 		public List<CodeContext> code() {
 			return getRuleContexts(CodeContext.class);
 		}
 		public CodeContext code(int i) {
 			return getRuleContext(CodeContext.class,i);
-		}
-		public List<TerminalNode> ENTER() { return getTokens(NiloScriptParser.ENTER); }
-		public TerminalNode ENTER(int i) {
-			return getToken(NiloScriptParser.ENTER, i);
 		}
 		public InCaseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -662,73 +674,164 @@ public class NiloScriptParser extends Parser {
 		enterRule(_localctx, 16, RULE_inCase);
 		int _la;
 		try {
-			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(95);
-			match(T__9);
-			setState(96);
-			match(T__6);
 			setState(97);
-			expression(0);
+			match(T__1);
 			setState(98);
-			match(OPERATOR);
+			match(OPAR);
 			setState(99);
 			expression(0);
 			setState(100);
-			match(T__7);
+			match(OPERATOR);
 			setState(101);
-			match(T__10);
-			setState(109); 
+			expression(0);
+			setState(102);
+			match(CPAR);
+			setState(103);
+			match(T__2);
+			setState(105); 
 			_errHandler.sync(this);
-			_alt = 1;
+			_la = _input.LA(1);
 			do {
-				switch (_alt) {
-				case 1:
-					{
-					{
-					setState(105);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-					while (_la==ENTER) {
-						{
-						{
-						setState(102);
-						match(ENTER);
-						}
-						}
-						setState(107);
-						_errHandler.sync(this);
-						_la = _input.LA(1);
-					}
-					setState(108);
-					code();
-					}
-					}
-					break;
-				default:
-					throw new NoViableAltException(this);
+				{
+				{
+				setState(104);
+				code();
 				}
-				setState(111); 
+				}
+				setState(107); 
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
-			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
+				_la = _input.LA(1);
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 1246054L) != 0) );
+			setState(109);
+			match(T__3);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class InputContext extends ParserRuleContext {
+		public TerminalNode EQUAL() { return getToken(NiloScriptParser.EQUAL, 0); }
+		public TerminalNode VAR() { return getToken(NiloScriptParser.VAR, 0); }
+		public TerminalNode READ() { return getToken(NiloScriptParser.READ, 0); }
+		public InputContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_input; }
+	}
+
+	public final InputContext input() throws RecognitionException {
+		InputContext _localctx = new InputContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_input);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(112);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==VAR) {
+				{
+				setState(111);
+				match(VAR);
+				}
+			}
+
+			setState(114);
+			match(EQUAL);
 			setState(116);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==ENTER) {
+			if (_la==READ) {
+				{
+				setState(115);
+				match(READ);
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class LoopContext extends ParserRuleContext {
+		public TerminalNode OPAR() { return getToken(NiloScriptParser.OPAR, 0); }
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode OPERATOR() { return getToken(NiloScriptParser.OPERATOR, 0); }
+		public TerminalNode CPAR() { return getToken(NiloScriptParser.CPAR, 0); }
+		public List<CodeContext> code() {
+			return getRuleContexts(CodeContext.class);
+		}
+		public CodeContext code(int i) {
+			return getRuleContext(CodeContext.class,i);
+		}
+		public LoopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_loop; }
+	}
+
+	public final LoopContext loop() throws RecognitionException {
+		LoopContext _localctx = new LoopContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_loop);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(118);
+			match(T__4);
+			setState(119);
+			match(OPAR);
+			setState(120);
+			expression(0);
+			setState(121);
+			match(OPERATOR);
+			setState(122);
+			expression(0);
+			setState(123);
+			match(CPAR);
+			setState(124);
+			match(T__2);
+			setState(126); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
 				{
 				{
-				setState(113);
-				match(ENTER);
+				setState(125);
+				code();
 				}
 				}
-				setState(118);
+				setState(128); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			}
-			setState(119);
-			match(T__11);
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 1246054L) != 0) );
+			setState(130);
+			match(T__3);
 			}
 		}
 		catch (RecognitionException re) {
@@ -748,8 +851,6 @@ public class NiloScriptParser extends Parser {
 			return expression_sempred((ExpressionContext)_localctx, predIndex);
 		case 4:
 			return term_sempred((TermContext)_localctx, predIndex);
-		case 5:
-			return pot_sempred((PotContext)_localctx, predIndex);
 		}
 		return true;
 	}
@@ -771,84 +872,84 @@ public class NiloScriptParser extends Parser {
 		}
 		return true;
 	}
-	private boolean pot_sempred(PotContext _localctx, int predIndex) {
-		switch (predIndex) {
-		case 4:
-			return precpred(_ctx, 2);
-		}
-		return true;
-	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0015z\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
-		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
-		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
-		"\b\u0007\b\u0001\u0000\u0001\u0000\u0005\u0000\u0015\b\u0000\n\u0000\f"+
-		"\u0000\u0018\t\u0000\u0004\u0000\u001a\b\u0000\u000b\u0000\f\u0000\u001b"+
-		"\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0003\u0001$\b\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0004\u0001\u0018\u0085\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0002\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004"+
+		"\u0002\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007"+
+		"\u0002\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0001\u0000\u0001\u0000"+
+		"\u0005\u0000\u0019\b\u0000\n\u0000\f\u0000\u001c\t\u0000\u0004\u0000\u001e"+
+		"\b\u0000\u000b\u0000\f\u0000\u001f\u0001\u0000\u0001\u0000\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001"+
+		"*\b\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0003"+
 		"\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003"+
-		"\u0001\u0003\u0001\u0003\u0001\u0003\u0005\u00033\b\u0003\n\u0003\f\u0003"+
-		"6\t\u0003\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004"+
-		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0005\u0004A\b\u0004"+
-		"\n\u0004\f\u0004D\t\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005"+
-		"\u0001\u0005\u0001\u0005\u0005\u0005L\b\u0005\n\u0005\f\u0005O\t\u0005"+
-		"\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006"+
-		"\u0001\u0006\u0001\u0006\u0003\u0006Y\b\u0006\u0001\u0007\u0001\u0007"+
-		"\u0001\u0007\u0001\u0007\u0001\u0007\u0001\b\u0001\b\u0001\b\u0001\b\u0001"+
-		"\b\u0001\b\u0001\b\u0001\b\u0005\bh\b\b\n\b\f\bk\t\b\u0001\b\u0004\bn"+
-		"\b\b\u000b\b\f\bo\u0001\b\u0005\bs\b\b\n\b\f\bv\t\b\u0001\b\u0001\b\u0001"+
-		"\b\u0000\u0003\u0006\b\n\t\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010\u0000"+
-		"\u0000\u0081\u0000\u0019\u0001\u0000\u0000\u0000\u0002#\u0001\u0000\u0000"+
-		"\u0000\u0004%\u0001\u0000\u0000\u0000\u0006)\u0001\u0000\u0000\u0000\b"+
-		"7\u0001\u0000\u0000\u0000\nE\u0001\u0000\u0000\u0000\fX\u0001\u0000\u0000"+
-		"\u0000\u000eZ\u0001\u0000\u0000\u0000\u0010_\u0001\u0000\u0000\u0000\u0012"+
-		"\u0016\u0003\u0002\u0001\u0000\u0013\u0015\u0005\u0013\u0000\u0000\u0014"+
-		"\u0013\u0001\u0000\u0000\u0000\u0015\u0018\u0001\u0000\u0000\u0000\u0016"+
-		"\u0014\u0001\u0000\u0000\u0000\u0016\u0017\u0001\u0000\u0000\u0000\u0017"+
-		"\u001a\u0001\u0000\u0000\u0000\u0018\u0016\u0001\u0000\u0000\u0000\u0019"+
-		"\u0012\u0001\u0000\u0000\u0000\u001a\u001b\u0001\u0000\u0000\u0000\u001b"+
-		"\u0019\u0001\u0000\u0000\u0000\u001b\u001c\u0001\u0000\u0000\u0000\u001c"+
-		"\u001d\u0001\u0000\u0000\u0000\u001d\u001e\u0005\u0000\u0000\u0001\u001e"+
-		"\u0001\u0001\u0000\u0000\u0000\u001f$\u0003\u0006\u0003\u0000 $\u0003"+
-		"\u000e\u0007\u0000!$\u0003\u0004\u0002\u0000\"$\u0003\u0010\b\u0000#\u001f"+
-		"\u0001\u0000\u0000\u0000# \u0001\u0000\u0000\u0000#!\u0001\u0000\u0000"+
-		"\u0000#\"\u0001\u0000\u0000\u0000$\u0003\u0001\u0000\u0000\u0000%&\u0005"+
-		"\u000f\u0000\u0000&\'\u0005\u0001\u0000\u0000\'(\u0003\u0006\u0003\u0000"+
-		"(\u0005\u0001\u0000\u0000\u0000)*\u0006\u0003\uffff\uffff\u0000*+\u0003"+
-		"\b\u0004\u0000+4\u0001\u0000\u0000\u0000,-\n\u0003\u0000\u0000-.\u0005"+
-		"\u0002\u0000\u0000.3\u0003\b\u0004\u0000/0\n\u0002\u0000\u000001\u0005"+
-		"\u0003\u0000\u000013\u0003\b\u0004\u00002,\u0001\u0000\u0000\u00002/\u0001"+
-		"\u0000\u0000\u000036\u0001\u0000\u0000\u000042\u0001\u0000\u0000\u0000"+
-		"45\u0001\u0000\u0000\u00005\u0007\u0001\u0000\u0000\u000064\u0001\u0000"+
-		"\u0000\u000078\u0006\u0004\uffff\uffff\u000089\u0003\n\u0005\u00009B\u0001"+
-		"\u0000\u0000\u0000:;\n\u0003\u0000\u0000;<\u0005\u0004\u0000\u0000<A\u0003"+
-		"\n\u0005\u0000=>\n\u0002\u0000\u0000>?\u0005\u0005\u0000\u0000?A\u0003"+
-		"\n\u0005\u0000@:\u0001\u0000\u0000\u0000@=\u0001\u0000\u0000\u0000AD\u0001"+
-		"\u0000\u0000\u0000B@\u0001\u0000\u0000\u0000BC\u0001\u0000\u0000\u0000"+
-		"C\t\u0001\u0000\u0000\u0000DB\u0001\u0000\u0000\u0000EF\u0006\u0005\uffff"+
-		"\uffff\u0000FG\u0003\f\u0006\u0000GM\u0001\u0000\u0000\u0000HI\n\u0002"+
-		"\u0000\u0000IJ\u0005\u0006\u0000\u0000JL\u0003\f\u0006\u0000KH\u0001\u0000"+
-		"\u0000\u0000LO\u0001\u0000\u0000\u0000MK\u0001\u0000\u0000\u0000MN\u0001"+
-		"\u0000\u0000\u0000N\u000b\u0001\u0000\u0000\u0000OM\u0001\u0000\u0000"+
-		"\u0000PQ\u0005\u0007\u0000\u0000QR\u0003\u0006\u0003\u0000RS\u0005\b\u0000"+
-		"\u0000SY\u0001\u0000\u0000\u0000TY\u0005\r\u0000\u0000UY\u0005\u000f\u0000"+
-		"\u0000VY\u0005\u0010\u0000\u0000WY\u0005\u0011\u0000\u0000XP\u0001\u0000"+
-		"\u0000\u0000XT\u0001\u0000\u0000\u0000XU\u0001\u0000\u0000\u0000XV\u0001"+
-		"\u0000\u0000\u0000XW\u0001\u0000\u0000\u0000Y\r\u0001\u0000\u0000\u0000"+
-		"Z[\u0005\t\u0000\u0000[\\\u0005\u0007\u0000\u0000\\]\u0003\u0006\u0003"+
-		"\u0000]^\u0005\b\u0000\u0000^\u000f\u0001\u0000\u0000\u0000_`\u0005\n"+
-		"\u0000\u0000`a\u0005\u0007\u0000\u0000ab\u0003\u0006\u0003\u0000bc\u0005"+
-		"\u000e\u0000\u0000cd\u0003\u0006\u0003\u0000de\u0005\b\u0000\u0000em\u0005"+
-		"\u000b\u0000\u0000fh\u0005\u0013\u0000\u0000gf\u0001\u0000\u0000\u0000"+
-		"hk\u0001\u0000\u0000\u0000ig\u0001\u0000\u0000\u0000ij\u0001\u0000\u0000"+
-		"\u0000jl\u0001\u0000\u0000\u0000ki\u0001\u0000\u0000\u0000ln\u0003\u0002"+
-		"\u0001\u0000mi\u0001\u0000\u0000\u0000no\u0001\u0000\u0000\u0000om\u0001"+
-		"\u0000\u0000\u0000op\u0001\u0000\u0000\u0000pt\u0001\u0000\u0000\u0000"+
-		"qs\u0005\u0013\u0000\u0000rq\u0001\u0000\u0000\u0000sv\u0001\u0000\u0000"+
-		"\u0000tr\u0001\u0000\u0000\u0000tu\u0001\u0000\u0000\u0000uw\u0001\u0000"+
-		"\u0000\u0000vt\u0001\u0000\u0000\u0000wx\u0005\f\u0000\u0000x\u0011\u0001"+
-		"\u0000\u0000\u0000\f\u0016\u001b#24@BMXiot";
+		"\u0001\u0003\u0001\u0003\u0005\u00039\b\u0003\n\u0003\f\u0003<\t\u0003"+
+		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004"+
+		"\u0001\u0004\u0001\u0004\u0001\u0004\u0005\u0004G\b\u0004\n\u0004\f\u0004"+
+		"J\t\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005"+
+		"\u0003\u0005Q\b\u0005\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006"+
+		"\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0003\u0006[\b\u0006"+
+		"\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001\u0007\u0001\b\u0001"+
+		"\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0001\b\u0004\bj\b\b\u000b"+
+		"\b\f\bk\u0001\b\u0001\b\u0001\t\u0003\tq\b\t\u0001\t\u0001\t\u0003\tu"+
+		"\b\t\u0001\n\u0001\n\u0001\n\u0001\n\u0001\n\u0001\n\u0001\n\u0001\n\u0004"+
+		"\n\u007f\b\n\u000b\n\f\n\u0080\u0001\n\u0001\n\u0001\n\u0000\u0002\u0006"+
+		"\b\u000b\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0000\u0000"+
+		"\u008d\u0000\u001d\u0001\u0000\u0000\u0000\u0002)\u0001\u0000\u0000\u0000"+
+		"\u0004+\u0001\u0000\u0000\u0000\u0006/\u0001\u0000\u0000\u0000\b=\u0001"+
+		"\u0000\u0000\u0000\nP\u0001\u0000\u0000\u0000\fZ\u0001\u0000\u0000\u0000"+
+		"\u000e\\\u0001\u0000\u0000\u0000\u0010a\u0001\u0000\u0000\u0000\u0012"+
+		"p\u0001\u0000\u0000\u0000\u0014v\u0001\u0000\u0000\u0000\u0016\u001a\u0003"+
+		"\u0002\u0001\u0000\u0017\u0019\u0005\u0016\u0000\u0000\u0018\u0017\u0001"+
+		"\u0000\u0000\u0000\u0019\u001c\u0001\u0000\u0000\u0000\u001a\u0018\u0001"+
+		"\u0000\u0000\u0000\u001a\u001b\u0001\u0000\u0000\u0000\u001b\u001e\u0001"+
+		"\u0000\u0000\u0000\u001c\u001a\u0001\u0000\u0000\u0000\u001d\u0016\u0001"+
+		"\u0000\u0000\u0000\u001e\u001f\u0001\u0000\u0000\u0000\u001f\u001d\u0001"+
+		"\u0000\u0000\u0000\u001f \u0001\u0000\u0000\u0000 !\u0001\u0000\u0000"+
+		"\u0000!\"\u0005\u0000\u0000\u0001\"\u0001\u0001\u0000\u0000\u0000#*\u0003"+
+		"\u0006\u0003\u0000$*\u0003\u000e\u0007\u0000%*\u0003\u0004\u0002\u0000"+
+		"&*\u0003\u0012\t\u0000\'*\u0003\u0014\n\u0000(*\u0003\u0010\b\u0000)#"+
+		"\u0001\u0000\u0000\u0000)$\u0001\u0000\u0000\u0000)%\u0001\u0000\u0000"+
+		"\u0000)&\u0001\u0000\u0000\u0000)\'\u0001\u0000\u0000\u0000)(\u0001\u0000"+
+		"\u0000\u0000*\u0003\u0001\u0000\u0000\u0000+,\u0005\b\u0000\u0000,-\u0005"+
+		"\u0010\u0000\u0000-.\u0003\u0006\u0003\u0000.\u0005\u0001\u0000\u0000"+
+		"\u0000/0\u0006\u0003\uffff\uffff\u000001\u0003\b\u0004\u00001:\u0001\u0000"+
+		"\u0000\u000023\n\u0003\u0000\u000034\u0005\n\u0000\u000049\u0003\b\u0004"+
+		"\u000056\n\u0002\u0000\u000067\u0005\u000b\u0000\u000079\u0003\b\u0004"+
+		"\u000082\u0001\u0000\u0000\u000085\u0001\u0000\u0000\u00009<\u0001\u0000"+
+		"\u0000\u0000:8\u0001\u0000\u0000\u0000:;\u0001\u0000\u0000\u0000;\u0007"+
+		"\u0001\u0000\u0000\u0000<:\u0001\u0000\u0000\u0000=>\u0006\u0004\uffff"+
+		"\uffff\u0000>?\u0003\n\u0005\u0000?H\u0001\u0000\u0000\u0000@A\n\u0003"+
+		"\u0000\u0000AB\u0005\f\u0000\u0000BG\u0003\n\u0005\u0000CD\n\u0002\u0000"+
+		"\u0000DE\u0005\r\u0000\u0000EG\u0003\n\u0005\u0000F@\u0001\u0000\u0000"+
+		"\u0000FC\u0001\u0000\u0000\u0000GJ\u0001\u0000\u0000\u0000HF\u0001\u0000"+
+		"\u0000\u0000HI\u0001\u0000\u0000\u0000I\t\u0001\u0000\u0000\u0000JH\u0001"+
+		"\u0000\u0000\u0000KL\u0003\f\u0006\u0000LM\u0005\u000e\u0000\u0000MN\u0003"+
+		"\n\u0005\u0000NQ\u0001\u0000\u0000\u0000OQ\u0003\f\u0006\u0000PK\u0001"+
+		"\u0000\u0000\u0000PO\u0001\u0000\u0000\u0000Q\u000b\u0001\u0000\u0000"+
+		"\u0000RS\u0005\u0011\u0000\u0000ST\u0003\u0006\u0003\u0000TU\u0005\u0012"+
+		"\u0000\u0000U[\u0001\u0000\u0000\u0000V[\u0005\u0006\u0000\u0000W[\u0005"+
+		"\b\u0000\u0000X[\u0005\t\u0000\u0000Y[\u0005\u0014\u0000\u0000ZR\u0001"+
+		"\u0000\u0000\u0000ZV\u0001\u0000\u0000\u0000ZW\u0001\u0000\u0000\u0000"+
+		"ZX\u0001\u0000\u0000\u0000ZY\u0001\u0000\u0000\u0000[\r\u0001\u0000\u0000"+
+		"\u0000\\]\u0005\u0001\u0000\u0000]^\u0005\u0011\u0000\u0000^_\u0003\u0006"+
+		"\u0003\u0000_`\u0005\u0012\u0000\u0000`\u000f\u0001\u0000\u0000\u0000"+
+		"ab\u0005\u0002\u0000\u0000bc\u0005\u0011\u0000\u0000cd\u0003\u0006\u0003"+
+		"\u0000de\u0005\u000f\u0000\u0000ef\u0003\u0006\u0003\u0000fg\u0005\u0012"+
+		"\u0000\u0000gi\u0005\u0003\u0000\u0000hj\u0003\u0002\u0001\u0000ih\u0001"+
+		"\u0000\u0000\u0000jk\u0001\u0000\u0000\u0000ki\u0001\u0000\u0000\u0000"+
+		"kl\u0001\u0000\u0000\u0000lm\u0001\u0000\u0000\u0000mn\u0005\u0004\u0000"+
+		"\u0000n\u0011\u0001\u0000\u0000\u0000oq\u0005\b\u0000\u0000po\u0001\u0000"+
+		"\u0000\u0000pq\u0001\u0000\u0000\u0000qr\u0001\u0000\u0000\u0000rt\u0005"+
+		"\u0010\u0000\u0000su\u0005\u0013\u0000\u0000ts\u0001\u0000\u0000\u0000"+
+		"tu\u0001\u0000\u0000\u0000u\u0013\u0001\u0000\u0000\u0000vw\u0005\u0005"+
+		"\u0000\u0000wx\u0005\u0011\u0000\u0000xy\u0003\u0006\u0003\u0000yz\u0005"+
+		"\u000f\u0000\u0000z{\u0003\u0006\u0003\u0000{|\u0005\u0012\u0000\u0000"+
+		"|~\u0005\u0003\u0000\u0000}\u007f\u0003\u0002\u0001\u0000~}\u0001\u0000"+
+		"\u0000\u0000\u007f\u0080\u0001\u0000\u0000\u0000\u0080~\u0001\u0000\u0000"+
+		"\u0000\u0080\u0081\u0001\u0000\u0000\u0000\u0081\u0082\u0001\u0000\u0000"+
+		"\u0000\u0082\u0083\u0005\u0004\u0000\u0000\u0083\u0015\u0001\u0000\u0000"+
+		"\u0000\r\u001a\u001f)8:FHPZkpt\u0080";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

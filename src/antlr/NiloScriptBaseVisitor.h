@@ -51,6 +51,14 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitInput(NiloScriptParser::InputContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitLoop(NiloScriptParser::LoopContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
 
 };
 

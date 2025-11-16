@@ -43,6 +43,12 @@ public:
   virtual void enterInCase(NiloScriptParser::InCaseContext * /*ctx*/) override { }
   virtual void exitInCase(NiloScriptParser::InCaseContext * /*ctx*/) override { }
 
+  virtual void enterInput(NiloScriptParser::InputContext * /*ctx*/) override { }
+  virtual void exitInput(NiloScriptParser::InputContext * /*ctx*/) override { }
+
+  virtual void enterLoop(NiloScriptParser::LoopContext * /*ctx*/) override { }
+  virtual void exitLoop(NiloScriptParser::LoopContext * /*ctx*/) override { }
+
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
   virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
