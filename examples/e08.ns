@@ -1,0 +1,2 @@
+pot :inteiro = 6**5 ** 2;
+mostrar(pot);

@@ -1,0 +1,4 @@
+teste_redefinir :inteiro = 5;
+mostrar(teste_redefinir);
+teste_redefinir = 10;
+mostrar(teste_redefinir);

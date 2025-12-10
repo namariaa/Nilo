@@ -1,0 +1,10 @@
+funcionalidade soma (x :inteiro, y :inteiro) :inteiro {
+    resultado :inteiro = x + y;
+    mostrar("test");
+    retorne resultado;
+}
+
+a :inteiro = pegaInteiro;
+b :inteiro = pegaInteiro;
+c :inteiro = soma(a, b);
+mostrar(c);

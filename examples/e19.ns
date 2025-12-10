@@ -1,0 +1,9 @@
+x :inteiro = pegaInteiro;
+y :inteiro = pegaInteiro;
+cont :inteiro = 0;
+
+enquanto (x >= y) {
+    cont = cont + 1;
+}
+
+mostrar(cont);

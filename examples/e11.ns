@@ -1,0 +1,15 @@
+x :inteiro = pegaInteiro;
+impar :bool = falso;
+contador :inteiro = 0;
+
+enquanto (impar != verdadeiro) {
+    x = x * 3;
+
+    caso (x % 2 == 1){
+        impar = verdadeiro;
+    }
+    contador = contador + 1;
+}
+
+mostrar(x);
+mostrar(contador);
