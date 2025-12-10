@@ -1,0 +1,12 @@
+a :inteiro = pegaInteiro;
+b :inteiro = pegaInteiro;
+cont :inteiro = 0;
+
+enquanto (cont < 10) {
+    caso (cont % 2 == 0){
+        mostrar("É par!");
+    }
+    senão {
+        mostrar("É impar!");
+    }
+}

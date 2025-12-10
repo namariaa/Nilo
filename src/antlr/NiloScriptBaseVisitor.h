@@ -19,7 +19,7 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitCode(NiloScriptParser::CodeContext *ctx) override {
+  virtual std::any visitStmt(NiloScriptParser::StmtContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -35,11 +35,19 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitPot(NiloScriptParser::PotContext *ctx) override {
+  virtual std::any visitFact(NiloScriptParser::FactContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitFact(NiloScriptParser::FactContext *ctx) override {
+  virtual std::any visitExpo(NiloScriptParser::ExpoContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitOpPar(NiloScriptParser::OpParContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitTypeSpecifier(NiloScriptParser::TypeSpecifierContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -47,15 +55,31 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitInCase(NiloScriptParser::InCaseContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitInput(NiloScriptParser::InputContext *ctx) override {
     return visitChildren(ctx);
   }
 
+  virtual std::any visitInCase(NiloScriptParser::InCaseContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitLoop(NiloScriptParser::LoopContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitFunction(NiloScriptParser::FunctionContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitFunctionCall(NiloScriptParser::FunctionCallContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitList(NiloScriptParser::ListContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitAcessList(NiloScriptParser::AcessListContext *ctx) override {
     return visitChildren(ctx);
   }
 

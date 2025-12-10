@@ -1,3 +1,3 @@
-first_test = 2 + 5 - 7
-print(first_test)
+primeiro_teste :inteiro = 2 + 5 - 7;
+print(primeiro_teste) ;
 :) RESPONSE : 0

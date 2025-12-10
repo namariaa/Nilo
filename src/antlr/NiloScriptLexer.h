@@ -12,10 +12,12 @@
 class  NiloScriptLexer : public antlr4::Lexer {
 public:
   enum {
-    T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, INT = 6, FLOAT = 7, 
-    VAR = 8, STRING = 9, PLUS = 10, MINUS = 11, MUL = 12, DIV = 13, POW = 14, 
-    OPERATOR = 15, EQUAL = 16, OPAR = 17, CPAR = 18, READ = 19, COMMENT = 20, 
-    TAB = 21, ENTER = 22, SPACE = 23, WHITESPACE = 24
+    T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
+    PLUS = 8, MINUS = 9, MUL = 10, DIV = 11, MOD = 12, POW = 13, OPERATOR = 14, 
+    INT = 15, FLOAT = 16, VAR = 17, STRING = 18, BOOL = 19, TYPE = 20, RETURN_TYPE = 21, 
+    EQUAL = 22, OPAR = 23, CPAR = 24, OBRA = 25, CBRA = 26, OKEY = 27, CKEY = 28, 
+    SC = 29, READ = 30, COMMENT = 31, TAB = 32, ENTER = 33, SPACE = 34, 
+    WHITESPACE = 35
   };
 
   explicit NiloScriptLexer(antlr4::CharStream *input);

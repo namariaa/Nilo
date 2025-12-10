@@ -1,2 +1,3 @@
-print("IS FUNNY TEST STRING TYPE IN A PRINT")
-:) a = "IS FUNNY TEST STRING TYPE IN A PRINT" is not possible
+testeString1 :caracter = "IS FUNNY TEST STRING TYPE IN A PRINT";
+mostrar(testeString1);
+:) "IS FUNNY TEST STRING TYPE IN A PRINT" 
