@@ -53,61 +53,106 @@ void niloscriptParserInitialize() {
 #endif
   auto staticData = std::make_unique<NiloScriptParserStaticData>(
     std::vector<std::string>{
-      "program", "code", "assignment", "expression", "term", "pot", "fact", 
-      "print", "inCase", "input", "loop"
+      "program", "stmt", "assignment", "expression", "term", "fact", "expo", 
+      "opPar", "typeSpecifier", "print", "input", "inCase", "loop", "function", 
+      "functionCall", "list", "acessList"
     },
     std::vector<std::string>{
-      "", "'mostrar'", "'caso'", "'{'", "'}'", "'enquanto'", "", "", "", 
-      "", "'+'", "'-'", "'*'", "'/'", "'**'", "", "'='", "'('", "')'"
+      "", "'mostrar'", "'caso'", "'sen\\u00E3o'", "'enquanto'", "'funcionalidade'", 
+      "','", "'retorne'", "'+'", "'-'", "'*'", "'/'", "'%'", "'**'", "", 
+      "", "", "", "", "", "", "", "'='", "'('", "')'", "'{'", "'}'", "'['", 
+      "']'", "';'"
     },
     std::vector<std::string>{
-      "", "", "", "", "", "", "INT", "FLOAT", "VAR", "STRING", "PLUS", "MINUS", 
-      "MUL", "DIV", "POW", "OPERATOR", "EQUAL", "OPAR", "CPAR", "READ", 
-      "COMMENT", "TAB", "ENTER", "SPACE", "WHITESPACE"
+      "", "", "", "", "", "", "", "", "PLUS", "MINUS", "MUL", "DIV", "MOD", 
+      "POW", "OPERATOR", "INT", "FLOAT", "VAR", "STRING", "BOOL", "TYPE", 
+      "RETURN_TYPE", "EQUAL", "OPAR", "CPAR", "OBRA", "CBRA", "OKEY", "CKEY", 
+      "SC", "READ", "COMMENT", "TAB", "ENTER", "SPACE", "WHITESPACE"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,24,133,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
-  	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,1,0,1,0,5,0,25,8,0,10,0,12,0,28,9,0,4,
-  	0,30,8,0,11,0,12,0,31,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,3,1,42,8,1,1,2,
-  	1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,5,3,57,8,3,10,3,12,3,
-  	60,9,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,5,4,71,8,4,10,4,12,4,74,9,
-  	4,1,5,1,5,1,5,1,5,1,5,3,5,81,8,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,3,6,
-  	91,8,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,4,8,106,8,
-  	8,11,8,12,8,107,1,8,1,8,1,9,3,9,113,8,9,1,9,1,9,3,9,117,8,9,1,10,1,10,
-  	1,10,1,10,1,10,1,10,1,10,1,10,4,10,127,8,10,11,10,12,10,128,1,10,1,10,
-  	1,10,0,2,6,8,11,0,2,4,6,8,10,12,14,16,18,20,0,0,141,0,29,1,0,0,0,2,41,
-  	1,0,0,0,4,43,1,0,0,0,6,47,1,0,0,0,8,61,1,0,0,0,10,80,1,0,0,0,12,90,1,
-  	0,0,0,14,92,1,0,0,0,16,97,1,0,0,0,18,112,1,0,0,0,20,118,1,0,0,0,22,26,
-  	3,2,1,0,23,25,5,22,0,0,24,23,1,0,0,0,25,28,1,0,0,0,26,24,1,0,0,0,26,27,
-  	1,0,0,0,27,30,1,0,0,0,28,26,1,0,0,0,29,22,1,0,0,0,30,31,1,0,0,0,31,29,
-  	1,0,0,0,31,32,1,0,0,0,32,33,1,0,0,0,33,34,5,0,0,1,34,1,1,0,0,0,35,42,
-  	3,6,3,0,36,42,3,14,7,0,37,42,3,4,2,0,38,42,3,18,9,0,39,42,3,20,10,0,40,
-  	42,3,16,8,0,41,35,1,0,0,0,41,36,1,0,0,0,41,37,1,0,0,0,41,38,1,0,0,0,41,
-  	39,1,0,0,0,41,40,1,0,0,0,42,3,1,0,0,0,43,44,5,8,0,0,44,45,5,16,0,0,45,
-  	46,3,6,3,0,46,5,1,0,0,0,47,48,6,3,-1,0,48,49,3,8,4,0,49,58,1,0,0,0,50,
-  	51,10,3,0,0,51,52,5,10,0,0,52,57,3,8,4,0,53,54,10,2,0,0,54,55,5,11,0,
-  	0,55,57,3,8,4,0,56,50,1,0,0,0,56,53,1,0,0,0,57,60,1,0,0,0,58,56,1,0,0,
-  	0,58,59,1,0,0,0,59,7,1,0,0,0,60,58,1,0,0,0,61,62,6,4,-1,0,62,63,3,10,
-  	5,0,63,72,1,0,0,0,64,65,10,3,0,0,65,66,5,12,0,0,66,71,3,10,5,0,67,68,
-  	10,2,0,0,68,69,5,13,0,0,69,71,3,10,5,0,70,64,1,0,0,0,70,67,1,0,0,0,71,
-  	74,1,0,0,0,72,70,1,0,0,0,72,73,1,0,0,0,73,9,1,0,0,0,74,72,1,0,0,0,75,
-  	76,3,12,6,0,76,77,5,14,0,0,77,78,3,10,5,0,78,81,1,0,0,0,79,81,3,12,6,
-  	0,80,75,1,0,0,0,80,79,1,0,0,0,81,11,1,0,0,0,82,83,5,17,0,0,83,84,3,6,
-  	3,0,84,85,5,18,0,0,85,91,1,0,0,0,86,91,5,6,0,0,87,91,5,8,0,0,88,91,5,
-  	9,0,0,89,91,5,20,0,0,90,82,1,0,0,0,90,86,1,0,0,0,90,87,1,0,0,0,90,88,
-  	1,0,0,0,90,89,1,0,0,0,91,13,1,0,0,0,92,93,5,1,0,0,93,94,5,17,0,0,94,95,
-  	3,6,3,0,95,96,5,18,0,0,96,15,1,0,0,0,97,98,5,2,0,0,98,99,5,17,0,0,99,
-  	100,3,6,3,0,100,101,5,15,0,0,101,102,3,6,3,0,102,103,5,18,0,0,103,105,
-  	5,3,0,0,104,106,3,2,1,0,105,104,1,0,0,0,106,107,1,0,0,0,107,105,1,0,0,
-  	0,107,108,1,0,0,0,108,109,1,0,0,0,109,110,5,4,0,0,110,17,1,0,0,0,111,
-  	113,5,8,0,0,112,111,1,0,0,0,112,113,1,0,0,0,113,114,1,0,0,0,114,116,5,
-  	16,0,0,115,117,5,19,0,0,116,115,1,0,0,0,116,117,1,0,0,0,117,19,1,0,0,
-  	0,118,119,5,5,0,0,119,120,5,17,0,0,120,121,3,6,3,0,121,122,5,15,0,0,122,
-  	123,3,6,3,0,123,124,5,18,0,0,124,126,5,3,0,0,125,127,3,2,1,0,126,125,
-  	1,0,0,0,127,128,1,0,0,0,128,126,1,0,0,0,128,129,1,0,0,0,129,130,1,0,0,
-  	0,130,131,5,4,0,0,131,21,1,0,0,0,13,26,31,41,56,58,70,72,80,90,107,112,
-  	116,128
+  	4,1,35,253,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
+  	14,2,15,7,15,2,16,7,16,1,0,4,0,36,8,0,11,0,12,0,37,1,0,1,0,1,1,1,1,1,
+  	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+  	1,1,1,1,3,1,64,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,73,8,2,1,3,1,3,1,3,
+  	1,3,1,3,3,3,80,8,3,1,4,1,4,1,4,1,4,1,4,1,4,5,4,88,8,4,10,4,12,4,91,9,
+  	4,1,5,1,5,1,5,1,5,1,5,1,5,5,5,99,8,5,10,5,12,5,102,9,5,1,6,1,6,1,6,1,
+  	6,1,6,1,6,5,6,110,8,6,10,6,12,6,113,9,6,1,7,1,7,1,7,1,7,1,7,3,7,120,8,
+  	7,1,8,1,8,1,9,1,9,1,9,1,9,3,9,128,8,9,1,9,1,9,1,10,1,10,1,10,1,11,1,11,
+  	1,11,1,11,1,11,1,11,1,11,1,11,1,11,4,11,144,8,11,11,11,12,11,145,1,11,
+  	1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,4,11,159,8,11,11,11,
+  	12,11,160,1,11,1,11,1,11,1,11,4,11,167,8,11,11,11,12,11,168,1,11,1,11,
+  	3,11,173,8,11,1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,4,12,184,8,
+  	12,11,12,12,12,185,1,12,1,12,1,13,1,13,1,13,1,13,1,13,3,13,195,8,13,1,
+  	13,1,13,1,13,5,13,200,8,13,10,13,12,13,203,9,13,1,13,1,13,1,13,1,13,4,
+  	13,209,8,13,11,13,12,13,210,1,13,1,13,1,13,1,13,1,13,1,14,1,14,1,14,3,
+  	14,221,8,14,1,14,1,14,5,14,225,8,14,10,14,12,14,228,9,14,1,14,1,14,1,
+  	15,1,15,1,15,1,15,1,15,3,15,237,8,15,1,15,1,15,5,15,241,8,15,10,15,12,
+  	15,244,9,15,1,15,1,15,1,16,1,16,1,16,1,16,1,16,1,16,0,3,8,10,12,17,0,
+  	2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,0,5,1,0,8,9,1,0,10,12,1,0,
+  	15,19,2,0,17,17,20,20,2,0,15,16,18,19,267,0,35,1,0,0,0,2,63,1,0,0,0,4,
+  	65,1,0,0,0,6,74,1,0,0,0,8,81,1,0,0,0,10,92,1,0,0,0,12,103,1,0,0,0,14,
+  	119,1,0,0,0,16,121,1,0,0,0,18,123,1,0,0,0,20,131,1,0,0,0,22,172,1,0,0,
+  	0,24,174,1,0,0,0,26,189,1,0,0,0,28,217,1,0,0,0,30,231,1,0,0,0,32,247,
+  	1,0,0,0,34,36,3,2,1,0,35,34,1,0,0,0,36,37,1,0,0,0,37,35,1,0,0,0,37,38,
+  	1,0,0,0,38,39,1,0,0,0,39,40,5,0,0,1,40,1,1,0,0,0,41,42,3,18,9,0,42,43,
+  	5,29,0,0,43,64,1,0,0,0,44,45,3,4,2,0,45,46,5,29,0,0,46,64,1,0,0,0,47,
+  	48,3,20,10,0,48,49,5,29,0,0,49,64,1,0,0,0,50,64,3,24,12,0,51,64,3,22,
+  	11,0,52,64,3,26,13,0,53,54,3,28,14,0,54,55,5,29,0,0,55,64,1,0,0,0,56,
+  	57,3,30,15,0,57,58,5,29,0,0,58,64,1,0,0,0,59,60,3,6,3,0,60,61,5,29,0,
+  	0,61,64,1,0,0,0,62,64,5,31,0,0,63,41,1,0,0,0,63,44,1,0,0,0,63,47,1,0,
+  	0,0,63,50,1,0,0,0,63,51,1,0,0,0,63,52,1,0,0,0,63,53,1,0,0,0,63,56,1,0,
+  	0,0,63,59,1,0,0,0,63,62,1,0,0,0,64,3,1,0,0,0,65,66,5,17,0,0,66,67,5,21,
+  	0,0,67,72,5,22,0,0,68,73,3,8,4,0,69,73,3,20,10,0,70,73,3,32,16,0,71,73,
+  	3,28,14,0,72,68,1,0,0,0,72,69,1,0,0,0,72,70,1,0,0,0,72,71,1,0,0,0,73,
+  	5,1,0,0,0,74,75,5,17,0,0,75,79,5,22,0,0,76,80,3,8,4,0,77,80,3,32,16,0,
+  	78,80,3,28,14,0,79,76,1,0,0,0,79,77,1,0,0,0,79,78,1,0,0,0,80,7,1,0,0,
+  	0,81,82,6,4,-1,0,82,83,3,10,5,0,83,89,1,0,0,0,84,85,10,2,0,0,85,86,7,
+  	0,0,0,86,88,3,8,4,3,87,84,1,0,0,0,88,91,1,0,0,0,89,87,1,0,0,0,89,90,1,
+  	0,0,0,90,9,1,0,0,0,91,89,1,0,0,0,92,93,6,5,-1,0,93,94,3,12,6,0,94,100,
+  	1,0,0,0,95,96,10,2,0,0,96,97,7,1,0,0,97,99,3,10,5,3,98,95,1,0,0,0,99,
+  	102,1,0,0,0,100,98,1,0,0,0,100,101,1,0,0,0,101,11,1,0,0,0,102,100,1,0,
+  	0,0,103,104,6,6,-1,0,104,105,3,14,7,0,105,111,1,0,0,0,106,107,10,2,0,
+  	0,107,108,5,13,0,0,108,110,3,12,6,0,109,106,1,0,0,0,110,113,1,0,0,0,111,
+  	109,1,0,0,0,111,112,1,0,0,0,112,13,1,0,0,0,113,111,1,0,0,0,114,115,5,
+  	23,0,0,115,116,3,8,4,0,116,117,5,24,0,0,117,120,1,0,0,0,118,120,3,16,
+  	8,0,119,114,1,0,0,0,119,118,1,0,0,0,120,15,1,0,0,0,121,122,7,2,0,0,122,
+  	17,1,0,0,0,123,124,5,1,0,0,124,127,5,23,0,0,125,128,3,8,4,0,126,128,3,
+  	32,16,0,127,125,1,0,0,0,127,126,1,0,0,0,128,129,1,0,0,0,129,130,5,24,
+  	0,0,130,19,1,0,0,0,131,132,5,30,0,0,132,133,5,29,0,0,133,21,1,0,0,0,134,
+  	135,5,2,0,0,135,136,5,23,0,0,136,137,3,8,4,0,137,138,5,14,0,0,138,139,
+  	3,8,4,0,139,140,1,0,0,0,140,141,5,24,0,0,141,143,5,25,0,0,142,144,3,2,
+  	1,0,143,142,1,0,0,0,144,145,1,0,0,0,145,143,1,0,0,0,145,146,1,0,0,0,146,
+  	147,1,0,0,0,147,148,5,26,0,0,148,173,1,0,0,0,149,150,5,2,0,0,150,151,
+  	5,23,0,0,151,152,3,8,4,0,152,153,5,14,0,0,153,154,3,8,4,0,154,155,1,0,
+  	0,0,155,156,5,24,0,0,156,158,5,25,0,0,157,159,3,2,1,0,158,157,1,0,0,0,
+  	159,160,1,0,0,0,160,158,1,0,0,0,160,161,1,0,0,0,161,162,1,0,0,0,162,163,
+  	5,26,0,0,163,164,5,3,0,0,164,166,5,25,0,0,165,167,3,2,1,0,166,165,1,0,
+  	0,0,167,168,1,0,0,0,168,166,1,0,0,0,168,169,1,0,0,0,169,170,1,0,0,0,170,
+  	171,5,26,0,0,171,173,1,0,0,0,172,134,1,0,0,0,172,149,1,0,0,0,173,23,1,
+  	0,0,0,174,175,5,4,0,0,175,176,5,23,0,0,176,177,3,8,4,0,177,178,5,14,0,
+  	0,178,179,3,8,4,0,179,180,1,0,0,0,180,181,5,24,0,0,181,183,5,25,0,0,182,
+  	184,3,2,1,0,183,182,1,0,0,0,184,185,1,0,0,0,185,183,1,0,0,0,185,186,1,
+  	0,0,0,186,187,1,0,0,0,187,188,5,26,0,0,188,25,1,0,0,0,189,190,5,5,0,0,
+  	190,191,5,17,0,0,191,194,5,23,0,0,192,193,5,17,0,0,193,195,5,21,0,0,194,
+  	192,1,0,0,0,194,195,1,0,0,0,195,201,1,0,0,0,196,197,5,6,0,0,197,198,5,
+  	17,0,0,198,200,5,21,0,0,199,196,1,0,0,0,200,203,1,0,0,0,201,199,1,0,0,
+  	0,201,202,1,0,0,0,202,204,1,0,0,0,203,201,1,0,0,0,204,205,5,24,0,0,205,
+  	206,5,21,0,0,206,208,5,25,0,0,207,209,3,2,1,0,208,207,1,0,0,0,209,210,
+  	1,0,0,0,210,208,1,0,0,0,210,211,1,0,0,0,211,212,1,0,0,0,212,213,5,7,0,
+  	0,213,214,7,3,0,0,214,215,5,29,0,0,215,216,5,26,0,0,216,27,1,0,0,0,217,
+  	218,5,17,0,0,218,220,5,23,0,0,219,221,5,17,0,0,220,219,1,0,0,0,220,221,
+  	1,0,0,0,221,226,1,0,0,0,222,223,5,6,0,0,223,225,5,17,0,0,224,222,1,0,
+  	0,0,225,228,1,0,0,0,226,224,1,0,0,0,226,227,1,0,0,0,227,229,1,0,0,0,228,
+  	226,1,0,0,0,229,230,5,24,0,0,230,29,1,0,0,0,231,232,5,17,0,0,232,233,
+  	5,21,0,0,233,234,5,22,0,0,234,236,5,27,0,0,235,237,7,4,0,0,236,235,1,
+  	0,0,0,236,237,1,0,0,0,237,242,1,0,0,0,238,239,5,6,0,0,239,241,7,4,0,0,
+  	240,238,1,0,0,0,241,244,1,0,0,0,242,240,1,0,0,0,242,243,1,0,0,0,243,245,
+  	1,0,0,0,244,242,1,0,0,0,245,246,5,28,0,0,246,31,1,0,0,0,247,248,5,17,
+  	0,0,248,249,5,27,0,0,249,250,5,15,0,0,250,251,5,28,0,0,251,33,1,0,0,0,
+  	21,37,63,72,79,89,100,111,119,127,145,160,168,172,185,194,201,210,220,
+  	226,236,242
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -166,20 +211,12 @@ tree::TerminalNode* NiloScriptParser::ProgramContext::EOF() {
   return getToken(NiloScriptParser::EOF, 0);
 }
 
-std::vector<NiloScriptParser::CodeContext *> NiloScriptParser::ProgramContext::code() {
-  return getRuleContexts<NiloScriptParser::CodeContext>();
+std::vector<NiloScriptParser::StmtContext *> NiloScriptParser::ProgramContext::stmt() {
+  return getRuleContexts<NiloScriptParser::StmtContext>();
 }
 
-NiloScriptParser::CodeContext* NiloScriptParser::ProgramContext::code(size_t i) {
-  return getRuleContext<NiloScriptParser::CodeContext>(i);
-}
-
-std::vector<tree::TerminalNode *> NiloScriptParser::ProgramContext::ENTER() {
-  return getTokens(NiloScriptParser::ENTER);
-}
-
-tree::TerminalNode* NiloScriptParser::ProgramContext::ENTER(size_t i) {
-  return getToken(NiloScriptParser::ENTER, i);
+NiloScriptParser::StmtContext* NiloScriptParser::ProgramContext::stmt(size_t i) {
+  return getRuleContext<NiloScriptParser::StmtContext>(i);
 }
 
 
@@ -221,28 +258,18 @@ NiloScriptParser::ProgramContext* NiloScriptParser::program() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(29); 
+    setState(35); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(22);
-      code();
-      setState(26);
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-      while (_la == NiloScriptParser::ENTER) {
-        setState(23);
-        match(NiloScriptParser::ENTER);
-        setState(28);
-        _errHandler->sync(this);
-        _la = _input->LA(1);
-      }
-      setState(31); 
+      setState(34);
+      stmt();
+      setState(37); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 1246054) != 0));
-    setState(33);
+      ((1ULL << _la) & 3221356598) != 0));
+    setState(39);
     match(NiloScriptParser::EOF);
    
   }
@@ -255,64 +282,84 @@ NiloScriptParser::ProgramContext* NiloScriptParser::program() {
   return _localctx;
 }
 
-//----------------- CodeContext ------------------------------------------------------------------
+//----------------- StmtContext ------------------------------------------------------------------
 
-NiloScriptParser::CodeContext::CodeContext(ParserRuleContext *parent, size_t invokingState)
+NiloScriptParser::StmtContext::StmtContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-NiloScriptParser::ExpressionContext* NiloScriptParser::CodeContext::expression() {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(0);
-}
-
-NiloScriptParser::PrintContext* NiloScriptParser::CodeContext::print() {
+NiloScriptParser::PrintContext* NiloScriptParser::StmtContext::print() {
   return getRuleContext<NiloScriptParser::PrintContext>(0);
 }
 
-NiloScriptParser::AssignmentContext* NiloScriptParser::CodeContext::assignment() {
+tree::TerminalNode* NiloScriptParser::StmtContext::SC() {
+  return getToken(NiloScriptParser::SC, 0);
+}
+
+NiloScriptParser::AssignmentContext* NiloScriptParser::StmtContext::assignment() {
   return getRuleContext<NiloScriptParser::AssignmentContext>(0);
 }
 
-NiloScriptParser::InputContext* NiloScriptParser::CodeContext::input() {
+NiloScriptParser::InputContext* NiloScriptParser::StmtContext::input() {
   return getRuleContext<NiloScriptParser::InputContext>(0);
 }
 
-NiloScriptParser::LoopContext* NiloScriptParser::CodeContext::loop() {
+NiloScriptParser::LoopContext* NiloScriptParser::StmtContext::loop() {
   return getRuleContext<NiloScriptParser::LoopContext>(0);
 }
 
-NiloScriptParser::InCaseContext* NiloScriptParser::CodeContext::inCase() {
+NiloScriptParser::InCaseContext* NiloScriptParser::StmtContext::inCase() {
   return getRuleContext<NiloScriptParser::InCaseContext>(0);
 }
 
-
-size_t NiloScriptParser::CodeContext::getRuleIndex() const {
-  return NiloScriptParser::RuleCode;
+NiloScriptParser::FunctionContext* NiloScriptParser::StmtContext::function() {
+  return getRuleContext<NiloScriptParser::FunctionContext>(0);
 }
 
-void NiloScriptParser::CodeContext::enterRule(tree::ParseTreeListener *listener) {
+NiloScriptParser::FunctionCallContext* NiloScriptParser::StmtContext::functionCall() {
+  return getRuleContext<NiloScriptParser::FunctionCallContext>(0);
+}
+
+NiloScriptParser::ListContext* NiloScriptParser::StmtContext::list() {
+  return getRuleContext<NiloScriptParser::ListContext>(0);
+}
+
+NiloScriptParser::ExpressionContext* NiloScriptParser::StmtContext::expression() {
+  return getRuleContext<NiloScriptParser::ExpressionContext>(0);
+}
+
+tree::TerminalNode* NiloScriptParser::StmtContext::COMMENT() {
+  return getToken(NiloScriptParser::COMMENT, 0);
+}
+
+
+size_t NiloScriptParser::StmtContext::getRuleIndex() const {
+  return NiloScriptParser::RuleStmt;
+}
+
+void NiloScriptParser::StmtContext::enterRule(tree::ParseTreeListener *listener) {
   auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
   if (parserListener != nullptr)
-    parserListener->enterCode(this);
+    parserListener->enterStmt(this);
 }
 
-void NiloScriptParser::CodeContext::exitRule(tree::ParseTreeListener *listener) {
+void NiloScriptParser::StmtContext::exitRule(tree::ParseTreeListener *listener) {
   auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
   if (parserListener != nullptr)
-    parserListener->exitCode(this);
+    parserListener->exitStmt(this);
 }
 
 
-std::any NiloScriptParser::CodeContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloScriptParser::StmtContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
-    return parserVisitor->visitCode(this);
+    return parserVisitor->visitStmt(this);
   else
     return visitor->visitChildren(this);
 }
 
-NiloScriptParser::CodeContext* NiloScriptParser::code() {
-  CodeContext *_localctx = _tracker.createInstance<CodeContext>(_ctx, getState());
-  enterRule(_localctx, 2, NiloScriptParser::RuleCode);
+NiloScriptParser::StmtContext* NiloScriptParser::stmt() {
+  StmtContext *_localctx = _tracker.createInstance<StmtContext>(_ctx, getState());
+  enterRule(_localctx, 2, NiloScriptParser::RuleStmt);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -322,48 +369,88 @@ NiloScriptParser::CodeContext* NiloScriptParser::code() {
     exitRule();
   });
   try {
-    setState(41);
+    setState(63);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 2, _ctx)) {
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 1, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(35);
-      expression(0);
+      setState(41);
+      print();
+      setState(42);
+      match(NiloScriptParser::SC);
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(36);
-      print();
+      setState(44);
+      assignment();
+      setState(45);
+      match(NiloScriptParser::SC);
       break;
     }
 
     case 3: {
       enterOuterAlt(_localctx, 3);
-      setState(37);
-      assignment();
+      setState(47);
+      input();
+      setState(48);
+      match(NiloScriptParser::SC);
       break;
     }
 
     case 4: {
       enterOuterAlt(_localctx, 4);
-      setState(38);
-      input();
+      setState(50);
+      loop();
       break;
     }
 
     case 5: {
       enterOuterAlt(_localctx, 5);
-      setState(39);
-      loop();
+      setState(51);
+      inCase();
       break;
     }
 
     case 6: {
       enterOuterAlt(_localctx, 6);
-      setState(40);
-      inCase();
+      setState(52);
+      function();
+      break;
+    }
+
+    case 7: {
+      enterOuterAlt(_localctx, 7);
+      setState(53);
+      functionCall();
+      setState(54);
+      match(NiloScriptParser::SC);
+      break;
+    }
+
+    case 8: {
+      enterOuterAlt(_localctx, 8);
+      setState(56);
+      list();
+      setState(57);
+      match(NiloScriptParser::SC);
+      break;
+    }
+
+    case 9: {
+      enterOuterAlt(_localctx, 9);
+      setState(59);
+      expression();
+      setState(60);
+      match(NiloScriptParser::SC);
+      break;
+    }
+
+    case 10: {
+      enterOuterAlt(_localctx, 10);
+      setState(62);
+      match(NiloScriptParser::COMMENT);
       break;
     }
 
@@ -391,12 +478,28 @@ tree::TerminalNode* NiloScriptParser::AssignmentContext::VAR() {
   return getToken(NiloScriptParser::VAR, 0);
 }
 
+tree::TerminalNode* NiloScriptParser::AssignmentContext::RETURN_TYPE() {
+  return getToken(NiloScriptParser::RETURN_TYPE, 0);
+}
+
 tree::TerminalNode* NiloScriptParser::AssignmentContext::EQUAL() {
   return getToken(NiloScriptParser::EQUAL, 0);
 }
 
-NiloScriptParser::ExpressionContext* NiloScriptParser::AssignmentContext::expression() {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(0);
+NiloScriptParser::TermContext* NiloScriptParser::AssignmentContext::term() {
+  return getRuleContext<NiloScriptParser::TermContext>(0);
+}
+
+NiloScriptParser::InputContext* NiloScriptParser::AssignmentContext::input() {
+  return getRuleContext<NiloScriptParser::InputContext>(0);
+}
+
+NiloScriptParser::AcessListContext* NiloScriptParser::AssignmentContext::acessList() {
+  return getRuleContext<NiloScriptParser::AcessListContext>(0);
+}
+
+NiloScriptParser::FunctionCallContext* NiloScriptParser::AssignmentContext::functionCall() {
+  return getRuleContext<NiloScriptParser::FunctionCallContext>(0);
 }
 
 
@@ -437,12 +540,42 @@ NiloScriptParser::AssignmentContext* NiloScriptParser::assignment() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(43);
+    setState(65);
     match(NiloScriptParser::VAR);
-    setState(44);
+    setState(66);
+    match(NiloScriptParser::RETURN_TYPE);
+    setState(67);
     match(NiloScriptParser::EQUAL);
-    setState(45);
-    expression(0);
+    setState(72);
+    _errHandler->sync(this);
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 2, _ctx)) {
+    case 1: {
+      setState(68);
+      term(0);
+      break;
+    }
+
+    case 2: {
+      setState(69);
+      input();
+      break;
+    }
+
+    case 3: {
+      setState(70);
+      acessList();
+      break;
+    }
+
+    case 4: {
+      setState(71);
+      functionCall();
+      break;
+    }
+
+    default:
+      break;
+    }
    
   }
   catch (RecognitionException &e) {
@@ -460,20 +593,24 @@ NiloScriptParser::ExpressionContext::ExpressionContext(ParserRuleContext *parent
   : ParserRuleContext(parent, invokingState) {
 }
 
+tree::TerminalNode* NiloScriptParser::ExpressionContext::VAR() {
+  return getToken(NiloScriptParser::VAR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::ExpressionContext::EQUAL() {
+  return getToken(NiloScriptParser::EQUAL, 0);
+}
+
 NiloScriptParser::TermContext* NiloScriptParser::ExpressionContext::term() {
   return getRuleContext<NiloScriptParser::TermContext>(0);
 }
 
-NiloScriptParser::ExpressionContext* NiloScriptParser::ExpressionContext::expression() {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(0);
+NiloScriptParser::AcessListContext* NiloScriptParser::ExpressionContext::acessList() {
+  return getRuleContext<NiloScriptParser::AcessListContext>(0);
 }
 
-tree::TerminalNode* NiloScriptParser::ExpressionContext::PLUS() {
-  return getToken(NiloScriptParser::PLUS, 0);
-}
-
-tree::TerminalNode* NiloScriptParser::ExpressionContext::MINUS() {
-  return getToken(NiloScriptParser::MINUS, 0);
+NiloScriptParser::FunctionCallContext* NiloScriptParser::ExpressionContext::functionCall() {
+  return getRuleContext<NiloScriptParser::FunctionCallContext>(0);
 }
 
 
@@ -501,86 +638,55 @@ std::any NiloScriptParser::ExpressionContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-
 NiloScriptParser::ExpressionContext* NiloScriptParser::expression() {
-   return expression(0);
-}
-
-NiloScriptParser::ExpressionContext* NiloScriptParser::expression(int precedence) {
-  ParserRuleContext *parentContext = _ctx;
-  size_t parentState = getState();
-  NiloScriptParser::ExpressionContext *_localctx = _tracker.createInstance<ExpressionContext>(_ctx, parentState);
-  NiloScriptParser::ExpressionContext *previousContext = _localctx;
-  (void)previousContext; // Silence compiler, in case the context is not used by generated code.
-  size_t startState = 6;
-  enterRecursionRule(_localctx, 6, NiloScriptParser::RuleExpression, precedence);
-
-    
+  ExpressionContext *_localctx = _tracker.createInstance<ExpressionContext>(_ctx, getState());
+  enterRule(_localctx, 6, NiloScriptParser::RuleExpression);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
 #else
   auto onExit = finally([=] {
 #endif
-    unrollRecursionContexts(parentContext);
+    exitRule();
   });
   try {
-    size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(48);
-    term(0);
-    _ctx->stop = _input->LT(-1);
-    setState(58);
+    setState(74);
+    match(NiloScriptParser::VAR);
+    setState(75);
+    match(NiloScriptParser::EQUAL);
+    setState(79);
     _errHandler->sync(this);
-    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
-    while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
-      if (alt == 1) {
-        if (!_parseListeners.empty())
-          triggerExitRuleEvent();
-        previousContext = _localctx;
-        setState(56);
-        _errHandler->sync(this);
-        switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx)) {
-        case 1: {
-          _localctx = _tracker.createInstance<ExpressionContext>(parentContext, parentState);
-          pushNewRecursionContext(_localctx, startState, RuleExpression);
-          setState(50);
-
-          if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
-          setState(51);
-          match(NiloScriptParser::PLUS);
-          setState(52);
-          term(0);
-          break;
-        }
-
-        case 2: {
-          _localctx = _tracker.createInstance<ExpressionContext>(parentContext, parentState);
-          pushNewRecursionContext(_localctx, startState, RuleExpression);
-          setState(53);
-
-          if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
-          setState(54);
-          match(NiloScriptParser::MINUS);
-          setState(55);
-          term(0);
-          break;
-        }
-
-        default:
-          break;
-        } 
-      }
-      setState(60);
-      _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx)) {
+    case 1: {
+      setState(76);
+      term(0);
+      break;
     }
+
+    case 2: {
+      setState(77);
+      acessList();
+      break;
+    }
+
+    case 3: {
+      setState(78);
+      functionCall();
+      break;
+    }
+
+    default:
+      break;
+    }
+   
   }
   catch (RecognitionException &e) {
     _errHandler->reportError(this, e);
     _localctx->exception = std::current_exception();
     _errHandler->recover(this, _localctx->exception);
   }
+
   return _localctx;
 }
 
@@ -590,20 +696,24 @@ NiloScriptParser::TermContext::TermContext(ParserRuleContext *parent, size_t inv
   : ParserRuleContext(parent, invokingState) {
 }
 
-NiloScriptParser::PotContext* NiloScriptParser::TermContext::pot() {
-  return getRuleContext<NiloScriptParser::PotContext>(0);
+NiloScriptParser::FactContext* NiloScriptParser::TermContext::fact() {
+  return getRuleContext<NiloScriptParser::FactContext>(0);
 }
 
-NiloScriptParser::TermContext* NiloScriptParser::TermContext::term() {
-  return getRuleContext<NiloScriptParser::TermContext>(0);
+std::vector<NiloScriptParser::TermContext *> NiloScriptParser::TermContext::term() {
+  return getRuleContexts<NiloScriptParser::TermContext>();
 }
 
-tree::TerminalNode* NiloScriptParser::TermContext::MUL() {
-  return getToken(NiloScriptParser::MUL, 0);
+NiloScriptParser::TermContext* NiloScriptParser::TermContext::term(size_t i) {
+  return getRuleContext<NiloScriptParser::TermContext>(i);
 }
 
-tree::TerminalNode* NiloScriptParser::TermContext::DIV() {
-  return getToken(NiloScriptParser::DIV, 0);
+tree::TerminalNode* NiloScriptParser::TermContext::PLUS() {
+  return getToken(NiloScriptParser::PLUS, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::TermContext::MINUS() {
+  return getToken(NiloScriptParser::MINUS, 0);
 }
 
 
@@ -645,7 +755,7 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
   size_t startState = 8;
   enterRecursionRule(_localctx, 8, NiloScriptParser::RuleTerm, precedence);
 
-    
+    size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -657,53 +767,39 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(62);
-    pot();
+    setState(82);
+    fact(0);
     _ctx->stop = _input->LT(-1);
-    setState(72);
+    setState(89);
     _errHandler->sync(this);
-    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
       if (alt == 1) {
         if (!_parseListeners.empty())
           triggerExitRuleEvent();
         previousContext = _localctx;
-        setState(70);
-        _errHandler->sync(this);
-        switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx)) {
-        case 1: {
-          _localctx = _tracker.createInstance<TermContext>(parentContext, parentState);
-          pushNewRecursionContext(_localctx, startState, RuleTerm);
-          setState(64);
+        _localctx = _tracker.createInstance<TermContext>(parentContext, parentState);
+        pushNewRecursionContext(_localctx, startState, RuleTerm);
+        setState(84);
 
-          if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
-          setState(65);
-          match(NiloScriptParser::MUL);
-          setState(66);
-          pot();
-          break;
+        if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
+        setState(85);
+        _la = _input->LA(1);
+        if (!(_la == NiloScriptParser::PLUS
+
+        || _la == NiloScriptParser::MINUS)) {
+        _errHandler->recoverInline(this);
         }
-
-        case 2: {
-          _localctx = _tracker.createInstance<TermContext>(parentContext, parentState);
-          pushNewRecursionContext(_localctx, startState, RuleTerm);
-          setState(67);
-
-          if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
-          setState(68);
-          match(NiloScriptParser::DIV);
-          setState(69);
-          pot();
-          break;
+        else {
+          _errHandler->reportMatch(this);
+          consume();
         }
-
-        default:
-          break;
-        } 
+        setState(86);
+        term(3); 
       }
-      setState(74);
+      setState(91);
       _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
     }
   }
   catch (RecognitionException &e) {
@@ -711,97 +807,6 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
     _localctx->exception = std::current_exception();
     _errHandler->recover(this, _localctx->exception);
   }
-  return _localctx;
-}
-
-//----------------- PotContext ------------------------------------------------------------------
-
-NiloScriptParser::PotContext::PotContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-NiloScriptParser::FactContext* NiloScriptParser::PotContext::fact() {
-  return getRuleContext<NiloScriptParser::FactContext>(0);
-}
-
-tree::TerminalNode* NiloScriptParser::PotContext::POW() {
-  return getToken(NiloScriptParser::POW, 0);
-}
-
-NiloScriptParser::PotContext* NiloScriptParser::PotContext::pot() {
-  return getRuleContext<NiloScriptParser::PotContext>(0);
-}
-
-
-size_t NiloScriptParser::PotContext::getRuleIndex() const {
-  return NiloScriptParser::RulePot;
-}
-
-void NiloScriptParser::PotContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterPot(this);
-}
-
-void NiloScriptParser::PotContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitPot(this);
-}
-
-
-std::any NiloScriptParser::PotContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
-    return parserVisitor->visitPot(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-NiloScriptParser::PotContext* NiloScriptParser::pot() {
-  PotContext *_localctx = _tracker.createInstance<PotContext>(_ctx, getState());
-  enterRule(_localctx, 10, NiloScriptParser::RulePot);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    setState(80);
-    _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 7, _ctx)) {
-    case 1: {
-      enterOuterAlt(_localctx, 1);
-      setState(75);
-      fact();
-
-      setState(76);
-      match(NiloScriptParser::POW);
-      setState(77);
-      pot();
-      break;
-    }
-
-    case 2: {
-      enterOuterAlt(_localctx, 2);
-      setState(79);
-      fact();
-      break;
-    }
-
-    default:
-      break;
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
   return _localctx;
 }
 
@@ -811,32 +816,28 @@ NiloScriptParser::FactContext::FactContext(ParserRuleContext *parent, size_t inv
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* NiloScriptParser::FactContext::OPAR() {
-  return getToken(NiloScriptParser::OPAR, 0);
+NiloScriptParser::ExpoContext* NiloScriptParser::FactContext::expo() {
+  return getRuleContext<NiloScriptParser::ExpoContext>(0);
 }
 
-NiloScriptParser::ExpressionContext* NiloScriptParser::FactContext::expression() {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(0);
+std::vector<NiloScriptParser::FactContext *> NiloScriptParser::FactContext::fact() {
+  return getRuleContexts<NiloScriptParser::FactContext>();
 }
 
-tree::TerminalNode* NiloScriptParser::FactContext::CPAR() {
-  return getToken(NiloScriptParser::CPAR, 0);
+NiloScriptParser::FactContext* NiloScriptParser::FactContext::fact(size_t i) {
+  return getRuleContext<NiloScriptParser::FactContext>(i);
 }
 
-tree::TerminalNode* NiloScriptParser::FactContext::INT() {
-  return getToken(NiloScriptParser::INT, 0);
+tree::TerminalNode* NiloScriptParser::FactContext::MUL() {
+  return getToken(NiloScriptParser::MUL, 0);
 }
 
-tree::TerminalNode* NiloScriptParser::FactContext::VAR() {
-  return getToken(NiloScriptParser::VAR, 0);
+tree::TerminalNode* NiloScriptParser::FactContext::DIV() {
+  return getToken(NiloScriptParser::DIV, 0);
 }
 
-tree::TerminalNode* NiloScriptParser::FactContext::STRING() {
-  return getToken(NiloScriptParser::STRING, 0);
-}
-
-tree::TerminalNode* NiloScriptParser::FactContext::COMMENT() {
-  return getToken(NiloScriptParser::COMMENT, 0);
+tree::TerminalNode* NiloScriptParser::FactContext::MOD() {
+  return getToken(NiloScriptParser::MOD, 0);
 }
 
 
@@ -864,9 +865,232 @@ std::any NiloScriptParser::FactContext::accept(tree::ParseTreeVisitor *visitor) 
     return visitor->visitChildren(this);
 }
 
+
 NiloScriptParser::FactContext* NiloScriptParser::fact() {
-  FactContext *_localctx = _tracker.createInstance<FactContext>(_ctx, getState());
-  enterRule(_localctx, 12, NiloScriptParser::RuleFact);
+   return fact(0);
+}
+
+NiloScriptParser::FactContext* NiloScriptParser::fact(int precedence) {
+  ParserRuleContext *parentContext = _ctx;
+  size_t parentState = getState();
+  NiloScriptParser::FactContext *_localctx = _tracker.createInstance<FactContext>(_ctx, parentState);
+  NiloScriptParser::FactContext *previousContext = _localctx;
+  (void)previousContext; // Silence compiler, in case the context is not used by generated code.
+  size_t startState = 10;
+  enterRecursionRule(_localctx, 10, NiloScriptParser::RuleFact, precedence);
+
+    size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    unrollRecursionContexts(parentContext);
+  });
+  try {
+    size_t alt;
+    enterOuterAlt(_localctx, 1);
+    setState(93);
+    expo(0);
+    _ctx->stop = _input->LT(-1);
+    setState(100);
+    _errHandler->sync(this);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
+    while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
+      if (alt == 1) {
+        if (!_parseListeners.empty())
+          triggerExitRuleEvent();
+        previousContext = _localctx;
+        _localctx = _tracker.createInstance<FactContext>(parentContext, parentState);
+        pushNewRecursionContext(_localctx, startState, RuleFact);
+        setState(95);
+
+        if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
+        setState(96);
+        _la = _input->LA(1);
+        if (!((((_la & ~ 0x3fULL) == 0) &&
+          ((1ULL << _la) & 7168) != 0))) {
+        _errHandler->recoverInline(this);
+        }
+        else {
+          _errHandler->reportMatch(this);
+          consume();
+        }
+        setState(97);
+        fact(3); 
+      }
+      setState(102);
+      _errHandler->sync(this);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
+    }
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+  return _localctx;
+}
+
+//----------------- ExpoContext ------------------------------------------------------------------
+
+NiloScriptParser::ExpoContext::ExpoContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+NiloScriptParser::OpParContext* NiloScriptParser::ExpoContext::opPar() {
+  return getRuleContext<NiloScriptParser::OpParContext>(0);
+}
+
+std::vector<NiloScriptParser::ExpoContext *> NiloScriptParser::ExpoContext::expo() {
+  return getRuleContexts<NiloScriptParser::ExpoContext>();
+}
+
+NiloScriptParser::ExpoContext* NiloScriptParser::ExpoContext::expo(size_t i) {
+  return getRuleContext<NiloScriptParser::ExpoContext>(i);
+}
+
+tree::TerminalNode* NiloScriptParser::ExpoContext::POW() {
+  return getToken(NiloScriptParser::POW, 0);
+}
+
+
+size_t NiloScriptParser::ExpoContext::getRuleIndex() const {
+  return NiloScriptParser::RuleExpo;
+}
+
+void NiloScriptParser::ExpoContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterExpo(this);
+}
+
+void NiloScriptParser::ExpoContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitExpo(this);
+}
+
+
+std::any NiloScriptParser::ExpoContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitExpo(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+
+NiloScriptParser::ExpoContext* NiloScriptParser::expo() {
+   return expo(0);
+}
+
+NiloScriptParser::ExpoContext* NiloScriptParser::expo(int precedence) {
+  ParserRuleContext *parentContext = _ctx;
+  size_t parentState = getState();
+  NiloScriptParser::ExpoContext *_localctx = _tracker.createInstance<ExpoContext>(_ctx, parentState);
+  NiloScriptParser::ExpoContext *previousContext = _localctx;
+  (void)previousContext; // Silence compiler, in case the context is not used by generated code.
+  size_t startState = 12;
+  enterRecursionRule(_localctx, 12, NiloScriptParser::RuleExpo, precedence);
+
+    
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    unrollRecursionContexts(parentContext);
+  });
+  try {
+    size_t alt;
+    enterOuterAlt(_localctx, 1);
+    setState(104);
+    opPar();
+    _ctx->stop = _input->LT(-1);
+    setState(111);
+    _errHandler->sync(this);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx);
+    while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
+      if (alt == 1) {
+        if (!_parseListeners.empty())
+          triggerExitRuleEvent();
+        previousContext = _localctx;
+        _localctx = _tracker.createInstance<ExpoContext>(parentContext, parentState);
+        pushNewRecursionContext(_localctx, startState, RuleExpo);
+        setState(106);
+
+        if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
+
+        setState(107);
+        match(NiloScriptParser::POW);
+        setState(108);
+        expo(0); 
+      }
+      setState(113);
+      _errHandler->sync(this);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx);
+    }
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+  return _localctx;
+}
+
+//----------------- OpParContext ------------------------------------------------------------------
+
+NiloScriptParser::OpParContext::OpParContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloScriptParser::OpParContext::OPAR() {
+  return getToken(NiloScriptParser::OPAR, 0);
+}
+
+NiloScriptParser::TermContext* NiloScriptParser::OpParContext::term() {
+  return getRuleContext<NiloScriptParser::TermContext>(0);
+}
+
+tree::TerminalNode* NiloScriptParser::OpParContext::CPAR() {
+  return getToken(NiloScriptParser::CPAR, 0);
+}
+
+NiloScriptParser::TypeSpecifierContext* NiloScriptParser::OpParContext::typeSpecifier() {
+  return getRuleContext<NiloScriptParser::TypeSpecifierContext>(0);
+}
+
+
+size_t NiloScriptParser::OpParContext::getRuleIndex() const {
+  return NiloScriptParser::RuleOpPar;
+}
+
+void NiloScriptParser::OpParContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterOpPar(this);
+}
+
+void NiloScriptParser::OpParContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitOpPar(this);
+}
+
+
+std::any NiloScriptParser::OpParContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitOpPar(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+NiloScriptParser::OpParContext* NiloScriptParser::opPar() {
+  OpParContext *_localctx = _tracker.createInstance<OpParContext>(_ctx, getState());
+  enterRule(_localctx, 14, NiloScriptParser::RuleOpPar);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -876,50 +1100,119 @@ NiloScriptParser::FactContext* NiloScriptParser::fact() {
     exitRule();
   });
   try {
-    setState(90);
+    setState(119);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case NiloScriptParser::OPAR: {
         enterOuterAlt(_localctx, 1);
-        setState(82);
+        setState(114);
         match(NiloScriptParser::OPAR);
-        setState(83);
-        expression(0);
-        setState(84);
+        setState(115);
+        term(0);
+        setState(116);
         match(NiloScriptParser::CPAR);
         break;
       }
 
-      case NiloScriptParser::INT: {
+      case NiloScriptParser::INT:
+      case NiloScriptParser::FLOAT:
+      case NiloScriptParser::VAR:
+      case NiloScriptParser::STRING:
+      case NiloScriptParser::BOOL: {
         enterOuterAlt(_localctx, 2);
-        setState(86);
-        match(NiloScriptParser::INT);
-        break;
-      }
-
-      case NiloScriptParser::VAR: {
-        enterOuterAlt(_localctx, 3);
-        setState(87);
-        match(NiloScriptParser::VAR);
-        break;
-      }
-
-      case NiloScriptParser::STRING: {
-        enterOuterAlt(_localctx, 4);
-        setState(88);
-        match(NiloScriptParser::STRING);
-        break;
-      }
-
-      case NiloScriptParser::COMMENT: {
-        enterOuterAlt(_localctx, 5);
-        setState(89);
-        match(NiloScriptParser::COMMENT);
+        setState(118);
+        typeSpecifier();
         break;
       }
 
     default:
       throw NoViableAltException(this);
+    }
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- TypeSpecifierContext ------------------------------------------------------------------
+
+NiloScriptParser::TypeSpecifierContext::TypeSpecifierContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloScriptParser::TypeSpecifierContext::INT() {
+  return getToken(NiloScriptParser::INT, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::TypeSpecifierContext::VAR() {
+  return getToken(NiloScriptParser::VAR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::TypeSpecifierContext::STRING() {
+  return getToken(NiloScriptParser::STRING, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::TypeSpecifierContext::BOOL() {
+  return getToken(NiloScriptParser::BOOL, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::TypeSpecifierContext::FLOAT() {
+  return getToken(NiloScriptParser::FLOAT, 0);
+}
+
+
+size_t NiloScriptParser::TypeSpecifierContext::getRuleIndex() const {
+  return NiloScriptParser::RuleTypeSpecifier;
+}
+
+void NiloScriptParser::TypeSpecifierContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterTypeSpecifier(this);
+}
+
+void NiloScriptParser::TypeSpecifierContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitTypeSpecifier(this);
+}
+
+
+std::any NiloScriptParser::TypeSpecifierContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitTypeSpecifier(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+NiloScriptParser::TypeSpecifierContext* NiloScriptParser::typeSpecifier() {
+  TypeSpecifierContext *_localctx = _tracker.createInstance<TypeSpecifierContext>(_ctx, getState());
+  enterRule(_localctx, 16, NiloScriptParser::RuleTypeSpecifier);
+  size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(121);
+    _la = _input->LA(1);
+    if (!((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 1015808) != 0))) {
+    _errHandler->recoverInline(this);
+    }
+    else {
+      _errHandler->reportMatch(this);
+      consume();
     }
    
   }
@@ -942,12 +1235,16 @@ tree::TerminalNode* NiloScriptParser::PrintContext::OPAR() {
   return getToken(NiloScriptParser::OPAR, 0);
 }
 
-NiloScriptParser::ExpressionContext* NiloScriptParser::PrintContext::expression() {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(0);
-}
-
 tree::TerminalNode* NiloScriptParser::PrintContext::CPAR() {
   return getToken(NiloScriptParser::CPAR, 0);
+}
+
+NiloScriptParser::TermContext* NiloScriptParser::PrintContext::term() {
+  return getRuleContext<NiloScriptParser::TermContext>(0);
+}
+
+NiloScriptParser::AcessListContext* NiloScriptParser::PrintContext::acessList() {
+  return getRuleContext<NiloScriptParser::AcessListContext>(0);
 }
 
 
@@ -977,7 +1274,7 @@ std::any NiloScriptParser::PrintContext::accept(tree::ParseTreeVisitor *visitor)
 
 NiloScriptParser::PrintContext* NiloScriptParser::print() {
   PrintContext *_localctx = _tracker.createInstance<PrintContext>(_ctx, getState());
-  enterRule(_localctx, 14, NiloScriptParser::RulePrint);
+  enterRule(_localctx, 18, NiloScriptParser::RulePrint);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -988,125 +1285,30 @@ NiloScriptParser::PrintContext* NiloScriptParser::print() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(92);
+    setState(123);
     match(NiloScriptParser::T__0);
-    setState(93);
+    setState(124);
     match(NiloScriptParser::OPAR);
-    setState(94);
-    expression(0);
-    setState(95);
-    match(NiloScriptParser::CPAR);
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- InCaseContext ------------------------------------------------------------------
-
-NiloScriptParser::InCaseContext::InCaseContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-tree::TerminalNode* NiloScriptParser::InCaseContext::OPAR() {
-  return getToken(NiloScriptParser::OPAR, 0);
-}
-
-std::vector<NiloScriptParser::ExpressionContext *> NiloScriptParser::InCaseContext::expression() {
-  return getRuleContexts<NiloScriptParser::ExpressionContext>();
-}
-
-NiloScriptParser::ExpressionContext* NiloScriptParser::InCaseContext::expression(size_t i) {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(i);
-}
-
-tree::TerminalNode* NiloScriptParser::InCaseContext::OPERATOR() {
-  return getToken(NiloScriptParser::OPERATOR, 0);
-}
-
-tree::TerminalNode* NiloScriptParser::InCaseContext::CPAR() {
-  return getToken(NiloScriptParser::CPAR, 0);
-}
-
-std::vector<NiloScriptParser::CodeContext *> NiloScriptParser::InCaseContext::code() {
-  return getRuleContexts<NiloScriptParser::CodeContext>();
-}
-
-NiloScriptParser::CodeContext* NiloScriptParser::InCaseContext::code(size_t i) {
-  return getRuleContext<NiloScriptParser::CodeContext>(i);
-}
-
-
-size_t NiloScriptParser::InCaseContext::getRuleIndex() const {
-  return NiloScriptParser::RuleInCase;
-}
-
-void NiloScriptParser::InCaseContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterInCase(this);
-}
-
-void NiloScriptParser::InCaseContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitInCase(this);
-}
-
-
-std::any NiloScriptParser::InCaseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
-    return parserVisitor->visitInCase(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
-  InCaseContext *_localctx = _tracker.createInstance<InCaseContext>(_ctx, getState());
-  enterRule(_localctx, 16, NiloScriptParser::RuleInCase);
-  size_t _la = 0;
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(97);
-    match(NiloScriptParser::T__1);
-    setState(98);
-    match(NiloScriptParser::OPAR);
-    setState(99);
-    expression(0);
-    setState(100);
-    match(NiloScriptParser::OPERATOR);
-    setState(101);
-    expression(0);
-    setState(102);
-    match(NiloScriptParser::CPAR);
-    setState(103);
-    match(NiloScriptParser::T__2);
-    setState(105); 
+    setState(127);
     _errHandler->sync(this);
-    _la = _input->LA(1);
-    do {
-      setState(104);
-      code();
-      setState(107); 
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-    } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 1246054) != 0));
-    setState(109);
-    match(NiloScriptParser::T__3);
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 8, _ctx)) {
+    case 1: {
+      setState(125);
+      term(0);
+      break;
+    }
+
+    case 2: {
+      setState(126);
+      acessList();
+      break;
+    }
+
+    default:
+      break;
+    }
+    setState(129);
+    match(NiloScriptParser::CPAR);
    
   }
   catch (RecognitionException &e) {
@@ -1124,16 +1326,12 @@ NiloScriptParser::InputContext::InputContext(ParserRuleContext *parent, size_t i
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* NiloScriptParser::InputContext::EQUAL() {
-  return getToken(NiloScriptParser::EQUAL, 0);
-}
-
-tree::TerminalNode* NiloScriptParser::InputContext::VAR() {
-  return getToken(NiloScriptParser::VAR, 0);
-}
-
 tree::TerminalNode* NiloScriptParser::InputContext::READ() {
   return getToken(NiloScriptParser::READ, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::InputContext::SC() {
+  return getToken(NiloScriptParser::SC, 0);
 }
 
 
@@ -1163,8 +1361,7 @@ std::any NiloScriptParser::InputContext::accept(tree::ParseTreeVisitor *visitor)
 
 NiloScriptParser::InputContext* NiloScriptParser::input() {
   InputContext *_localctx = _tracker.createInstance<InputContext>(_ctx, getState());
-  enterRule(_localctx, 18, NiloScriptParser::RuleInput);
-  size_t _la = 0;
+  enterRule(_localctx, 20, NiloScriptParser::RuleInput);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1175,23 +1372,197 @@ NiloScriptParser::InputContext* NiloScriptParser::input() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(112);
-    _errHandler->sync(this);
+    setState(131);
+    match(NiloScriptParser::READ);
+    setState(132);
+    match(NiloScriptParser::SC);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
 
-    _la = _input->LA(1);
-    if (_la == NiloScriptParser::VAR) {
-      setState(111);
-      match(NiloScriptParser::VAR);
+  return _localctx;
+}
+
+//----------------- InCaseContext ------------------------------------------------------------------
+
+NiloScriptParser::InCaseContext::InCaseContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::OPAR() {
+  return getToken(NiloScriptParser::OPAR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::CPAR() {
+  return getToken(NiloScriptParser::CPAR, 0);
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::InCaseContext::OBRA() {
+  return getTokens(NiloScriptParser::OBRA);
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::OBRA(size_t i) {
+  return getToken(NiloScriptParser::OBRA, i);
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::InCaseContext::CBRA() {
+  return getTokens(NiloScriptParser::CBRA);
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::CBRA(size_t i) {
+  return getToken(NiloScriptParser::CBRA, i);
+}
+
+std::vector<NiloScriptParser::TermContext *> NiloScriptParser::InCaseContext::term() {
+  return getRuleContexts<NiloScriptParser::TermContext>();
+}
+
+NiloScriptParser::TermContext* NiloScriptParser::InCaseContext::term(size_t i) {
+  return getRuleContext<NiloScriptParser::TermContext>(i);
+}
+
+tree::TerminalNode* NiloScriptParser::InCaseContext::OPERATOR() {
+  return getToken(NiloScriptParser::OPERATOR, 0);
+}
+
+std::vector<NiloScriptParser::StmtContext *> NiloScriptParser::InCaseContext::stmt() {
+  return getRuleContexts<NiloScriptParser::StmtContext>();
+}
+
+NiloScriptParser::StmtContext* NiloScriptParser::InCaseContext::stmt(size_t i) {
+  return getRuleContext<NiloScriptParser::StmtContext>(i);
+}
+
+
+size_t NiloScriptParser::InCaseContext::getRuleIndex() const {
+  return NiloScriptParser::RuleInCase;
+}
+
+void NiloScriptParser::InCaseContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterInCase(this);
+}
+
+void NiloScriptParser::InCaseContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitInCase(this);
+}
+
+
+std::any NiloScriptParser::InCaseContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitInCase(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
+  InCaseContext *_localctx = _tracker.createInstance<InCaseContext>(_ctx, getState());
+  enterRule(_localctx, 22, NiloScriptParser::RuleInCase);
+  size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    setState(172);
+    _errHandler->sync(this);
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 12, _ctx)) {
+    case 1: {
+      enterOuterAlt(_localctx, 1);
+      setState(134);
+      match(NiloScriptParser::T__1);
+      setState(135);
+      match(NiloScriptParser::OPAR);
+
+      setState(136);
+      term(0);
+      setState(137);
+      match(NiloScriptParser::OPERATOR);
+      setState(138);
+      term(0);
+      setState(140);
+      match(NiloScriptParser::CPAR);
+      setState(141);
+      match(NiloScriptParser::OBRA);
+      setState(143); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+      do {
+        setState(142);
+        stmt();
+        setState(145); 
+        _errHandler->sync(this);
+        _la = _input->LA(1);
+      } while ((((_la & ~ 0x3fULL) == 0) &&
+        ((1ULL << _la) & 3221356598) != 0));
+      setState(147);
+      match(NiloScriptParser::CBRA);
+      break;
     }
-    setState(114);
-    match(NiloScriptParser::EQUAL);
-    setState(116);
-    _errHandler->sync(this);
 
-    _la = _input->LA(1);
-    if (_la == NiloScriptParser::READ) {
-      setState(115);
-      match(NiloScriptParser::READ);
+    case 2: {
+      enterOuterAlt(_localctx, 2);
+      setState(149);
+      match(NiloScriptParser::T__1);
+      setState(150);
+      match(NiloScriptParser::OPAR);
+
+      setState(151);
+      term(0);
+      setState(152);
+      match(NiloScriptParser::OPERATOR);
+      setState(153);
+      term(0);
+      setState(155);
+      match(NiloScriptParser::CPAR);
+      setState(156);
+      match(NiloScriptParser::OBRA);
+      setState(158); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+      do {
+        setState(157);
+        stmt();
+        setState(160); 
+        _errHandler->sync(this);
+        _la = _input->LA(1);
+      } while ((((_la & ~ 0x3fULL) == 0) &&
+        ((1ULL << _la) & 3221356598) != 0));
+      setState(162);
+      match(NiloScriptParser::CBRA);
+      setState(163);
+      match(NiloScriptParser::T__2);
+      setState(164);
+      match(NiloScriptParser::OBRA);
+      setState(166); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+      do {
+        setState(165);
+        stmt();
+        setState(168); 
+        _errHandler->sync(this);
+        _la = _input->LA(1);
+      } while ((((_la & ~ 0x3fULL) == 0) &&
+        ((1ULL << _la) & 3221356598) != 0));
+      setState(170);
+      match(NiloScriptParser::CBRA);
+      break;
+    }
+
+    default:
+      break;
     }
    
   }
@@ -1214,28 +1585,36 @@ tree::TerminalNode* NiloScriptParser::LoopContext::OPAR() {
   return getToken(NiloScriptParser::OPAR, 0);
 }
 
-std::vector<NiloScriptParser::ExpressionContext *> NiloScriptParser::LoopContext::expression() {
-  return getRuleContexts<NiloScriptParser::ExpressionContext>();
+tree::TerminalNode* NiloScriptParser::LoopContext::CPAR() {
+  return getToken(NiloScriptParser::CPAR, 0);
 }
 
-NiloScriptParser::ExpressionContext* NiloScriptParser::LoopContext::expression(size_t i) {
-  return getRuleContext<NiloScriptParser::ExpressionContext>(i);
+tree::TerminalNode* NiloScriptParser::LoopContext::OBRA() {
+  return getToken(NiloScriptParser::OBRA, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::LoopContext::CBRA() {
+  return getToken(NiloScriptParser::CBRA, 0);
+}
+
+std::vector<NiloScriptParser::TermContext *> NiloScriptParser::LoopContext::term() {
+  return getRuleContexts<NiloScriptParser::TermContext>();
+}
+
+NiloScriptParser::TermContext* NiloScriptParser::LoopContext::term(size_t i) {
+  return getRuleContext<NiloScriptParser::TermContext>(i);
 }
 
 tree::TerminalNode* NiloScriptParser::LoopContext::OPERATOR() {
   return getToken(NiloScriptParser::OPERATOR, 0);
 }
 
-tree::TerminalNode* NiloScriptParser::LoopContext::CPAR() {
-  return getToken(NiloScriptParser::CPAR, 0);
+std::vector<NiloScriptParser::StmtContext *> NiloScriptParser::LoopContext::stmt() {
+  return getRuleContexts<NiloScriptParser::StmtContext>();
 }
 
-std::vector<NiloScriptParser::CodeContext *> NiloScriptParser::LoopContext::code() {
-  return getRuleContexts<NiloScriptParser::CodeContext>();
-}
-
-NiloScriptParser::CodeContext* NiloScriptParser::LoopContext::code(size_t i) {
-  return getRuleContext<NiloScriptParser::CodeContext>(i);
+NiloScriptParser::StmtContext* NiloScriptParser::LoopContext::stmt(size_t i) {
+  return getRuleContext<NiloScriptParser::StmtContext>(i);
 }
 
 
@@ -1265,7 +1644,7 @@ std::any NiloScriptParser::LoopContext::accept(tree::ParseTreeVisitor *visitor) 
 
 NiloScriptParser::LoopContext* NiloScriptParser::loop() {
   LoopContext *_localctx = _tracker.createInstance<LoopContext>(_ctx, getState());
-  enterRule(_localctx, 20, NiloScriptParser::RuleLoop);
+  enterRule(_localctx, 24, NiloScriptParser::RuleLoop);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1277,33 +1656,534 @@ NiloScriptParser::LoopContext* NiloScriptParser::loop() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(118);
-    match(NiloScriptParser::T__4);
-    setState(119);
+    setState(174);
+    match(NiloScriptParser::T__3);
+    setState(175);
     match(NiloScriptParser::OPAR);
-    setState(120);
-    expression(0);
-    setState(121);
+
+    setState(176);
+    term(0);
+    setState(177);
     match(NiloScriptParser::OPERATOR);
-    setState(122);
-    expression(0);
-    setState(123);
+    setState(178);
+    term(0);
+    setState(180);
     match(NiloScriptParser::CPAR);
-    setState(124);
-    match(NiloScriptParser::T__2);
-    setState(126); 
+    setState(181);
+    match(NiloScriptParser::OBRA);
+    setState(183); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(125);
-      code();
-      setState(128); 
+      setState(182);
+      stmt();
+      setState(185); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 1246054) != 0));
-    setState(130);
-    match(NiloScriptParser::T__3);
+      ((1ULL << _la) & 3221356598) != 0));
+    setState(187);
+    match(NiloScriptParser::CBRA);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- FunctionContext ------------------------------------------------------------------
+
+NiloScriptParser::FunctionContext::FunctionContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::FunctionContext::VAR() {
+  return getTokens(NiloScriptParser::VAR);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::VAR(size_t i) {
+  return getToken(NiloScriptParser::VAR, i);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::OPAR() {
+  return getToken(NiloScriptParser::OPAR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::CPAR() {
+  return getToken(NiloScriptParser::CPAR, 0);
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::FunctionContext::RETURN_TYPE() {
+  return getTokens(NiloScriptParser::RETURN_TYPE);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::RETURN_TYPE(size_t i) {
+  return getToken(NiloScriptParser::RETURN_TYPE, i);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::OBRA() {
+  return getToken(NiloScriptParser::OBRA, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::SC() {
+  return getToken(NiloScriptParser::SC, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::CBRA() {
+  return getToken(NiloScriptParser::CBRA, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionContext::TYPE() {
+  return getToken(NiloScriptParser::TYPE, 0);
+}
+
+std::vector<NiloScriptParser::StmtContext *> NiloScriptParser::FunctionContext::stmt() {
+  return getRuleContexts<NiloScriptParser::StmtContext>();
+}
+
+NiloScriptParser::StmtContext* NiloScriptParser::FunctionContext::stmt(size_t i) {
+  return getRuleContext<NiloScriptParser::StmtContext>(i);
+}
+
+
+size_t NiloScriptParser::FunctionContext::getRuleIndex() const {
+  return NiloScriptParser::RuleFunction;
+}
+
+void NiloScriptParser::FunctionContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterFunction(this);
+}
+
+void NiloScriptParser::FunctionContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitFunction(this);
+}
+
+
+std::any NiloScriptParser::FunctionContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitFunction(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+NiloScriptParser::FunctionContext* NiloScriptParser::function() {
+  FunctionContext *_localctx = _tracker.createInstance<FunctionContext>(_ctx, getState());
+  enterRule(_localctx, 26, NiloScriptParser::RuleFunction);
+  size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(189);
+    match(NiloScriptParser::T__4);
+    setState(190);
+    match(NiloScriptParser::VAR);
+    setState(191);
+    match(NiloScriptParser::OPAR);
+    setState(194);
+    _errHandler->sync(this);
+
+    _la = _input->LA(1);
+    if (_la == NiloScriptParser::VAR) {
+      setState(192);
+      match(NiloScriptParser::VAR);
+      setState(193);
+      match(NiloScriptParser::RETURN_TYPE);
+    }
+    setState(201);
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    while (_la == NiloScriptParser::T__5) {
+      setState(196);
+      match(NiloScriptParser::T__5);
+      setState(197);
+      match(NiloScriptParser::VAR);
+      setState(198);
+      match(NiloScriptParser::RETURN_TYPE);
+      setState(203);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    }
+    setState(204);
+    match(NiloScriptParser::CPAR);
+    setState(205);
+    match(NiloScriptParser::RETURN_TYPE);
+    setState(206);
+    match(NiloScriptParser::OBRA);
+    setState(208); 
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    do {
+      setState(207);
+      stmt();
+      setState(210); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    } while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 3221356598) != 0));
+    setState(212);
+    match(NiloScriptParser::T__6);
+    setState(213);
+    _la = _input->LA(1);
+    if (!(_la == NiloScriptParser::VAR
+
+    || _la == NiloScriptParser::TYPE)) {
+    _errHandler->recoverInline(this);
+    }
+    else {
+      _errHandler->reportMatch(this);
+      consume();
+    }
+    setState(214);
+    match(NiloScriptParser::SC);
+    setState(215);
+    match(NiloScriptParser::CBRA);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- FunctionCallContext ------------------------------------------------------------------
+
+NiloScriptParser::FunctionCallContext::FunctionCallContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::FunctionCallContext::VAR() {
+  return getTokens(NiloScriptParser::VAR);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionCallContext::VAR(size_t i) {
+  return getToken(NiloScriptParser::VAR, i);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionCallContext::OPAR() {
+  return getToken(NiloScriptParser::OPAR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::FunctionCallContext::CPAR() {
+  return getToken(NiloScriptParser::CPAR, 0);
+}
+
+
+size_t NiloScriptParser::FunctionCallContext::getRuleIndex() const {
+  return NiloScriptParser::RuleFunctionCall;
+}
+
+void NiloScriptParser::FunctionCallContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterFunctionCall(this);
+}
+
+void NiloScriptParser::FunctionCallContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitFunctionCall(this);
+}
+
+
+std::any NiloScriptParser::FunctionCallContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitFunctionCall(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+NiloScriptParser::FunctionCallContext* NiloScriptParser::functionCall() {
+  FunctionCallContext *_localctx = _tracker.createInstance<FunctionCallContext>(_ctx, getState());
+  enterRule(_localctx, 28, NiloScriptParser::RuleFunctionCall);
+  size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(217);
+    match(NiloScriptParser::VAR);
+    setState(218);
+    match(NiloScriptParser::OPAR);
+    setState(220);
+    _errHandler->sync(this);
+
+    _la = _input->LA(1);
+    if (_la == NiloScriptParser::VAR) {
+      setState(219);
+      match(NiloScriptParser::VAR);
+    }
+    setState(226);
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    while (_la == NiloScriptParser::T__5) {
+      setState(222);
+      match(NiloScriptParser::T__5);
+      setState(223);
+      match(NiloScriptParser::VAR);
+      setState(228);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    }
+    setState(229);
+    match(NiloScriptParser::CPAR);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- ListContext ------------------------------------------------------------------
+
+NiloScriptParser::ListContext::ListContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::VAR() {
+  return getToken(NiloScriptParser::VAR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::RETURN_TYPE() {
+  return getToken(NiloScriptParser::RETURN_TYPE, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::EQUAL() {
+  return getToken(NiloScriptParser::EQUAL, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::OKEY() {
+  return getToken(NiloScriptParser::OKEY, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::CKEY() {
+  return getToken(NiloScriptParser::CKEY, 0);
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::ListContext::INT() {
+  return getTokens(NiloScriptParser::INT);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::INT(size_t i) {
+  return getToken(NiloScriptParser::INT, i);
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::ListContext::FLOAT() {
+  return getTokens(NiloScriptParser::FLOAT);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::FLOAT(size_t i) {
+  return getToken(NiloScriptParser::FLOAT, i);
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::ListContext::STRING() {
+  return getTokens(NiloScriptParser::STRING);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::STRING(size_t i) {
+  return getToken(NiloScriptParser::STRING, i);
+}
+
+std::vector<tree::TerminalNode *> NiloScriptParser::ListContext::BOOL() {
+  return getTokens(NiloScriptParser::BOOL);
+}
+
+tree::TerminalNode* NiloScriptParser::ListContext::BOOL(size_t i) {
+  return getToken(NiloScriptParser::BOOL, i);
+}
+
+
+size_t NiloScriptParser::ListContext::getRuleIndex() const {
+  return NiloScriptParser::RuleList;
+}
+
+void NiloScriptParser::ListContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterList(this);
+}
+
+void NiloScriptParser::ListContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitList(this);
+}
+
+
+std::any NiloScriptParser::ListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+NiloScriptParser::ListContext* NiloScriptParser::list() {
+  ListContext *_localctx = _tracker.createInstance<ListContext>(_ctx, getState());
+  enterRule(_localctx, 30, NiloScriptParser::RuleList);
+  size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(231);
+    match(NiloScriptParser::VAR);
+    setState(232);
+    match(NiloScriptParser::RETURN_TYPE);
+    setState(233);
+    match(NiloScriptParser::EQUAL);
+    setState(234);
+    match(NiloScriptParser::OKEY);
+    setState(236);
+    _errHandler->sync(this);
+
+    _la = _input->LA(1);
+    if ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 884736) != 0)) {
+      setState(235);
+      _la = _input->LA(1);
+      if (!((((_la & ~ 0x3fULL) == 0) &&
+        ((1ULL << _la) & 884736) != 0))) {
+      _errHandler->recoverInline(this);
+      }
+      else {
+        _errHandler->reportMatch(this);
+        consume();
+      }
+    }
+    setState(242);
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    while (_la == NiloScriptParser::T__5) {
+      setState(238);
+      match(NiloScriptParser::T__5);
+      setState(239);
+      _la = _input->LA(1);
+      if (!((((_la & ~ 0x3fULL) == 0) &&
+        ((1ULL << _la) & 884736) != 0))) {
+      _errHandler->recoverInline(this);
+      }
+      else {
+        _errHandler->reportMatch(this);
+        consume();
+      }
+      setState(244);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    }
+    setState(245);
+    match(NiloScriptParser::CKEY);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- AcessListContext ------------------------------------------------------------------
+
+NiloScriptParser::AcessListContext::AcessListContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloScriptParser::AcessListContext::VAR() {
+  return getToken(NiloScriptParser::VAR, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::AcessListContext::OKEY() {
+  return getToken(NiloScriptParser::OKEY, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::AcessListContext::INT() {
+  return getToken(NiloScriptParser::INT, 0);
+}
+
+tree::TerminalNode* NiloScriptParser::AcessListContext::CKEY() {
+  return getToken(NiloScriptParser::CKEY, 0);
+}
+
+
+size_t NiloScriptParser::AcessListContext::getRuleIndex() const {
+  return NiloScriptParser::RuleAcessList;
+}
+
+void NiloScriptParser::AcessListContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterAcessList(this);
+}
+
+void NiloScriptParser::AcessListContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<NiloScriptListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitAcessList(this);
+}
+
+
+std::any NiloScriptParser::AcessListContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<NiloScriptVisitor*>(visitor))
+    return parserVisitor->visitAcessList(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+NiloScriptParser::AcessListContext* NiloScriptParser::acessList() {
+  AcessListContext *_localctx = _tracker.createInstance<AcessListContext>(_ctx, getState());
+  enterRule(_localctx, 32, NiloScriptParser::RuleAcessList);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(247);
+    match(NiloScriptParser::VAR);
+    setState(248);
+    match(NiloScriptParser::OKEY);
+    setState(249);
+    match(NiloScriptParser::INT);
+    setState(250);
+    match(NiloScriptParser::CKEY);
    
   }
   catch (RecognitionException &e) {
@@ -1317,19 +2197,9 @@ NiloScriptParser::LoopContext* NiloScriptParser::loop() {
 
 bool NiloScriptParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
   switch (ruleIndex) {
-    case 3: return expressionSempred(antlrcpp::downCast<ExpressionContext *>(context), predicateIndex);
     case 4: return termSempred(antlrcpp::downCast<TermContext *>(context), predicateIndex);
-
-  default:
-    break;
-  }
-  return true;
-}
-
-bool NiloScriptParser::expressionSempred(ExpressionContext *_localctx, size_t predicateIndex) {
-  switch (predicateIndex) {
-    case 0: return precpred(_ctx, 3);
-    case 1: return precpred(_ctx, 2);
+    case 5: return factSempred(antlrcpp::downCast<FactContext *>(context), predicateIndex);
+    case 6: return expoSempred(antlrcpp::downCast<ExpoContext *>(context), predicateIndex);
 
   default:
     break;
@@ -1339,8 +2209,27 @@ bool NiloScriptParser::expressionSempred(ExpressionContext *_localctx, size_t pr
 
 bool NiloScriptParser::termSempred(TermContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
-    case 2: return precpred(_ctx, 3);
-    case 3: return precpred(_ctx, 2);
+    case 0: return precpred(_ctx, 2);
+
+  default:
+    break;
+  }
+  return true;
+}
+
+bool NiloScriptParser::factSempred(FactContext *_localctx, size_t predicateIndex) {
+  switch (predicateIndex) {
+    case 1: return precpred(_ctx, 2);
+
+  default:
+    break;
+  }
+  return true;
+}
+
+bool NiloScriptParser::expoSempred(ExpoContext *_localctx, size_t predicateIndex) {
+  switch (predicateIndex) {
+    case 2: return precpred(_ctx, 2);
 
   default:
     break;
