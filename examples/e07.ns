@@ -1,2 +1,12 @@
-pot = 6**5
-print(pot)
+x_y :inteiro = 5;
+mostrar("test before!!!!!!!!!!");
+caso (x_y != 5){
+    mostrar("test"); 
+
+    
+    mostrar("is distinct!!!!!!!!!!"); 
+}
+senão {
+    mostrar("is equal!!!!!!!!!!") ;
+}
+:) RESPONSE : is equal!!!!!!!!!!
