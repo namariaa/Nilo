@@ -47,13 +47,13 @@ assignment : VAR RETURN_TYPE EQUAL (term | input | acessList | functionCall);
 
 expression : VAR EQUAL (term | acessList | functionCall);
 
-term : term (PLUS | MINUS) term 
+term : fact (PLUS | MINUS) fact 
         | fact; 
 
-fact :  fact (MUL | DIV | MOD) fact 
+fact :  fact (MUL | DIV | MOD) expo 
         | expo;
 
-expo : expo (POW expo)
+expo : opPar (POW expo)
       | opPar;
 
 opPar : OPAR term CPAR

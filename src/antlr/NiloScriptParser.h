@@ -149,8 +149,7 @@ public:
     TermContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     FactContext *fact();
-    std::vector<TermContext *> term();
-    TermContext* term(size_t i);
+    TermContext *term();
     antlr4::tree::TerminalNode *PLUS();
     antlr4::tree::TerminalNode *MINUS();
 
@@ -168,8 +167,7 @@ public:
     FactContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ExpoContext *expo();
-    std::vector<FactContext *> fact();
-    FactContext* fact(size_t i);
+    FactContext *fact();
     antlr4::tree::TerminalNode *MUL();
     antlr4::tree::TerminalNode *DIV();
     antlr4::tree::TerminalNode *MOD();
@@ -188,9 +186,8 @@ public:
     ExpoContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     OpParContext *opPar();
-    std::vector<ExpoContext *> expo();
-    ExpoContext* expo(size_t i);
     antlr4::tree::TerminalNode *POW();
+    ExpoContext *expo();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -200,7 +197,7 @@ public:
   };
 
   ExpoContext* expo();
-  ExpoContext* expo(int precedence);
+
   class  OpParContext : public antlr4::ParserRuleContext {
   public:
     OpParContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -414,7 +411,6 @@ public:
 
   bool termSempred(TermContext *_localctx, size_t predicateIndex);
   bool factSempred(FactContext *_localctx, size_t predicateIndex);
-  bool expoSempred(ExpoContext *_localctx, size_t predicateIndex);
 
   // By default the static state used to implement the parser is lazily initialized during the first
   // call to the constructor. You can call this function if you wish to initialize the static state

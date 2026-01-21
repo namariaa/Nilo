@@ -1,3 +1,3 @@
 primeiro_teste :inteiro = 2 + 5 - 7;
-print(primeiro_teste) ;
+mostrar(primeiro_teste) ;
 :) RESPONSE : 0
