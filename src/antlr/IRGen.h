@@ -19,11 +19,16 @@ unique_ptr<llvm::LLVMContext> Conteiner;
 unique_ptr<llvm::Module> Executable;
 unique_ptr<llvm::IRBuilder<llvm::NoFolder>> Builder;
 map<string,llvm::AllocaInst*> SymbolTable;
+string lastVar;
+
 
 class IRGen : public NiloScriptVisitor{
     private:
         llvm::Function *MainFunction;
         llvm::BasicBlock *CurrentBasicBlock;
+        llvm::Value* dPrint;
+        llvm::Value* fPrint;
+        llvm::Value* cPrint;
 
     public:
         IRGen(NiloScriptParser::ProgramContext* tree){
@@ -41,7 +46,20 @@ class IRGen : public NiloScriptVisitor{
             MainFunction = llvm::Function::Create(MAINTYPE, llvm::Function::ExternalLinkage, "main", Executable.get());
             CurrentBasicBlock = llvm::BasicBlock::Create(*Conteiner, "entrada", MainFunction);
             Builder->SetInsertPoint(CurrentBasicBlock);
+
+            //Cria Função Print
+            llvm::FunctionCallee Print = Executable->getOrInsertFunction("printf",
+            llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
             
+            //Cria Função Input
+            llvm::FunctionCallee Input = Executable->getOrInsertFunction("scanf",
+            llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
+
+            // Tipos do print para reutilizar e não criar de novo
+            dPrint = Builder->CreateGlobalStringPtr("%d", "dPrint");
+            fPrint = Builder->CreateGlobalStringPtr("%f", "fPrint");
+            cPrint = Builder->CreateGlobalStringPtr("%c", "cPrint");
+
             //Inicia visitação da árvore para gerar executável 
             visitProgram(tree);
             
@@ -73,9 +91,6 @@ class IRGen : public NiloScriptVisitor{
             cout << "RESULT OD PRGRAM " << x.type().name() << endl;
             return x;
         }
-        else if (context->input() != nullptr){
-            return visitInput(context->input());
-        }
         else if (context->loop() != nullptr){
             return visitLoop(context->loop());
         }
@@ -105,6 +120,7 @@ class IRGen : public NiloScriptVisitor{
 
     virtual std::any visitAssignment(NiloScriptParser::AssignmentContext *context) override {
         string var = context->VAR()->getText();
+        lastVar = var;
         llvm::Value *value;
         if (context->term() != nullptr) value = any_cast<llvm::Value *>(visitTerm(context->term()));
         else if (context->input() != nullptr) value = any_cast<llvm::Value *>(visitInput(context->input()));
@@ -127,7 +143,7 @@ class IRGen : public NiloScriptVisitor{
             alloca = Builder->CreateAlloca(llvm::Type::getFloatTy(*Conteiner),nullptr,var);
         }
         else if (context->RETURN_TYPE()->getText() == ":caracter"){
-            alloca = Builder->CreateAlloca(llvm::Type::getLabelTy(*Conteiner),nullptr,var);
+            alloca = Builder->CreateAlloca(llvm::Type::getInt8Ty(*Conteiner),nullptr,var);
         }
         else if (context->RETURN_TYPE()->getText() == ":bool"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,var);
@@ -137,7 +153,8 @@ class IRGen : public NiloScriptVisitor{
             exit(1);
         }
 
-        cout << "RETURN " << alloca->getType() << endl;
+        //Guardando na tabela para ser útil em momentos como input
+        SymbolTable[var] = alloca;
 
         //Armazenar variável no espaço que alocamos
         return Builder->CreateStore(value,alloca);
@@ -269,7 +286,7 @@ class IRGen : public NiloScriptVisitor{
                 return llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
             }
             else if (context->BOOL()->getText() == "falso"){
-                return llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
+                return llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
             }
             else{
                 cerr << "Error. Não foi possível reconhecer o booleano!" << endl;
@@ -286,7 +303,6 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitPrint(NiloScriptParser::PrintContext *context) override {
-        cout << "PRINT " << context->getText() << endl;
         llvm::Value* value;
         if (context->term()){
            value = any_cast<llvm::Value*>(visitTerm(context->term()));
@@ -295,14 +311,29 @@ class IRGen : public NiloScriptVisitor{
             value = any_cast<llvm::Value*>(visitAcessList(context->acessList()));
         }
         if (value){
-            llvm::FunctionCallee Print = Executable->getOrInsertFunction("print",
-            llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
-        
-            //Cria chamada de função
-            llvm::SmallVector<llvm::Value*, 1> Args;
-            Args.push_back(value);
-            Builder->CreateCall(Print, Args, "print");
-            return value;
+            // Pegando a função que criei lá no construtor 
+            llvm::Function* printf =Executable->getFunction("printf");
+
+            // Criando os % necessários do C para entender o tipo (formatted output)
+            llvm::Value* typePrint;
+
+            if (context->RETURN_TYPE()->getText() == ":inteiro"){
+                typePrint = dPrint;
+            }
+            else if (context->RETURN_TYPE()->getText() == ":flutuante"){
+                typePrint = fPrint;
+            }
+            else if (context->RETURN_TYPE()->getText() == ":caracter"){
+                typePrint = Builder->CreateGlobalStringPtr("%c");
+            }
+            else if (context->RETURN_TYPE()->getText() == ":bool"){
+                typePrint = Builder->CreateGlobalStringPtr("%d");
+            }
+            else {
+                cerr << "Error. Tipo não reconhecido!" << endl;
+                exit(1);
+            }
+            return Builder->CreateCall(printf, { typePrint, value });
         }
         else{
             cerr << "Error. Você precisa colocar algo para mostrar" << endl;
@@ -312,9 +343,29 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitInput(NiloScriptParser::InputContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
-    };
+        // Pegando a função que criei lá no construtor 
+        llvm::Function *scanf =Executable->getFunction("scanf");
+
+        // Criando os % necessários do C para entender o tipo
+        llvm::Value *typeInput;
+
+        if (context->READ()->getText() == "pegaInteiro"){
+            typeInput = Builder->CreateGlobalStringPtr("%d");
+        }
+        else if (context->READ()->getText() == "pegaFlutuante"){
+            typeInput = Builder->CreateGlobalStringPtr("%f");
+        }
+        else if (context->READ()->getText() == "pegaCaracter"){
+            typeInput = Builder->CreateGlobalStringPtr("%d");
+        }
+        else {
+            cerr << "Error. Tipo não reconhecido!" << endl;
+            exit(1);
+        }
+    
+        return Builder->CreateCall(scanf, { typeInput, SymbolTable[lastVar] });
+    }
+      
 
     virtual std::any visitInCase(NiloScriptParser::InCaseContext *context) override {
         cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;

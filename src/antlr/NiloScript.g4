@@ -34,7 +34,6 @@ program : (stmt)+ EOF;
 
 stmt : print SC
        | assignment SC
-       | input SC
        | loop 
        | inCase
        | function
@@ -47,7 +46,7 @@ assignment : VAR RETURN_TYPE EQUAL (term | input | acessList | functionCall);
 
 expression : VAR EQUAL (term | acessList | functionCall);
 
-term : fact (PLUS | MINUS) fact 
+term : term (PLUS | MINUS) fact 
         | fact; 
 
 fact :  fact (MUL | DIV | MOD) expo 
@@ -66,7 +65,7 @@ typeSpecifier : INT
                 | FLOAT;
 
 // SYSCALL .-*+...-*+...-*+...-*+.. 
-print : 'mostrar' OPAR (term | acessList) CPAR;
+print : 'mostrar' RETURN_TYPE OPAR (term | acessList) CPAR;
 input : READ SC; 
 
 // CONDICIONAL .-*+...-*+...-*+...-*+.. 

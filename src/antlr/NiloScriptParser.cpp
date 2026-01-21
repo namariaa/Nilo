@@ -71,87 +71,86 @@ void niloscriptParserInitialize() {
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,35,249,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	4,1,35,247,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
   	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
   	14,2,15,7,15,2,16,7,16,1,0,4,0,36,8,0,11,0,12,0,37,1,0,1,0,1,1,1,1,1,
-  	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-  	1,1,1,1,3,1,64,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,73,8,2,1,3,1,3,1,3,
-  	1,3,1,3,3,3,80,8,3,1,4,1,4,1,4,1,4,1,4,1,4,5,4,88,8,4,10,4,12,4,91,9,
-  	4,1,5,1,5,1,5,1,5,1,5,1,5,5,5,99,8,5,10,5,12,5,102,9,5,1,6,1,6,1,6,1,
-  	6,1,6,3,6,109,8,6,1,7,1,7,1,7,1,7,1,7,3,7,116,8,7,1,8,1,8,1,9,1,9,1,9,
-  	1,9,3,9,124,8,9,1,9,1,9,1,10,1,10,1,10,1,11,1,11,1,11,1,11,1,11,1,11,
-  	1,11,1,11,1,11,4,11,140,8,11,11,11,12,11,141,1,11,1,11,1,11,1,11,1,11,
-  	1,11,1,11,1,11,1,11,1,11,1,11,4,11,155,8,11,11,11,12,11,156,1,11,1,11,
-  	1,11,1,11,4,11,163,8,11,11,11,12,11,164,1,11,1,11,3,11,169,8,11,1,12,
-  	1,12,1,12,1,12,1,12,1,12,1,12,1,12,1,12,4,12,180,8,12,11,12,12,12,181,
-  	1,12,1,12,1,13,1,13,1,13,1,13,1,13,3,13,191,8,13,1,13,1,13,1,13,5,13,
-  	196,8,13,10,13,12,13,199,9,13,1,13,1,13,1,13,1,13,4,13,205,8,13,11,13,
-  	12,13,206,1,13,1,13,1,13,1,13,1,13,1,14,1,14,1,14,3,14,217,8,14,1,14,
-  	1,14,5,14,221,8,14,10,14,12,14,224,9,14,1,14,1,14,1,15,1,15,1,15,1,15,
-  	1,15,3,15,233,8,15,1,15,1,15,5,15,237,8,15,10,15,12,15,240,9,15,1,15,
-  	1,15,1,16,1,16,1,16,1,16,1,16,1,16,0,2,8,10,17,0,2,4,6,8,10,12,14,16,
-  	18,20,22,24,26,28,30,32,0,5,1,0,8,9,1,0,10,12,1,0,15,19,2,0,17,17,20,
-  	20,2,0,15,16,18,19,263,0,35,1,0,0,0,2,63,1,0,0,0,4,65,1,0,0,0,6,74,1,
-  	0,0,0,8,81,1,0,0,0,10,92,1,0,0,0,12,108,1,0,0,0,14,115,1,0,0,0,16,117,
-  	1,0,0,0,18,119,1,0,0,0,20,127,1,0,0,0,22,168,1,0,0,0,24,170,1,0,0,0,26,
-  	185,1,0,0,0,28,213,1,0,0,0,30,227,1,0,0,0,32,243,1,0,0,0,34,36,3,2,1,
-  	0,35,34,1,0,0,0,36,37,1,0,0,0,37,35,1,0,0,0,37,38,1,0,0,0,38,39,1,0,0,
-  	0,39,40,5,0,0,1,40,1,1,0,0,0,41,42,3,18,9,0,42,43,5,29,0,0,43,64,1,0,
-  	0,0,44,45,3,4,2,0,45,46,5,29,0,0,46,64,1,0,0,0,47,48,3,20,10,0,48,49,
-  	5,29,0,0,49,64,1,0,0,0,50,64,3,24,12,0,51,64,3,22,11,0,52,64,3,26,13,
-  	0,53,54,3,28,14,0,54,55,5,29,0,0,55,64,1,0,0,0,56,57,3,30,15,0,57,58,
-  	5,29,0,0,58,64,1,0,0,0,59,60,3,6,3,0,60,61,5,29,0,0,61,64,1,0,0,0,62,
-  	64,5,31,0,0,63,41,1,0,0,0,63,44,1,0,0,0,63,47,1,0,0,0,63,50,1,0,0,0,63,
-  	51,1,0,0,0,63,52,1,0,0,0,63,53,1,0,0,0,63,56,1,0,0,0,63,59,1,0,0,0,63,
-  	62,1,0,0,0,64,3,1,0,0,0,65,66,5,17,0,0,66,67,5,21,0,0,67,72,5,22,0,0,
-  	68,73,3,8,4,0,69,73,3,20,10,0,70,73,3,32,16,0,71,73,3,28,14,0,72,68,1,
-  	0,0,0,72,69,1,0,0,0,72,70,1,0,0,0,72,71,1,0,0,0,73,5,1,0,0,0,74,75,5,
-  	17,0,0,75,79,5,22,0,0,76,80,3,8,4,0,77,80,3,32,16,0,78,80,3,28,14,0,79,
-  	76,1,0,0,0,79,77,1,0,0,0,79,78,1,0,0,0,80,7,1,0,0,0,81,82,6,4,-1,0,82,
-  	83,3,10,5,0,83,89,1,0,0,0,84,85,10,2,0,0,85,86,7,0,0,0,86,88,3,10,5,0,
-  	87,84,1,0,0,0,88,91,1,0,0,0,89,87,1,0,0,0,89,90,1,0,0,0,90,9,1,0,0,0,
-  	91,89,1,0,0,0,92,93,6,5,-1,0,93,94,3,12,6,0,94,100,1,0,0,0,95,96,10,2,
-  	0,0,96,97,7,1,0,0,97,99,3,12,6,0,98,95,1,0,0,0,99,102,1,0,0,0,100,98,
-  	1,0,0,0,100,101,1,0,0,0,101,11,1,0,0,0,102,100,1,0,0,0,103,104,3,14,7,
-  	0,104,105,5,13,0,0,105,106,3,12,6,0,106,109,1,0,0,0,107,109,3,14,7,0,
-  	108,103,1,0,0,0,108,107,1,0,0,0,109,13,1,0,0,0,110,111,5,23,0,0,111,112,
-  	3,8,4,0,112,113,5,24,0,0,113,116,1,0,0,0,114,116,3,16,8,0,115,110,1,0,
-  	0,0,115,114,1,0,0,0,116,15,1,0,0,0,117,118,7,2,0,0,118,17,1,0,0,0,119,
-  	120,5,1,0,0,120,123,5,23,0,0,121,124,3,8,4,0,122,124,3,32,16,0,123,121,
-  	1,0,0,0,123,122,1,0,0,0,124,125,1,0,0,0,125,126,5,24,0,0,126,19,1,0,0,
-  	0,127,128,5,30,0,0,128,129,5,29,0,0,129,21,1,0,0,0,130,131,5,2,0,0,131,
-  	132,5,23,0,0,132,133,3,8,4,0,133,134,5,14,0,0,134,135,3,8,4,0,135,136,
-  	1,0,0,0,136,137,5,24,0,0,137,139,5,25,0,0,138,140,3,2,1,0,139,138,1,0,
-  	0,0,140,141,1,0,0,0,141,139,1,0,0,0,141,142,1,0,0,0,142,143,1,0,0,0,143,
-  	144,5,26,0,0,144,169,1,0,0,0,145,146,5,2,0,0,146,147,5,23,0,0,147,148,
-  	3,8,4,0,148,149,5,14,0,0,149,150,3,8,4,0,150,151,1,0,0,0,151,152,5,24,
-  	0,0,152,154,5,25,0,0,153,155,3,2,1,0,154,153,1,0,0,0,155,156,1,0,0,0,
-  	156,154,1,0,0,0,156,157,1,0,0,0,157,158,1,0,0,0,158,159,5,26,0,0,159,
-  	160,5,3,0,0,160,162,5,25,0,0,161,163,3,2,1,0,162,161,1,0,0,0,163,164,
-  	1,0,0,0,164,162,1,0,0,0,164,165,1,0,0,0,165,166,1,0,0,0,166,167,5,26,
-  	0,0,167,169,1,0,0,0,168,130,1,0,0,0,168,145,1,0,0,0,169,23,1,0,0,0,170,
-  	171,5,4,0,0,171,172,5,23,0,0,172,173,3,8,4,0,173,174,5,14,0,0,174,175,
-  	3,8,4,0,175,176,1,0,0,0,176,177,5,24,0,0,177,179,5,25,0,0,178,180,3,2,
-  	1,0,179,178,1,0,0,0,180,181,1,0,0,0,181,179,1,0,0,0,181,182,1,0,0,0,182,
-  	183,1,0,0,0,183,184,5,26,0,0,184,25,1,0,0,0,185,186,5,5,0,0,186,187,5,
-  	17,0,0,187,190,5,23,0,0,188,189,5,17,0,0,189,191,5,21,0,0,190,188,1,0,
-  	0,0,190,191,1,0,0,0,191,197,1,0,0,0,192,193,5,6,0,0,193,194,5,17,0,0,
-  	194,196,5,21,0,0,195,192,1,0,0,0,196,199,1,0,0,0,197,195,1,0,0,0,197,
-  	198,1,0,0,0,198,200,1,0,0,0,199,197,1,0,0,0,200,201,5,24,0,0,201,202,
-  	5,21,0,0,202,204,5,25,0,0,203,205,3,2,1,0,204,203,1,0,0,0,205,206,1,0,
-  	0,0,206,204,1,0,0,0,206,207,1,0,0,0,207,208,1,0,0,0,208,209,5,7,0,0,209,
-  	210,7,3,0,0,210,211,5,29,0,0,211,212,5,26,0,0,212,27,1,0,0,0,213,214,
-  	5,17,0,0,214,216,5,23,0,0,215,217,5,17,0,0,216,215,1,0,0,0,216,217,1,
-  	0,0,0,217,222,1,0,0,0,218,219,5,6,0,0,219,221,5,17,0,0,220,218,1,0,0,
-  	0,221,224,1,0,0,0,222,220,1,0,0,0,222,223,1,0,0,0,223,225,1,0,0,0,224,
-  	222,1,0,0,0,225,226,5,24,0,0,226,29,1,0,0,0,227,228,5,17,0,0,228,229,
-  	5,21,0,0,229,230,5,22,0,0,230,232,5,27,0,0,231,233,7,4,0,0,232,231,1,
-  	0,0,0,232,233,1,0,0,0,233,238,1,0,0,0,234,235,5,6,0,0,235,237,7,4,0,0,
-  	236,234,1,0,0,0,237,240,1,0,0,0,238,236,1,0,0,0,238,239,1,0,0,0,239,241,
-  	1,0,0,0,240,238,1,0,0,0,241,242,5,28,0,0,242,31,1,0,0,0,243,244,5,17,
-  	0,0,244,245,5,27,0,0,245,246,5,15,0,0,246,247,5,28,0,0,247,33,1,0,0,0,
-  	21,37,63,72,79,89,100,108,115,123,141,156,164,168,181,190,197,206,216,
-  	222,232,238
+  	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,
+  	61,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,70,8,2,1,3,1,3,1,3,1,3,1,3,3,3,
+  	77,8,3,1,4,1,4,1,4,1,4,1,4,1,4,5,4,85,8,4,10,4,12,4,88,9,4,1,5,1,5,1,
+  	5,1,5,1,5,1,5,5,5,96,8,5,10,5,12,5,99,9,5,1,6,1,6,1,6,1,6,1,6,3,6,106,
+  	8,6,1,7,1,7,1,7,1,7,1,7,3,7,113,8,7,1,8,1,8,1,9,1,9,1,9,1,9,1,9,3,9,122,
+  	8,9,1,9,1,9,1,10,1,10,1,10,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,
+  	11,4,11,138,8,11,11,11,12,11,139,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,
+  	11,1,11,1,11,1,11,4,11,153,8,11,11,11,12,11,154,1,11,1,11,1,11,1,11,4,
+  	11,161,8,11,11,11,12,11,162,1,11,1,11,3,11,167,8,11,1,12,1,12,1,12,1,
+  	12,1,12,1,12,1,12,1,12,1,12,4,12,178,8,12,11,12,12,12,179,1,12,1,12,1,
+  	13,1,13,1,13,1,13,1,13,3,13,189,8,13,1,13,1,13,1,13,5,13,194,8,13,10,
+  	13,12,13,197,9,13,1,13,1,13,1,13,1,13,4,13,203,8,13,11,13,12,13,204,1,
+  	13,1,13,1,13,1,13,1,13,1,14,1,14,1,14,3,14,215,8,14,1,14,1,14,5,14,219,
+  	8,14,10,14,12,14,222,9,14,1,14,1,14,1,15,1,15,1,15,1,15,1,15,3,15,231,
+  	8,15,1,15,1,15,5,15,235,8,15,10,15,12,15,238,9,15,1,15,1,15,1,16,1,16,
+  	1,16,1,16,1,16,1,16,0,2,8,10,17,0,2,4,6,8,10,12,14,16,18,20,22,24,26,
+  	28,30,32,0,5,1,0,8,9,1,0,10,12,1,0,15,19,2,0,17,17,20,20,2,0,15,16,18,
+  	19,260,0,35,1,0,0,0,2,60,1,0,0,0,4,62,1,0,0,0,6,71,1,0,0,0,8,78,1,0,0,
+  	0,10,89,1,0,0,0,12,105,1,0,0,0,14,112,1,0,0,0,16,114,1,0,0,0,18,116,1,
+  	0,0,0,20,125,1,0,0,0,22,166,1,0,0,0,24,168,1,0,0,0,26,183,1,0,0,0,28,
+  	211,1,0,0,0,30,225,1,0,0,0,32,241,1,0,0,0,34,36,3,2,1,0,35,34,1,0,0,0,
+  	36,37,1,0,0,0,37,35,1,0,0,0,37,38,1,0,0,0,38,39,1,0,0,0,39,40,5,0,0,1,
+  	40,1,1,0,0,0,41,42,3,18,9,0,42,43,5,29,0,0,43,61,1,0,0,0,44,45,3,4,2,
+  	0,45,46,5,29,0,0,46,61,1,0,0,0,47,61,3,24,12,0,48,61,3,22,11,0,49,61,
+  	3,26,13,0,50,51,3,28,14,0,51,52,5,29,0,0,52,61,1,0,0,0,53,54,3,30,15,
+  	0,54,55,5,29,0,0,55,61,1,0,0,0,56,57,3,6,3,0,57,58,5,29,0,0,58,61,1,0,
+  	0,0,59,61,5,31,0,0,60,41,1,0,0,0,60,44,1,0,0,0,60,47,1,0,0,0,60,48,1,
+  	0,0,0,60,49,1,0,0,0,60,50,1,0,0,0,60,53,1,0,0,0,60,56,1,0,0,0,60,59,1,
+  	0,0,0,61,3,1,0,0,0,62,63,5,17,0,0,63,64,5,21,0,0,64,69,5,22,0,0,65,70,
+  	3,8,4,0,66,70,3,20,10,0,67,70,3,32,16,0,68,70,3,28,14,0,69,65,1,0,0,0,
+  	69,66,1,0,0,0,69,67,1,0,0,0,69,68,1,0,0,0,70,5,1,0,0,0,71,72,5,17,0,0,
+  	72,76,5,22,0,0,73,77,3,8,4,0,74,77,3,32,16,0,75,77,3,28,14,0,76,73,1,
+  	0,0,0,76,74,1,0,0,0,76,75,1,0,0,0,77,7,1,0,0,0,78,79,6,4,-1,0,79,80,3,
+  	10,5,0,80,86,1,0,0,0,81,82,10,2,0,0,82,83,7,0,0,0,83,85,3,10,5,0,84,81,
+  	1,0,0,0,85,88,1,0,0,0,86,84,1,0,0,0,86,87,1,0,0,0,87,9,1,0,0,0,88,86,
+  	1,0,0,0,89,90,6,5,-1,0,90,91,3,12,6,0,91,97,1,0,0,0,92,93,10,2,0,0,93,
+  	94,7,1,0,0,94,96,3,12,6,0,95,92,1,0,0,0,96,99,1,0,0,0,97,95,1,0,0,0,97,
+  	98,1,0,0,0,98,11,1,0,0,0,99,97,1,0,0,0,100,101,3,14,7,0,101,102,5,13,
+  	0,0,102,103,3,12,6,0,103,106,1,0,0,0,104,106,3,14,7,0,105,100,1,0,0,0,
+  	105,104,1,0,0,0,106,13,1,0,0,0,107,108,5,23,0,0,108,109,3,8,4,0,109,110,
+  	5,24,0,0,110,113,1,0,0,0,111,113,3,16,8,0,112,107,1,0,0,0,112,111,1,0,
+  	0,0,113,15,1,0,0,0,114,115,7,2,0,0,115,17,1,0,0,0,116,117,5,1,0,0,117,
+  	118,5,21,0,0,118,121,5,23,0,0,119,122,3,8,4,0,120,122,3,32,16,0,121,119,
+  	1,0,0,0,121,120,1,0,0,0,122,123,1,0,0,0,123,124,5,24,0,0,124,19,1,0,0,
+  	0,125,126,5,30,0,0,126,127,5,29,0,0,127,21,1,0,0,0,128,129,5,2,0,0,129,
+  	130,5,23,0,0,130,131,3,8,4,0,131,132,5,14,0,0,132,133,3,8,4,0,133,134,
+  	1,0,0,0,134,135,5,24,0,0,135,137,5,25,0,0,136,138,3,2,1,0,137,136,1,0,
+  	0,0,138,139,1,0,0,0,139,137,1,0,0,0,139,140,1,0,0,0,140,141,1,0,0,0,141,
+  	142,5,26,0,0,142,167,1,0,0,0,143,144,5,2,0,0,144,145,5,23,0,0,145,146,
+  	3,8,4,0,146,147,5,14,0,0,147,148,3,8,4,0,148,149,1,0,0,0,149,150,5,24,
+  	0,0,150,152,5,25,0,0,151,153,3,2,1,0,152,151,1,0,0,0,153,154,1,0,0,0,
+  	154,152,1,0,0,0,154,155,1,0,0,0,155,156,1,0,0,0,156,157,5,26,0,0,157,
+  	158,5,3,0,0,158,160,5,25,0,0,159,161,3,2,1,0,160,159,1,0,0,0,161,162,
+  	1,0,0,0,162,160,1,0,0,0,162,163,1,0,0,0,163,164,1,0,0,0,164,165,5,26,
+  	0,0,165,167,1,0,0,0,166,128,1,0,0,0,166,143,1,0,0,0,167,23,1,0,0,0,168,
+  	169,5,4,0,0,169,170,5,23,0,0,170,171,3,8,4,0,171,172,5,14,0,0,172,173,
+  	3,8,4,0,173,174,1,0,0,0,174,175,5,24,0,0,175,177,5,25,0,0,176,178,3,2,
+  	1,0,177,176,1,0,0,0,178,179,1,0,0,0,179,177,1,0,0,0,179,180,1,0,0,0,180,
+  	181,1,0,0,0,181,182,5,26,0,0,182,25,1,0,0,0,183,184,5,5,0,0,184,185,5,
+  	17,0,0,185,188,5,23,0,0,186,187,5,17,0,0,187,189,5,21,0,0,188,186,1,0,
+  	0,0,188,189,1,0,0,0,189,195,1,0,0,0,190,191,5,6,0,0,191,192,5,17,0,0,
+  	192,194,5,21,0,0,193,190,1,0,0,0,194,197,1,0,0,0,195,193,1,0,0,0,195,
+  	196,1,0,0,0,196,198,1,0,0,0,197,195,1,0,0,0,198,199,5,24,0,0,199,200,
+  	5,21,0,0,200,202,5,25,0,0,201,203,3,2,1,0,202,201,1,0,0,0,203,204,1,0,
+  	0,0,204,202,1,0,0,0,204,205,1,0,0,0,205,206,1,0,0,0,206,207,5,7,0,0,207,
+  	208,7,3,0,0,208,209,5,29,0,0,209,210,5,26,0,0,210,27,1,0,0,0,211,212,
+  	5,17,0,0,212,214,5,23,0,0,213,215,5,17,0,0,214,213,1,0,0,0,214,215,1,
+  	0,0,0,215,220,1,0,0,0,216,217,5,6,0,0,217,219,5,17,0,0,218,216,1,0,0,
+  	0,219,222,1,0,0,0,220,218,1,0,0,0,220,221,1,0,0,0,221,223,1,0,0,0,222,
+  	220,1,0,0,0,223,224,5,24,0,0,224,29,1,0,0,0,225,226,5,17,0,0,226,227,
+  	5,21,0,0,227,228,5,22,0,0,228,230,5,27,0,0,229,231,7,4,0,0,230,229,1,
+  	0,0,0,230,231,1,0,0,0,231,236,1,0,0,0,232,233,5,6,0,0,233,235,7,4,0,0,
+  	234,232,1,0,0,0,235,238,1,0,0,0,236,234,1,0,0,0,236,237,1,0,0,0,237,239,
+  	1,0,0,0,238,236,1,0,0,0,239,240,5,28,0,0,240,31,1,0,0,0,241,242,5,17,
+  	0,0,242,243,5,27,0,0,243,244,5,15,0,0,244,245,5,28,0,0,245,33,1,0,0,0,
+  	21,37,60,69,76,86,97,105,112,121,139,154,162,166,179,188,195,204,214,
+  	220,230,236
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -267,7 +266,7 @@ NiloScriptParser::ProgramContext* NiloScriptParser::program() {
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 3221356598) != 0));
+      ((1ULL << _la) & 2147614774) != 0));
     setState(39);
     match(NiloScriptParser::EOF);
    
@@ -297,10 +296,6 @@ tree::TerminalNode* NiloScriptParser::StmtContext::SC() {
 
 NiloScriptParser::AssignmentContext* NiloScriptParser::StmtContext::assignment() {
   return getRuleContext<NiloScriptParser::AssignmentContext>(0);
-}
-
-NiloScriptParser::InputContext* NiloScriptParser::StmtContext::input() {
-  return getRuleContext<NiloScriptParser::InputContext>(0);
 }
 
 NiloScriptParser::LoopContext* NiloScriptParser::StmtContext::loop() {
@@ -368,7 +363,7 @@ NiloScriptParser::StmtContext* NiloScriptParser::stmt() {
     exitRule();
   });
   try {
-    setState(63);
+    setState(60);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 1, _ctx)) {
     case 1: {
@@ -392,37 +387,37 @@ NiloScriptParser::StmtContext* NiloScriptParser::stmt() {
     case 3: {
       enterOuterAlt(_localctx, 3);
       setState(47);
-      input();
-      setState(48);
-      match(NiloScriptParser::SC);
+      loop();
       break;
     }
 
     case 4: {
       enterOuterAlt(_localctx, 4);
-      setState(50);
-      loop();
+      setState(48);
+      inCase();
       break;
     }
 
     case 5: {
       enterOuterAlt(_localctx, 5);
-      setState(51);
-      inCase();
+      setState(49);
+      function();
       break;
     }
 
     case 6: {
       enterOuterAlt(_localctx, 6);
-      setState(52);
-      function();
+      setState(50);
+      functionCall();
+      setState(51);
+      match(NiloScriptParser::SC);
       break;
     }
 
     case 7: {
       enterOuterAlt(_localctx, 7);
       setState(53);
-      functionCall();
+      list();
       setState(54);
       match(NiloScriptParser::SC);
       break;
@@ -431,7 +426,7 @@ NiloScriptParser::StmtContext* NiloScriptParser::stmt() {
     case 8: {
       enterOuterAlt(_localctx, 8);
       setState(56);
-      list();
+      expression();
       setState(57);
       match(NiloScriptParser::SC);
       break;
@@ -440,15 +435,6 @@ NiloScriptParser::StmtContext* NiloScriptParser::stmt() {
     case 9: {
       enterOuterAlt(_localctx, 9);
       setState(59);
-      expression();
-      setState(60);
-      match(NiloScriptParser::SC);
-      break;
-    }
-
-    case 10: {
-      enterOuterAlt(_localctx, 10);
-      setState(62);
       match(NiloScriptParser::COMMENT);
       break;
     }
@@ -539,35 +525,35 @@ NiloScriptParser::AssignmentContext* NiloScriptParser::assignment() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(65);
+    setState(62);
     match(NiloScriptParser::VAR);
-    setState(66);
+    setState(63);
     match(NiloScriptParser::RETURN_TYPE);
-    setState(67);
+    setState(64);
     match(NiloScriptParser::EQUAL);
-    setState(72);
+    setState(69);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 2, _ctx)) {
     case 1: {
-      setState(68);
+      setState(65);
       term(0);
       break;
     }
 
     case 2: {
-      setState(69);
+      setState(66);
       input();
       break;
     }
 
     case 3: {
-      setState(70);
+      setState(67);
       acessList();
       break;
     }
 
     case 4: {
-      setState(71);
+      setState(68);
       functionCall();
       break;
     }
@@ -650,27 +636,27 @@ NiloScriptParser::ExpressionContext* NiloScriptParser::expression() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(74);
+    setState(71);
     match(NiloScriptParser::VAR);
-    setState(75);
+    setState(72);
     match(NiloScriptParser::EQUAL);
-    setState(79);
+    setState(76);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 3, _ctx)) {
     case 1: {
-      setState(76);
+      setState(73);
       term(0);
       break;
     }
 
     case 2: {
-      setState(77);
+      setState(74);
       acessList();
       break;
     }
 
     case 3: {
-      setState(78);
+      setState(75);
       functionCall();
       break;
     }
@@ -762,10 +748,10 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(82);
+    setState(79);
     fact(0);
     _ctx->stop = _input->LT(-1);
-    setState(89);
+    setState(86);
     _errHandler->sync(this);
     alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
@@ -775,10 +761,10 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
         previousContext = _localctx;
         _localctx = _tracker.createInstance<TermContext>(parentContext, parentState);
         pushNewRecursionContext(_localctx, startState, RuleTerm);
-        setState(84);
+        setState(81);
 
         if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
-        setState(85);
+        setState(82);
         _la = _input->LA(1);
         if (!(_la == NiloScriptParser::PLUS
 
@@ -789,10 +775,10 @@ NiloScriptParser::TermContext* NiloScriptParser::term(int precedence) {
           _errHandler->reportMatch(this);
           consume();
         }
-        setState(86);
+        setState(83);
         fact(0); 
       }
-      setState(91);
+      setState(88);
       _errHandler->sync(this);
       alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx);
     }
@@ -882,10 +868,10 @@ NiloScriptParser::FactContext* NiloScriptParser::fact(int precedence) {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(93);
+    setState(90);
     expo();
     _ctx->stop = _input->LT(-1);
-    setState(100);
+    setState(97);
     _errHandler->sync(this);
     alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
@@ -895,10 +881,10 @@ NiloScriptParser::FactContext* NiloScriptParser::fact(int precedence) {
         previousContext = _localctx;
         _localctx = _tracker.createInstance<FactContext>(parentContext, parentState);
         pushNewRecursionContext(_localctx, startState, RuleFact);
-        setState(95);
+        setState(92);
 
         if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
-        setState(96);
+        setState(93);
         _la = _input->LA(1);
         if (!((((_la & ~ 0x3fULL) == 0) &&
           ((1ULL << _la) & 7168) != 0))) {
@@ -908,10 +894,10 @@ NiloScriptParser::FactContext* NiloScriptParser::fact(int precedence) {
           _errHandler->reportMatch(this);
           consume();
         }
-        setState(97);
+        setState(94);
         expo(); 
       }
-      setState(102);
+      setState(99);
       _errHandler->sync(this);
       alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
     }
@@ -979,24 +965,24 @@ NiloScriptParser::ExpoContext* NiloScriptParser::expo() {
     exitRule();
   });
   try {
-    setState(108);
+    setState(105);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(103);
+      setState(100);
       opPar();
 
-      setState(104);
+      setState(101);
       match(NiloScriptParser::POW);
-      setState(105);
+      setState(102);
       expo();
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(107);
+      setState(104);
       opPar();
       break;
     }
@@ -1074,16 +1060,16 @@ NiloScriptParser::OpParContext* NiloScriptParser::opPar() {
     exitRule();
   });
   try {
-    setState(115);
+    setState(112);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case NiloScriptParser::OPAR: {
         enterOuterAlt(_localctx, 1);
-        setState(110);
+        setState(107);
         match(NiloScriptParser::OPAR);
-        setState(111);
+        setState(108);
         term(0);
-        setState(112);
+        setState(109);
         match(NiloScriptParser::CPAR);
         break;
       }
@@ -1094,7 +1080,7 @@ NiloScriptParser::OpParContext* NiloScriptParser::opPar() {
       case NiloScriptParser::STRING:
       case NiloScriptParser::BOOL: {
         enterOuterAlt(_localctx, 2);
-        setState(114);
+        setState(111);
         typeSpecifier();
         break;
       }
@@ -1178,7 +1164,7 @@ NiloScriptParser::TypeSpecifierContext* NiloScriptParser::typeSpecifier() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(117);
+    setState(114);
     _la = _input->LA(1);
     if (!((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & 1015808) != 0))) {
@@ -1203,6 +1189,10 @@ NiloScriptParser::TypeSpecifierContext* NiloScriptParser::typeSpecifier() {
 
 NiloScriptParser::PrintContext::PrintContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloScriptParser::PrintContext::RETURN_TYPE() {
+  return getToken(NiloScriptParser::RETURN_TYPE, 0);
 }
 
 tree::TerminalNode* NiloScriptParser::PrintContext::OPAR() {
@@ -1259,21 +1249,23 @@ NiloScriptParser::PrintContext* NiloScriptParser::print() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(119);
+    setState(116);
     match(NiloScriptParser::T__0);
-    setState(120);
+    setState(117);
+    match(NiloScriptParser::RETURN_TYPE);
+    setState(118);
     match(NiloScriptParser::OPAR);
-    setState(123);
+    setState(121);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 8, _ctx)) {
     case 1: {
-      setState(121);
+      setState(119);
       term(0);
       break;
     }
 
     case 2: {
-      setState(122);
+      setState(120);
       acessList();
       break;
     }
@@ -1281,7 +1273,7 @@ NiloScriptParser::PrintContext* NiloScriptParser::print() {
     default:
       break;
     }
-    setState(125);
+    setState(123);
     match(NiloScriptParser::CPAR);
    
   }
@@ -1346,9 +1338,9 @@ NiloScriptParser::InputContext* NiloScriptParser::input() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(127);
+    setState(125);
     match(NiloScriptParser::READ);
-    setState(128);
+    setState(126);
     match(NiloScriptParser::SC);
    
   }
@@ -1449,88 +1441,88 @@ NiloScriptParser::InCaseContext* NiloScriptParser::inCase() {
     exitRule();
   });
   try {
-    setState(168);
+    setState(166);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 12, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(130);
+      setState(128);
       match(NiloScriptParser::T__1);
-      setState(131);
+      setState(129);
       match(NiloScriptParser::OPAR);
 
+      setState(130);
+      term(0);
+      setState(131);
+      match(NiloScriptParser::OPERATOR);
       setState(132);
       term(0);
-      setState(133);
-      match(NiloScriptParser::OPERATOR);
       setState(134);
-      term(0);
-      setState(136);
       match(NiloScriptParser::CPAR);
-      setState(137);
+      setState(135);
       match(NiloScriptParser::OBRA);
-      setState(139); 
+      setState(137); 
       _errHandler->sync(this);
       _la = _input->LA(1);
       do {
-        setState(138);
+        setState(136);
         stmt();
-        setState(141); 
+        setState(139); 
         _errHandler->sync(this);
         _la = _input->LA(1);
       } while ((((_la & ~ 0x3fULL) == 0) &&
-        ((1ULL << _la) & 3221356598) != 0));
-      setState(143);
+        ((1ULL << _la) & 2147614774) != 0));
+      setState(141);
       match(NiloScriptParser::CBRA);
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(145);
+      setState(143);
       match(NiloScriptParser::T__1);
-      setState(146);
+      setState(144);
       match(NiloScriptParser::OPAR);
 
+      setState(145);
+      term(0);
+      setState(146);
+      match(NiloScriptParser::OPERATOR);
       setState(147);
       term(0);
-      setState(148);
-      match(NiloScriptParser::OPERATOR);
       setState(149);
-      term(0);
-      setState(151);
       match(NiloScriptParser::CPAR);
-      setState(152);
+      setState(150);
       match(NiloScriptParser::OBRA);
-      setState(154); 
+      setState(152); 
       _errHandler->sync(this);
       _la = _input->LA(1);
       do {
-        setState(153);
+        setState(151);
         stmt();
-        setState(156); 
+        setState(154); 
         _errHandler->sync(this);
         _la = _input->LA(1);
       } while ((((_la & ~ 0x3fULL) == 0) &&
-        ((1ULL << _la) & 3221356598) != 0));
-      setState(158);
+        ((1ULL << _la) & 2147614774) != 0));
+      setState(156);
       match(NiloScriptParser::CBRA);
-      setState(159);
+      setState(157);
       match(NiloScriptParser::T__2);
-      setState(160);
+      setState(158);
       match(NiloScriptParser::OBRA);
-      setState(162); 
+      setState(160); 
       _errHandler->sync(this);
       _la = _input->LA(1);
       do {
-        setState(161);
+        setState(159);
         stmt();
-        setState(164); 
+        setState(162); 
         _errHandler->sync(this);
         _la = _input->LA(1);
       } while ((((_la & ~ 0x3fULL) == 0) &&
-        ((1ULL << _la) & 3221356598) != 0));
-      setState(166);
+        ((1ULL << _la) & 2147614774) != 0));
+      setState(164);
       match(NiloScriptParser::CBRA);
       break;
     }
@@ -1630,33 +1622,33 @@ NiloScriptParser::LoopContext* NiloScriptParser::loop() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(170);
+    setState(168);
     match(NiloScriptParser::T__3);
-    setState(171);
+    setState(169);
     match(NiloScriptParser::OPAR);
 
+    setState(170);
+    term(0);
+    setState(171);
+    match(NiloScriptParser::OPERATOR);
     setState(172);
     term(0);
-    setState(173);
-    match(NiloScriptParser::OPERATOR);
     setState(174);
-    term(0);
-    setState(176);
     match(NiloScriptParser::CPAR);
-    setState(177);
+    setState(175);
     match(NiloScriptParser::OBRA);
-    setState(179); 
+    setState(177); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(178);
+      setState(176);
       stmt();
-      setState(181); 
+      setState(179); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 3221356598) != 0));
-    setState(183);
+      ((1ULL << _la) & 2147614774) != 0));
+    setState(181);
     match(NiloScriptParser::CBRA);
    
   }
@@ -1762,56 +1754,56 @@ NiloScriptParser::FunctionContext* NiloScriptParser::function() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(185);
+    setState(183);
     match(NiloScriptParser::T__4);
-    setState(186);
+    setState(184);
     match(NiloScriptParser::VAR);
-    setState(187);
+    setState(185);
     match(NiloScriptParser::OPAR);
-    setState(190);
+    setState(188);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == NiloScriptParser::VAR) {
-      setState(188);
+      setState(186);
       match(NiloScriptParser::VAR);
-      setState(189);
+      setState(187);
       match(NiloScriptParser::RETURN_TYPE);
     }
-    setState(197);
+    setState(195);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == NiloScriptParser::T__5) {
-      setState(192);
+      setState(190);
       match(NiloScriptParser::T__5);
-      setState(193);
+      setState(191);
       match(NiloScriptParser::VAR);
-      setState(194);
+      setState(192);
       match(NiloScriptParser::RETURN_TYPE);
-      setState(199);
+      setState(197);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(200);
+    setState(198);
     match(NiloScriptParser::CPAR);
-    setState(201);
+    setState(199);
     match(NiloScriptParser::RETURN_TYPE);
-    setState(202);
+    setState(200);
     match(NiloScriptParser::OBRA);
-    setState(204); 
+    setState(202); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(203);
+      setState(201);
       stmt();
-      setState(206); 
+      setState(204); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 3221356598) != 0));
-    setState(208);
+      ((1ULL << _la) & 2147614774) != 0));
+    setState(206);
     match(NiloScriptParser::T__6);
-    setState(209);
+    setState(207);
     _la = _input->LA(1);
     if (!(_la == NiloScriptParser::VAR
 
@@ -1822,9 +1814,9 @@ NiloScriptParser::FunctionContext* NiloScriptParser::function() {
       _errHandler->reportMatch(this);
       consume();
     }
-    setState(210);
+    setState(208);
     match(NiloScriptParser::SC);
-    setState(211);
+    setState(209);
     match(NiloScriptParser::CBRA);
    
   }
@@ -1898,31 +1890,31 @@ NiloScriptParser::FunctionCallContext* NiloScriptParser::functionCall() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(213);
+    setState(211);
     match(NiloScriptParser::VAR);
-    setState(214);
+    setState(212);
     match(NiloScriptParser::OPAR);
-    setState(216);
+    setState(214);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == NiloScriptParser::VAR) {
-      setState(215);
+      setState(213);
       match(NiloScriptParser::VAR);
     }
-    setState(222);
+    setState(220);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == NiloScriptParser::T__5) {
-      setState(218);
+      setState(216);
       match(NiloScriptParser::T__5);
-      setState(219);
+      setState(217);
       match(NiloScriptParser::VAR);
-      setState(224);
+      setState(222);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(225);
+    setState(223);
     match(NiloScriptParser::CPAR);
    
   }
@@ -2032,21 +2024,21 @@ NiloScriptParser::ListContext* NiloScriptParser::list() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(227);
+    setState(225);
     match(NiloScriptParser::VAR);
-    setState(228);
+    setState(226);
     match(NiloScriptParser::RETURN_TYPE);
-    setState(229);
+    setState(227);
     match(NiloScriptParser::EQUAL);
-    setState(230);
+    setState(228);
     match(NiloScriptParser::OKEY);
-    setState(232);
+    setState(230);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & 884736) != 0)) {
-      setState(231);
+      setState(229);
       _la = _input->LA(1);
       if (!((((_la & ~ 0x3fULL) == 0) &&
         ((1ULL << _la) & 884736) != 0))) {
@@ -2057,13 +2049,13 @@ NiloScriptParser::ListContext* NiloScriptParser::list() {
         consume();
       }
     }
-    setState(238);
+    setState(236);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == NiloScriptParser::T__5) {
-      setState(234);
+      setState(232);
       match(NiloScriptParser::T__5);
-      setState(235);
+      setState(233);
       _la = _input->LA(1);
       if (!((((_la & ~ 0x3fULL) == 0) &&
         ((1ULL << _la) & 884736) != 0))) {
@@ -2073,11 +2065,11 @@ NiloScriptParser::ListContext* NiloScriptParser::list() {
         _errHandler->reportMatch(this);
         consume();
       }
-      setState(240);
+      setState(238);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(241);
+    setState(239);
     match(NiloScriptParser::CKEY);
    
   }
@@ -2150,13 +2142,13 @@ NiloScriptParser::AcessListContext* NiloScriptParser::acessList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(243);
+    setState(241);
     match(NiloScriptParser::VAR);
-    setState(244);
+    setState(242);
     match(NiloScriptParser::OKEY);
-    setState(245);
+    setState(243);
     match(NiloScriptParser::INT);
-    setState(246);
+    setState(244);
     match(NiloScriptParser::CKEY);
    
   }

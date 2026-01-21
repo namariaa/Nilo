@@ -86,7 +86,6 @@ public:
     PrintContext *print();
     antlr4::tree::TerminalNode *SC();
     AssignmentContext *assignment();
-    InputContext *input();
     LoopContext *loop();
     InCaseContext *inCase();
     FunctionContext *function();
@@ -239,6 +238,7 @@ public:
   public:
     PrintContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *RETURN_TYPE();
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *CPAR();
     TermContext *term();
