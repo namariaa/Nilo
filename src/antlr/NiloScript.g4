@@ -42,9 +42,9 @@ stmt : print SC
        | expression SC
        | COMMENT;
 
-assignment : VAR RETURN_TYPE EQUAL (term | input | acessList | functionCall);
+assignment : VAR (COLON RETURN_TYPE) EQUAL (term | input | acessList | functionCall);
 
-expression : VAR EQUAL (term | acessList | functionCall);
+expression : VAR EQUAL (term | acessList | functionCall | input);
 
 term : term (PLUS | MINUS) fact 
         | fact; 
@@ -65,22 +65,21 @@ typeSpecifier : INT
                 | FLOAT;
 
 // SYSCALL .-*+...-*+...-*+...-*+.. 
-print : 'mostrar' RETURN_TYPE OPAR (term | acessList) CPAR;
-input : READ SC; 
+print : SHOW OPAR (term | acessList) CPAR;
+input : READ; 
 
 // CONDICIONAL .-*+...-*+...-*+...-*+.. 
-inCase : 'caso' OPAR (term OPERATOR term) CPAR OBRA (stmt)+ CBRA
-                | 'caso' OPAR (term OPERATOR term) CPAR OBRA (stmt)+ CBRA 'senão' OBRA (stmt)+ CBRA;
+inCase : CASE OPAR (term OPERATOR term) CPAR OBRA (thenBlock+=stmt)+ CBRA (ELSE OBRA (elseStmt+=stmt)+ CBRA)?;
 
 // LOOP .-*+...-*+...-*+...-*+.. 
 loop : 'enquanto' OPAR (term OPERATOR term) CPAR OBRA (stmt)+ CBRA;
 
 // FUNCTION .-*+...-*+...-*+...-*+.. 
-function : 'funcionalidade' VAR OPAR (VAR RETURN_TYPE)? (',' VAR RETURN_TYPE)* CPAR RETURN_TYPE OBRA (stmt)+ 'retorne' (TYPE | VAR) SC CBRA;
+function : 'funcionalidade' VAR OPAR (VAR RETURN_TYPE)? (',' VAR  RETURN_TYPE)* CPAR  RETURN_TYPE OBRA (stmt)+ 'retorne' (TYPE | VAR) SC CBRA;
 functionCall : VAR OPAR VAR? (',' VAR)* CPAR;
 
 // ARRAY .-*+...-*+...-*+...-*+.. 
-list : VAR RETURN_TYPE EQUAL OKEY (INT | FLOAT | STRING | BOOL)? (',' (INT | FLOAT | STRING | BOOL))* CKEY;
+list : VAR  RETURN_TYPE EQUAL OKEY (INT | FLOAT | STRING | BOOL)? (',' (INT | FLOAT | STRING | BOOL))* CKEY;
 acessList : VAR OKEY INT CKEY;
 
 //DO LEXER
@@ -94,15 +93,6 @@ MOD : '%';
 POW : '**';
 OPERATOR : '==' | '!=' | '>' | '<' | '>=' | '<=' ;
 
-// TYPES .-*+...-*+...-*+...-*+.. 
-INT : [0-9]+;
-FLOAT : [0-9]+ ',' [0-9]+;
-VAR : [a-zA-Z_][a-zA-Z0-9_]*;
-STRING : '"' ~('"')* '"';  
-BOOL : 'verdadeiro' | 'falso';
-TYPE : INT | FLOAT | STRING | BOOL;
-RETURN_TYPE: ':' ('inteiro' | 'flutuante' | 'caracter' | 'bool' | 'nada');
-
 // UTILS .-*+...-*+...-*+...-*+.. 
 EQUAL : '=';
 OPAR : '(';
@@ -112,7 +102,20 @@ CBRA : '}';
 OKEY: '[';
 CKEY: ']';
 SC: ';' ;
-READ : 'pegaInteiro' | 'pegaFlutuante' | 'pegaCaracter';
+READ : 'pegaInteiro' | 'pegaFlutuante' | 'pegaCaracteres';
+SHOW: 'mostrarInteiro' | 'mostrarFlutuante' | 'mostrarCaracteres' | 'mostrarBool';
+CASE: 'caso';
+ELSE: 'senao';
+
+// TYPES .-*+...-*+...-*+...-*+.. 
+STRING : '"' ~('"')* '"';  
+BOOL : 'verdadeiro' | 'falso';
+RETURN_TYPE: ('inteiro' | 'flutuante' | 'caracter' | 'bool' | 'nada');
+COLON: ':';
+INT : [0-9]+;
+FLOAT : [0-9]+ ',' [0-9]+;
+VAR : [a-zA-Z_][a-zA-Z0-9_]*;
+TYPE : INT | FLOAT | STRING | BOOL;
 
 // SKIP .-*+...-*+...-*+...-*+.. 
 COMMENT : ':)' ~[\r\n]+ -> skip;

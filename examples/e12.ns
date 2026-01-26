@@ -1,5 +1,5 @@
 valor :caracter = ["Olá" , "Mundo"];
 valor2 :inteiro = [1 , 2];
 primeira :caracter = valor[0];
-mostrar(primeira);
-mostrar(valor[1]);
+mostrarCaracteres(primeira);
+mostrarInteiro(valor[1]);

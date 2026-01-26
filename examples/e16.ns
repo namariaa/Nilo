@@ -1,7 +1,7 @@
 :) Teste de erro do assigment 
 
 x :int = 5;
-mostrar(x);
+mostrarInteiro(x);
 
 
 :) O objetivo é testar a atribuição de um tipo que não existe 

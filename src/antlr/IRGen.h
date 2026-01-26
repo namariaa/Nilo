@@ -136,16 +136,16 @@ class IRGen : public NiloScriptVisitor{
 
         cout << "RETURN TYPE " << context->RETURN_TYPE()->getText() << endl;
         
-        if (context->RETURN_TYPE()->getText() == ":inteiro"){
+        if (context->RETURN_TYPE()->getText() == "inteiro"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt32Ty(*Conteiner),nullptr,var);
         }
-        else if (context->RETURN_TYPE()->getText() == ":flutuante"){
+        else if (context->RETURN_TYPE()->getText() == "flutuante"){
             alloca = Builder->CreateAlloca(llvm::Type::getFloatTy(*Conteiner),nullptr,var);
         }
-        else if (context->RETURN_TYPE()->getText() == ":caracter"){
+        else if (context->RETURN_TYPE()->getText() == "caracter"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt8Ty(*Conteiner),nullptr,var);
         }
-        else if (context->RETURN_TYPE()->getText() == ":bool"){
+        else if (context->RETURN_TYPE()->getText() == "bool"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,var);
         }
         else {
@@ -161,8 +161,33 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitExpression(NiloScriptParser::ExpressionContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
+        string var = context->VAR()->getText();
+        lastVar = var;
+        llvm::Value *value;
+        if (context->term() != nullptr) value = any_cast<llvm::Value *>(visitTerm(context->term()));
+        else if (context->input() != nullptr) value = any_cast<llvm::Value *>(visitInput(context->input()));
+        else if (context->acessList() != nullptr) value = any_cast<llvm::Value *>(visitAcessList(context->acessList()));
+        else if (context->functionCall() != nullptr) value = any_cast<llvm::Value *>(visitFunctionCall(context->functionCall()));
+        else {
+            cerr << "Error. Não foi possível associar a variável com essa expressão!" << endl;
+            exit(1);
+        }
+
+        llvm::AllocaInst* varInTable = SymbolTable[var];
+        llvm::Type* typeLoadTable = varInTable->getAllocatedType();
+        llvm::Type* newType = value->getType();
+        llvm::Value* storeValue;
+
+        if (typeLoadTable == newType){
+            storeValue = Builder->CreateStore(value,varInTable);
+        }
+        else {
+            cerr << "Error. Não foi possível atribuir variavéis em que o tipo é diferente do novo valor a ser atribuido!" << endl;
+            exit(1);
+        }
+
+        //Armazenar variável no espaço que alocamos
+        return storeValue;
     };
 
     virtual std::any visitTerm(NiloScriptParser::TermContext *context) override {
@@ -283,10 +308,12 @@ class IRGen : public NiloScriptVisitor{
         }
         else if (context->BOOL()){
             if (context->BOOL()->getText() == "verdadeiro"){
-                return llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
+                llvm::Value* trueValue = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
+                return trueValue;
             }
             else if (context->BOOL()->getText() == "falso"){
-                return llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
+                llvm::Value* falseValue = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
+                return falseValue;
             }
             else{
                 cerr << "Error. Não foi possível reconhecer o booleano!" << endl;
@@ -294,7 +321,9 @@ class IRGen : public NiloScriptVisitor{
             }
         }
         else if (context->FLOAT()){
-            return llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), context->FLOAT()->getText());
+            cout << "É FLOATTTTTTT" << endl;
+            llvm::Value* floatValue = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), context->FLOAT()->getText());
+            return floatValue;
         }
         else {
             cerr << "Error. Não foi possível reconhecer uma instrução!" << endl;
@@ -317,20 +346,20 @@ class IRGen : public NiloScriptVisitor{
             // Criando os % necessários do C para entender o tipo (formatted output)
             llvm::Value* typePrint;
 
-            if (context->RETURN_TYPE()->getText() == ":inteiro"){
+            if (context->SHOW()->getText() == "mostrarInteiro"){
                 typePrint = dPrint;
             }
-            else if (context->RETURN_TYPE()->getText() == ":flutuante"){
+            else if (context->SHOW()->getText() == "mostrarFlutuante"){
                 typePrint = fPrint;
             }
-            else if (context->RETURN_TYPE()->getText() == ":caracter"){
-                typePrint = Builder->CreateGlobalStringPtr("%c");
+            else if (context->SHOW()->getText() == "mostrarCaracteres"){
+                typePrint = cPrint;
             }
-            else if (context->RETURN_TYPE()->getText() == ":bool"){
-                typePrint = Builder->CreateGlobalStringPtr("%d");
+            else if (context->SHOW()->getText() == "mostrarBool"){
+                typePrint = dPrint;
             }
             else {
-                cerr << "Error. Tipo não reconhecido!" << endl;
+                cerr << "Error. Função mostrar não reconhecida!" << endl;
                 exit(1);
             }
             return Builder->CreateCall(printf, { typePrint, value });
@@ -343,6 +372,7 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitInput(NiloScriptParser::InputContext *context) override {
+        cout <<"INPUT " << context->getText() <<endl;
         // Pegando a função que criei lá no construtor 
         llvm::Function *scanf =Executable->getFunction("scanf");
 
@@ -350,31 +380,153 @@ class IRGen : public NiloScriptVisitor{
         llvm::Value *typeInput;
 
         if (context->READ()->getText() == "pegaInteiro"){
-            typeInput = Builder->CreateGlobalStringPtr("%d");
+            typeInput = dPrint;
         }
         else if (context->READ()->getText() == "pegaFlutuante"){
-            typeInput = Builder->CreateGlobalStringPtr("%f");
+            typeInput = fPrint;
         }
-        else if (context->READ()->getText() == "pegaCaracter"){
-            typeInput = Builder->CreateGlobalStringPtr("%d");
+        else if (context->READ()->getText() == "pegaCaracteres"){
+            typeInput = dPrint;
         }
         else {
-            cerr << "Error. Tipo não reconhecido!" << endl;
+            cerr << "Error. Função de pegar não reconhecida!" << endl;
             exit(1);
         }
+
+        //Alocar espaço de memória para guardar variavel
+        llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::Type::getInt32Ty(*Conteiner),nullptr,lastVar);
+        SymbolTable[lastVar] = alloca;
+        
+        //Faz chamada de função
+        llvm::Value* callScanf = Builder->CreateCall(scanf, { typeInput, SymbolTable[lastVar] });
     
-        return Builder->CreateCall(scanf, { typeInput, SymbolTable[lastVar] });
+        return callScanf;
     }
       
 
     virtual std::any visitInCase(NiloScriptParser::InCaseContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
+        llvm::Value* lhs = any_cast<llvm::Value*>(visitTerm(context->term()[0]));
+        llvm::Value* rhs = any_cast<llvm::Value*>(visitTerm(context->term()[1]));
+        string oper = context->OPERATOR()->getText();
+        llvm::Value* operation;
+
+        if (oper ==  "=="){
+            operation = Builder->CreateICmpEQ(lhs, rhs, oper);
+        }
+        else if (oper == "!="){
+            operation = Builder->CreateICmpNE(lhs, rhs, oper);
+        }
+        else if (oper == ">"){
+            operation = Builder->CreateICmpUGT(lhs, rhs, oper);
+        }
+        else if (oper == "<"){
+            operation = Builder->CreateICmpULT(lhs, rhs, oper);
+        }
+        else if (oper == ">="){
+            operation = Builder->CreateICmpUGE(lhs, rhs, oper);
+        }
+        else if (oper == "<="){
+            operation = Builder->CreateICmpULE(lhs, rhs, oper);
+        }
+        else{
+            cerr << "Error. Operador de comparação não encontrado!" << endl;
+            exit(1);
+        }
+
+        //Crio o bloco de condicional e vou inserindo o código que está dentro dele
+        llvm::BasicBlock* blockCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoCondicional", MainFunction); 
+        Builder->SetInsertPoint(blockCondicional);
+        for (NiloScriptParser::StmtContext *stm : context->thenBlock) {
+            visitStmt(stm);
+        }
+        llvm::Value* jump;
+        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada2", MainFunction); 
+        jump = Builder->CreateBr(block2);
+
+        //Criar o bloco do senão caso haja
+        llvm::BasicBlock* blockElseCondicional;
+        if (context->ELSE()){
+            blockElseCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoSenaoCondicional", MainFunction); 
+            Builder->SetInsertPoint(blockElseCondicional);
+            for (NiloScriptParser::StmtContext *stm : context->elseStmt){
+                visitStmt(stm);
+            }
+            jump = Builder->CreateBr(block2);
+        }
+
+        //No bloco que eu estava antes vou criar um salto condicional 
+        Builder->SetInsertPoint(CurrentBasicBlock);
+        if (context->ELSE()){
+            jump = Builder->CreateCondBr(operation, blockCondicional, blockElseCondicional);
+        }
+        else{
+            jump = Builder->CreateCondBr(operation, blockCondicional, block2);
+        }
+        
+        CurrentBasicBlock = block2;
+        Builder->SetInsertPoint(CurrentBasicBlock);
+
+        return lhs;
     };
 
     virtual std::any visitLoop(NiloScriptParser::LoopContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
+        cout << "CHEGOU NO LOOP " << context->getText()  << endl;
+        //Cria blocos
+        llvm::BasicBlock* blockCondicionalLoop = llvm::BasicBlock::Create(*Conteiner, "blocoCondicionalLoop", MainFunction); 
+        llvm::BasicBlock* blockLoopBody = llvm::BasicBlock::Create(*Conteiner, "blocoCorpoLoop", MainFunction); 
+        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada3", MainFunction);
+
+        //Cria um jump para o condicional
+        llvm::Value* jump = Builder->CreateBr(blockCondicionalLoop);
+
+        //Cria bloco de condicional
+        CurrentBasicBlock = blockCondicionalLoop;
+        Builder->SetInsertPoint(CurrentBasicBlock);
+
+        llvm::Value* lhs = any_cast<llvm::Value*>(visitTerm(context->term()[0]));
+        llvm::Value* rhs = any_cast<llvm::Value*>(visitTerm(context->term()[1]));
+        string oper = context->OPERATOR()->getText();
+        llvm::Value* operation;
+        
+        if (oper ==  "=="){
+            operation = Builder->CreateICmpEQ(lhs, rhs, oper);
+        }
+        else if (oper == "!="){
+            operation = Builder->CreateICmpNE(lhs, rhs, oper);
+        }
+        else if (oper == ">"){
+            operation = Builder->CreateICmpUGT(lhs, rhs, oper);
+        }
+        else if (oper == "<"){
+            operation = Builder->CreateICmpULT(lhs, rhs, oper);
+        }
+        else if (oper == ">="){
+            operation = Builder->CreateICmpUGE(lhs, rhs, oper);
+        }
+        else if (oper == "<="){
+            operation = Builder->CreateICmpULE(lhs, rhs, oper);
+        }
+        else{
+            cerr << "Error. Operador de comparação não encontrado!" << endl;
+            exit(1);
+        }
+
+        jump = Builder->CreateCondBr(operation, blockLoopBody, block2);
+
+        //Corpo do loop
+        CurrentBasicBlock = blockLoopBody;
+        Builder->SetInsertPoint(CurrentBasicBlock);
+        for (NiloScriptParser::StmtContext *stm : context->stmt()) {
+            visitStmt(stm);
+        }
+        jump = Builder->CreateBr(blockCondicionalLoop);
+        
+        //Muda para o bloco final
+        CurrentBasicBlock = block2;
+        Builder->SetInsertPoint(CurrentBasicBlock);
+
+        return lhs;
+        
     };
 
     virtual std::any visitFunction(NiloScriptParser::FunctionContext *context) override {

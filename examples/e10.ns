@@ -9,4 +9,4 @@ enquanto (par == falso) {
     }
 }
 
-mostrar(x);
+mostrarInteiro(x);
