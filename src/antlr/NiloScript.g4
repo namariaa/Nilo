@@ -79,7 +79,7 @@ function : 'funcionalidade' VAR OPAR (VAR RETURN_TYPE)? (',' VAR  RETURN_TYPE)* 
 functionCall : VAR OPAR VAR? (',' VAR)* CPAR;
 
 // ARRAY .-*+...-*+...-*+...-*+.. 
-list : VAR  RETURN_TYPE EQUAL OKEY (INT | FLOAT | STRING | BOOL)? (',' (INT | FLOAT | STRING | BOOL))* CKEY;
+list : VAR OBRA nElements=INT CBRA COLON RETURN_TYPE EQUAL OKEY valuesList=(INT | FLOAT | BOOL)? (',' (INT | FLOAT | BOOL))* CKEY;
 acessList : VAR OKEY INT CKEY;
 
 //DO LEXER

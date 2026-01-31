@@ -1,5 +1,3 @@
-valor :caracter = ["Olá" , "Mundo"];
-valor2 :inteiro = [1 , 2];
-primeira :caracter = valor[0];
-mostrarCaracteres(primeira);
-mostrarInteiro(valor[1]);
+valor2{2} :inteiro = [1 , 2];
+primeira :inteiro = valor2[0];
+mostrarInteiro(primeira);

@@ -369,9 +369,14 @@ public:
 
   class  ListContext : public antlr4::ParserRuleContext {
   public:
+    antlr4::Token *nElements = nullptr;
+    antlr4::Token *valuesList = nullptr;
     ListContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *VAR();
+    antlr4::tree::TerminalNode *OBRA();
+    antlr4::tree::TerminalNode *CBRA();
+    antlr4::tree::TerminalNode *COLON();
     antlr4::tree::TerminalNode *RETURN_TYPE();
     antlr4::tree::TerminalNode *EQUAL();
     antlr4::tree::TerminalNode *OKEY();
@@ -380,8 +385,6 @@ public:
     antlr4::tree::TerminalNode* INT(size_t i);
     std::vector<antlr4::tree::TerminalNode *> FLOAT();
     antlr4::tree::TerminalNode* FLOAT(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> STRING();
-    antlr4::tree::TerminalNode* STRING(size_t i);
     std::vector<antlr4::tree::TerminalNode *> BOOL();
     antlr4::tree::TerminalNode* BOOL(size_t i);
 

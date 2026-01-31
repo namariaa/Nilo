@@ -121,15 +121,6 @@ class IRGen : public NiloScriptVisitor{
     virtual std::any visitAssignment(NiloScriptParser::AssignmentContext *context) override {
         string var = context->VAR()->getText();
         lastVar = var;
-        llvm::Value *value;
-        if (context->term() != nullptr) value = any_cast<llvm::Value *>(visitTerm(context->term()));
-        else if (context->input() != nullptr) value = any_cast<llvm::Value *>(visitInput(context->input()));
-        else if (context->acessList() != nullptr) value = any_cast<llvm::Value *>(visitAcessList(context->acessList()));
-        else if (context->functionCall() != nullptr) value = any_cast<llvm::Value *>(visitFunctionCall(context->functionCall()));
-        else {
-            cerr << "Error. Não foi possível associar a variável com essa expressão!" << endl;
-            exit(1);
-        }
 
         //Usando a função alloca para alocar um espaço de memória dependendo do tipo para salvarmos na nossa tabela.
         llvm::AllocaInst* alloca= nullptr;
@@ -155,6 +146,17 @@ class IRGen : public NiloScriptVisitor{
 
         //Guardando na tabela para ser útil em momentos como input
         SymbolTable[var] = alloca;
+
+        //Pega o value
+        llvm::Value *value;
+        if (context->term() != nullptr) value = any_cast<llvm::Value *>(visitTerm(context->term()));
+        else if (context->input() != nullptr) value = any_cast<llvm::Value *>(visitInput(context->input()));
+        else if (context->acessList() != nullptr) value = any_cast<llvm::Value *>(visitAcessList(context->acessList()));
+        else if (context->functionCall() != nullptr) value = any_cast<llvm::Value *>(visitFunctionCall(context->functionCall()));
+        else {
+            cerr << "Error. Não foi possível associar a variável com essa expressão!" << endl;
+            exit(1);
+        }
 
         //Armazenar variável no espaço que alocamos
         return Builder->CreateStore(value,alloca);
@@ -332,6 +334,7 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitPrint(NiloScriptParser::PrintContext *context) override {
+        cout << "ENTROU NO PRINT" << context->getText() << endl;
         llvm::Value* value;
         if (context->term()){
            value = any_cast<llvm::Value*>(visitTerm(context->term()));
@@ -392,10 +395,6 @@ class IRGen : public NiloScriptVisitor{
             cerr << "Error. Função de pegar não reconhecida!" << endl;
             exit(1);
         }
-
-        //Alocar espaço de memória para guardar variavel
-        llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::Type::getInt32Ty(*Conteiner),nullptr,lastVar);
-        SymbolTable[lastVar] = alloca;
         
         //Faz chamada de função
         llvm::Value* callScanf = Builder->CreateCall(scanf, { typeInput, SymbolTable[lastVar] });
@@ -540,12 +539,106 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitList(NiloScriptParser::ListContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
+        cout << "CHEGOU NA VISITA DA LISTA " << context->getText() << " " << context->RETURN_TYPE()->getText() <<endl;
+
+        int nElements = std::stoi(context->nElements->getText());
+        string var = context->VAR()->getText();
+        llvm::Type* elementsType;
+        if (context->RETURN_TYPE()->getText() == "inteiro"){
+            elementsType = llvm::Type::getInt32Ty(*Conteiner);
+        }
+        else if (context->RETURN_TYPE()->getText() == "flutuante"){
+            elementsType = llvm::Type::getFloatTy(*Conteiner);
+
+        }
+        else if (context->RETURN_TYPE()->getText() == "bool"){
+            elementsType = llvm::Type::getInt1Ty(*Conteiner);
+        }
+        else {
+            cerr << "Error. Tipo da lista não reconhecido!" << endl;
+            exit(1);
+        }
+        //Alloca o array 
+        llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::ArrayType::get(elementsType, nElements),nullptr,var);
+
+        //Armazena na tabela de simbolos
+        SymbolTable[var] = alloca;
+
+        
+        //Store dos elementos dpo array no espaço alocado
+        //GetElementPtr (GEP) calcula o endereço de um elemento.
+        llvm::Value *addressArray;
+        llvm::Value* store;
+        llvm::Value* index;
+        llvm::Value* value;
+
+        index = Builder->getInt32(0);
+        if (context->RETURN_TYPE()->getText() == "inteiro"){
+            value = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->valuesList->getText()));
+        }
+        else if (context->RETURN_TYPE()->getText() == "flutuante"){
+            value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  any_cast<float>(context->valuesList->getText()));
+        }
+        else if (context->RETURN_TYPE()->getText() == "bool"){
+            value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner),  any_cast<int>(context->valuesList->getText()));
+        }
+        else {
+            cerr << "Error. Tipo da lista não reconhecido!" << endl;
+            exit(1);
+        }
+        addressArray = Builder->CreateGEP(llvm::ArrayType::get(elementsType, nElements), alloca, {llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0),index}, "endereco");
+        store = Builder->CreateStore(value, addressArray);
+
+        for (int i = 1; i < nElements; i++){
+            index = Builder->getInt32(i);
+            if (context->RETURN_TYPE()->getText() == "inteiro"){
+                value = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()[i -1]->getText()));
+            }
+            else if (context->RETURN_TYPE()->getText() == "flutuante"){
+                value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  any_cast<float>(context->FLOAT()[i - 1]->getText()));
+            }
+            else if (context->RETURN_TYPE()->getText() == "bool"){
+                value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner),  any_cast<int>(context->BOOL()[i - 1]->getText()));
+            }
+            else {
+                cerr << "Error. Tipo da lista não reconhecido!" << endl;
+                exit(1);
+            }
+
+            addressArray = Builder->CreateGEP(llvm::ArrayType::get(elementsType, nElements), alloca, {llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0),index}, "endereco");
+            store = Builder->CreateStore(value, addressArray);
+        }
+        return store;
     };
 
     virtual std::any visitAcessList(NiloScriptParser::AcessListContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
+        cout << "ACESS LIST " << context->getText() <<endl;
+        llvm::AllocaInst* varInTable = SymbolTable[context->VAR()->getText()];
+        llvm::Type* typeLoadTable = varInTable->getAllocatedType();
+        auto* arrayType = llvm::cast<llvm::ArrayType>(typeLoadTable);
+        llvm::Type* elementsType;    
+        
+        if (arrayType->getElementType()->isIntegerTy(32)){
+            elementsType = llvm::Type::getInt32Ty(*Conteiner);
+        }
+        else if (arrayType->getElementType()->isFloatTy()){
+            elementsType = llvm::Type::getFloatTy(*Conteiner);
+        }
+        else if (arrayType->getElementType()->isIntegerTy(1)){
+            elementsType = llvm::Type::getInt1Ty(*Conteiner);
+        }
+        else {
+            cerr << "Error. Tipo não da lista reconhecido!" << endl;
+            exit(1);
+        }
+        // Acessar o endereço na posição correta do array
+        llvm::Value* position = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()->getText()));
+
+        llvm::Value* gep = Builder->CreateGEP(arrayType, varInTable,{Builder->getInt32(0), position});
+
+        // Load do array[posição]
+        llvm::Value* element = Builder->CreateLoad(elementsType, gep);
+
+        return element;
     };
 };
