@@ -1,3 +1,11 @@
-valor2{2} :inteiro = [1 , 2];
-primeira :inteiro = valor2[0];
+valor1{2} :inteiro = [1 , 2];
+primeira :inteiro = valor1[0];
 mostrarInteiro(primeira);
+
+valor2{3} :flutuante = [1.22 , 8.2999 ,88.88];
+segundo :flutuante = valor2[2];
+mostrarFlutuante(segundo);
+
+valor3{2} :bool = [verdadeiro, falso];
+terceiro :bool = valor3[0];
+mostrarBool(terceiro);

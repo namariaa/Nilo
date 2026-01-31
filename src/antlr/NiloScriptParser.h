@@ -325,17 +325,22 @@ public:
 
   class  FunctionContext : public antlr4::ParserRuleContext {
   public:
+    antlr4::Token *functionName = nullptr;
+    antlr4::Token *paramerReturn = nullptr;
+    antlr4::Token *typeFunction = nullptr;
     FunctionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> VAR();
-    antlr4::tree::TerminalNode* VAR(size_t i);
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *CPAR();
-    std::vector<antlr4::tree::TerminalNode *> RETURN_TYPE();
-    antlr4::tree::TerminalNode* RETURN_TYPE(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> COLON();
+    antlr4::tree::TerminalNode* COLON(size_t i);
     antlr4::tree::TerminalNode *OBRA();
     antlr4::tree::TerminalNode *SC();
     antlr4::tree::TerminalNode *CBRA();
+    std::vector<antlr4::tree::TerminalNode *> VAR();
+    antlr4::tree::TerminalNode* VAR(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> RETURN_TYPE();
+    antlr4::tree::TerminalNode* RETURN_TYPE(size_t i);
     antlr4::tree::TerminalNode *TYPE();
     std::vector<StmtContext *> stmt();
     StmtContext* stmt(size_t i);
@@ -351,12 +356,13 @@ public:
 
   class  FunctionCallContext : public antlr4::ParserRuleContext {
   public:
+    antlr4::Token *functionName = nullptr;
     FunctionCallContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> VAR();
-    antlr4::tree::TerminalNode* VAR(size_t i);
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *CPAR();
+    std::vector<antlr4::tree::TerminalNode *> VAR();
+    antlr4::tree::TerminalNode* VAR(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;

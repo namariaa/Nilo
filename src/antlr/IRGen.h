@@ -19,13 +19,15 @@ unique_ptr<llvm::LLVMContext> Conteiner;
 unique_ptr<llvm::Module> Executable;
 unique_ptr<llvm::IRBuilder<llvm::NoFolder>> Builder;
 map<string,llvm::AllocaInst*> SymbolTable;
+map<string,llvm::AllocaInst*> SymbolTableFunction;
 string lastVar;
 
 
 class IRGen : public NiloScriptVisitor{
     private:
-        llvm::Function *MainFunction;
+        llvm::Function *CurrentFunction;
         llvm::BasicBlock *CurrentBasicBlock;
+        std::vector<string> functionsParams;
         llvm::Value* dPrint;
         llvm::Value* fPrint;
         llvm::Value* cPrint;
@@ -43,8 +45,8 @@ class IRGen : public NiloScriptVisitor{
             
             //Cria função main
             llvm::FunctionType *MAINTYPE = llvm::FunctionType::get(llvm::Type::getInt32Ty(*Conteiner), false);
-            MainFunction = llvm::Function::Create(MAINTYPE, llvm::Function::ExternalLinkage, "main", Executable.get());
-            CurrentBasicBlock = llvm::BasicBlock::Create(*Conteiner, "entrada", MainFunction);
+            CurrentFunction = llvm::Function::Create(MAINTYPE, llvm::Function::ExternalLinkage, "main", Executable.get());
+            CurrentBasicBlock = llvm::BasicBlock::Create(*Conteiner, "entrada", CurrentFunction);
             Builder->SetInsertPoint(CurrentBasicBlock);
 
             //Cria Função Print
@@ -67,7 +69,7 @@ class IRGen : public NiloScriptVisitor{
             Builder->CreateRet(llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner),0));
 
             //Print the executable file 
-            llvm::verifyFunction(*MainFunction);
+            llvm::verifyFunction(*CurrentFunction);
             Executable->print(llvm::outs(), nullptr);
         }
 
@@ -433,19 +435,19 @@ class IRGen : public NiloScriptVisitor{
         }
 
         //Crio o bloco de condicional e vou inserindo o código que está dentro dele
-        llvm::BasicBlock* blockCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoCondicional", MainFunction); 
+        llvm::BasicBlock* blockCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoCondicional", CurrentFunction); 
         Builder->SetInsertPoint(blockCondicional);
         for (NiloScriptParser::StmtContext *stm : context->thenBlock) {
             visitStmt(stm);
         }
         llvm::Value* jump;
-        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada2", MainFunction); 
+        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada2", CurrentFunction); 
         jump = Builder->CreateBr(block2);
 
         //Criar o bloco do senão caso haja
         llvm::BasicBlock* blockElseCondicional;
         if (context->ELSE()){
-            blockElseCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoSenaoCondicional", MainFunction); 
+            blockElseCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoSenaoCondicional", CurrentFunction); 
             Builder->SetInsertPoint(blockElseCondicional);
             for (NiloScriptParser::StmtContext *stm : context->elseStmt){
                 visitStmt(stm);
@@ -471,9 +473,9 @@ class IRGen : public NiloScriptVisitor{
     virtual std::any visitLoop(NiloScriptParser::LoopContext *context) override {
         cout << "CHEGOU NO LOOP " << context->getText()  << endl;
         //Cria blocos
-        llvm::BasicBlock* blockCondicionalLoop = llvm::BasicBlock::Create(*Conteiner, "blocoCondicionalLoop", MainFunction); 
-        llvm::BasicBlock* blockLoopBody = llvm::BasicBlock::Create(*Conteiner, "blocoCorpoLoop", MainFunction); 
-        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada3", MainFunction);
+        llvm::BasicBlock* blockCondicionalLoop = llvm::BasicBlock::Create(*Conteiner, "blocoCondicionalLoop", CurrentFunction); 
+        llvm::BasicBlock* blockLoopBody = llvm::BasicBlock::Create(*Conteiner, "blocoCorpoLoop", CurrentFunction); 
+        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada3", CurrentFunction);
 
         //Cria um jump para o condicional
         llvm::Value* jump = Builder->CreateBr(blockCondicionalLoop);
@@ -529,13 +531,108 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitFunction(NiloScriptParser::FunctionContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
+        cout << "VISITOU O FUNCTION " << context->getText() << endl;
+        //Pega nome da função 
+        string var = context->functionName->getText();
+
+        //Salvando parametros
+        for (int i = 1; i < context->VAR().size(); i++){
+            string variavel = context->VAR()[i]->getText();
+            string variavelChamada = functionsParams[i];
+            SymbolTableFunction[variavel] = SymbolTable[variavelChamada];
+            llvm::AllocaInst* alloca;
+            if (context->paramerReturn->getText() == "inteiro"){
+                alloca = Builder->CreateAlloca(llvm::Type::getInt32Ty(*Conteiner),nullptr,variavel);
+            }
+            else if (context->paramerReturn->getText() == "flutuante"){
+                alloca = Builder->CreateAlloca(llvm::Type::getFloatTy(*Conteiner),nullptr,variavel);
+            }
+            else if (context->paramerReturn->getText() == "caracter"){
+                alloca = Builder->CreateAlloca(llvm::Type::getInt8Ty(*Conteiner),nullptr,variavel);
+            }
+            else if (context->paramerReturn->getText() == "bool"){
+                alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,variavel);
+            }
+            else {
+                cerr << "Error. Tipo da função não reconhecido!" << endl;
+                exit(1);
+            } 
+            SymbolTable[variavel] = alloca;
+        }
+
+
+        //Cria a função
+        llvm::FunctionType *FUNCTIONTYPE;
+        if (context->typeFunction->getText() == "inteiro"){
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt32Ty(*Conteiner), true);
+        }
+        else if (context->typeFunction->getText() == "flutuante"){
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getFloatTy(*Conteiner), true);
+        }
+        else if (context->typeFunction->getText() == "caracter"){
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt8Ty(*Conteiner), true);
+        }
+        else if (context->typeFunction->getText() == "bool"){
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt1Ty(*Conteiner), true);
+        }
+        else if (context->typeFunction->getText() == "naa"){
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getVoidTy(*Conteiner), false);
+        }
+        else {
+            cerr << "Error. Tipo da função não reconhecido!" << endl;
+            exit(1);
+        } 
+        llvm::Function* mainFunction = CurrentFunction;
+        llvm::BasicBlock* currentBlock = CurrentBasicBlock;
+        llvm::Function* theFunction = llvm::Function::Create(FUNCTIONTYPE, llvm::Function::ExternalLinkage, var, Executable.get());
+        CurrentFunction = theFunction;
+
+        //Cria basic block de conteúdo da função
+        llvm::BasicBlock* functionBB = llvm::BasicBlock::Create(*Conteiner, "blocoFuncao", CurrentFunction); 
+        CurrentBasicBlock = functionBB;
+        Builder->SetInsertPoint(CurrentBasicBlock);
+        llvm::Value* valueReturn;
+        for (NiloScriptParser::StmtContext* stm : context->stmt()){
+            valueReturn = any_cast<llvm::Value*>(visitStmt(stm));
+        }
+
+        //Adiciona retorno da função
+        Builder->CreateRet(valueReturn);
+    
+        //Volta aos valores originais da tabela de simbolo
+        for (int i = 1; i < context->VAR().size(); i++){
+            string variavel = context->VAR()[i]->getText();
+            string variavelChamada = functionsParams[i];
+            SymbolTable[variavelChamada] = SymbolTableFunction[variavel];
+        }
+
+        //Limpa array de parametros
+        functionsParams.clear();
+        
+        //Volta a função main e ao basic block antigo
+        CurrentFunction = mainFunction;
+        Builder->SetInsertPoint(currentBlock);
+        return valueReturn;
     };
 
     virtual std::any visitFunctionCall(NiloScriptParser::FunctionCallContext *context) override {
-        cerr << "A funcionalidade não está implementada ainda, desculpe o transtorno!" << endl;
-        exit(1);
+        cout << "VISITOU A CHAMADA AO FUNCTION " << context->getText() << endl;
+        string var = context->functionName->getText();
+        llvm::Function* functionCall =Executable->getFunction(var);   
+        std::vector<llvm::Value*> objectParams; 
+        
+        for (int i = 1; i < context->VAR().size(); i++){
+            string variavel = context->VAR()[i]->getText();
+
+            llvm::AllocaInst* varAlloca = SymbolTable[variavel];
+            llvm::Type* varType = varAlloca->getAllocatedType();
+            llvm::Value* loadedValue = Builder->CreateLoad(varType, varAlloca);
+            objectParams.push_back(loadedValue);
+    
+            functionsParams.push_back(variavel);
+        }
+
+        return Builder->CreateCall(functionCall, objectParams);
     };
 
     virtual std::any visitList(NiloScriptParser::ListContext *context) override {
@@ -577,10 +674,19 @@ class IRGen : public NiloScriptVisitor{
             value = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->valuesList->getText()));
         }
         else if (context->RETURN_TYPE()->getText() == "flutuante"){
-            value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  any_cast<float>(context->valuesList->getText()));
+            value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  std::stof(context->valuesList->getText()));
         }
         else if (context->RETURN_TYPE()->getText() == "bool"){
-            value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner),  any_cast<int>(context->valuesList->getText()));
+            if (context->BOOL()[0]->getText() == "verdadeiro"){
+                value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
+            }
+            else if (context->BOOL()[0]->getText() == "falso"){
+                value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
+            }
+            else{
+                cerr << "Error. Booleano errado!" << endl;
+                exit(1);
+            }
         }
         else {
             cerr << "Error. Tipo da lista não reconhecido!" << endl;
@@ -595,10 +701,19 @@ class IRGen : public NiloScriptVisitor{
                 value = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()[i -1]->getText()));
             }
             else if (context->RETURN_TYPE()->getText() == "flutuante"){
-                value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  any_cast<float>(context->FLOAT()[i - 1]->getText()));
+                value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  std::stof(context->FLOAT()[i - 1]->getText()));
             }
             else if (context->RETURN_TYPE()->getText() == "bool"){
-                value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner),  any_cast<int>(context->BOOL()[i - 1]->getText()));
+                if (context->BOOL()[i - 1]->getText() == "verdadeiro"){
+                    value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
+                }
+                else if (context->BOOL()[i - 1]->getText() == "falso"){
+                    value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
+                }
+                else{
+                    cerr << "Error. Booleano errado!" << endl;
+                    exit(1);
+                }
             }
             else {
                 cerr << "Error. Tipo da lista não reconhecido!" << endl;
@@ -631,6 +746,7 @@ class IRGen : public NiloScriptVisitor{
             cerr << "Error. Tipo não da lista reconhecido!" << endl;
             exit(1);
         }
+
         // Acessar o endereço na posição correta do array
         llvm::Value* position = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()->getText()));
 

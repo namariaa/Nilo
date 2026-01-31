@@ -75,8 +75,8 @@ inCase : CASE OPAR (term OPERATOR term) CPAR OBRA (thenBlock+=stmt)+ CBRA (ELSE 
 loop : 'enquanto' OPAR (term OPERATOR term) CPAR OBRA (stmt)+ CBRA;
 
 // FUNCTION .-*+...-*+...-*+...-*+.. 
-function : 'funcionalidade' VAR OPAR (VAR RETURN_TYPE)? (',' VAR  RETURN_TYPE)* CPAR  RETURN_TYPE OBRA (stmt)+ 'retorne' (TYPE | VAR) SC CBRA;
-functionCall : VAR OPAR VAR? (',' VAR)* CPAR;
+function : 'funcionalidade' functionName=VAR OPAR (VAR COLON paramerReturn=RETURN_TYPE)? (',' VAR  COLON RETURN_TYPE)* CPAR  COLON typeFunction=RETURN_TYPE OBRA (stmt)+ 'retorne' (TYPE | VAR) SC CBRA;
+functionCall : functionName=VAR OPAR VAR? (',' VAR)* CPAR;
 
 // ARRAY .-*+...-*+...-*+...-*+.. 
 list : VAR OBRA nElements=INT CBRA COLON RETURN_TYPE EQUAL OKEY valuesList=(INT | FLOAT | BOOL)? (',' (INT | FLOAT | BOOL))* CKEY;
@@ -113,7 +113,7 @@ BOOL : 'verdadeiro' | 'falso';
 RETURN_TYPE: ('inteiro' | 'flutuante' | 'caracter' | 'bool' | 'nada');
 COLON: ':';
 INT : [0-9]+;
-FLOAT : [0-9]+ ',' [0-9]+;
+FLOAT : [0-9]+ '.' [0-9]+;
 VAR : [a-zA-Z_][a-zA-Z0-9_]*;
 TYPE : INT | FLOAT | STRING | BOOL;
 
