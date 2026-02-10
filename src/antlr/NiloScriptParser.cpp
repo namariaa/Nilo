@@ -1753,7 +1753,7 @@ NiloScriptParser::FunctionContext* NiloScriptParser::function() {
     _la = _input->LA(1);
     if (_la == NiloScriptParser::VAR) {
       setState(172);
-      match(NiloScriptParser::VAR);
+      antlrcpp::downCast<FunctionContext *>(_localctx)->arg01 = match(NiloScriptParser::VAR);
       setState(173);
       match(NiloScriptParser::COLON);
       setState(174);
@@ -1797,11 +1797,12 @@ NiloScriptParser::FunctionContext* NiloScriptParser::function() {
     setState(195);
     match(NiloScriptParser::T__3);
     setState(196);
+    antlrcpp::downCast<FunctionContext *>(_localctx)->return_ = _input->LT(1);
     _la = _input->LA(1);
     if (!(_la == NiloScriptParser::VAR
 
     || _la == NiloScriptParser::TYPE)) {
-    _errHandler->recoverInline(this);
+      antlrcpp::downCast<FunctionContext *>(_localctx)->return_ = _errHandler->recoverInline(this);
     }
     else {
       _errHandler->reportMatch(this);

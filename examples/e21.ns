@@ -1,0 +1,17 @@
+funcionalidade sub (a :inteiro, b :inteiro) :inteiro {
+    resultado :inteiro = a - b;
+    retorne resultado;
+}
+
+funcionalidade soma (x :inteiro, y :inteiro) :inteiro {
+    resultado :inteiro = x + y;
+    mostrarCaracteres("test");
+    retorne resultado;
+}
+
+a :inteiro = pegaInteiro;
+b :inteiro = pegaInteiro;
+c :inteiro = soma(a, b);
+d :inteiro = sub(a, b);
+mostrarInteiro(c);
+mostrarInteiro(d);

@@ -18,8 +18,8 @@ using namespace std;
 unique_ptr<llvm::LLVMContext> Conteiner;
 unique_ptr<llvm::Module> Executable;
 unique_ptr<llvm::IRBuilder<llvm::NoFolder>> Builder;
-map<string,llvm::AllocaInst*> SymbolTable;
-map<string,llvm::AllocaInst*> SymbolTableFunction;
+map<string,map<string,llvm::AllocaInst*>> SymbolTable;
+map<string, vector<string>> argsFunctions;
 string lastVar;
 
 
@@ -27,10 +27,10 @@ class IRGen : public NiloScriptVisitor{
     private:
         llvm::Function *CurrentFunction;
         llvm::BasicBlock *CurrentBasicBlock;
-        std::vector<string> functionsParams;
         llvm::Value* dPrint;
         llvm::Value* fPrint;
         llvm::Value* cPrint;
+        llvm::Value* sPrint;
 
     public:
         IRGen(NiloScriptParser::ProgramContext* tree){
@@ -58,9 +58,10 @@ class IRGen : public NiloScriptVisitor{
             llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
 
             // Tipos do print para reutilizar e não criar de novo
-            dPrint = Builder->CreateGlobalStringPtr("%d", "dPrint");
-            fPrint = Builder->CreateGlobalStringPtr("%f", "fPrint");
-            cPrint = Builder->CreateGlobalStringPtr("%c", "cPrint");
+            dPrint = Builder->CreateGlobalStringPtr("%d\n", "dPrint");
+            fPrint = Builder->CreateGlobalStringPtr("%f\n", "fPrint");
+            cPrint = Builder->CreateGlobalStringPtr("%c\n", "cPrint");
+            sPrint = Builder->CreateGlobalStringPtr("%s\n", "sPrint");
 
             //Inicia visitação da árvore para gerar executável 
             visitProgram(tree);
@@ -71,6 +72,12 @@ class IRGen : public NiloScriptVisitor{
             //Print the executable file 
             llvm::verifyFunction(*CurrentFunction);
             Executable->print(llvm::outs(), nullptr);
+
+            //Cria o arquivo .ll
+            std::error_code errorCode;
+            llvm::raw_fd_ostream out("executavel.ll", errorCode);
+            Executable->print(out, nullptr);
+            out.flush();
         }
 
     virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) override {
@@ -147,7 +154,8 @@ class IRGen : public NiloScriptVisitor{
         }
 
         //Guardando na tabela para ser útil em momentos como input
-        SymbolTable[var] = alloca;
+        string nameCurrentFunction = CurrentFunction->getName().str();
+        SymbolTable[nameCurrentFunction][var] = alloca;
 
         //Pega o value
         llvm::Value *value;
@@ -161,7 +169,8 @@ class IRGen : public NiloScriptVisitor{
         }
 
         //Armazenar variável no espaço que alocamos
-        return Builder->CreateStore(value,alloca);
+        llvm::Value* store = Builder->CreateStore(value,alloca);
+        return store;
     };
 
     virtual std::any visitExpression(NiloScriptParser::ExpressionContext *context) override {
@@ -177,7 +186,8 @@ class IRGen : public NiloScriptVisitor{
             exit(1);
         }
 
-        llvm::AllocaInst* varInTable = SymbolTable[var];
+        string nameCurrentFunction = CurrentFunction->getName().str();
+        llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
         llvm::Type* typeLoadTable = varInTable->getAllocatedType();
         llvm::Type* newType = value->getType();
         llvm::Value* storeValue;
@@ -301,7 +311,9 @@ class IRGen : public NiloScriptVisitor{
         }
         else if (context->VAR()){
             cout << "VAR " << context->getText() << endl;
-            llvm::Value* variavel = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner), SymbolTable[context->VAR()->getText()], "var");
+            string nameCurrentFunction = CurrentFunction->getName().str();
+            cout << "NOME DA FUNÇÃO " << SymbolTable[nameCurrentFunction][context->VAR()->getText()] << endl;
+            llvm::Value* variavel = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner), SymbolTable[nameCurrentFunction][context->VAR()->getText()], "var");
             return variavel;
         }
         else if (context->STRING()){
@@ -358,7 +370,7 @@ class IRGen : public NiloScriptVisitor{
                 typePrint = fPrint;
             }
             else if (context->SHOW()->getText() == "mostrarCaracteres"){
-                typePrint = cPrint;
+                typePrint = sPrint;
             }
             else if (context->SHOW()->getText() == "mostrarBool"){
                 typePrint = dPrint;
@@ -367,7 +379,8 @@ class IRGen : public NiloScriptVisitor{
                 cerr << "Error. Função mostrar não reconhecida!" << endl;
                 exit(1);
             }
-            return Builder->CreateCall(printf, { typePrint, value });
+            llvm::Value* call = Builder->CreateCall(printf, { typePrint, value });
+            return call;
         }
         else{
             cerr << "Error. Você precisa colocar algo para mostrar" << endl;
@@ -399,7 +412,8 @@ class IRGen : public NiloScriptVisitor{
         }
         
         //Faz chamada de função
-        llvm::Value* callScanf = Builder->CreateCall(scanf, { typeInput, SymbolTable[lastVar] });
+        string nameCurrentFunction = CurrentFunction->getName().str();
+        llvm::Value* callScanf = Builder->CreateCall(scanf, { typeInput, SymbolTable[nameCurrentFunction][lastVar] });
     
         return callScanf;
     }
@@ -535,34 +549,9 @@ class IRGen : public NiloScriptVisitor{
         //Pega nome da função 
         string var = context->functionName->getText();
 
-        //Salvando parametros
-        for (int i = 1; i < context->VAR().size(); i++){
-            string variavel = context->VAR()[i]->getText();
-            string variavelChamada = functionsParams[i];
-            SymbolTableFunction[variavel] = SymbolTable[variavelChamada];
-            llvm::AllocaInst* alloca;
-            if (context->paramerReturn->getText() == "inteiro"){
-                alloca = Builder->CreateAlloca(llvm::Type::getInt32Ty(*Conteiner),nullptr,variavel);
-            }
-            else if (context->paramerReturn->getText() == "flutuante"){
-                alloca = Builder->CreateAlloca(llvm::Type::getFloatTy(*Conteiner),nullptr,variavel);
-            }
-            else if (context->paramerReturn->getText() == "caracter"){
-                alloca = Builder->CreateAlloca(llvm::Type::getInt8Ty(*Conteiner),nullptr,variavel);
-            }
-            else if (context->paramerReturn->getText() == "bool"){
-                alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,variavel);
-            }
-            else {
-                cerr << "Error. Tipo da função não reconhecido!" << endl;
-                exit(1);
-            } 
-            SymbolTable[variavel] = alloca;
-        }
-
-
-        //Cria a função
+         //Cria a função e armazena retorno
         llvm::FunctionType *FUNCTIONTYPE;
+        llvm::Value* valueReturn;
         if (context->typeFunction->getText() == "inteiro"){
             FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt32Ty(*Conteiner), true);
         }
@@ -575,7 +564,7 @@ class IRGen : public NiloScriptVisitor{
         else if (context->typeFunction->getText() == "bool"){
             FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt1Ty(*Conteiner), true);
         }
-        else if (context->typeFunction->getText() == "naa"){
+        else if (context->typeFunction->getText() == "nada"){
             FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getVoidTy(*Conteiner), false);
         }
         else {
@@ -583,35 +572,120 @@ class IRGen : public NiloScriptVisitor{
             exit(1);
         } 
         llvm::Function* mainFunction = CurrentFunction;
-        llvm::BasicBlock* currentBlock = CurrentBasicBlock;
         llvm::Function* theFunction = llvm::Function::Create(FUNCTIONTYPE, llvm::Function::ExternalLinkage, var, Executable.get());
         CurrentFunction = theFunction;
+        llvm::BasicBlock* currentBlock = CurrentBasicBlock;
 
         //Cria basic block de conteúdo da função
         llvm::BasicBlock* functionBB = llvm::BasicBlock::Create(*Conteiner, "blocoFuncao", CurrentFunction); 
         CurrentBasicBlock = functionBB;
         Builder->SetInsertPoint(CurrentBasicBlock);
-        llvm::Value* valueReturn;
+
+        //Crio escopo da função e armazeno argumentos
+        for (int i = 1; i < context->VAR().size(); i++){
+            cout << "ARG " << context->children[i + 8]->getText() << endl;
+            string arg = context->VAR()[i]->getText();
+            
+            //Salva na lista de argumentos 
+            argsFunctions[var].push_back(arg);
+
+            if (context->children[i + 8]->getText() == ")") break; //Pois os argumentos acabaram
+        }
+
+        //Cria os parametros para botar na chamada de função
+        for (int i = 1; i < context->VAR().size(); i++){
+            string arg = context->VAR()[i]->getText();
+            string type = context->RETURN_TYPE()[i]->getText();
+
+            cout << "FUNÇÂO DO TIPO " << type << " " << arg << endl;
+            //Faz load
+            string nameCurrentFunction = CurrentFunction->getName().str();
+        
+            //Aloca espaços de memória das variáveis da função
+            llvm::AllocaInst* alloca;
+            if (type == "inteiro"){
+                alloca = Builder->CreateAlloca(llvm::Type::getInt32Ty(*Conteiner),nullptr,arg);
+            }
+            else if (type == "flutuante"){
+                alloca = Builder->CreateAlloca(llvm::Type::getFloatTy(*Conteiner),nullptr,arg);
+            }
+            else if (type == "caracter"){
+                alloca = Builder->CreateAlloca(llvm::Type::getInt8Ty(*Conteiner),nullptr,arg);
+            }
+            else if (type == "booleano"){
+                alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,arg);
+            }
+            else {
+                cerr << "Error. Tipo da função não reconhecido!" << endl;
+                exit(1);
+            } 
+            SymbolTable[var][arg] = alloca;
+            if (context->children[i + 8]->getText() == ")") break; //Pois os argumentos acabaram
+        }
+        cout << "SALVOU TUDO " << context->getText() << endl;
+
+        //Preenche o bloco atual
         for (NiloScriptParser::StmtContext* stm : context->stmt()){
-            valueReturn = any_cast<llvm::Value*>(visitStmt(stm));
+            visitStmt(stm);
+        }
+
+        // Armazena valor de retorno
+        if (!context->TYPE()){
+            if (context->typeFunction->getText() == "inteiro"){
+                valueReturn = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner),SymbolTable[var][context->return_->getText()]);
+            }
+            else if (context->typeFunction->getText() == "flutuante"){
+                valueReturn = Builder->CreateLoad(llvm::Type::getFloatTy(*Conteiner),SymbolTable[var][context->return_->getText()]);
+            }
+            else if (context->typeFunction->getText() == "caracter"){
+                valueReturn = Builder->CreateLoad(llvm::Type::getInt8Ty(*Conteiner),SymbolTable[var][context->return_->getText()]);
+            }
+            else if (context->typeFunction->getText() == "bool"){
+                valueReturn = Builder->CreateLoad(llvm::Type::getInt1Ty(*Conteiner),SymbolTable[var][context->return_->getText()]);
+            }
+            else {
+                cerr << "Error. Valor de retorno não reconhecido!" << endl;
+                exit(1);
+            } 
+        } 
+        else{
+            if (context->typeFunction->getText() == "inteiro"){
+                valueReturn = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->return_->getText()));
+            }
+            else if (context->typeFunction->getText() == "flutuante"){
+                valueReturn = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  std::stof(context->return_->getText()));
+            }
+            else if (context->typeFunction->getText() == "caracter"){
+                valueReturn = llvm::ConstantInt::get(llvm::Type::getInt8Ty(*Conteiner), std::stoi(context->return_->getText()));
+            }
+            else if (context->typeFunction->getText() == "bool"){
+                if (context->return_->getText() == "verdadeiro"){
+                    valueReturn = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
+                }
+                else if (context->return_->getText()  == "falso"){
+                    valueReturn = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
+                }
+                else {
+                    cerr << "Error! Booleano não reconhecido." << endl;
+                    exit(1);
+                }
+            }
+            else if (context->typeFunction->getText() == "nada"){
+                valueReturn = any_cast<llvm::Value*>(llvm::PointerType::get(*Conteiner, 0));
+            }
+            else {
+                cerr << "Error. Valor de retorno não reconhecido!" << endl;
+                exit(1);
+            } 
         }
 
         //Adiciona retorno da função
         Builder->CreateRet(valueReturn);
     
-        //Volta aos valores originais da tabela de simbolo
-        for (int i = 1; i < context->VAR().size(); i++){
-            string variavel = context->VAR()[i]->getText();
-            string variavelChamada = functionsParams[i];
-            SymbolTable[variavelChamada] = SymbolTableFunction[variavel];
-        }
-
-        //Limpa array de parametros
-        functionsParams.clear();
-        
-        //Volta a função main e ao basic block antigo
+        //Volta a função anterior e ao basic block antigo
         CurrentFunction = mainFunction;
-        Builder->SetInsertPoint(currentBlock);
+        CurrentBasicBlock = currentBlock;
+        Builder->SetInsertPoint(CurrentBasicBlock);
         return valueReturn;
     };
 
@@ -620,19 +694,32 @@ class IRGen : public NiloScriptVisitor{
         string var = context->functionName->getText();
         llvm::Function* functionCall =Executable->getFunction(var);   
         std::vector<llvm::Value*> objectParams; 
-        
-        for (int i = 1; i < context->VAR().size(); i++){
-            string variavel = context->VAR()[i]->getText();
 
-            llvm::AllocaInst* varAlloca = SymbolTable[variavel];
+        //Faz store nos endereços que já aloquei
+        for (int i = 1; i < context->VAR().size(); i++){
+            string arg = context->VAR()[i]->getText();
+            
+            //Pego o argumento correspondente na função mesmo
+            string argName = argsFunctions[var][i - 1];
+
+            //Faz load
+            string nameCurrentFunction = CurrentFunction->getName().str();
+            llvm::AllocaInst* varAlloca = SymbolTable[nameCurrentFunction][arg];
+            cout << "FEZ LOAD " << varAlloca << " " << nameCurrentFunction  << endl;
             llvm::Type* varType = varAlloca->getAllocatedType();
             llvm::Value* loadedValue = Builder->CreateLoad(varType, varAlloca);
-            objectParams.push_back(loadedValue);
-    
-            functionsParams.push_back(variavel);
-        }
+            
+            cout << "TEM COISA " << var << " " << arg << " " << SymbolTable[var][arg] << endl;
 
-        return Builder->CreateCall(functionCall, objectParams);
+            //Faz store
+            llvm::Value* stroreValue = Builder->CreateStore(loadedValue, SymbolTable[var][argName]);
+            objectParams.push_back(loadedValue);
+        }
+        cout << "SALVOU TUDO " << context->getText() << endl;
+
+        llvm::Value* store = Builder->CreateCall(functionCall, objectParams);
+
+        return store;
     };
 
     virtual std::any visitList(NiloScriptParser::ListContext *context) override {
@@ -659,7 +746,8 @@ class IRGen : public NiloScriptVisitor{
         llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::ArrayType::get(elementsType, nElements),nullptr,var);
 
         //Armazena na tabela de simbolos
-        SymbolTable[var] = alloca;
+        string nameCurrentFunction = CurrentFunction->getName().str();
+        SymbolTable[nameCurrentFunction][var] = alloca;
 
         
         //Store dos elementos dpo array no espaço alocado
@@ -728,7 +816,8 @@ class IRGen : public NiloScriptVisitor{
 
     virtual std::any visitAcessList(NiloScriptParser::AcessListContext *context) override {
         cout << "ACESS LIST " << context->getText() <<endl;
-        llvm::AllocaInst* varInTable = SymbolTable[context->VAR()->getText()];
+        string nameCurrentFunction = CurrentFunction->getName().str();
+        llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][context->VAR()->getText()];
         llvm::Type* typeLoadTable = varInTable->getAllocatedType();
         auto* arrayType = llvm::cast<llvm::ArrayType>(typeLoadTable);
         llvm::Type* elementsType;    

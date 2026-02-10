@@ -1045,8 +1045,10 @@ public class NiloScriptParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class FunctionContext extends ParserRuleContext {
 		public Token functionName;
+		public Token arg01;
 		public Token paramerReturn;
 		public Token typeFunction;
+		public Token return_;
 		public TerminalNode OPAR() { return getToken(NiloScriptParser.OPAR, 0); }
 		public TerminalNode CPAR() { return getToken(NiloScriptParser.CPAR, 0); }
 		public List<TerminalNode> COLON() { return getTokens(NiloScriptParser.COLON); }
@@ -1096,7 +1098,7 @@ public class NiloScriptParser extends Parser {
 			if (_la==VAR) {
 				{
 				setState(172);
-				match(VAR);
+				((FunctionContext)_localctx).arg01 = match(VAR);
 				setState(173);
 				match(COLON);
 				setState(174);
@@ -1149,9 +1151,10 @@ public class NiloScriptParser extends Parser {
 			setState(195);
 			match(T__3);
 			setState(196);
+			((FunctionContext)_localctx).return_ = _input.LT(1);
 			_la = _input.LA(1);
 			if ( !(_la==VAR || _la==TYPE) ) {
-			_errHandler.recoverInline(this);
+				((FunctionContext)_localctx).return_ = (Token)_errHandler.recoverInline(this);
 			}
 			else {
 				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;

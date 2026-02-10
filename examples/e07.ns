@@ -5,8 +5,10 @@ caso (x_y != 5){
 
     
     mostrarCaracteres("is distinct!!!!!!!!!!"); 
+    mostrarInteiro(0);
 }
 senao {
+    mostrarInteiro(1);
     mostrarCaracteres("is equal!!!!!!!!!!") ;
 }
 :) RESPONSE : is equal!!!!!!!!!!

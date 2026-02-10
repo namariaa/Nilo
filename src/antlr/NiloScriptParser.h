@@ -326,8 +326,10 @@ public:
   class  FunctionContext : public antlr4::ParserRuleContext {
   public:
     antlr4::Token *functionName = nullptr;
+    antlr4::Token *arg01 = nullptr;
     antlr4::Token *paramerReturn = nullptr;
     antlr4::Token *typeFunction = nullptr;
+    antlr4::Token *return_ = nullptr;
     FunctionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *OPAR();
