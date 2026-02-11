@@ -31,6 +31,10 @@ class IRGen : public NiloScriptVisitor{
         llvm::Value* fPrint;
         llvm::Value* cPrint;
         llvm::Value* sPrint;
+        llvm::Value* dScanf;
+        llvm::Value* fScanf;
+        llvm::Value* cScanf;
+        llvm::Value* sScanf;
 
     public:
         IRGen(NiloScriptParser::ProgramContext* tree){
@@ -42,27 +46,32 @@ class IRGen : public NiloScriptVisitor{
             Executable->setDataLayout(llvm::DataLayout("e-m:e-i64:64-f80:128-n8:16:32:64-S128"));
             Executable->setModuleIdentifier("Executável");
             Executable->setTargetTriple("x86_64-unknown-linux-gnu");
-            
-            //Cria função main
+
+            //Cria função
             llvm::FunctionType *MAINTYPE = llvm::FunctionType::get(llvm::Type::getInt32Ty(*Conteiner), false);
             CurrentFunction = llvm::Function::Create(MAINTYPE, llvm::Function::ExternalLinkage, "main", Executable.get());
             CurrentBasicBlock = llvm::BasicBlock::Create(*Conteiner, "entrada", CurrentFunction);
             Builder->SetInsertPoint(CurrentBasicBlock);
 
-            //Cria Função Print
-            llvm::FunctionCallee Print = Executable->getOrInsertFunction("printf",
-            llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
-            
-            //Cria Função Input
-            llvm::FunctionCallee Input = Executable->getOrInsertFunction("scanf",
-            llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
-
-            // Tipos do print para reutilizar e não criar de novo
+            //Cria utilitários de scanf e printf
             dPrint = Builder->CreateGlobalStringPtr("%d\n", "dPrint");
             fPrint = Builder->CreateGlobalStringPtr("%f\n", "fPrint");
             cPrint = Builder->CreateGlobalStringPtr("%c\n", "cPrint");
             sPrint = Builder->CreateGlobalStringPtr("%s\n", "sPrint");
 
+            dScanf = Builder->CreateGlobalStringPtr("%d", "dScanf");
+            fScanf = Builder->CreateGlobalStringPtr("%f", "fScanf");
+            cScanf = Builder->CreateGlobalStringPtr("%c", "cScanf");
+            sScanf = Builder->CreateGlobalStringPtr("%s", "sScanf");
+
+            //Cria Função Print
+            llvm::FunctionCallee Print = Executable->getOrInsertFunction("printf",
+            llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
+                
+            //Cria Função Input
+            llvm::FunctionCallee Input = Executable->getOrInsertFunction("scanf",
+            llvm::FunctionType::get(llvm::IntegerType::getInt32Ty(*Conteiner), {llvm::PointerType::get(llvm::Type::getInt8Ty(*Conteiner), 0)}, true));
+            
             //Inicia visitação da árvore para gerar executável 
             visitProgram(tree);
             
@@ -81,6 +90,7 @@ class IRGen : public NiloScriptVisitor{
         }
 
     virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) override {
+        cout << "CHEGOU NO PROGRAM" << endl;
         for(NiloScriptParser::StmtContext *stm : context->stmt()){
             visitStmt(stm);
             cout << "OUT OF PROGRAM "  << context->children.size()<< endl;
@@ -169,7 +179,13 @@ class IRGen : public NiloScriptVisitor{
         }
 
         //Armazenar variável no espaço que alocamos
-        llvm::Value* store = Builder->CreateStore(value,alloca);
+        llvm::Value* store;
+        if (!context->input()){
+            store = Builder->CreateStore(value,alloca);
+        }
+        else{ 
+            store = value;
+        }
         return store;
     };
 
@@ -313,7 +329,8 @@ class IRGen : public NiloScriptVisitor{
             cout << "VAR " << context->getText() << endl;
             string nameCurrentFunction = CurrentFunction->getName().str();
             cout << "NOME DA FUNÇÃO " << SymbolTable[nameCurrentFunction][context->VAR()->getText()] << endl;
-            llvm::Value* variavel = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner), SymbolTable[nameCurrentFunction][context->VAR()->getText()], "var");
+            llvm::Type* type = SymbolTable[nameCurrentFunction][context->VAR()->getText()]->getAllocatedType();
+            llvm::Value* variavel = Builder->CreateLoad(type, SymbolTable[nameCurrentFunction][context->VAR()->getText()], "var");
             return variavel;
         }
         else if (context->STRING()){
@@ -323,12 +340,13 @@ class IRGen : public NiloScriptVisitor{
             return valueText; 
         }
         else if (context->BOOL()){
+            cout <<"VISITOU O BOLL " << context->getText() << endl;
             if (context->BOOL()->getText() == "verdadeiro"){
-                llvm::Value* trueValue = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
+                llvm::Value* trueValue = llvm::ConstantInt::getTrue(*Conteiner);
                 return trueValue;
             }
             else if (context->BOOL()->getText() == "falso"){
-                llvm::Value* falseValue = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
+                llvm::Value* falseValue = llvm::ConstantInt::getFalse(*Conteiner);
                 return falseValue;
             }
             else{
@@ -398,13 +416,13 @@ class IRGen : public NiloScriptVisitor{
         llvm::Value *typeInput;
 
         if (context->READ()->getText() == "pegaInteiro"){
-            typeInput = dPrint;
+            typeInput = dScanf;
         }
         else if (context->READ()->getText() == "pegaFlutuante"){
-            typeInput = fPrint;
+            typeInput = fScanf;
         }
         else if (context->READ()->getText() == "pegaCaracteres"){
-            typeInput = dPrint;
+            typeInput = sScanf;
         }
         else {
             cerr << "Error. Função de pegar não reconhecida!" << endl;
@@ -425,23 +443,37 @@ class IRGen : public NiloScriptVisitor{
         string oper = context->OPERATOR()->getText();
         llvm::Value* operation;
 
+        //Garante que o tipo retornado esteja certinho
+        // auto *lhsTy = lhs->getType();
+        // auto *rhsTy = rhs->getType();
+
+        // if (lhsTy != rhsTy) {
+        //     if (lhsTy->isIntegerTy(32) && rhsTy->isIntegerTy(1)){
+        //         rhs = Builder->CreateZExt(rhs, lhsTy, "convertendo_bool_inteiro");
+        //     }
+        //     else if (lhsTy->isIntegerTy(1) && rhsTy->isIntegerTy(32)){
+        //         lhs = Builder->CreateZExt(lhs, rhsTy, "convertendo_bool_inteiro");
+        //     }     
+        // }
+
+        //Cria operações
         if (oper ==  "=="){
-            operation = Builder->CreateICmpEQ(lhs, rhs, oper);
+            operation = Builder->CreateICmpEQ(lhs, rhs, "igual");
         }
         else if (oper == "!="){
-            operation = Builder->CreateICmpNE(lhs, rhs, oper);
+            operation = Builder->CreateICmpNE(lhs, rhs, "diferente");
         }
         else if (oper == ">"){
-            operation = Builder->CreateICmpUGT(lhs, rhs, oper);
+            operation = Builder->CreateICmpUGT(lhs, rhs, "maior");
         }
         else if (oper == "<"){
-            operation = Builder->CreateICmpULT(lhs, rhs, oper);
+            operation = Builder->CreateICmpULT(lhs, rhs, "menor");
         }
         else if (oper == ">="){
-            operation = Builder->CreateICmpUGE(lhs, rhs, oper);
+            operation = Builder->CreateICmpUGE(lhs, rhs, "maior_igual");
         }
         else if (oper == "<="){
-            operation = Builder->CreateICmpULE(lhs, rhs, oper);
+            operation = Builder->CreateICmpULE(lhs, rhs, "menor_igaul");
         }
         else{
             cerr << "Error. Operador de comparação não encontrado!" << endl;
@@ -504,22 +536,22 @@ class IRGen : public NiloScriptVisitor{
         llvm::Value* operation;
         
         if (oper ==  "=="){
-            operation = Builder->CreateICmpEQ(lhs, rhs, oper);
+            operation = Builder->CreateICmpEQ(lhs, rhs, "igual");
         }
         else if (oper == "!="){
-            operation = Builder->CreateICmpNE(lhs, rhs, oper);
+            operation = Builder->CreateICmpNE(lhs, rhs, "diferente");
         }
         else if (oper == ">"){
-            operation = Builder->CreateICmpUGT(lhs, rhs, oper);
+            operation = Builder->CreateICmpUGT(lhs, rhs, "maior");
         }
         else if (oper == "<"){
-            operation = Builder->CreateICmpULT(lhs, rhs, oper);
+            operation = Builder->CreateICmpULT(lhs, rhs, "menor");
         }
         else if (oper == ">="){
-            operation = Builder->CreateICmpUGE(lhs, rhs, oper);
+            operation = Builder->CreateICmpUGE(lhs, rhs, "maior_igual");
         }
         else if (oper == "<="){
-            operation = Builder->CreateICmpULE(lhs, rhs, oper);
+            operation = Builder->CreateICmpULE(lhs, rhs, "menor_igaul");
         }
         else{
             cerr << "Error. Operador de comparação não encontrado!" << endl;
@@ -709,7 +741,7 @@ class IRGen : public NiloScriptVisitor{
             llvm::Type* varType = varAlloca->getAllocatedType();
             llvm::Value* loadedValue = Builder->CreateLoad(varType, varAlloca);
             
-            cout << "TEM COISA " << var << " " << arg << " " << SymbolTable[var][arg] << endl;
+            cout << "TEM COISA " << var << " " << arg << " " << SymbolTable[var][argName] << endl;
 
             //Faz store
             llvm::Value* stroreValue = Builder->CreateStore(loadedValue, SymbolTable[var][argName]);
