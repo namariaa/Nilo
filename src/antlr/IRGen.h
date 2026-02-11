@@ -581,20 +581,53 @@ class IRGen : public NiloScriptVisitor{
         //Pega nome da função 
         string var = context->functionName->getText();
 
-         //Cria a função e armazena retorno
+        //Crio escopo da função e armazeno argumentos
+        std::vector<llvm::Type*> params;
+        for (int i = 1; i < context->VAR().size(); i++){
+            cout << "ARG " << context->children[i + 8]->getText() << endl;
+            string arg = context->VAR()[i]->getText();
+            llvm::Type* argType;
+
+            //Salva o tipo do argumento
+            if (context->RETURN_TYPE()[i - 1]->getText() == "inteiro"){
+                argType = llvm::Type::getInt32Ty(*Conteiner);
+            }
+            else if (context->RETURN_TYPE()[i - 1]->getText() == "flutuante"){
+                argType = llvm::Type::getFloatTy(*Conteiner);
+            }
+            else if (context->RETURN_TYPE()[i - 1]->getText() == "caracter"){
+                argType = llvm::Type::getInt8Ty(*Conteiner);
+            }
+            else if (context->RETURN_TYPE()[i - 1]->getText() == "bool"){
+                argType = llvm::Type::getInt1Ty(*Conteiner);
+            }
+            else {
+                cerr << "Error. Tipo do argumento não reconhecido!" << endl;
+                exit(1);
+            } 
+            params.push_back(argType);
+
+            //Salva na lista de argumentos 
+            argsFunctions[var].push_back(arg);
+
+            if (context->children[i + 8]->getText() == ")") break; //Pois os argumentos acabaram
+        }
+
+        //Cria a função e armazena retorno
         llvm::FunctionType *FUNCTIONTYPE;
         llvm::Value* valueReturn;
         if (context->typeFunction->getText() == "inteiro"){
-            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt32Ty(*Conteiner), true);
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt32Ty(*Conteiner),params, false);
         }
         else if (context->typeFunction->getText() == "flutuante"){
-            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getFloatTy(*Conteiner), true);
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getFloatTy(*Conteiner), params, false);
+           
         }
         else if (context->typeFunction->getText() == "caracter"){
-            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt8Ty(*Conteiner), true);
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt8Ty(*Conteiner),params, false);
         }
         else if (context->typeFunction->getText() == "bool"){
-            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt1Ty(*Conteiner), true);
+            FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getInt1Ty(*Conteiner),params, false);
         }
         else if (context->typeFunction->getText() == "nada"){
             FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getVoidTy(*Conteiner), false);
@@ -612,17 +645,6 @@ class IRGen : public NiloScriptVisitor{
         llvm::BasicBlock* functionBB = llvm::BasicBlock::Create(*Conteiner, "blocoFuncao", CurrentFunction); 
         CurrentBasicBlock = functionBB;
         Builder->SetInsertPoint(CurrentBasicBlock);
-
-        //Crio escopo da função e armazeno argumentos
-        for (int i = 1; i < context->VAR().size(); i++){
-            cout << "ARG " << context->children[i + 8]->getText() << endl;
-            string arg = context->VAR()[i]->getText();
-            
-            //Salva na lista de argumentos 
-            argsFunctions[var].push_back(arg);
-
-            if (context->children[i + 8]->getText() == ")") break; //Pois os argumentos acabaram
-        }
 
         //Cria os parametros para botar na chamada de função
         for (int i = 1; i < context->VAR().size(); i++){
@@ -653,6 +675,13 @@ class IRGen : public NiloScriptVisitor{
             } 
             SymbolTable[var][arg] = alloca;
             if (context->children[i + 8]->getText() == ")") break; //Pois os argumentos acabaram
+        }
+
+        //Fazer o store do argumentos 
+        cout << "SIZE " << CurrentFunction->arg_size() << endl;
+        for (int i = 0; i < CurrentFunction->arg_size();i++){
+            llvm::Value* ponteiroArg = &(*CurrentFunction->getArg(i));
+            llvm::Value* stroreValue = Builder->CreateStore(ponteiroArg, SymbolTable[var][argsFunctions[var][i]]);
         }
         cout << "SALVOU TUDO " << context->getText() << endl;
 
@@ -730,21 +759,14 @@ class IRGen : public NiloScriptVisitor{
         //Faz store nos endereços que já aloquei
         for (int i = 1; i < context->VAR().size(); i++){
             string arg = context->VAR()[i]->getText();
-            
-            //Pego o argumento correspondente na função mesmo
-            string argName = argsFunctions[var][i - 1];
 
             //Faz load
             string nameCurrentFunction = CurrentFunction->getName().str();
             llvm::AllocaInst* varAlloca = SymbolTable[nameCurrentFunction][arg];
-            cout << "FEZ LOAD " << varAlloca << " " << nameCurrentFunction  << endl;
             llvm::Type* varType = varAlloca->getAllocatedType();
             llvm::Value* loadedValue = Builder->CreateLoad(varType, varAlloca);
             
-            cout << "TEM COISA " << var << " " << arg << " " << SymbolTable[var][argName] << endl;
-
-            //Faz store
-            llvm::Value* stroreValue = Builder->CreateStore(loadedValue, SymbolTable[var][argName]);
+            //Salva parametro da função
             objectParams.push_back(loadedValue);
         }
         cout << "SALVOU TUDO " << context->getText() << endl;
