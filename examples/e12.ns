@@ -1,5 +1,5 @@
 valor1{2} :inteiro = [1 , 2];
-primeira :inteiro = valor1[0];
+primeira :inteiro = valor1[1];
 mostrarInteiro(primeira);
 
 valor2{3} :flutuante = [1.22 , 8.2999 ,88.88];

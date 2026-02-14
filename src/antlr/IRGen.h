@@ -843,7 +843,8 @@ class IRGen : public NiloScriptVisitor{
                 value = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()[i -1]->getText()));
             }
             else if (context->RETURN_TYPE()->getText() == "flutuante"){
-                value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  std::stof(context->FLOAT()[i - 1]->getText()));
+                cout << "LISTA VALOR " << context->FLOAT()[i - 1]->getText() << endl;
+                value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), context->FLOAT()[i - 1]->getText());
             }
             else if (context->RETURN_TYPE()->getText() == "bool"){
                 if (context->BOOL()[i - 1]->getText() == "verdadeiro"){
