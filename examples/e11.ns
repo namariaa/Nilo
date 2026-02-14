@@ -11,5 +11,5 @@ enquanto (impar != verdadeiro) {
     contador = contador + 1;
 }
 
-mostrar(x);
-mostrar(contador);
+mostrarInteiro(x);
+mostrarInteiro(contador);

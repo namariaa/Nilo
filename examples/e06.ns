@@ -1,5 +1,6 @@
 x_y :inteiro = 6;
 caso ( x_y != 5 ) {
-    mostrar("diferente!!!!!!!!!!") ;
+    mostrarCaracteres("diferente!!!!!!!!!!") ;
 }
 :) RESPONSE : diferente!!!!!!!!!!
+

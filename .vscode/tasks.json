@@ -34,9 +34,9 @@
         {
             "label": "run",
             "type": "shell",
-            "command": "${workspaceFolder}/src/execute/ns ${workspaceFolder}/examples/e20.ns",
+            "command": "${workspaceFolder}/src/execute/ns ${workspaceFolder}/examples/e12.ns",
             "problemMatcher": []
         }
 
     ]
-}
+} 

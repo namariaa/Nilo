@@ -1,7 +1,7 @@
 
 
 
-        mostrar("É importante testar se ele está igorando espaços em branco, enter e tabs corretamente");
+        mostrarCaracteres("É importante testar se ele está igorando espaços em branco, enter e tabs corretamente");
     :) Caso não esteja correto é importante modificar a gramática
 :) Testes; Testar vários níveis é importante; 
 

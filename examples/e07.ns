@@ -1,12 +1,14 @@
 x_y :inteiro = 5;
-mostrar("test before!!!!!!!!!!");
+mostrarCaracteres("test before!!!!!!!!!!");
 caso (x_y != 5){
-    mostrar("test"); 
+    mostrarCaracteres("test"); 
 
     
-    mostrar("is distinct!!!!!!!!!!"); 
+    mostrarCaracteres("is distinct!!!!!!!!!!"); 
+    mostrarInteiro(0);
 }
-senão {
-    mostrar("is equal!!!!!!!!!!") ;
+senao {
+    mostrarInteiro(1);
+    mostrarCaracteres("is equal!!!!!!!!!!") ;
 }
 :) RESPONSE : is equal!!!!!!!!!!

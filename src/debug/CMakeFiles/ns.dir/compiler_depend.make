@@ -82,8 +82,10 @@
   antlr4-cpp-runtime-bin/runtime/libantlr4-runtime.a
 
 CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp \
+  /home/namaria/Gram-tica-com-ANTLR/src/antlr/IRGen.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptLexer.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptParser.h \
+  /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptVisitor.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorListener.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorStrategy.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRFileStream.h \
@@ -256,6 +258,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/assert.h \
   /usr/include/c++/13/algorithm \
   /usr/include/c++/13/any \
+  /usr/include/c++/13/array \
   /usr/include/c++/13/atomic \
   /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
@@ -296,6 +299,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/c++/13/bits/ios_base.h \
   /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/iterator_concepts.h \
+  /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
   /usr/include/c++/13/bits/locale_facets.h \
@@ -328,6 +332,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -339,6 +344,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_list.h \
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_multiset.h \
@@ -393,6 +399,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/fstream \
+  /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
@@ -400,11 +407,13 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/c++/13/istream \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
+  /usr/include/c++/13/list \
   /usr/include/c++/13/map \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
+  /usr/include/c++/13/optional \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
@@ -416,6 +425,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stack \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -432,6 +442,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/inttypes.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
@@ -563,7 +574,128 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
+  /usr/lib/llvm-19/include/llvm-c/DataTypes.h \
+  /usr/lib/llvm-19/include/llvm-c/ExternC.h \
+  /usr/lib/llvm-19/include/llvm-c/Types.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ADL.h \
+  /usr/lib/llvm-19/include/llvm/ADT/APFloat.h \
+  /usr/lib/llvm-19/include/llvm/ADT/APInt.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ArrayRef.h \
+  /usr/lib/llvm-19/include/llvm/ADT/Bitfields.h \
+  /usr/lib/llvm-19/include/llvm/ADT/BitmaskEnum.h \
+  /usr/lib/llvm-19/include/llvm/ADT/DenseMap.h \
+  /usr/lib/llvm-19/include/llvm/ADT/DenseMapInfo.h \
+  /usr/lib/llvm-19/include/llvm/ADT/DenseSet.h \
+  /usr/lib/llvm-19/include/llvm/ADT/EpochTracker.h \
+  /usr/lib/llvm-19/include/llvm/ADT/FloatingPointMode.h \
+  /usr/lib/llvm-19/include/llvm/ADT/GraphTraits.h \
+  /usr/lib/llvm-19/include/llvm/ADT/Hashing.h \
+  /usr/lib/llvm-19/include/llvm/ADT/MapVector.h \
+  /usr/lib/llvm-19/include/llvm/ADT/PointerIntPair.h \
+  /usr/lib/llvm-19/include/llvm/ADT/PointerUnion.h \
+  /usr/lib/llvm-19/include/llvm/ADT/STLExtras.h \
+  /usr/lib/llvm-19/include/llvm/ADT/STLForwardCompat.h \
+  /usr/lib/llvm-19/include/llvm/ADT/STLFunctionalExtras.h \
+  /usr/lib/llvm-19/include/llvm/ADT/Sequence.h \
+  /usr/lib/llvm-19/include/llvm/ADT/SmallPtrSet.h \
+  /usr/lib/llvm-19/include/llvm/ADT/SmallVector.h \
+  /usr/lib/llvm-19/include/llvm/ADT/StringMap.h \
+  /usr/lib/llvm-19/include/llvm/ADT/StringMapEntry.h \
+  /usr/lib/llvm-19/include/llvm/ADT/StringRef.h \
+  /usr/lib/llvm-19/include/llvm/ADT/StringSwitch.h \
+  /usr/lib/llvm-19/include/llvm/ADT/TinyPtrVector.h \
+  /usr/lib/llvm-19/include/llvm/ADT/Twine.h \
+  /usr/lib/llvm-19/include/llvm/ADT/bit.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ilist.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ilist_base.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ilist_iterator.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ilist_node.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ilist_node_base.h \
+  /usr/lib/llvm-19/include/llvm/ADT/ilist_node_options.h \
+  /usr/lib/llvm-19/include/llvm/ADT/iterator.h \
+  /usr/lib/llvm-19/include/llvm/ADT/iterator_range.h \
+  /usr/lib/llvm-19/include/llvm/ADT/simple_ilist.h \
+  /usr/lib/llvm-19/include/llvm/Config/abi-breaking.h \
+  /usr/lib/llvm-19/include/llvm/Config/llvm-config.h \
+  /usr/lib/llvm-19/include/llvm/IR/Analysis.h \
+  /usr/lib/llvm-19/include/llvm/IR/Argument.h \
+  /usr/lib/llvm-19/include/llvm/IR/Attributes.h \
+  /usr/lib/llvm-19/include/llvm/IR/Attributes.inc \
+  /usr/lib/llvm-19/include/llvm/IR/BasicBlock.h \
+  /usr/lib/llvm-19/include/llvm/IR/CFG.h \
+  /usr/lib/llvm-19/include/llvm/IR/CallingConv.h \
+  /usr/lib/llvm-19/include/llvm/IR/Comdat.h \
+  /usr/lib/llvm-19/include/llvm/IR/Constant.h \
+  /usr/lib/llvm-19/include/llvm/IR/ConstantFold.h \
+  /usr/lib/llvm-19/include/llvm/IR/ConstantFolder.h \
+  /usr/lib/llvm-19/include/llvm/IR/ConstantRange.h \
+  /usr/lib/llvm-19/include/llvm/IR/Constants.h \
+  /usr/lib/llvm-19/include/llvm/IR/DataLayout.h \
+  /usr/lib/llvm-19/include/llvm/IR/DbgVariableFragmentInfo.h \
+  /usr/lib/llvm-19/include/llvm/IR/DebugLoc.h \
+  /usr/lib/llvm-19/include/llvm/IR/DebugProgramInstruction.h \
+  /usr/lib/llvm-19/include/llvm/IR/DerivedTypes.h \
+  /usr/lib/llvm-19/include/llvm/IR/DiagnosticHandler.h \
+  /usr/lib/llvm-19/include/llvm/IR/FMF.h \
+  /usr/lib/llvm-19/include/llvm/IR/FPEnv.h \
+  /usr/lib/llvm-19/include/llvm/IR/FixedMetadataKinds.def \
+  /usr/lib/llvm-19/include/llvm/IR/Function.h \
+  /usr/lib/llvm-19/include/llvm/IR/GEPNoWrapFlags.h \
+  /usr/lib/llvm-19/include/llvm/IR/GlobalAlias.h \
+  /usr/lib/llvm-19/include/llvm/IR/GlobalIFunc.h \
+  /usr/lib/llvm-19/include/llvm/IR/GlobalObject.h \
+  /usr/lib/llvm-19/include/llvm/IR/GlobalValue.h \
+  /usr/lib/llvm-19/include/llvm/IR/GlobalVariable.h \
+  /usr/lib/llvm-19/include/llvm/IR/IRBuilder.h \
+  /usr/lib/llvm-19/include/llvm/IR/IRBuilderFolder.h \
+  /usr/lib/llvm-19/include/llvm/IR/InstrTypes.h \
+  /usr/lib/llvm-19/include/llvm/IR/Instruction.def \
+  /usr/lib/llvm-19/include/llvm/IR/Instruction.h \
+  /usr/lib/llvm-19/include/llvm/IR/Instructions.h \
+  /usr/lib/llvm-19/include/llvm/IR/IntrinsicEnums.inc \
+  /usr/lib/llvm-19/include/llvm/IR/Intrinsics.h \
+  /usr/lib/llvm-19/include/llvm/IR/LLVMContext.h \
+  /usr/lib/llvm-19/include/llvm/IR/Metadata.def \
+  /usr/lib/llvm-19/include/llvm/IR/Metadata.h \
+  /usr/lib/llvm-19/include/llvm/IR/Module.h \
+  /usr/lib/llvm-19/include/llvm/IR/NoFolder.h \
+  /usr/lib/llvm-19/include/llvm/IR/OperandTraits.h \
+  /usr/lib/llvm-19/include/llvm/IR/Operator.h \
+  /usr/lib/llvm-19/include/llvm/IR/PassManager.h \
+  /usr/lib/llvm-19/include/llvm/IR/PassManagerInternal.h \
+  /usr/lib/llvm-19/include/llvm/IR/ProfileSummary.h \
+  /usr/lib/llvm-19/include/llvm/IR/SymbolTableListTraits.h \
+  /usr/lib/llvm-19/include/llvm/IR/TrackingMDRef.h \
+  /usr/lib/llvm-19/include/llvm/IR/Type.h \
+  /usr/lib/llvm-19/include/llvm/IR/Use.h \
+  /usr/lib/llvm-19/include/llvm/IR/User.h \
+  /usr/lib/llvm-19/include/llvm/IR/Value.def \
+  /usr/lib/llvm-19/include/llvm/IR/Value.h \
+  /usr/lib/llvm-19/include/llvm/IR/ValueHandle.h \
+  /usr/lib/llvm-19/include/llvm/IR/Verifier.h \
+  /usr/lib/llvm-19/include/llvm/Support/AlignOf.h \
+  /usr/lib/llvm-19/include/llvm/Support/Alignment.h \
+  /usr/lib/llvm-19/include/llvm/Support/AllocatorBase.h \
+  /usr/lib/llvm-19/include/llvm/Support/AtomicOrdering.h \
+  /usr/lib/llvm-19/include/llvm/Support/CBindingWrapping.h \
+  /usr/lib/llvm-19/include/llvm/Support/Casting.h \
+  /usr/lib/llvm-19/include/llvm/Support/CodeGen.h \
+  /usr/lib/llvm-19/include/llvm/Support/Compiler.h \
+  /usr/lib/llvm-19/include/llvm/Support/DataTypes.h \
+  /usr/lib/llvm-19/include/llvm/Support/ErrorHandling.h \
+  /usr/lib/llvm-19/include/llvm/Support/MathExtras.h \
+  /usr/lib/llvm-19/include/llvm/Support/MemAlloc.h \
+  /usr/lib/llvm-19/include/llvm/Support/ModRef.h \
+  /usr/lib/llvm-19/include/llvm/Support/PointerLikeTypeTraits.h \
+  /usr/lib/llvm-19/include/llvm/Support/ReverseIteration.h \
+  /usr/lib/llvm-19/include/llvm/Support/SwapByteOrder.h \
+  /usr/lib/llvm-19/include/llvm/Support/TrailingObjects.h \
+  /usr/lib/llvm-19/include/llvm/Support/TypeName.h \
+  /usr/lib/llvm-19/include/llvm/Support/TypeSize.h \
+  /usr/lib/llvm-19/include/llvm/Support/float128.h \
+  /usr/lib/llvm-19/include/llvm/Support/raw_ostream.h \
+  /usr/lib/llvm-19/include/llvm/Support/type_traits.h
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptBaseListener.cpp \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptBaseListener.h \
@@ -3478,13 +3610,169 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptLexer.cpp:
 
-/home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptVisitor.h:
-
 /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptBaseVisitor.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptListener.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptBaseListener.cpp:
+
+/usr/lib/llvm-19/include/llvm/Support/raw_ostream.h:
+
+/usr/lib/llvm-19/include/llvm/Support/TypeSize.h:
+
+/usr/lib/llvm-19/include/llvm/Support/TrailingObjects.h:
+
+/usr/lib/llvm-19/include/llvm/Support/ModRef.h:
+
+/usr/lib/llvm-19/include/llvm/Support/ErrorHandling.h:
+
+/usr/lib/llvm-19/include/llvm/Support/DataTypes.h:
+
+/usr/lib/llvm-19/include/llvm/Support/CodeGen.h:
+
+/usr/lib/llvm-19/include/llvm/Support/AtomicOrdering.h:
+
+/usr/lib/llvm-19/include/llvm/Support/Alignment.h:
+
+/usr/lib/llvm-19/include/llvm/Support/AlignOf.h:
+
+/usr/lib/llvm-19/include/llvm/Support/CBindingWrapping.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Verifier.h:
+
+/usr/lib/llvm-19/include/llvm/IR/ValueHandle.h:
+
+/usr/lib/llvm-19/include/llvm/IR/User.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Use.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Type.h:
+
+/usr/lib/llvm-19/include/llvm/IR/TrackingMDRef.h:
+
+/usr/lib/llvm-19/include/llvm/IR/PassManagerInternal.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Operator.h:
+
+/usr/lib/llvm-19/include/llvm/IR/OperandTraits.h:
+
+/usr/lib/llvm-19/include/llvm/IR/NoFolder.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Metadata.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Metadata.def:
+
+/usr/lib/llvm-19/include/llvm/IR/Instruction.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Instruction.def:
+
+/usr/lib/llvm-19/include/llvm/IR/InstrTypes.h:
+
+/usr/lib/llvm-19/include/llvm/IR/IRBuilderFolder.h:
+
+/usr/lib/llvm-19/include/llvm/IR/IRBuilder.h:
+
+/usr/lib/llvm-19/include/llvm/Support/type_traits.h:
+
+/usr/lib/llvm-19/include/llvm/IR/GlobalVariable.h:
+
+/usr/lib/llvm-19/include/llvm/IR/GlobalValue.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Value.h:
+
+/usr/lib/llvm-19/include/llvm/IR/GlobalObject.h:
+
+/usr/lib/llvm-19/include/llvm/IR/GlobalIFunc.h:
+
+/usr/lib/llvm-19/include/llvm/IR/GlobalAlias.h:
+
+/usr/lib/llvm-19/include/llvm/IR/GEPNoWrapFlags.h:
+
+/usr/lib/llvm-19/include/llvm/IR/FixedMetadataKinds.def:
+
+/usr/lib/llvm-19/include/llvm/IR/FPEnv.h:
+
+/usr/lib/llvm-19/include/llvm/IR/FMF.h:
+
+/usr/lib/llvm-19/include/llvm/IR/DebugLoc.h:
+
+/usr/lib/llvm-19/include/llvm/IR/DbgVariableFragmentInfo.h:
+
+/usr/lib/llvm-19/include/llvm/IR/DataLayout.h:
+
+/usr/lib/llvm-19/include/llvm/IR/ConstantRange.h:
+
+/usr/lib/llvm-19/include/llvm/IR/ConstantFolder.h:
+
+/usr/lib/llvm-19/include/llvm/IR/ConstantFold.h:
+
+/usr/lib/llvm-19/include/llvm/IR/PassManager.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Constant.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Comdat.h:
+
+/usr/lib/llvm-19/include/llvm/IR/CallingConv.h:
+
+/usr/lib/llvm-19/include/llvm/IR/CFG.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Attributes.inc:
+
+/usr/lib/llvm-19/include/llvm/IR/Attributes.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Analysis.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/iterator_range.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/iterator.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/ilist_node_options.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/ilist_node_base.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/ilist_node.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/bit.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/TinyPtrVector.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/StringSwitch.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/StringRef.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/StringMapEntry.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/StringMap.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/SmallPtrSet.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/Sequence.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/STLFunctionalExtras.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/STLExtras.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/PointerIntPair.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/MapVector.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/Hashing.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/GraphTraits.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/EpochTracker.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/DenseSet.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/DenseMapInfo.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/APInt.h:
+
+/usr/lib/llvm-19/include/llvm-c/Types.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/BitmaskEnum.h:
+
+/usr/lib/llvm-19/include/llvm-c/DataTypes.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h:
 
@@ -3510,11 +3798,25 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
 /usr/include/c++/13/algorithm:
 
 /usr/include/alloca.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathWildcardElement.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/Twine.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathRuleAnywhereElement.h:
 
@@ -3532,6 +3834,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp:
 
+/usr/lib/llvm-19/include/llvm/IR/Argument.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/pattern/ParseTreeMatch.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTreeProperty.h:
@@ -3544,9 +3848,9 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/assert.h:
 
-/usr/include/c++/13/atomic:
-
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTreeType.h:
+
+/usr/lib/llvm-19/include/llvm/IR/DebugProgramInstruction.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Any.h:
 
@@ -3564,6 +3868,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/c++/13/compare:
 
+/usr/lib/llvm-19/include/llvm/Support/AllocatorBase.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/TransitionType.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/StarLoopbackState.h:
@@ -3576,7 +3882,7 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/sched.h:
 
-/usr/include/c++/13/debug/debug.h:
+/usr/lib/llvm-19/include/llvm/Support/TypeName.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredictionMode.h:
 
@@ -3620,6 +3926,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/c++/13/bits/char_traits.h:
 
+/usr/include/c++/13/bits/std_function.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LexerPopModeAction.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
@@ -3633,6 +3941,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 /usr/include/wctype.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LexerATNSimulator.h:
+
+/usr/include/inttypes.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LexerModeAction.h:
 
@@ -3654,11 +3964,11 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/ctype.h:
 
-/usr/include/c++/13/backward/auto_ptr.h:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredicateEvalInfo.h:
-
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/RuleStopState.h:
+
+/usr/lib/llvm-19/include/llvm/IR/ProfileSummary.h:
+
+/usr/lib/llvm-19/include/llvm/IR/LLVMContext.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ArrayPredictionContext.h:
 
@@ -3672,7 +3982,13 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/Interval.h:
 
+/home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptVisitor.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/PointerUnion.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNDeserializationOptions.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/ArrayRef.h:
 
 /usr/include/c++/13/bits/stl_multiset.h:
 
@@ -3684,6 +4000,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/pattern/TagChunk.h:
 
+/usr/lib/llvm-19/include/llvm/ADT/DenseMap.h:
+
 /usr/lib/x86_64-linux-gnu/crtn.o:
 
 /usr/include/c++/13/numbers:
@@ -3692,6 +4010,12 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
+/usr/lib/llvm-19/lib/libLLVMSelectionDAG.a:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathLexerErrorListener.h:
+
+/usr/lib/llvm-19/lib/libLLVMMCDisassembler.a:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/TerminalNodeImpl.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LexerActionExecutor.h:
@@ -3699,12 +4023,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 
 /usr/lib/llvm-19/lib/libLLVMMC.a:
-
-/usr/lib/llvm-19/lib/libLLVMSelectionDAG.a:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathLexerErrorListener.h:
-
-/usr/lib/llvm-19/lib/libLLVMMCDisassembler.a:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LookaheadEventInfo.h:
 
@@ -3717,6 +4035,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 /usr/include/c++/13/bits/shared_ptr_atomic.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptBaseVisitor.cpp:
+
+/usr/lib/llvm-19/include/llvm-c/ExternC.h:
 
 /usr/include/c++/13/set:
 
@@ -3732,13 +4052,15 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/CPPUtils.h:
 
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTree.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/StarLoopEntryState.h:
 
 /usr/lib/llvm-19/lib/libLLVMHipStdPar.a:
 
 /usr/lib/llvm-19/lib/libLLVMTargetParser.a:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/lib/llvm-19/lib/libLLVMDemangle.a:
 
@@ -3760,6 +4082,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
+/usr/lib/llvm-19/include/llvm/IR/BasicBlock.h:
+
 /usr/lib/llvm-19/lib/libLLVMSupport.a:
 
 /usr/include/c++/13/bits/ios_base.h:
@@ -3767,6 +4091,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 /usr/include/c++/13/iterator:
 
 /usr/lib/llvm-19/lib/libLLVMFrontendOffloading.a:
+
+/usr/lib/llvm-19/include/llvm/IR/Value.def:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/WildcardTransition.h:
 
@@ -3790,10 +4116,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 
 /usr/lib/llvm-19/lib/libLLVMDebugInfoMSF.a:
 
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTree.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
 /usr/include/linux/close_range.h:
 
 /usr/lib/llvm-19/lib/libLLVMGlobalISel.a:
@@ -3813,6 +4135,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so:
 
 /usr/lib/llvm-19/lib/libLLVMX86Desc.a:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr/IRGen.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
@@ -3836,6 +4160,10 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/pattern/TextChunk.h:
 
+/usr/lib/llvm-19/include/llvm/IR/IntrinsicEnums.inc:
+
+/usr/lib/llvm-19/include/llvm/ADT/APFloat.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
 /usr/lib/llvm-19/lib/libLLVMCFGuard.a:
@@ -3854,10 +4182,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/TokenStream.h:
 
-/usr/include/c++/13/backward/binders.h:
-
-/usr/lib/llvm-19/lib/libLLVMBitWriter.a:
-
 /usr/lib/llvm-19/lib/libLLVMDebugInfoCodeView.a:
 
 /usr/include/c++/13/bits/basic_string.h:
@@ -3865,6 +4189,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/BitSet.h:
 
 /lib/x86_64-linux-gnu/libm.so.6:
+
+/usr/lib/llvm-19/include/llvm/IR/Function.h:
 
 /usr/lib/llvm-19/lib/libLLVMCore.a:
 
@@ -3876,13 +4202,15 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 
 /usr/include/c++/13/bits/erase_if.h:
 
+/usr/include/c++/13/debug/debug.h:
+
+/usr/include/c++/13/bits/stl_list.h:
+
 /usr/lib/llvm-19/lib/libLLVMRemarks.a:
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o:
 
 /usr/lib/llvm-19/lib/libLLVMInstrumentation.a:
-
-/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/TokenSource.h:
 
@@ -3904,6 +4232,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Recognizer.h:
 
+/usr/lib/llvm-19/include/llvm/IR/Constants.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/misc/Predicate.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptLexer.h:
@@ -3912,11 +4242,15 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorListener.h:
 
+/usr/lib/llvm-19/include/llvm/ADT/ilist.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
 /usr/lib/llvm-19/lib/libLLVMTextAPI.a:
+
+/usr/lib/llvm-19/include/llvm/Support/float128.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
@@ -3944,17 +4278,23 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Version.h:
 
+/usr/lib/llvm-19/include/llvm/IR/Module.h:
+
 /usr/include/c++/13/bits/ranges_algobase.h:
 
 /usr/lib/llvm-19/lib/libLLVMX86Info.a:
 
 /usr/include/c++/13/bits/align.h:
 
+/usr/lib/llvm-19/include/llvm/IR/Instructions.h:
+
 /usr/lib/x86_64-linux-gnu/libc_nonshared.a:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/BufferedTokenStream.h:
 
 /usr/lib/x86_64-linux-gnu/libzstd.so:
+
+/usr/include/c++/13/array:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathTokenElement.h:
 
@@ -3972,6 +4312,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/DefaultErrorStrategy.h:
 
+/usr/lib/llvm-19/include/llvm/ADT/Bitfields.h:
+
 /usr/include/stdlib.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o:
@@ -3984,9 +4326,21 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/UnbufferedCharStream.h:
 
+/usr/lib/llvm-19/include/llvm/IR/DerivedTypes.h:
+
 antlr4-cpp-runtime-bin/runtime/libantlr4-runtime.a:
 
 /usr/include/c++/13/ext/string_conversions.h:
+
+/usr/lib/llvm-19/include/llvm/IR/Intrinsics.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/STLForwardCompat.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Arrays.h:
+
+/usr/include/string.h:
+
+/usr/lib/llvm-19/lib/libLLVMObjCARCOpts.a:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorStrategy.h:
 
@@ -4004,6 +4358,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/LexerNoViableAltException.h:
 
+/usr/lib/llvm-19/include/llvm/ADT/ilist_iterator.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRFileStream.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/TokenStreamRewriter.h:
@@ -4018,15 +4374,13 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o:
 
 /usr/lib/llvm-19/lib/libLLVMAsmPrinter.a:
 
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LexerMoreAction.h:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/CommonTokenStream.h:
-
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Token.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/CharStream.h:
+
+/usr/lib/llvm-19/include/llvm/Support/Compiler.h:
 
 /usr/include/x86_64-linux-gnu/asm/unistd_64.h:
 
@@ -4036,11 +4390,27 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/CommonTokenFactory.h:
 
+/usr/lib/llvm-19/include/llvm/Support/Casting.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
 
+/home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptBaseListener.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SingletonPredictionContext.h:
+
+/usr/include/c++/13/bits/stl_construct.h:
+
+/usr/lib/llvm-19/lib/libLLVMBinaryFormat.a:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/IntStream.h:
+
+/usr/lib/llvm-19/include/llvm/Support/MathExtras.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Vocabulary.h:
+
+/usr/lib/llvm-19/include/llvm/IR/SymbolTableListTraits.h:
 
 /usr/include/c++/13/bits/streambuf.tcc:
 
@@ -4057,22 +4427,6 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /usr/include/stdint.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/FlatHashSet.h:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptBaseListener.h:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SingletonPredictionContext.h:
-
-/usr/include/c++/13/bits/stl_construct.h:
-
-/usr/lib/llvm-19/lib/libLLVMBinaryFormat.a:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/IntStream.h:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/support/Arrays.h:
-
-/usr/include/string.h:
-
-/usr/lib/llvm-19/lib/libLLVMObjCARCOpts.a:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/InterpreterRuleContext.h:
 
@@ -4098,7 +4452,21 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATN.h:
 
+/usr/lib/llvm-19/lib/libLLVMBitWriter.a:
+
+/usr/include/c++/13/stdlib.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/UnbufferedTokenStream.h:
+
+/usr/include/c++/13/atomic:
+
+/usr/lib/llvm-19/include/llvm/Support/PointerLikeTypeTraits.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PredicateEvalInfo.h:
+
+/usr/include/c++/13/backward/auto_ptr.h:
+
+/usr/include/c++/13/backward/binders.h:
 
 /usr/include/c++/13/bit:
 
@@ -4122,9 +4490,9 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContextWithAltNum.h:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuleContextWithAltNum.h:
 
 /usr/include/c++/13/bits/charconv.h:
 
@@ -4133,6 +4501,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /usr/include/c++/13/bits/codecvt.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/ilist_base.h:
 
 /usr/include/c++/13/bits/stl_tree.h:
 
@@ -4150,15 +4520,19 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
+/usr/lib/llvm-19/include/llvm/ADT/FloatingPointMode.h:
+
 /usr/include/c++/13/bits/exception.h:
 
+/usr/lib/llvm-19/include/llvm/Support/ReverseIteration.h:
+
 /usr/include/c++/13/bits/exception_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/ATNConfigSet.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/Transition.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
@@ -4216,11 +4590,11 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 
 /usr/include/c++/13/bits/parse_numbers.h:
 
+/usr/include/x86_64-linux-gnu/bits/wchar2-decl.h:
+
 /usr/include/linux/errno.h:
 
 /usr/lib/llvm-19/lib/libLLVMSymbolize.a:
-
-/usr/include/x86_64-linux-gnu/bits/wchar2-decl.h:
 
 /usr/include/c++/13/bits/std_abs.h:
 
@@ -4229,6 +4603,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /usr/include/c++/13/bits/ptr_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2-decl.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/ADL.h:
 
 /usr/include/c++/13/bits/range_access.h:
 
@@ -4254,6 +4630,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 
 /usr/include/c++/13/bits/stl_algobase.h:
 
+/usr/lib/llvm-19/include/llvm/Config/abi-breaking.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/RuntimeMetaData.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
@@ -4263,6 +4641,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/utility:
+
+/usr/lib/llvm-19/include/llvm/Support/SwapByteOrder.h:
 
 /usr/include/c++/13/bits/stl_iterator.h:
 
@@ -4307,6 +4687,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /usr/lib/llvm-19/lib/libLLVMX86Disassembler.a:
 
 /usr/include/c++/13/bits/vector.tcc:
+
+/usr/include/c++/13/optional:
 
 /usr/include/c++/13/bitset:
 
@@ -4354,13 +4736,25 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 
 /usr/include/c++/13/exception:
 
+/usr/lib/llvm-19/include/llvm/Config/llvm-config.h:
+
 /usr/lib/llvm-19/lib/libLLVMDebugInfoPDB.a:
 
 /usr/include/c++/13/bits/memory_resource.h:
 
 /usr/include/c++/13/pstl/glue_memory_defs.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
+
 /usr/include/c++/13/ext/alloc_traits.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/LexerMoreAction.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/CommonTokenStream.h:
+
+/usr/include/c++/13/list:
 
 /usr/include/c++/13/ext/atomicity.h:
 
@@ -4375,6 +4769,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/PlusLoopbackState.h:
 
 /usr/include/c++/13/ext/type_traits.h:
+
+/usr/include/c++/13/functional:
 
 /usr/include/c++/13/bits/stl_stack.h:
 
@@ -4397,6 +4793,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o:
 
 /usr/include/c++/13/limits:
+
+/usr/lib/llvm-19/include/llvm/IR/DiagnosticHandler.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/SemanticContextType.h:
 
@@ -4468,11 +4866,15 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o:
 
 /usr/include/strings.h:
 
+/usr/lib/llvm-19/include/llvm/Support/MemAlloc.h:
+
 /usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
 /usr/include/c++/13/bits/stl_heap.h:
 
 /usr/include/syscall.h:
+
+/usr/lib/llvm-19/include/llvm/ADT/simple_ilist.h:
 
 /usr/include/time.h:
 
@@ -4534,6 +4936,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
 
+/usr/lib/llvm-19/include/llvm/ADT/SmallVector.h:
+
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/ParseTreeVisitor.h:
 
 /usr/include/c++/13/bits/unordered_set.h:
@@ -4580,6 +4984,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o:
 
+/usr/include/c++/13/bits/list.tcc:
+
 /usr/include/c++/13/type_traits:
 
 /usr/include/features-time64.h:
@@ -4603,15 +5009,3 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd.h:
-
-/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
-
-/usr/include/c++/13/ext/aligned_buffer.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:

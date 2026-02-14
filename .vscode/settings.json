@@ -71,5 +71,5 @@
         "variant": "cpp",
         "*.def": "cpp"
     },
-    "cmake.sourceDirectory": "/home/namaria/Gram-tica-com-ANTLR/src"
+    "cmake.sourceDirectory": "/home/namaria/Gram-tica-com-ANTLR"
 }

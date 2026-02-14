@@ -12,12 +12,12 @@
 class  NiloScriptParser : public antlr4::Parser {
 public:
   enum {
-    T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, 
-    PLUS = 8, MINUS = 9, MUL = 10, DIV = 11, MOD = 12, POW = 13, OPERATOR = 14, 
-    INT = 15, FLOAT = 16, VAR = 17, STRING = 18, BOOL = 19, TYPE = 20, RETURN_TYPE = 21, 
-    EQUAL = 22, OPAR = 23, CPAR = 24, OBRA = 25, CBRA = 26, OKEY = 27, CKEY = 28, 
-    SC = 29, READ = 30, COMMENT = 31, TAB = 32, ENTER = 33, SPACE = 34, 
-    WHITESPACE = 35
+    T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, PLUS = 5, MINUS = 6, MUL = 7, 
+    DIV = 8, MOD = 9, POW = 10, OPERATOR = 11, EQUAL = 12, OPAR = 13, CPAR = 14, 
+    OBRA = 15, CBRA = 16, OKEY = 17, CKEY = 18, SC = 19, READ = 20, SHOW = 21, 
+    CASE = 22, ELSE = 23, STRING = 24, BOOL = 25, RETURN_TYPE = 26, COLON = 27, 
+    INT = 28, FLOAT = 29, VAR = 30, TYPE = 31, COMMENT = 32, TAB = 33, ENTER = 34, 
+    SPACE = 35, WHITESPACE = 36
   };
 
   enum {
@@ -86,7 +86,6 @@ public:
     PrintContext *print();
     antlr4::tree::TerminalNode *SC();
     AssignmentContext *assignment();
-    InputContext *input();
     LoopContext *loop();
     InCaseContext *inCase();
     FunctionContext *function();
@@ -109,8 +108,9 @@ public:
     AssignmentContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *VAR();
-    antlr4::tree::TerminalNode *RETURN_TYPE();
     antlr4::tree::TerminalNode *EQUAL();
+    antlr4::tree::TerminalNode *COLON();
+    antlr4::tree::TerminalNode *RETURN_TYPE();
     TermContext *term();
     InputContext *input();
     AcessListContext *acessList();
@@ -134,6 +134,7 @@ public:
     TermContext *term();
     AcessListContext *acessList();
     FunctionCallContext *functionCall();
+    InputContext *input();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -149,8 +150,7 @@ public:
     TermContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     FactContext *fact();
-    std::vector<TermContext *> term();
-    TermContext* term(size_t i);
+    TermContext *term();
     antlr4::tree::TerminalNode *PLUS();
     antlr4::tree::TerminalNode *MINUS();
 
@@ -168,8 +168,7 @@ public:
     FactContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ExpoContext *expo();
-    std::vector<FactContext *> fact();
-    FactContext* fact(size_t i);
+    FactContext *fact();
     antlr4::tree::TerminalNode *MUL();
     antlr4::tree::TerminalNode *DIV();
     antlr4::tree::TerminalNode *MOD();
@@ -188,9 +187,8 @@ public:
     ExpoContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     OpParContext *opPar();
-    std::vector<ExpoContext *> expo();
-    ExpoContext* expo(size_t i);
     antlr4::tree::TerminalNode *POW();
+    ExpoContext *expo();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -200,7 +198,7 @@ public:
   };
 
   ExpoContext* expo();
-  ExpoContext* expo(int precedence);
+
   class  OpParContext : public antlr4::ParserRuleContext {
   public:
     OpParContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -242,6 +240,7 @@ public:
   public:
     PrintContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *SHOW();
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *CPAR();
     TermContext *term();
@@ -261,7 +260,6 @@ public:
     InputContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *READ();
-    antlr4::tree::TerminalNode *SC();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -274,8 +272,12 @@ public:
 
   class  InCaseContext : public antlr4::ParserRuleContext {
   public:
+    NiloScriptParser::StmtContext *stmtContext = nullptr;
+    std::vector<StmtContext *> thenBlock;
+    std::vector<StmtContext *> elseStmt;
     InCaseContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *CASE();
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *CPAR();
     std::vector<antlr4::tree::TerminalNode *> OBRA();
@@ -285,6 +287,7 @@ public:
     std::vector<TermContext *> term();
     TermContext* term(size_t i);
     antlr4::tree::TerminalNode *OPERATOR();
+    antlr4::tree::TerminalNode *ELSE();
     std::vector<StmtContext *> stmt();
     StmtContext* stmt(size_t i);
 
@@ -322,17 +325,24 @@ public:
 
   class  FunctionContext : public antlr4::ParserRuleContext {
   public:
+    antlr4::Token *functionName = nullptr;
+    antlr4::Token *arg01 = nullptr;
+    antlr4::Token *paramerReturn = nullptr;
+    antlr4::Token *typeFunction = nullptr;
+    antlr4::Token *return_ = nullptr;
     FunctionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> VAR();
-    antlr4::tree::TerminalNode* VAR(size_t i);
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *CPAR();
-    std::vector<antlr4::tree::TerminalNode *> RETURN_TYPE();
-    antlr4::tree::TerminalNode* RETURN_TYPE(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> COLON();
+    antlr4::tree::TerminalNode* COLON(size_t i);
     antlr4::tree::TerminalNode *OBRA();
     antlr4::tree::TerminalNode *SC();
     antlr4::tree::TerminalNode *CBRA();
+    std::vector<antlr4::tree::TerminalNode *> VAR();
+    antlr4::tree::TerminalNode* VAR(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> RETURN_TYPE();
+    antlr4::tree::TerminalNode* RETURN_TYPE(size_t i);
     antlr4::tree::TerminalNode *TYPE();
     std::vector<StmtContext *> stmt();
     StmtContext* stmt(size_t i);
@@ -348,12 +358,13 @@ public:
 
   class  FunctionCallContext : public antlr4::ParserRuleContext {
   public:
+    antlr4::Token *functionName = nullptr;
     FunctionCallContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> VAR();
-    antlr4::tree::TerminalNode* VAR(size_t i);
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *CPAR();
+    std::vector<antlr4::tree::TerminalNode *> VAR();
+    antlr4::tree::TerminalNode* VAR(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -366,9 +377,14 @@ public:
 
   class  ListContext : public antlr4::ParserRuleContext {
   public:
+    antlr4::Token *nElements = nullptr;
+    antlr4::Token *valuesList = nullptr;
     ListContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *VAR();
+    antlr4::tree::TerminalNode *OBRA();
+    antlr4::tree::TerminalNode *CBRA();
+    antlr4::tree::TerminalNode *COLON();
     antlr4::tree::TerminalNode *RETURN_TYPE();
     antlr4::tree::TerminalNode *EQUAL();
     antlr4::tree::TerminalNode *OKEY();
@@ -377,8 +393,6 @@ public:
     antlr4::tree::TerminalNode* INT(size_t i);
     std::vector<antlr4::tree::TerminalNode *> FLOAT();
     antlr4::tree::TerminalNode* FLOAT(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> STRING();
-    antlr4::tree::TerminalNode* STRING(size_t i);
     std::vector<antlr4::tree::TerminalNode *> BOOL();
     antlr4::tree::TerminalNode* BOOL(size_t i);
 
@@ -414,7 +428,6 @@ public:
 
   bool termSempred(TermContext *_localctx, size_t predicateIndex);
   bool factSempred(FactContext *_localctx, size_t predicateIndex);
-  bool expoSempred(ExpoContext *_localctx, size_t predicateIndex);
 
   // By default the static state used to implement the parser is lazily initialized during the first
   // call to the constructor. You can call this function if you wish to initialize the static state

@@ -1,7 +1,7 @@
 :) Teste de erro do assigment 
 
 x = 5;
-mostrar(x);
+mostrarInteiro(x);
 
 
 :) O objetivo é testar atribuições sem tipo. Até a árvore vai funcionar mas posteriormente não 

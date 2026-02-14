@@ -7,6 +7,7 @@ enquanto (par == falso) {
     caso (x % 2 == 0) {
         par = verdadeiro;
     }
+    mostrarCaracteres("UM");
 }
 
-mostrar(x);
+mostrarInteiro(x);

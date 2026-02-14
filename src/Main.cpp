@@ -4,7 +4,7 @@
 #include "antlr4-runtime.h"
 #include "./antlr/NiloScriptParser.h"
 #include "./antlr/NiloScriptLexer.h"
-// #include "./antlr/codegen.h"
+#include "./antlr/IRGen.h"
 
 using namespace std;
 using namespace antlr4;
@@ -40,11 +40,11 @@ int main(int nArguments, const char *sourceCode[]){
 
     NiloScriptParser::ProgramContext* tree = parser.program();
 
-    std::cout << tree->toStringTree() << std::endl;
+    // std::cout << tree->toStringTree() << std::endl;
 
-    printParseTree(tree);
+    // printParseTree(tree);
     
-    // CodeGen visit(tree);
+    IRGen visit(tree);
 
     return 0; 
 }
