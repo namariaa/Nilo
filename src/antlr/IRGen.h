@@ -17,7 +17,7 @@ using namespace std;
 
 unique_ptr<llvm::LLVMContext> Conteiner;
 unique_ptr<llvm::Module> Executable;
-unique_ptr<llvm::IRBuilder<llvm::NoFolder>> Builder;
+unique_ptr<llvm::IRBuilder<llvm::ConstantFolder>> Builder;
 map<string,map<string,llvm::AllocaInst*>> SymbolTable;
 map<string, vector<string>> argsFunctions;
 string lastVar;
@@ -42,7 +42,7 @@ class IRGen : public NiloScriptVisitor{
         IRGen(NiloScriptParser::ProgramContext* tree){
             Conteiner = make_unique<llvm::LLVMContext>();
             Executable = make_unique<llvm::Module>("NiloScriptModule", *Conteiner);
-            Builder = make_unique<llvm::IRBuilder<llvm::NoFolder>>(*Conteiner);
+            Builder = make_unique<llvm::IRBuilder<llvm::ConstantFolder>>(*Conteiner);
 
             //Adiciona informações de configurações para executável
             Executable->setDataLayout(llvm::DataLayout("e-m:e-i64:64-f80:128-n8:16:32:64-S128"));
@@ -298,21 +298,26 @@ class IRGen : public NiloScriptVisitor{
     virtual std::any visitExpo(NiloScriptParser::ExpoContext *context) override {
         if (context->opPar() && !context->expo()){
             cout << "EXPO 2 " << context->getText() << endl;
-            return visitOpPar(context->opPar());
+            any x = visitOpPar(context->opPar());
+            cout << "TIPO DO EXPO " << x.type().name() << endl;
+            return x;
         }
         else{
-            int v1, v2;
+            cout << "QUAL O EXPO " << context->expo()->getText() << " RHS: " <<  context->opPar()->getText() << endl;
             llvm::Value* lhs = any_cast<llvm::Value *>(visitExpo(context->expo()));
             llvm::Value* rhs = any_cast<llvm::Value *>(visitOpPar(context->opPar()));
-
-            auto *constExp = llvm::dyn_cast<llvm::ConstantInt>(rhs); 
+            
+            auto *constExp = llvm::dyn_cast<llvm::ConstantInt>(lhs); 
             int value = constExp->getSExtValue(); 
 
-            llvm::Value *result = lhs; 
+            llvm::Value *result = rhs; 
             if (value > 1){
-                for (int i = 0; i < value; i++){
-                    result = Builder->CreateMul(std::any_cast<llvm::Value *>(result), std::any_cast<llvm::Value *>(lhs), "expotmp");
+                for (int i = 1; i < value; i++){
+                    cout << "AQUI " << value << " " << i << endl;
+                    result = Builder->CreateMul(std::any_cast<llvm::Value *>(result), std::any_cast<llvm::Value *>(rhs), "expotmp");
                 }
+             
+               
             }
             if (value == 0){
                 result = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 1);
