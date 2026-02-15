@@ -27,6 +27,8 @@ class IRGen : public NiloScriptVisitor{
     private:
         llvm::Function *CurrentFunction;
         llvm::BasicBlock *CurrentBasicBlock;
+        string CurrentVar;
+        map<string,int> CurrentVarSize;
         llvm::Value* dPrint;
         llvm::Value* fPrint;
         llvm::Value* cPrint;
@@ -100,40 +102,49 @@ class IRGen : public NiloScriptVisitor{
     };
 
     virtual std::any visitStmt(NiloScriptParser::StmtContext *context) override {
-        if (context->print() != nullptr){
-            any x = visitPrint(context->print());
-            cout << "RESULT OD PRGRAM " << x.type().name() << endl;
-            return x;
-        }
-        else if (context->assignment() != nullptr){
-            any x = visitAssignment(context->assignment());
-            cout << "RESULT OD PRGRAM " << x.type().name() << endl;
-            return x;
-        }
-        else if (context->loop() != nullptr){
-            return visitLoop(context->loop());
-        }
-        else if (context->inCase() != nullptr){
-            return visitInCase(context->inCase());
-        }
-        else if (context->function() != nullptr){
-            return visitFunction(context->function());
-        }
-        else if (context->functionCall() != nullptr){
-            return visitFunctionCall(context->functionCall());
-        }
-        else if (context->list() != nullptr){
-            return visitList(context->list());
-        }
-        else if (context->expression() != nullptr){
-            return visitExpression(context->expression());
-        }
-        else if (context->COMMENT() != nullptr){
-            return nullptr;
+        //Verifica se a pessoa colocou o ; para dá um feedback adequado
+        if ((context->print() != nullptr || context->assignment() != nullptr || context->functionCall() != nullptr || context->list() != nullptr || context->expression() != nullptr) && context->SC()->getText() == "<missing ';'>"){
+            cerr << "Error. É necessário colocar ; em todo fim de expressão!" << endl;
+            exit(1);
         }
         else{
-            cerr << "Error. Expressão não reconhecida!" << endl;
-            exit(1);
+            cout << "NO STMT " << context->getText() << endl;
+    
+            if (context->print() != nullptr){
+                any x = visitPrint(context->print());
+                cout << "RESULT OD PRGRAM " << x.type().name() << endl;
+                return x;
+            }
+            else if (context->assignment() != nullptr){
+                any x = visitAssignment(context->assignment());
+                cout << "RESULT OD PRGRAM " << x.type().name() << endl;
+                return x;
+            }
+            else if (context->loop() != nullptr){
+                return visitLoop(context->loop());
+            }
+            else if (context->inCase() != nullptr){
+                return visitInCase(context->inCase());
+            }
+            else if (context->function() != nullptr){
+                return visitFunction(context->function());
+            }
+            else if (context->functionCall() != nullptr){
+                return visitFunctionCall(context->functionCall());
+            }
+            else if (context->list() != nullptr){
+                return visitList(context->list());
+            }
+            else if (context->expression() != nullptr){
+                return visitExpression(context->expression());
+            }
+            else if (context->COMMENT() != nullptr){
+                return nullptr;
+            }
+            else{
+                cerr << "Error. Expressão não reconhecida!" << endl;
+                exit(1);
+            }
         }
     };
 
@@ -153,7 +164,7 @@ class IRGen : public NiloScriptVisitor{
             alloca = Builder->CreateAlloca(llvm::Type::getFloatTy(*Conteiner),nullptr,var);
         }
         else if (context->RETURN_TYPE()->getText() == "caracter"){
-            alloca = Builder->CreateAlloca(llvm::Type::getInt8Ty(*Conteiner),nullptr,var);
+            CurrentVar = var;
         }
         else if (context->RETURN_TYPE()->getText() == "bool"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,var);
@@ -165,7 +176,10 @@ class IRGen : public NiloScriptVisitor{
 
         //Guardando na tabela para ser útil em momentos como input
         string nameCurrentFunction = CurrentFunction->getName().str();
-        SymbolTable[nameCurrentFunction][var] = alloca;
+        if (context->RETURN_TYPE()->getText() != "caracter"){
+            SymbolTable[nameCurrentFunction][var] = alloca;
+        }
+        CurrentVar = var;
 
         //Pega o value
         llvm::Value *value;
@@ -177,10 +191,10 @@ class IRGen : public NiloScriptVisitor{
             cerr << "Error. Não foi possível associar a variável com essa expressão!" << endl;
             exit(1);
         }
-
+        
         //Armazenar variável no espaço que alocamos
         llvm::Value* store;
-        if (!context->input()){
+        if (!context->input() && context->RETURN_TYPE()->getText() != "caracter"){
             store = Builder->CreateStore(value,alloca);
         }
         else{ 
@@ -191,6 +205,14 @@ class IRGen : public NiloScriptVisitor{
 
     virtual std::any visitExpression(NiloScriptParser::ExpressionContext *context) override {
         string var = context->VAR()->getText();
+        string nameCurrentFunction = CurrentFunction->getName().str();
+        llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
+        // Testa se a variável já existe na tabela de simbolos e pode ser reatribuida
+        if (!varInTable){
+            cerr << "Error. Não foi possível atribuir um valor a uma varíavel que não foi associada a um tipo!" << endl;
+            exit(1);
+        }
+
         lastVar = var;
         llvm::Value *value;
         if (context->term() != nullptr) value = any_cast<llvm::Value *>(visitTerm(context->term()));
@@ -202,8 +224,6 @@ class IRGen : public NiloScriptVisitor{
             exit(1);
         }
 
-        string nameCurrentFunction = CurrentFunction->getName().str();
-        llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
         llvm::Type* typeLoadTable = varInTable->getAllocatedType();
         llvm::Type* newType = value->getType();
         llvm::Value* storeValue;
@@ -330,14 +350,49 @@ class IRGen : public NiloScriptVisitor{
             string nameCurrentFunction = CurrentFunction->getName().str();
             cout << "NOME DA FUNÇÃO " << SymbolTable[nameCurrentFunction][context->VAR()->getText()] << endl;
             llvm::Type* type = SymbolTable[nameCurrentFunction][context->VAR()->getText()]->getAllocatedType();
-            llvm::Value* variavel = Builder->CreateLoad(type, SymbolTable[nameCurrentFunction][context->VAR()->getText()], "var");
+
+            //Para casos especificos em que a variavel é uma string
+            llvm::Value* variavel;
+            if (type->isArrayTy()){
+                cout << "É STRING "  << endl;
+                string nameCurrentFunction = CurrentFunction->getName().str();
+                llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][context->VAR()->getText()];
+                llvm::Value* position = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0);
+                llvm::Value* gep = Builder->CreateGEP(llvm::ArrayType::get(llvm::Type::getInt8Ty(*Conteiner), CurrentVarSize[context->VAR()->getText()]), varInTable,{Builder->getInt32(0), position});
+                variavel = gep;
+            }
+            else{
+                variavel = Builder->CreateLoad(type, SymbolTable[nameCurrentFunction][context->VAR()->getText()], "var");
+            }
             return variavel;
         }
         else if (context->STRING()){
+            cout << "ACESS STRING " << context->getText() <<endl;
             string text = context->STRING()->getText();
             text = text.substr(1, text.size() - 2);
-            llvm::Value *valueText = Builder->CreateGlobalStringPtr(text);
-            return valueText; 
+            CurrentVarSize[CurrentVar] = text.size();
+           
+            //Alloca o array 
+            string nameCurrentFunction = CurrentFunction->getName().str();
+            llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::ArrayType::get(llvm::Type::getInt8Ty(*Conteiner), text.size()),nullptr,CurrentVar); 
+            SymbolTable[nameCurrentFunction][CurrentVar] = alloca;
+            
+            //Store dos elementos dpo array no espaço alocado
+            //GetElementPtr (GEP) calcula o endereço de um elemento.
+            llvm::Value *addressArray;
+            llvm::Value* store;
+            llvm::Value* index;
+            llvm::Value* value;
+            llvm::Value* retorno;
+            for (int i = 0; i < text.size(); i++){
+                index = Builder->getInt32(i);
+                value = llvm::ConstantInt::get(llvm::Type::getInt8Ty(*Conteiner), text[i]);
+                addressArray = Builder->CreateGEP(llvm::ArrayType::get(llvm::Type::getInt8Ty(*Conteiner), text.size()), alloca, {llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0),index}, "endereco");
+                store = Builder->CreateStore(value, addressArray);
+                if (i == 0) retorno = addressArray;
+            }
+            
+            return retorno;
         }
         else if (context->BOOL()){
             cout <<"VISITOU O BOLL " << context->getText() << endl;
@@ -367,6 +422,10 @@ class IRGen : public NiloScriptVisitor{
 
     virtual std::any visitPrint(NiloScriptParser::PrintContext *context) override {
         cout << "ENTROU NO PRINT" << context->getText() << endl;
+
+        //Para não associar a string a uma variavel aleatória
+        CurrentVar = "";
+
         llvm::Value* value;
         if (context->term()){
            value = any_cast<llvm::Value*>(visitTerm(context->term()));
@@ -449,12 +508,12 @@ class IRGen : public NiloScriptVisitor{
 
         // if (lhsTy != rhsTy) {
         //     if (lhsTy->isIntegerTy(32) && rhsTy->isIntegerTy(1)){
-        //         rhs = Builder->CreateZExt(rhs, lhsTy, "convertendo_bool_inteiro");
-        //     }
-        //     else if (lhsTy->isIntegerTy(1) && rhsTy->isIntegerTy(32)){
-        //         lhs = Builder->CreateZExt(lhs, rhsTy, "convertendo_bool_inteiro");
-        //     }     
-        // }
+            //         rhs = Builder->CreateZExt(rhs, lhsTy, "convertendo_bool_inteiro");
+            //     }
+            //     else if (lhsTy->isIntegerTy(1) && rhsTy->isIntegerTy(32)){
+                //         lhs = Builder->CreateZExt(lhs, rhsTy, "convertendo_bool_inteiro");
+                //     }     
+                // }
 
         //Cria operações
         if (oper ==  "=="){
@@ -473,27 +532,35 @@ class IRGen : public NiloScriptVisitor{
             operation = Builder->CreateICmpUGE(lhs, rhs, "maior_igual");
         }
         else if (oper == "<="){
-            operation = Builder->CreateICmpULE(lhs, rhs, "menor_igaul");
+            operation = Builder->CreateICmpULE(lhs, rhs, "menor_igual");
         }
         else{
             cerr << "Error. Operador de comparação não encontrado!" << endl;
             exit(1);
         }
 
-        //Crio o bloco de condicional e vou inserindo o código que está dentro dele
+        //Cria pulo condicional
         llvm::BasicBlock* blockCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoCondicional", CurrentFunction); 
+        llvm::Value* jump;
+        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada2", CurrentFunction); 
+        llvm::BasicBlock* blockElseCondicional;
+        if (context->ELSE()){
+            blockElseCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoSenaoCondicional", CurrentFunction); 
+            jump = Builder->CreateCondBr(operation, blockCondicional, blockElseCondicional);
+        }
+        else{
+            jump = Builder->CreateCondBr(operation, blockCondicional, block2);
+        }
+
+        //Crio o bloco de condicional e vou inserindo o código que está dentro dele
         Builder->SetInsertPoint(blockCondicional);
         for (NiloScriptParser::StmtContext *stm : context->thenBlock) {
             visitStmt(stm);
         }
-        llvm::Value* jump;
-        llvm::BasicBlock* block2 = llvm::BasicBlock::Create(*Conteiner, "Entrada2", CurrentFunction); 
         jump = Builder->CreateBr(block2);
 
         //Criar o bloco do senão caso haja
-        llvm::BasicBlock* blockElseCondicional;
         if (context->ELSE()){
-            blockElseCondicional = llvm::BasicBlock::Create(*Conteiner, "blocoSenaoCondicional", CurrentFunction); 
             Builder->SetInsertPoint(blockElseCondicional);
             for (NiloScriptParser::StmtContext *stm : context->elseStmt){
                 visitStmt(stm);
@@ -502,13 +569,6 @@ class IRGen : public NiloScriptVisitor{
         }
 
         //No bloco que eu estava antes vou criar um salto condicional 
-        Builder->SetInsertPoint(CurrentBasicBlock);
-        if (context->ELSE()){
-            jump = Builder->CreateCondBr(operation, blockCondicional, blockElseCondicional);
-        }
-        else{
-            jump = Builder->CreateCondBr(operation, blockCondicional, block2);
-        }
         
         CurrentBasicBlock = block2;
         Builder->SetInsertPoint(CurrentBasicBlock);
