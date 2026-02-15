@@ -1,12 +1,25 @@
 a :inteiro = pegaInteiro;
 b :inteiro = pegaInteiro;
-cont :inteiro = 0;
+cont :inteiro = 2;
 
 enquanto (cont < 10) {
     caso (cont % 2 == 0){
         mostrarCaracteres("É par!");
     }
-    senão {
+    senao {
         mostrarCaracteres("É impar!");
+    }
+
+    caso (a != b){
+        caso (a > b){
+            b = b + 1;
+        }
+        senao {
+            a = a + 1;
+        }
+        cont = cont + 1; 
+    }
+    senao{
+        cont = 10;
     }
 }
