@@ -27,5 +27,5 @@ caso (a != d){
     }
 }
 senao {
-    mostrarCaracteres("Não há o que testar!")
+    mostrarCaracteres("Não há o que testar!");
 }
