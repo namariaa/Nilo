@@ -1,0 +1,5 @@
+:) Teste de erro na criação da lista
+
+valor1{4} :inteiro = [1 , 2.5, "numero", verdadeiro];
+primeira :inteiro = valor1[1];
+mostrarInteiro(primeira);

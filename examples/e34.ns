@@ -1,0 +1,11 @@
+x :bool = falso;
+
+caso (x == falso){
+    mostrarBool(falso);
+}
+senao {
+    mostrarBool(verdadeiro);
+}
+
+
+:) Error. O valor apresentado não é um booleano.

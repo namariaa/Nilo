@@ -1,0 +1,24 @@
+funcionalidade div (num01: inteiro, num02: inteiro, tipo :caracter) {
+    funcionalidade mod (num01: inteiro, num02: inteiro) {
+        retorne num01 % num02;
+    }
+
+    caso (tipo == "div"){
+        retorne num01 / num02;
+    }
+    
+    retorne num01 % num02;
+}
+
+x :inteiro = pegaInteiro;
+y :inteiro = pegaInteiro;
+
+
+div :inteiro = div(x, y, "div");
+restoDiv :inteiro = div(x,y, "mod");
+
+mostrarCaracteres("MOD:");
+mostrarInteiro(restoDiv);
+
+mostrarCaracteres("DIV:");
+mostrarInteiro(div);
