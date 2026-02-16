@@ -1,0 +1,31 @@
+a :inteiro = pegaInteiro;
+b :inteiro = pegaInteiro;
+c :inteiro = pegaInteiro;
+d :inteiro = pegaInteiro;
+
+caso (a != d){
+    caso (a == b){
+        mostrarCaracteres("A é igual a B");
+        caso (a + b == c + d){
+            mostrarCaracteres("A soma de a e b é igual a soma de c e d");
+        }
+        senao {
+            mostrarCaracteres("A soma de a e b não é igual a soma de c e d");
+        }
+    }
+    caso (c == d){
+        mostrarCaracteres("C é igual a D");
+    }
+    caso (a == c){
+        mostrarCaracteres("A é igual a C");
+    }
+    caso (b == c){
+        mostrarCaracteres("B é igual a C");
+    }
+    caso (b == d){
+        mostrarCaracteres("B é igual a D");
+    }
+}
+senao {
+    mostrarCaracteres("Não há o que testar!");
+}

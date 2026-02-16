@@ -1,0 +1,13 @@
+:) Teste para dá erro na atribuição
+
+funcionalidade mul (num01: inteiro, num02: inteiro) :inteiro {
+    ret : inteiro = num01 * num02;
+    retorne ret;
+}
+
+x :inteiro = pegaInteiro;
+y :inteiro = pegaInteiro;
+
+multiplicacao :flutuante = mul(x, y);
+
+mostrarInteiro(multiplicacao);
