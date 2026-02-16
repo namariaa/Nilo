@@ -75,7 +75,7 @@ inCase : CASE OPAR (term OPERATOR term) CPAR OBRA (thenBlock+=stmt)+ CBRA (ELSE 
 loop : 'enquanto' OPAR (term OPERATOR term) CPAR OBRA (stmt)+ CBRA;
 
 // FUNCTION .-*+...-*+...-*+...-*+.. 
-function : 'funcionalidade' functionName=VAR OPAR (arg01=VAR COLON paramerReturn=RETURN_TYPE)? (',' VAR  COLON RETURN_TYPE)* CPAR  COLON typeFunction=RETURN_TYPE OBRA (stmt)+ 'retorne' return=(TYPE | VAR) SC CBRA;
+function : 'funcionalidade' functionName=VAR OPAR (arg01=VAR COLON paramerReturn=RETURN_TYPE)? (',' VAR  COLON RETURN_TYPE)* CPAR  COLON typeFunction=RETURN_TYPE OBRA (stmt)* (RETURNFUNC (term | returnVar=VAR) SC)? CBRA;
 functionCall : functionName=VAR OPAR VAR? (',' VAR)* CPAR;
 
 // ARRAY .-*+...-*+...-*+...-*+.. 
@@ -106,6 +106,7 @@ READ : 'pegaInteiro' | 'pegaFlutuante' | 'pegaCaracteres';
 SHOW: 'mostrarInteiro' | 'mostrarFlutuante' | 'mostrarCaracteres' | 'mostrarBool';
 CASE: 'caso';
 ELSE: 'senao';
+RETURNFUNC: 'retorne';
 
 // TYPES .-*+...-*+...-*+...-*+.. 
 STRING : '"' ~('"')* '"';  

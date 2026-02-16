@@ -750,63 +750,54 @@ class IRGen : public NiloScriptVisitor{
         }
         cout << "SALVOU TUDO " << context->getText() << endl;
 
-        //Preenche o bloco atual
+        //Preenche o bloco atual e confere se não tem funções declaradas dentro de outras
         for (NiloScriptParser::StmtContext* stm : context->stmt()){
+
+            if(context->stmt().front()->function()){
+                cerr << "Error. Não é possível declarar uma função dentro de outra!" << endl;
+                exit(1);
+            }
             visitStmt(stm);
         }
 
         // Armazena valor de retorno
-        if (!context->TYPE()){
+        if (!context->term() && context->returnVar){
             if (context->typeFunction->getText() == "inteiro"){
-                valueReturn = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner),SymbolTable[var][context->return_->getText()]);
+                valueReturn = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner),SymbolTable[var][context->returnVar->getText()]);
             }
             else if (context->typeFunction->getText() == "flutuante"){
-                valueReturn = Builder->CreateLoad(llvm::Type::getFloatTy(*Conteiner),SymbolTable[var][context->return_->getText()]);
+                valueReturn = Builder->CreateLoad(llvm::Type::getFloatTy(*Conteiner),SymbolTable[var][context->returnVar->getText()]);
             }
             else if (context->typeFunction->getText() == "caracter"){
-                valueReturn = Builder->CreateLoad(llvm::Type::getInt8Ty(*Conteiner),SymbolTable[var][context->return_->getText()]);
+                valueReturn = Builder->CreateLoad(llvm::Type::getInt8Ty(*Conteiner),SymbolTable[var][context->returnVar->getText()]);
             }
             else if (context->typeFunction->getText() == "bool"){
-                valueReturn = Builder->CreateLoad(llvm::Type::getInt1Ty(*Conteiner),SymbolTable[var][context->return_->getText()]);
+                valueReturn = Builder->CreateLoad(llvm::Type::getInt1Ty(*Conteiner),SymbolTable[var][context->returnVar->getText()]);
             }
             else {
                 cerr << "Error. Valor de retorno não reconhecido!" << endl;
                 exit(1);
             } 
         } 
-        else{
-            if (context->typeFunction->getText() == "inteiro"){
-                valueReturn = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->return_->getText()));
-            }
-            else if (context->typeFunction->getText() == "flutuante"){
-                valueReturn = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner),  std::stof(context->return_->getText()));
-            }
-            else if (context->typeFunction->getText() == "caracter"){
-                valueReturn = llvm::ConstantInt::get(llvm::Type::getInt8Ty(*Conteiner), std::stoi(context->return_->getText()));
-            }
-            else if (context->typeFunction->getText() == "bool"){
-                if (context->return_->getText() == "verdadeiro"){
-                    valueReturn = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 1);
-                }
-                else if (context->return_->getText()  == "falso"){
-                    valueReturn = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
-                }
-                else {
-                    cerr << "Error! Booleano não reconhecido." << endl;
-                    exit(1);
-                }
-            }
-            else if (context->typeFunction->getText() == "nada"){
-                valueReturn = any_cast<llvm::Value*>(llvm::PointerType::get(*Conteiner, 0));
-            }
-            else {
-                cerr << "Error. Valor de retorno não reconhecido!" << endl;
-                exit(1);
-            } 
+        else if (context->typeFunction->getText() == "nada"){
+            cout << "É VOID " << endl;
+            valueReturn;
+        }
+        else if (context->term() && !context->returnVar) {
+            valueReturn = any_cast<llvm::Value*>(visitTerm(context->term()));
+        }
+        else {
+            cerr << "Error. Valor de retorno não reconhecido!" << endl;
+            exit(1);
         }
 
         //Adiciona retorno da função
-        Builder->CreateRet(valueReturn);
+        if (context->typeFunction->getText() == "nada"){
+            Builder->CreateRetVoid();
+        }
+        else{
+            Builder->CreateRet(valueReturn);
+        }
     
         //Volta a função anterior e ao basic block antigo
         CurrentFunction = mainFunction;
@@ -821,10 +812,11 @@ class IRGen : public NiloScriptVisitor{
         llvm::Function* functionCall =Executable->getFunction(var);   
         std::vector<llvm::Value*> objectParams; 
 
+        
         //Faz store nos endereços que já aloquei
         for (int i = 1; i < context->VAR().size(); i++){
             string arg = context->VAR()[i]->getText();
-
+            
             //Faz load
             string nameCurrentFunction = CurrentFunction->getName().str();
             llvm::AllocaInst* varAlloca = SymbolTable[nameCurrentFunction][arg];
@@ -834,6 +826,13 @@ class IRGen : public NiloScriptVisitor{
             //Salva parametro da função
             objectParams.push_back(loadedValue);
         }
+
+        cout << "VALORES ARMAZENADOS FUNCTION " << argsFunctions[var].size() << " " << objectParams.size() << endl;
+        if (argsFunctions[var].size() != objectParams.size()){
+            cerr << "Error. O número de argumentos não correspondem a quatidade de parametros necessários na função!" << endl;
+            exit(1);
+        }
+
         cout << "SALVOU TUDO " << context->getText() << endl;
 
         llvm::Value* store = Builder->CreateCall(functionCall, objectParams);

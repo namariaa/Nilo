@@ -1,5 +1,7 @@
+:) Teste para dá erro em declaração de funções dentro de outras
+
 funcionalidade div (num01: inteiro, num02: inteiro) : inteiro {
-    funcionalidade mod (num01: inteiro, num02: inteiro) {
+    funcionalidade mod (num01: inteiro, num02: inteiro) :inteiro {
         ret : inteiro = num01 * num02;
         retorne ret;
     }
