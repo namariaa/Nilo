@@ -268,13 +268,37 @@ class IRGen : public NiloScriptVisitor{
             llvm::Value* lhs = any_cast<llvm::Value*>(visitTerm(context->term()));
             cout << "TERM 2 " << context->fact()->getText() << endl;
             llvm::Value* rhs = any_cast<llvm::Value*>(visitFact(context->fact()));
+
+            //Não pode operação entre dois tipos diferentes
+            if (lhs->getType() != rhs->getType()) {
+                errorResponse("Error. Operações matemáticas com valores com os tipos diferentes não é possível!");
+                exit(1);
+            }
     
             llvm::Value *result;
             if (context->children[1]->getText() == "+"){
-                result = Builder->CreateAdd(lhs, std::any_cast<llvm::Value *>(rhs), "addtmp");
+                if (lhs->getType()->isIntegerTy(32)){
+                    result = Builder->CreateAdd(lhs, std::any_cast<llvm::Value *>(rhs), "addftmp");
+                }
+                else if (lhs->getType()->isFloatTy()){
+                    result = Builder->CreateFAdd(lhs, std::any_cast<llvm::Value *>(rhs), "addftmp");
+                }
+                else {
+                    errorResponse("Error. Tipo dos operandos não reconhecido na adição");
+                    exit(1);
+                }
             }
             else if (context->children[1]->getText() == "-"){
-                result = Builder->CreateSub(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "subtmp");
+                if (lhs->getType()->isIntegerTy(32)){
+                    result = Builder->CreateSub(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "subtmp");
+                }
+                else if (lhs->getType()->isFloatTy()){
+                    result = Builder->CreateFSub(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "subtmp");
+                }
+                else {
+                    errorResponse("Error. Tipo dos operandos não reconhecido na subtração");
+                    exit(1);
+                }
             }
             else {
                 errorResponse("Error. Operador não reconhecido!");
@@ -295,16 +319,49 @@ class IRGen : public NiloScriptVisitor{
             cout << "FACT " << context->getText() << endl;
             llvm::Value* lhs = any_cast<llvm::Value*>(visitFact(context->fact()));
             llvm::Value* rhs = any_cast<llvm::Value*>(visitExpo(context->expo()));
+
+            //Não pode operação entre dois tipos diferentes
+            if (lhs->getType() != rhs->getType()) {
+                errorResponse("Error. Operações matemáticas com valores com os tipos diferentes não é possível!");
+                exit(1);
+            }
     
             llvm::Value *result;
             if (context->children[1]->getText() == "*"){
-                result = Builder->CreateMul(lhs, std::any_cast<llvm::Value *>(rhs), "multmp");
+                if (lhs->getType()->isIntegerTy(32)){
+                    result = Builder->CreateMul(lhs, std::any_cast<llvm::Value *>(rhs), "multmp");
+                }
+                else if (lhs->getType()->isFloatTy()){
+                    result = Builder->CreateFMul(lhs, std::any_cast<llvm::Value *>(rhs), "multmp");
+                }
+                else {
+                    errorResponse("Error. Tipo do operandos não reconhecido na multiplicação");
+                    exit(1);
+                }
             }
             else if (context->children[1]->getText() == "/"){
-                result = Builder->CreateSDiv(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "divtmp");
+                if (lhs->getType()->isIntegerTy(32)){
+                    result = Builder->CreateSDiv(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "divtmp");
+                }
+                else if (lhs->getType()->isFloatTy()){
+                    result = Builder->CreateFDiv(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "divtmp");
+                }
+                else {
+                    errorResponse("Error. Tipo do operandos não reconhecido na divisão");
+                    exit(1);
+                }
             }
             else if (context->children[1]->getText() == "%"){
-                result = Builder->CreateSRem(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "modtmp");
+                if (lhs->getType()->isIntegerTy(32)){
+                    result = Builder->CreateSRem(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "modtmp");
+                }
+                else if (lhs->getType()->isFloatTy()){
+                    result = Builder->CreateFRem(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "modtmp");
+                }
+                else {
+                    errorResponse("Error. Tipo do operandos não reconhecido no resto da divisão");
+                    exit(1);
+                }
             }
             else {
                 errorResponse("Error. Operador não reconhecido!");
@@ -325,6 +382,12 @@ class IRGen : public NiloScriptVisitor{
             cout << "QUAL O EXPO " << context->expo()->getText() << " RHS: " <<  context->opPar()->getText() << endl;
             llvm::Value* lhs = any_cast<llvm::Value *>(visitExpo(context->expo()));
             llvm::Value* rhs = any_cast<llvm::Value *>(visitOpPar(context->opPar()));
+
+            //Não pode operação entre dois tipos diferentes
+            if (lhs->getType() != rhs->getType()) {
+                errorResponse("Error. Operações matemáticas com valores com os tipos diferentes não é possível!");
+                exit(1);
+            }
             
             auto *constExp = llvm::dyn_cast<llvm::ConstantInt>(lhs); 
             int value = constExp->getSExtValue(); 
@@ -333,10 +396,17 @@ class IRGen : public NiloScriptVisitor{
             if (value > 1){
                 for (int i = 1; i < value; i++){
                     cout << "AQUI " << value << " " << i << endl;
-                    result = Builder->CreateMul(std::any_cast<llvm::Value *>(result), std::any_cast<llvm::Value *>(rhs), "expotmp");
+                    if (lhs->getType()->isIntegerTy(32)){
+                        result = Builder->CreateMul(std::any_cast<llvm::Value *>(result), std::any_cast<llvm::Value *>(rhs), "expotmp");
+                    }
+                    else if (lhs->getType()->isFloatTy()){
+                        result = Builder->CreateFMul(std::any_cast<llvm::Value *>(result), std::any_cast<llvm::Value *>(rhs), "expotmp");
+                    }
+                    else {
+                        errorResponse("Error. Tipo do operandos não reconhecido na potenciação");
+                        exit(1);
+                    }
                 }
-             
-               
             }
             if (value == 0){
                 result = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 1);
@@ -547,19 +617,6 @@ class IRGen : public NiloScriptVisitor{
         llvm::Value* rhs = any_cast<llvm::Value*>(visitTerm(context->term()[1]));
         string oper = context->OPERATOR()->getText();
         llvm::Value* operation;
-
-        //Garante que o tipo retornado esteja certinho
-        // auto *lhsTy = lhs->getType();
-        // auto *rhsTy = rhs->getType();
-
-        // if (lhsTy != rhsTy) {
-        //     if (lhsTy->isIntegerTy(32) && rhsTy->isIntegerTy(1)){
-            //         rhs = Builder->CreateZExt(rhs, lhsTy, "convertendo_bool_inteiro");
-            //     }
-            //     else if (lhsTy->isIntegerTy(1) && rhsTy->isIntegerTy(32)){
-                //         lhs = Builder->CreateZExt(lhs, rhsTy, "convertendo_bool_inteiro");
-                //     }     
-                // }
 
         //Cria operações
         if (oper ==  "=="){
