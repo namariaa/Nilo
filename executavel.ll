@@ -14,10 +14,7 @@ target triple = "x86_64-unknown-linux-gnu"
 
 define i32 @main() {
 entrada:
-  %matematicasAvancadas = alloca i32, align 4
-  store i32 -22, ptr %matematicasAvancadas, align 4
-  %var = load i32, ptr %matematicasAvancadas, align 4
-  %0 = call i32 (ptr, ...) @printf(ptr @dPrint, i32 %var)
+  %0 = call i32 (ptr, ...) @printf(ptr @fPrint, float -1.000000e+00)
   ret i32 0
 }
 

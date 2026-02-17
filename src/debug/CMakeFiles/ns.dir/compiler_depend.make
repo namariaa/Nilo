@@ -86,6 +86,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o: /home/namaria/Gram-tica-com-ANTLR/src/Main.cpp
   /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptLexer.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptParser.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptVisitor.h \
+  /home/namaria/Gram-tica-com-ANTLR/src/antlr/errorResponse.cpp \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorListener.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorStrategy.h \
   /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRFileStream.h \
@@ -3810,6 +3811,8 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
 /usr/include/c++/13/algorithm:
 
 /usr/include/alloca.h:
@@ -3901,8 +3904,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/Trees.h:
 
 /usr/include/c++/13/cstdint:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/dfa/DFA.h:
 
 /usr/include/c++/13/fstream:
 
@@ -4000,6 +4001,16 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/pattern/TagChunk.h:
 
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/RuleStartState.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/AbstractParseTreeVisitor.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathWildcardAnywhereElement.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Version.h:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/dfa/DFA.h:
+
 /usr/lib/llvm-19/include/llvm/ADT/DenseMap.h:
 
 /usr/lib/x86_64-linux-gnu/crtn.o:
@@ -4007,8 +4018,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com
 /usr/include/c++/13/numbers:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/libgcc.a:
-
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/lib/llvm-19/lib/libLLVMSelectionDAG.a:
 
@@ -4220,10 +4229,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o:
 
 /usr/include/c++/13/bits/ranges_util.h:
 
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/AbstractParseTreeVisitor.h:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/RuleStartState.h:
-
 /usr/lib/llvm-19/lib/libLLVMInstCombine.a:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/atn/BlockEndState.h:
@@ -4274,10 +4279,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathWildcardAnywhereElement.h:
-
-/home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/Version.h:
-
 /usr/lib/llvm-19/include/llvm/IR/Module.h:
 
 /usr/include/c++/13/bits/ranges_algobase.h:
@@ -4293,8 +4294,6 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o:
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/BufferedTokenStream.h:
 
 /usr/lib/x86_64-linux-gnu/libzstd.so:
-
-/usr/include/c++/13/array:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathTokenElement.h:
 
@@ -4341,6 +4340,10 @@ antlr4-cpp-runtime-bin/runtime/libantlr4-runtime.a:
 /usr/include/string.h:
 
 /usr/lib/llvm-19/lib/libLLVMObjCARCOpts.a:
+
+/home/namaria/Gram-tica-com-ANTLR/src/antlr/errorResponse.cpp:
+
+/usr/include/c++/13/bits/stl_function.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorStrategy.h:
 
@@ -4457,6 +4460,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /usr/include/c++/13/stdlib.h:
 
 /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/UnbufferedTokenStream.h:
+
+/usr/include/c++/13/array:
 
 /usr/include/c++/13/atomic:
 
@@ -4637,8 +4642,6 @@ CMakeFiles/ns.dir/src/Main.cpp.o:
 /usr/include/c++/13/bits/stl_bvector.h:
 
 /usr/include/c++/13/bits/stl_deque.h:
-
-/usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/utility:
 
