@@ -103,6 +103,11 @@ class IRGen : public NiloScriptVisitor{
 
     virtual std::any visitStmt(NiloScriptParser::StmtContext *context) override {
         //Verifica se a pessoa colocou o ; para dá um feedback adequado
+        if (context->assignment() && !context->assignment()->RETURN_TYPE()){
+            cerr << "Error. O tipo da variável não existe!" << endl;
+            exit(1);
+        }
+
         if ((context->print() != nullptr || context->assignment() != nullptr || context->functionCall() != nullptr || context->list() != nullptr || context->expression() != nullptr) && context->SC()->getText() == "<missing ';'>"){
             cerr << "Error. É necessário colocar ; em todo fim de expressão!" << endl;
             exit(1);
@@ -154,20 +159,23 @@ class IRGen : public NiloScriptVisitor{
 
         //Usando a função alloca para alocar um espaço de memória dependendo do tipo para salvarmos na nossa tabela.
         llvm::AllocaInst* alloca= nullptr;
-
-        cout << "RETURN TYPE " << context->RETURN_TYPE()->getText() << endl;
-        
+        llvm::Type* type;
+    
         if (context->RETURN_TYPE()->getText() == "inteiro"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt32Ty(*Conteiner),nullptr,var);
+            type = llvm::Type::getInt32Ty(*Conteiner);
         }
         else if (context->RETURN_TYPE()->getText() == "flutuante"){
             alloca = Builder->CreateAlloca(llvm::Type::getFloatTy(*Conteiner),nullptr,var);
+            type = llvm::Type::getFloatTy(*Conteiner);
         }
         else if (context->RETURN_TYPE()->getText() == "caracter"){
             CurrentVar = var;
+            type = llvm::Type::getInt8Ty(*Conteiner);
         }
         else if (context->RETURN_TYPE()->getText() == "bool"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,var);
+            type = llvm::Type::getInt1Ty(*Conteiner);
         }
         else {
             cerr << "Error. Tipo não reconhecido!" << endl;
@@ -189,6 +197,16 @@ class IRGen : public NiloScriptVisitor{
         else if (context->functionCall() != nullptr) value = any_cast<llvm::Value *>(visitFunctionCall(context->functionCall()));
         else {
             cerr << "Error. Não foi possível associar a variável com essa expressão!" << endl;
+            exit(1);
+        }
+
+        if (type != value->getType() && context->RETURN_TYPE()->getText() != "caracter"){
+            cerr << "Error. O tipo da variável não corresponde com o valor atribuido!" << endl;
+            exit(1);
+        }
+
+        if ((type != value->getType()) && (context->RETURN_TYPE()->getText() == "caracter" && !value->getType()->isPointerTy())){
+            cerr << "Error. O tipo da variável não corresponde com o valor atribuido!" << endl;
             exit(1);
         }
         
@@ -444,23 +462,46 @@ class IRGen : public NiloScriptVisitor{
 
             // Criando os % necessários do C para entender o tipo (formatted output)
             llvm::Value* typePrint;
+            llvm::Type* type;
 
             if (context->SHOW()->getText() == "mostrarInteiro"){
                 typePrint = dPrint;
+                type = llvm::Type::getInt32Ty(*Conteiner);
             }
             else if (context->SHOW()->getText() == "mostrarFlutuante"){
                 typePrint = fPrint;
+                type = llvm::Type::getFloatTy(*Conteiner);
             }
             else if (context->SHOW()->getText() == "mostrarCaracteres"){
                 typePrint = sPrint;
+                type = llvm::Type::getInt8Ty(*Conteiner);
             }
             else if (context->SHOW()->getText() == "mostrarBool"){
                 typePrint = dPrint;
+                type = llvm::Type::getInt1Ty(*Conteiner);
             }
             else {
                 cerr << "Error. Função mostrar não reconhecida!" << endl;
                 exit(1);
             }
+
+            if (type != value->getType() && context->SHOW()->getText() != "mostrarCaracteres"){
+                cerr << "Error. O valor passado não é do mesmo tipo da função mostrar declarada!" << endl;
+                exit(1);
+            }
+
+            if ((type != value->getType()) && (context->SHOW()->getText() == "mostrarCaracteres" && !value->getType()->isPointerTy())){
+                cerr << "Error. O valor passado não é do mesmo tipo da função mostrar declarada!" << endl;
+                exit(1);
+            }
+
+            if (context->children.size() != 4){
+                cerr << "Error. A declaração do mostrar está incorreta!" << endl;
+                exit(1);
+            }
+
+            cout << "TAMNHO DO FILHO DO PRINT " << context->children.size() << endl;
+
             llvm::Value* call = Builder->CreateCall(printf, { typePrint, value });
             return call;
         }
@@ -846,20 +887,35 @@ class IRGen : public NiloScriptVisitor{
         int nElements = std::stoi(context->nElements->getText());
         string var = context->VAR()->getText();
         llvm::Type* elementsType;
+        int qElementosInput = 0;
+
         if (context->RETURN_TYPE()->getText() == "inteiro"){
             elementsType = llvm::Type::getInt32Ty(*Conteiner);
+
+            if (context->INT().size() > 0 && nElements > 0){
+                qElementosInput = context->INT().size() - 1;
+            }
         }
         else if (context->RETURN_TYPE()->getText() == "flutuante"){
             elementsType = llvm::Type::getFloatTy(*Conteiner);
 
+            if (context->FLOAT().size() > 0 && nElements > 0){
+                qElementosInput = context->FLOAT().size();
+            }
+
         }
         else if (context->RETURN_TYPE()->getText() == "bool"){
             elementsType = llvm::Type::getInt1Ty(*Conteiner);
+
+            if (context->BOOL().size() > 0 && nElements > 0){
+                qElementosInput = context->BOOL().size();
+            }
         }
         else {
             cerr << "Error. Tipo da lista não reconhecido!" << endl;
             exit(1);
         }
+
         //Alloca o array 
         llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::ArrayType::get(elementsType, nElements),nullptr,var);
 
@@ -907,7 +963,6 @@ class IRGen : public NiloScriptVisitor{
                 value = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()[i -1]->getText()));
             }
             else if (context->RETURN_TYPE()->getText() == "flutuante"){
-                cout << "LISTA VALOR " << context->FLOAT()[i - 1]->getText() << endl;
                 value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), context->FLOAT()[i - 1]->getText());
             }
             else if (context->RETURN_TYPE()->getText() == "bool"){
@@ -927,6 +982,13 @@ class IRGen : public NiloScriptVisitor{
                 exit(1);
             }
 
+            //Confere se a quantidade de elementos colocada é igual a declarada
+            cout << "N ELEMNTOS " << qElementosInput << " " << nElements << endl;
+            if (qElementosInput != nElements){
+                cerr << "Error. A quatidade de elementos e o tamanho declarado na lista não correspondem ou o tipo dos elementos não corresponde ao tipo da variável declarada!!" << endl;
+                exit(1);
+            }
+
             addressArray = Builder->CreateGEP(llvm::ArrayType::get(elementsType, nElements), alloca, {llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0),index}, "endereco");
             store = Builder->CreateStore(value, addressArray);
         }
@@ -940,6 +1002,16 @@ class IRGen : public NiloScriptVisitor{
         llvm::Type* typeLoadTable = varInTable->getAllocatedType();
         auto* arrayType = llvm::cast<llvm::ArrayType>(typeLoadTable);
         llvm::Type* elementsType;    
+
+        // Avalia se o indicie não está maior nem menor
+        if (std::stoi(context->INT()->getText()) >= arrayType->getNumElements()){
+            cerr << "Error. A posição fornecida ultrapassa a quatidade de elemento do array!" << endl;
+            exit(1);
+        }
+        if (std::stoi(context->INT()->getText()) < 0){
+            cerr << "Error. A posição deve ser números positivos dentro do limite da lista!" << endl;
+            exit(1);
+        }
         
         if (arrayType->getElementType()->isIntegerTy(32)){
             elementsType = llvm::Type::getInt32Ty(*Conteiner);
@@ -954,7 +1026,7 @@ class IRGen : public NiloScriptVisitor{
             cerr << "Error. Tipo não da lista reconhecido!" << endl;
             exit(1);
         }
-
+        
         // Acessar o endereço na posição correta do array
         llvm::Value* position = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()->getText()));
 
