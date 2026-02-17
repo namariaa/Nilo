@@ -12,6 +12,6 @@ funcionalidade soma (x :inteiro, y :inteiro) :inteiro {
 a :inteiro = pegaInteiro;
 b :inteiro = pegaInteiro;
 c :inteiro = soma(a, b);
-d :inteiro = sub(a, b);
+d :inteiro = sub(b,a);
 mostrarInteiro(c);
 mostrarInteiro(d);
