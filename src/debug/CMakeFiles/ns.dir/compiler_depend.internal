@@ -88,6 +88,7 @@ CMakeFiles/ns.dir/src/Main.cpp.o
  /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptLexer.h
  /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptParser.h
  /home/namaria/Gram-tica-com-ANTLR/src/antlr/NiloScriptVisitor.h
+ /home/namaria/Gram-tica-com-ANTLR/src/antlr/errorResponse.cpp
  /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorListener.h
  /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRErrorStrategy.h
  /home/namaria/Gram-tica-com-ANTLR/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/ANTLRFileStream.h

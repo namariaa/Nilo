@@ -12,6 +12,7 @@
 #include "llvm/IR/NoFolder.h"
 #include "llvm/IR/Type.h"
 #include "llvm/IR/Verifier.h"
+#include "errorResponse.cpp"
 
 using namespace std;
 
@@ -104,12 +105,12 @@ class IRGen : public NiloScriptVisitor{
     virtual std::any visitStmt(NiloScriptParser::StmtContext *context) override {
         //Verifica se a pessoa colocou o ; para dá um feedback adequado
         if (context->assignment() && !context->assignment()->RETURN_TYPE()){
-            cerr << "Error. O tipo da variável não existe!" << endl;
+            errorResponse("Error. O tipo da variável não existe!");
             exit(1);
         }
 
         if ((context->print() != nullptr || context->assignment() != nullptr || context->functionCall() != nullptr || context->list() != nullptr || context->expression() != nullptr) && context->SC()->getText() == "<missing ';'>"){
-            cerr << "Error. É necessário colocar ; em todo fim de expressão!" << endl;
+            errorResponse("Error. É necessário colocar ; em todo fim de expressão!");
             exit(1);
         }
         else{
@@ -147,7 +148,7 @@ class IRGen : public NiloScriptVisitor{
                 return nullptr;
             }
             else{
-                cerr << "Error. Expressão não reconhecida!" << endl;
+                errorResponse("Error. Expressão não reconhecida!");
                 exit(1);
             }
         }
@@ -178,7 +179,7 @@ class IRGen : public NiloScriptVisitor{
             type = llvm::Type::getInt1Ty(*Conteiner);
         }
         else {
-            cerr << "Error. Tipo não reconhecido!" << endl;
+            errorResponse("Error. Tipo não reconhecido!");
             exit(1);
         }
 
@@ -196,17 +197,17 @@ class IRGen : public NiloScriptVisitor{
         else if (context->acessList() != nullptr) value = any_cast<llvm::Value *>(visitAcessList(context->acessList()));
         else if (context->functionCall() != nullptr) value = any_cast<llvm::Value *>(visitFunctionCall(context->functionCall()));
         else {
-            cerr << "Error. Não foi possível associar a variável com essa expressão!" << endl;
+            errorResponse("Error. Não foi possível associar a variável com essa expressão!");
             exit(1);
         }
 
         if (type != value->getType() && context->RETURN_TYPE()->getText() != "caracter"){
-            cerr << "Error. O tipo da variável não corresponde com o valor atribuido!" << endl;
+            errorResponse("Error. O tipo da variável não corresponde com o valor atribuido!");
             exit(1);
         }
 
         if ((type != value->getType()) && (context->RETURN_TYPE()->getText() == "caracter" && !value->getType()->isPointerTy())){
-            cerr << "Error. O tipo da variável não corresponde com o valor atribuido!" << endl;
+            errorResponse("Error. O tipo da variável não corresponde com o valor atribuido!");
             exit(1);
         }
         
@@ -227,7 +228,7 @@ class IRGen : public NiloScriptVisitor{
         llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
         // Testa se a variável já existe na tabela de simbolos e pode ser reatribuida
         if (!varInTable){
-            cerr << "Error. Não foi possível atribuir um valor a uma varíavel que não foi associada a um tipo!" << endl;
+            errorResponse("Error. Não foi possível atribuir um valor a uma varíavel que não foi associada a um tipo!");
             exit(1);
         }
 
@@ -238,7 +239,7 @@ class IRGen : public NiloScriptVisitor{
         else if (context->acessList() != nullptr) value = any_cast<llvm::Value *>(visitAcessList(context->acessList()));
         else if (context->functionCall() != nullptr) value = any_cast<llvm::Value *>(visitFunctionCall(context->functionCall()));
         else {
-            cerr << "Error. Não foi possível associar a variável com essa expressão!" << endl;
+            errorResponse("Error. Não foi possível associar a variável com essa expressão!");
             exit(1);
         }
 
@@ -250,7 +251,7 @@ class IRGen : public NiloScriptVisitor{
             storeValue = Builder->CreateStore(value,varInTable);
         }
         else {
-            cerr << "Error. Não foi possível atribuir variavéis em que o tipo é diferente do novo valor a ser atribuido!" << endl;
+            errorResponse("Error. Não foi possível atribuir variavéis em que o tipo é diferente do novo valor a ser atribuido!");
             exit(1);
         }
 
@@ -276,7 +277,7 @@ class IRGen : public NiloScriptVisitor{
                 result = Builder->CreateSub(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "subtmp");
             }
             else {
-                cerr << "Error. Operador não reconhecido!" << endl;
+                errorResponse("Error. Operador não reconhecido!");
                 return nullptr;
             }
             return result;
@@ -306,7 +307,7 @@ class IRGen : public NiloScriptVisitor{
                 result = Builder->CreateSRem(std::any_cast<llvm::Value *>(lhs), std::any_cast<llvm::Value *>(rhs), "modtmp");
             }
             else {
-                cerr << "Error. Operador não reconhecido!" << endl;
+                errorResponse("Error. Operador não reconhecido!");
                 exit(1);
             }
             return result;
@@ -356,7 +357,7 @@ class IRGen : public NiloScriptVisitor{
             return visitTerm(context->term());
         }
         else{
-            cerr << "Error. Os parenteses não estão corretos!" << endl;
+            errorResponse("Error. Os parenteses não estão corretos!");
             exit(1);
             return nullptr;
         }
@@ -428,7 +429,7 @@ class IRGen : public NiloScriptVisitor{
                 return falseValue;
             }
             else{
-                cerr << "Error. Não foi possível reconhecer o booleano!" << endl;
+                errorResponse("Error. Não foi possível reconhecer o booleano!");
             return nullptr;
             }
         }
@@ -438,7 +439,7 @@ class IRGen : public NiloScriptVisitor{
             return floatValue;
         }
         else {
-            cerr << "Error. Não foi possível reconhecer uma instrução!" << endl;
+            errorResponse("Error. Não foi possível reconhecer uma instrução!");
             return nullptr;
         }
     };
@@ -481,22 +482,22 @@ class IRGen : public NiloScriptVisitor{
                 type = llvm::Type::getInt1Ty(*Conteiner);
             }
             else {
-                cerr << "Error. Função mostrar não reconhecida!" << endl;
+                errorResponse("Error. Função mostrar não reconhecida!");
                 exit(1);
             }
 
             if (type != value->getType() && context->SHOW()->getText() != "mostrarCaracteres"){
-                cerr << "Error. O valor passado não é do mesmo tipo da função mostrar declarada!" << endl;
+                errorResponse("Error. O valor passado não é do mesmo tipo da função mostrar declarada!");
                 exit(1);
             }
 
             if ((type != value->getType()) && (context->SHOW()->getText() == "mostrarCaracteres" && !value->getType()->isPointerTy())){
-                cerr << "Error. O valor passado não é do mesmo tipo da função mostrar declarada!" << endl;
+                errorResponse("Error. O valor passado não é do mesmo tipo da função mostrar declarada!");
                 exit(1);
             }
 
             if (context->children.size() != 4){
-                cerr << "Error. A declaração do mostrar está incorreta!" << endl;
+                errorResponse("Error. A declaração do mostrar está incorreta!");
                 exit(1);
             }
 
@@ -506,9 +507,8 @@ class IRGen : public NiloScriptVisitor{
             return call;
         }
         else{
-            cerr << "Error. Você precisa colocar algo para mostrar" << endl;
+            errorResponse("Error. Você precisa colocar algo para mostrar");
             exit(1);
-            return nullptr;
         }
     };
 
@@ -530,7 +530,7 @@ class IRGen : public NiloScriptVisitor{
             typeInput = sScanf;
         }
         else {
-            cerr << "Error. Função de pegar não reconhecida!" << endl;
+            errorResponse("Error. Função de pegar não reconhecida!");
             exit(1);
         }
         
@@ -581,7 +581,7 @@ class IRGen : public NiloScriptVisitor{
             operation = Builder->CreateICmpULE(lhs, rhs, "menor_igual");
         }
         else{
-            cerr << "Error. Operador de comparação não encontrado!" << endl;
+            errorResponse("Error. Operador de comparação não encontrado!");
             exit(1);
         }
 
@@ -660,7 +660,7 @@ class IRGen : public NiloScriptVisitor{
             operation = Builder->CreateICmpULE(lhs, rhs, "menor_igaul");
         }
         else{
-            cerr << "Error. Operador de comparação não encontrado!" << endl;
+            errorResponse("Error. Operador de comparação não encontrado!");
             exit(1);
         }
 
@@ -708,7 +708,7 @@ class IRGen : public NiloScriptVisitor{
                 argType = llvm::Type::getInt1Ty(*Conteiner);
             }
             else {
-                cerr << "Error. Tipo do argumento não reconhecido!" << endl;
+                errorResponse("Error. Tipo do argumento não reconhecido!");
                 exit(1);
             } 
             params.push_back(argType);
@@ -739,7 +739,7 @@ class IRGen : public NiloScriptVisitor{
             FUNCTIONTYPE = llvm::FunctionType::get(llvm::Type::getVoidTy(*Conteiner), false);
         }
         else {
-            cerr << "Error. Tipo da função não reconhecido!" << endl;
+            errorResponse("Error. Tipo da função não reconhecido!");
             exit(1);
         } 
         llvm::Function* mainFunction = CurrentFunction;
@@ -776,7 +776,7 @@ class IRGen : public NiloScriptVisitor{
                 alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,arg);
             }
             else {
-                cerr << "Error. Tipo da função não reconhecido!" << endl;
+                errorResponse("Error. Tipo da função não reconhecido!");
                 exit(1);
             } 
             SymbolTable[var][arg] = alloca;
@@ -795,7 +795,7 @@ class IRGen : public NiloScriptVisitor{
         for (NiloScriptParser::StmtContext* stm : context->stmt()){
 
             if(context->stmt().front()->function()){
-                cerr << "Error. Não é possível declarar uma função dentro de outra!" << endl;
+                errorResponse("Error. Não é possível declarar uma função dentro de outra!");
                 exit(1);
             }
             visitStmt(stm);
@@ -816,7 +816,7 @@ class IRGen : public NiloScriptVisitor{
                 valueReturn = Builder->CreateLoad(llvm::Type::getInt1Ty(*Conteiner),SymbolTable[var][context->returnVar->getText()]);
             }
             else {
-                cerr << "Error. Valor de retorno não reconhecido!" << endl;
+                errorResponse("Error. Valor de retorno não reconhecido!");
                 exit(1);
             } 
         } 
@@ -828,7 +828,7 @@ class IRGen : public NiloScriptVisitor{
             valueReturn = any_cast<llvm::Value*>(visitTerm(context->term()));
         }
         else {
-            cerr << "Error. Valor de retorno não reconhecido!" << endl;
+            errorResponse("Error. Valor de retorno não reconhecido!");
             exit(1);
         }
 
@@ -870,7 +870,7 @@ class IRGen : public NiloScriptVisitor{
 
         cout << "VALORES ARMAZENADOS FUNCTION " << argsFunctions[var].size() << " " << objectParams.size() << endl;
         if (argsFunctions[var].size() != objectParams.size()){
-            cerr << "Error. O número de argumentos não correspondem a quatidade de parametros necessários na função!" << endl;
+            errorResponse("Error. O número de argumentos não correspondem a quatidade de parametros necessários na função!");
             exit(1);
         }
 
@@ -912,7 +912,7 @@ class IRGen : public NiloScriptVisitor{
             }
         }
         else {
-            cerr << "Error. Tipo da lista não reconhecido!" << endl;
+            errorResponse("Error. Tipo da lista não reconhecido!");
             exit(1);
         }
 
@@ -946,12 +946,12 @@ class IRGen : public NiloScriptVisitor{
                 value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
             }
             else{
-                cerr << "Error. Booleano errado!" << endl;
+                errorResponse("Error. Booleano errado!");
                 exit(1);
             }
         }
         else {
-            cerr << "Error. Tipo da lista não reconhecido!" << endl;
+            errorResponse("Error. Tipo da lista não reconhecido!");
             exit(1);
         }
         addressArray = Builder->CreateGEP(llvm::ArrayType::get(elementsType, nElements), alloca, {llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0),index}, "endereco");
@@ -973,19 +973,19 @@ class IRGen : public NiloScriptVisitor{
                     value = llvm::ConstantInt::get(llvm::Type::getInt1Ty(*Conteiner), 0);
                 }
                 else{
-                    cerr << "Error. Booleano errado!" << endl;
+                    errorResponse("Error. Booleano errado!");
                     exit(1);
                 }
             }
             else {
-                cerr << "Error. Tipo da lista não reconhecido!" << endl;
+                errorResponse("Error. Tipo da lista não reconhecido!");
                 exit(1);
             }
 
             //Confere se a quantidade de elementos colocada é igual a declarada
             cout << "N ELEMNTOS " << qElementosInput << " " << nElements << endl;
             if (qElementosInput != nElements){
-                cerr << "Error. A quatidade de elementos e o tamanho declarado na lista não correspondem ou o tipo dos elementos não corresponde ao tipo da variável declarada!!" << endl;
+                errorResponse("Error. A quatidade de elementos e o tamanho declarado na lista não correspondem ou o tipo dos elementos não corresponde ao tipo da variável declarada!!");
                 exit(1);
             }
 
@@ -1005,11 +1005,11 @@ class IRGen : public NiloScriptVisitor{
 
         // Avalia se o indicie não está maior nem menor
         if (std::stoi(context->INT()->getText()) >= arrayType->getNumElements()){
-            cerr << "Error. A posição fornecida ultrapassa a quatidade de elemento do array!" << endl;
+            errorResponse("Error. A posição fornecida ultrapassa a quatidade de elemento do array!");
             exit(1);
         }
         if (std::stoi(context->INT()->getText()) < 0){
-            cerr << "Error. A posição deve ser números positivos dentro do limite da lista!" << endl;
+            errorResponse("Error. A posição deve ser números positivos dentro do limite da lista!");
             exit(1);
         }
         
@@ -1023,7 +1023,7 @@ class IRGen : public NiloScriptVisitor{
             elementsType = llvm::Type::getInt1Ty(*Conteiner);
         }
         else {
-            cerr << "Error. Tipo não da lista reconhecido!" << endl;
+            errorResponse("Error. Tipo não da lista reconhecido!");
             exit(1);
         }
         

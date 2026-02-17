@@ -542,4 +542,5 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /usr/lib/llvm-19/include/llvm/IR/PassManagerInternal.h \
  /usr/lib/llvm-19/include/llvm/Support/TypeName.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
- /usr/include/c++/13/bits/list.tcc
+ /usr/include/c++/13/bits/list.tcc \
+ /home/namaria/Gram-tica-com-ANTLR/src/./antlr/errorResponse.cpp
