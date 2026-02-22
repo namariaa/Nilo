@@ -39,6 +39,8 @@ void errorResponse(string text){
             CurrentBasicBlock2 = llvm::BasicBlock::Create(*Conteiner2, "entrada", CurrentFunction2);
             Builder2->SetInsertPoint(CurrentBasicBlock2);
 
+            text.push_back('\0');
+
             //Insere erro no basisc block
             llvm::AllocaInst* alloca = Builder2->CreateAlloca(llvm::ArrayType::get(llvm::Type::getInt8Ty(*Conteiner2), text.size()),nullptr,"error"); 
           

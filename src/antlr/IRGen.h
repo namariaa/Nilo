@@ -226,6 +226,7 @@ class IRGen : public NiloScriptVisitor{
         string var = context->VAR()->getText();
         string nameCurrentFunction = CurrentFunction->getName().str();
         llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
+
         // Testa se a variável já existe na tabela de simbolos e pode ser reatribuida
         if (!varInTable){
             errorResponse("Error. Não foi possível atribuir um valor a uma varíavel que não foi associada a um tipo!");
@@ -442,21 +443,26 @@ class IRGen : public NiloScriptVisitor{
         else if (context->VAR()){
             cout << "VAR " << context->getText() << endl;
             string nameCurrentFunction = CurrentFunction->getName().str();
-            cout << "NOME DA FUNÇÃO " << SymbolTable[nameCurrentFunction][context->VAR()->getText()] << endl;
-            llvm::Type* type = SymbolTable[nameCurrentFunction][context->VAR()->getText()]->getAllocatedType();
+            string var = context->VAR()->getText();
+            llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
+            if (!varInTable){
+                    errorResponse("Error. A variável " + var + " não foi declarada!");
+                    exit(1);
+                }
+            cout << "NOME DA FUNÇÃO " << SymbolTable[nameCurrentFunction][var] << endl;
+            llvm::Type* type = SymbolTable[nameCurrentFunction][var]->getAllocatedType();
 
             //Para casos especificos em que a variavel é uma string
             llvm::Value* variavel;
             if (type->isArrayTy()){
                 cout << "É STRING "  << endl;
                 string nameCurrentFunction = CurrentFunction->getName().str();
-                llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][context->VAR()->getText()];
                 llvm::Value* position = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0);
                 llvm::Value* gep = Builder->CreateGEP(llvm::ArrayType::get(llvm::Type::getInt8Ty(*Conteiner), CurrentVarSize[context->VAR()->getText()]), varInTable,{Builder->getInt32(0), position});
                 variavel = gep;
             }
             else{
-                variavel = Builder->CreateLoad(type, SymbolTable[nameCurrentFunction][context->VAR()->getText()], "var");
+                variavel = Builder->CreateLoad(type, varInTable, "var");
             }
             return variavel;
         }
@@ -464,6 +470,7 @@ class IRGen : public NiloScriptVisitor{
             cout << "ACESS STRING " << context->getText() <<endl;
             string text = context->STRING()->getText();
             text = text.substr(1, text.size() - 2);
+            text.push_back('\0'); 
             CurrentVarSize[CurrentVar] = text.size();
            
             //Alloca o array 
@@ -914,9 +921,15 @@ class IRGen : public NiloScriptVisitor{
         //Faz store nos endereços que já aloquei
         for (int i = 1; i < context->VAR().size(); i++){
             string arg = context->VAR()[i]->getText();
+            string nameCurrentFunction = CurrentFunction->getName().str();
+
+            llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][arg];
+            if (!varInTable){
+                errorResponse("Error. A variável " + arg + " não foi declarada!");
+                exit(1);
+            }
             
             //Faz load
-            string nameCurrentFunction = CurrentFunction->getName().str();
             llvm::AllocaInst* varAlloca = SymbolTable[nameCurrentFunction][arg];
             llvm::Type* varType = varAlloca->getAllocatedType();
             llvm::Value* loadedValue = Builder->CreateLoad(varType, varAlloca);
