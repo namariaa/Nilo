@@ -1,0 +1,7 @@
+:) Teste de erro variáveis que não existem
+
+a :inteiro = pegaInteiro;
+b :inteiro = pegaInteiro;
+c :inteiro = a + d;
+mostrarInteiro(c);
+mostrarInteiro(C - b);
