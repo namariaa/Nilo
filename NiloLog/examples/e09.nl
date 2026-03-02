@@ -1,0 +1,15 @@
+exiba (parser) em PDF {
+    entrada : [1, 2]
+    programa : /*
+       funcionalidade soma (x :inteiro, y :inteiro) :inteiro {
+            resultado :inteiro = x + y;
+            mostrarCaracteres("test");
+            retorne resultado;
+        }
+
+        a :inteiro = pegaInteiro;
+        b :inteiro = pegaInteiro;
+        c :inteiro = soma(a, b);
+        mostrarInteiro(c);
+    */
+}

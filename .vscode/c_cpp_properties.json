@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "/usr/lib/llvm-19/include",
                 "/usr/lib/llvm-19/lib/cmake/llvm/include",
-                "${workspaceFolder}/NiloScript/src/antlr4-cpp-runtime-4.13.2-source/runtime/src"
+                "${workspaceFolder}/NiloScript/src/antlr4-cpp-runtime-4.13.2-source/runtime/src",
+                "${workspaceFolder}/NiloLog/src/antlr4-cpp-runtime-4.13.2-source/runtime/src"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

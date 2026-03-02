@@ -1,0 +1,18 @@
+exiba (lexer) em PNG {
+    programa : /*
+        x_y :inteiro = 5;
+        mostrarCaracteres("test before!!!!!!!!!!");
+        caso (x_y != 5){
+            mostrarCaracteres("test"); 
+
+            
+            mostrarCaracteres("is distinct!!!!!!!!!!"); 
+            mostrarInteiro(0);
+        }
+        senao {
+            mostrarInteiro(1);
+            mostrarCaracteres("is equal!!!!!!!!!!") ;
+        }
+        :) RESPONSE : is equal!!!!!!!!!!
+    */
+}

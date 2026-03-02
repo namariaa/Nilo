@@ -1,0 +1,9 @@
+exiba (lexer) em PDF {
+    programa : /*
+        primeiro_teste : inteiro = 2 + 5 - 7;
+        segundo_teste :inteiro = 2 + 8 - 7;
+        primeiro_teste = primeiro_teste + segundo_teste;
+        mostrarInteiro(primeiro_teste) ;
+        :) RESPONSE : 3
+    */
+}

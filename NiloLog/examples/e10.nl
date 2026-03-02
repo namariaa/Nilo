@@ -1,0 +1,18 @@
+exiba (parser) em PDF {
+    entrada : [8]
+    programa : /*
+        x :inteiro = pegaInteiro;
+        par :bool = falso;
+
+        enquanto (par == falso) {
+            x = x + 1;
+
+            caso (x % 2 == 0) {
+                par = verdadeiro;
+            }
+            mostrarCaracteres("UM");
+        }
+
+        mostrarInteiro(x);
+    */
+}

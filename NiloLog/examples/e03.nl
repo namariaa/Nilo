@@ -1,0 +1,7 @@
+exiba (representação intermediária) em PNG {
+    programa : /*
+        testeString1 :caracter = "IS FUNNY TEST STRING TYPE IN A PRINT";
+        mostrarCaracteres(testeString1);
+        :) "IS FUNNY TEST STRING TYPE IN A PRINT" 
+    */
+}
