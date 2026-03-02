@@ -1,0 +1,8 @@
+exiba (parser) em PDF {
+    programa : /*
+        :) Teste para dá erro por conta do 2.5 * 2 serem de tipos diferentes
+
+        mostrarInteiro((500 - 100) - (5 * (2.5 * 2)));
+        :) RESPONSE : 375
+    */
+}

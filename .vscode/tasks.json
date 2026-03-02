@@ -36,6 +36,43 @@
             "type": "shell",
             "command": "${workspaceFolder}/NiloScript/src/execute/ns ${workspaceFolder}/NiloScript/examples/e02.ns",
             "problemMatcher": []
+        },
+
+        {
+            "label": "build log",
+            "type": "shell",
+            "command": "make",
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/NiloLog/src/debug"
+            },
+        },
+        {
+            "type": "shell",
+            "label": "cmake log",
+            "command": "cmake ../..",
+            "options": {
+                "cwd": "${workspaceFolder}/NiloLog/src/debug"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run log",
+            "type": "shell",
+            "command": "${workspaceFolder}/NiloLog/src/execute/ns ${workspaceFolder}/NiloLog/examples/e01.nl",
+            "problemMatcher": []
         }
 
     ]
