@@ -1,0 +1,5 @@
+:) Teste de erro do input
+
+input :caracter = pegaInteiro;
+
+:) Tentativa de atribuir um input de inteiro a uma variavel string

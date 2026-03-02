@@ -1,5 +1,0 @@
-reatribuir :inteiro = 1;
-mostrarInteiro(reatribuir);
-
-reatribuir :caracter = "Testando";
-mostrarCaracteres(reatribuir);

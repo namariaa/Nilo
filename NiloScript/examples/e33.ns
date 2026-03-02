@@ -1,0 +1,5 @@
+:) Testes de print com erro -> Booleano
+
+mostrarBool("dando errado");
+
+:) Error. O valor apresentado não é um booleano.

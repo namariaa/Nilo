@@ -1,0 +1,4 @@
+matematicasAvancadas: inteiro = 2 + 5 - 6 * (8 / 4 + 2) - (9 % 2 * 5);
+mostrarInteiro(matematicasAvancadas) ;
+
+:) RESPONSE : -22

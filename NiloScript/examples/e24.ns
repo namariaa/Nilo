@@ -1,0 +1,6 @@
+:) Testes de print com erro -> Inteiro
+
+mostrarInteiro(2.5);
+
+
+:) Error. O valor apresentado não é um inteiro.

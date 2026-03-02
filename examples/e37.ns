@@ -1,6 +1,0 @@
-funcionalidade printManeiro () :nada {
-    mostrarCaracteres("Texto super maneiro");
-}
-
-mostrarCaracteres("Vamos ver algo maneiro?");
-printManeiro();
