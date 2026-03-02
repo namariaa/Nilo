@@ -1,5 +1,0 @@
-:) Testes de print com erro -> Flutuante
-
-mostrarFlutuante("dando errado");
-
-:) Error. O valor apresentado não é um número flutuante.

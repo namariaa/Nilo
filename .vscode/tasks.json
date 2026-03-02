@@ -19,7 +19,7 @@
                 "clear": false
             },
             "options": {
-                "cwd": "${workspaceFolder}/src/debug"
+                "cwd": "${workspaceFolder}/NiloScript/src/debug"
             },
         },
         {
@@ -27,14 +27,14 @@
             "label": "cmake",
             "command": "cmake ../..",
             "options": {
-                "cwd": "${workspaceFolder}/src/debug"
+                "cwd": "${workspaceFolder}/NiloScript/src/debug"
             },
             "problemMatcher": []
         },
         {
             "label": "run",
             "type": "shell",
-            "command": "${workspaceFolder}/src/execute/ns ${workspaceFolder}/examples/e48.ns",
+            "command": "${workspaceFolder}/NiloScript/src/execute/ns ${workspaceFolder}/NiloScript/examples/e02.ns",
             "problemMatcher": []
         }
 

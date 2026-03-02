@@ -1,5 +1,0 @@
-:) Testes de print com erro -> Caracter
-
-mostrarCaracteres(1);
-
-:) Error. O valor apresentado não é uma cadeia de caracteres.

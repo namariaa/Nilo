@@ -1,0 +1,5 @@
+:) Testes de print com erro -> Flutuante
+
+mostrarFlutuante(9);
+
+:) Error. O valor apresentado não é um número flutuante.

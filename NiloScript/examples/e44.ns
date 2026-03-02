@@ -1,0 +1,5 @@
+:) Teste de erro no acesso aos elementos da lista que não existem
+
+valor1{4} :inteiro = [1 , 2];
+primeira :inteiro = valor1[2];
+mostrarInteiro(primeira);
