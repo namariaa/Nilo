@@ -1,5 +1,5 @@
 
-// Generated from NiloLog.g4 by ANTLR 4.9.2
+// Generated from NiloLog.g4 by ANTLR 4.13.2
 
 #pragma once
 
@@ -15,19 +15,19 @@
 class  NiloLogBaseVisitor : public NiloLogVisitor {
 public:
 
-  virtual antlrcpp::Any visitStmts(NiloLogParser::StmtsContext *ctx) override {
+  virtual std::any visitStmts(NiloLogParser::StmtsContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitLog(NiloLogParser::LogContext *ctx) override {
+  virtual std::any visitLog(NiloLogParser::LogContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitInput(NiloLogParser::InputContext *ctx) override {
+  virtual std::any visitInput(NiloLogParser::InputContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual antlrcpp::Any visitProgram(NiloLogParser::ProgramContext *ctx) override {
+  virtual std::any visitProgram(NiloLogParser::ProgramContext *ctx) override {
     return visitChildren(ctx);
   }
 
