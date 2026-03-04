@@ -1,4 +1,4 @@
-exiba (parser) em PNG {
+exiba (parser) {
     programa : /*
         segundo :inteiro = 2 - 4 * 7 / (57 - (7 * 8));
         mostrarInteiro(segundo);

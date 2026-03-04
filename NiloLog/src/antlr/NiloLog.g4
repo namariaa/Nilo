@@ -25,10 +25,9 @@
 
 grammar NiloLog;
 
-stmts: log EOF;
-log: SHOW OPAR PHASE CPAR IN FORMAT OBRA input? ENTER program CBRA;
-input: ENTRY COLON OKEY (STRING | BOOL | INT | FLOAT)+ CKEY ENTER;
-program: NILOCODE ENTER;
+log: SHOW OPAR PHASE CPAR OBRA input? ENTER program CBRA EOF;
+input: ENTRY COLON OKEY listValues=(STRING | BOOL | INT | FLOAT)+ CKEY ENTER;
+program: PROGRAM COLON NILOCODE ENTER;
 
 // TYPES .-*+...-*+...-*+...-*+.. 
 STRING : '"' ~('"')* '"';  
@@ -38,7 +37,6 @@ FLOAT : [0-9]+ '.' [0-9]+;
 NILOCODE : OASTSLA .*? CASTSLA;
 
 // UTILS .-*+...-*+...-*+...-*+.. 
-FORMAT : PDF | PNG;
 PHASE: LEXER | PARSER | IR;
 SHOW : 'exiba';
 OPAR : '(';
@@ -49,11 +47,9 @@ OKEY: '[';
 CKEY: ']';
 OASTSLA: '/*';
 CASTSLA: '*/';
-PDF: 'PDF';
-PNG: 'PNG';
 ENTRY: 'entrada';
+PROGRAM: 'programa';
 COLON: ':';
-IN: 'em';
 LEXER: 'lexer';
 PARSER: 'parser';
 IR: 'representação intermediária';

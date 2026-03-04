@@ -86,14 +86,110 @@ CMakeFiles/nl.dir/src/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nl.dir/src/Main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/Main.cpp -o CMakeFiles/nl.dir/src/Main.cpp.s
 
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o: CMakeFiles/nl.dir/flags.make
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseListener.cpp
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o: CMakeFiles/nl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o -MF CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o.d -o CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseListener.cpp
+
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseListener.cpp > CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.i
+
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseListener.cpp -o CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.s
+
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o: CMakeFiles/nl.dir/flags.make
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseVisitor.cpp
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o: CMakeFiles/nl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o -MF CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o.d -o CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseVisitor.cpp
+
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseVisitor.cpp > CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.i
+
+CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogBaseVisitor.cpp -o CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.s
+
+CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o: CMakeFiles/nl.dir/flags.make
+CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogLexer.cpp
+CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o: CMakeFiles/nl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o -MF CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o.d -o CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogLexer.cpp
+
+CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogLexer.cpp > CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.i
+
+CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogLexer.cpp -o CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.s
+
+CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o: CMakeFiles/nl.dir/flags.make
+CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogListener.cpp
+CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o: CMakeFiles/nl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o -MF CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o.d -o CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogListener.cpp
+
+CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogListener.cpp > CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.i
+
+CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogListener.cpp -o CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.s
+
+CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o: CMakeFiles/nl.dir/flags.make
+CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogParser.cpp
+CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o: CMakeFiles/nl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o -MF CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o.d -o CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogParser.cpp
+
+CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogParser.cpp > CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.i
+
+CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogParser.cpp -o CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.s
+
+CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o: CMakeFiles/nl.dir/flags.make
+CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogVisitor.cpp
+CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o: CMakeFiles/nl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o -MF CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o.d -o CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogVisitor.cpp
+
+CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogVisitor.cpp > CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.i
+
+CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/antlr/NiloLogVisitor.cpp -o CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.s
+
 # Object files for target nl
 nl_OBJECTS = \
-"CMakeFiles/nl.dir/src/Main.cpp.o"
+"CMakeFiles/nl.dir/src/Main.cpp.o" \
+"CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o" \
+"CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o" \
+"CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o" \
+"CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o" \
+"CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o" \
+"CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o"
 
 # External object files for target nl
 nl_EXTERNAL_OBJECTS =
 
 /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/src/Main.cpp.o
+/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o
+/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o
+/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o
+/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o
+/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o
+/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o
 /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/build.make
 /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/compiler_depend.ts
 /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: antlr4-cpp-runtime-bin/runtime/libantlr4-runtime.a
@@ -154,7 +250,7 @@ nl_EXTERNAL_OBJECTS =
 /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: /usr/lib/x86_64-linux-gnu/libz.so
 /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: /usr/lib/x86_64-linux-gnu/libzstd.so
 /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl: CMakeFiles/nl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloLog/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/namaria/Gram-tica-com-ANTLR/NiloLog/src/execute/nl"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

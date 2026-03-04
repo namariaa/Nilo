@@ -1,5 +1,5 @@
 
-// Generated from NiloLog.g4 by ANTLR 4.9.2
+// Generated from NiloLog.g4 by ANTLR 4.13.2
 
 #pragma once
 
@@ -15,9 +15,6 @@
  */
 class  NiloLogBaseListener : public NiloLogListener {
 public:
-
-  virtual void enterStmts(NiloLogParser::StmtsContext * /*ctx*/) override { }
-  virtual void exitStmts(NiloLogParser::StmtsContext * /*ctx*/) override { }
 
   virtual void enterLog(NiloLogParser::LogContext * /*ctx*/) override { }
   virtual void exitLog(NiloLogParser::LogContext * /*ctx*/) override { }

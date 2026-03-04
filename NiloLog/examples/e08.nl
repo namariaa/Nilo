@@ -1,4 +1,4 @@
-exiba (representação intermediária) em PDF {
+exiba (representação intermediária) {
     programa : /*
         pot :inteiro = 6 ** 3 ** 2;
         mostrarInteiro(pot);

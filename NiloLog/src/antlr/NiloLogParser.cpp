@@ -1,5 +1,5 @@
 
-// Generated from NiloLog.g4 by ANTLR 4.9.2
+// Generated from NiloLog.g4 by ANTLR 4.13.2
 
 
 #include "NiloLogListener.h"
@@ -9,14 +9,104 @@
 
 
 using namespace antlrcpp;
+
 using namespace antlr4;
 
-NiloLogParser::NiloLogParser(TokenStream *input) : Parser(input) {
-  _interpreter = new atn::ParserATNSimulator(this, _atn, _decisionToDFA, _sharedContextCache);
+namespace {
+
+struct NiloLogParserStaticData final {
+  NiloLogParserStaticData(std::vector<std::string> ruleNames,
+                        std::vector<std::string> literalNames,
+                        std::vector<std::string> symbolicNames)
+      : ruleNames(std::move(ruleNames)), literalNames(std::move(literalNames)),
+        symbolicNames(std::move(symbolicNames)),
+        vocabulary(this->literalNames, this->symbolicNames) {}
+
+  NiloLogParserStaticData(const NiloLogParserStaticData&) = delete;
+  NiloLogParserStaticData(NiloLogParserStaticData&&) = delete;
+  NiloLogParserStaticData& operator=(const NiloLogParserStaticData&) = delete;
+  NiloLogParserStaticData& operator=(NiloLogParserStaticData&&) = delete;
+
+  std::vector<antlr4::dfa::DFA> decisionToDFA;
+  antlr4::atn::PredictionContextCache sharedContextCache;
+  const std::vector<std::string> ruleNames;
+  const std::vector<std::string> literalNames;
+  const std::vector<std::string> symbolicNames;
+  const antlr4::dfa::Vocabulary vocabulary;
+  antlr4::atn::SerializedATNView serializedATN;
+  std::unique_ptr<antlr4::atn::ATN> atn;
+};
+
+::antlr4::internal::OnceFlag nilologParserOnceFlag;
+#if ANTLR4_USE_THREAD_LOCAL_CACHE
+static thread_local
+#endif
+std::unique_ptr<NiloLogParserStaticData> nilologParserStaticData = nullptr;
+
+void nilologParserInitialize() {
+#if ANTLR4_USE_THREAD_LOCAL_CACHE
+  if (nilologParserStaticData != nullptr) {
+    return;
+  }
+#else
+  assert(nilologParserStaticData == nullptr);
+#endif
+  auto staticData = std::make_unique<NiloLogParserStaticData>(
+    std::vector<std::string>{
+      "log", "input", "program"
+    },
+    std::vector<std::string>{
+      "", "", "", "", "", "", "", "'exiba'", "'('", "')'", "'{'", "'}'", 
+      "'['", "']'", "'/*'", "'*/'", "'entrada'", "'programa'", "':'", "'lexer'", 
+      "'parser'", "'representa\\u00E7\\u00E3o intermedi\\u00E1ria'"
+    },
+    std::vector<std::string>{
+      "", "STRING", "BOOL", "INT", "FLOAT", "NILOCODE", "PHASE", "SHOW", 
+      "OPAR", "CPAR", "OBRA", "CBRA", "OKEY", "CKEY", "OASTSLA", "CASTSLA", 
+      "ENTRY", "PROGRAM", "COLON", "LEXER", "PARSER", "IR", "TAB", "ENTER", 
+      "SPACE", "WHITESPACE"
+    }
+  );
+  static const int32_t serializedATNSegment[] = {
+  	4,1,25,36,2,0,7,0,2,1,7,1,2,2,7,2,1,0,1,0,1,0,1,0,1,0,1,0,3,0,13,8,0,
+  	1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,1,4,1,24,8,1,11,1,12,1,25,1,1,1,1,1,
+  	1,1,2,1,2,1,2,1,2,1,2,1,2,0,0,3,0,2,4,0,1,1,0,1,4,34,0,6,1,0,0,0,2,19,
+  	1,0,0,0,4,30,1,0,0,0,6,7,5,7,0,0,7,8,5,8,0,0,8,9,5,6,0,0,9,10,5,9,0,0,
+  	10,12,5,10,0,0,11,13,3,2,1,0,12,11,1,0,0,0,12,13,1,0,0,0,13,14,1,0,0,
+  	0,14,15,5,23,0,0,15,16,3,4,2,0,16,17,5,11,0,0,17,18,5,0,0,1,18,1,1,0,
+  	0,0,19,20,5,16,0,0,20,21,5,18,0,0,21,23,5,12,0,0,22,24,7,0,0,0,23,22,
+  	1,0,0,0,24,25,1,0,0,0,25,23,1,0,0,0,25,26,1,0,0,0,26,27,1,0,0,0,27,28,
+  	5,13,0,0,28,29,5,23,0,0,29,3,1,0,0,0,30,31,5,17,0,0,31,32,5,18,0,0,32,
+  	33,5,5,0,0,33,34,5,23,0,0,34,5,1,0,0,0,2,12,25
+  };
+  staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
+
+  antlr4::atn::ATNDeserializer deserializer;
+  staticData->atn = deserializer.deserialize(staticData->serializedATN);
+
+  const size_t count = staticData->atn->getNumberOfDecisions();
+  staticData->decisionToDFA.reserve(count);
+  for (size_t i = 0; i < count; i++) { 
+    staticData->decisionToDFA.emplace_back(staticData->atn->getDecisionState(i), i);
+  }
+  nilologParserStaticData = std::move(staticData);
+}
+
+}
+
+NiloLogParser::NiloLogParser(TokenStream *input) : NiloLogParser(input, antlr4::atn::ParserATNSimulatorOptions()) {}
+
+NiloLogParser::NiloLogParser(TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options) : Parser(input) {
+  NiloLogParser::initialize();
+  _interpreter = new atn::ParserATNSimulator(this, *nilologParserStaticData->atn, nilologParserStaticData->decisionToDFA, nilologParserStaticData->sharedContextCache, options);
 }
 
 NiloLogParser::~NiloLogParser() {
   delete _interpreter;
+}
+
+const atn::ATN& NiloLogParser::getATN() const {
+  return *nilologParserStaticData->atn;
 }
 
 std::string NiloLogParser::getGrammarFileName() const {
@@ -24,80 +114,17 @@ std::string NiloLogParser::getGrammarFileName() const {
 }
 
 const std::vector<std::string>& NiloLogParser::getRuleNames() const {
-  return _ruleNames;
+  return nilologParserStaticData->ruleNames;
 }
 
-dfa::Vocabulary& NiloLogParser::getVocabulary() const {
-  return _vocabulary;
+const dfa::Vocabulary& NiloLogParser::getVocabulary() const {
+  return nilologParserStaticData->vocabulary;
 }
 
-
-//----------------- StmtsContext ------------------------------------------------------------------
-
-NiloLogParser::StmtsContext::StmtsContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
+antlr4::atn::SerializedATNView NiloLogParser::getSerializedATN() const {
+  return nilologParserStaticData->serializedATN;
 }
 
-NiloLogParser::LogContext* NiloLogParser::StmtsContext::log() {
-  return getRuleContext<NiloLogParser::LogContext>(0);
-}
-
-tree::TerminalNode* NiloLogParser::StmtsContext::EOF() {
-  return getToken(NiloLogParser::EOF, 0);
-}
-
-
-size_t NiloLogParser::StmtsContext::getRuleIndex() const {
-  return NiloLogParser::RuleStmts;
-}
-
-void NiloLogParser::StmtsContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloLogListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterStmts(this);
-}
-
-void NiloLogParser::StmtsContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloLogListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitStmts(this);
-}
-
-
-antlrcpp::Any NiloLogParser::StmtsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<NiloLogVisitor*>(visitor))
-    return parserVisitor->visitStmts(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-NiloLogParser::StmtsContext* NiloLogParser::stmts() {
-  StmtsContext *_localctx = _tracker.createInstance<StmtsContext>(_ctx, getState());
-  enterRule(_localctx, 0, NiloLogParser::RuleStmts);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(8);
-    log();
-    setState(9);
-    match(NiloLogParser::EOF);
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
 
 //----------------- LogContext ------------------------------------------------------------------
 
@@ -121,14 +148,6 @@ tree::TerminalNode* NiloLogParser::LogContext::CPAR() {
   return getToken(NiloLogParser::CPAR, 0);
 }
 
-tree::TerminalNode* NiloLogParser::LogContext::IN() {
-  return getToken(NiloLogParser::IN, 0);
-}
-
-tree::TerminalNode* NiloLogParser::LogContext::FORMAT() {
-  return getToken(NiloLogParser::FORMAT, 0);
-}
-
 tree::TerminalNode* NiloLogParser::LogContext::OBRA() {
   return getToken(NiloLogParser::OBRA, 0);
 }
@@ -143,6 +162,10 @@ NiloLogParser::ProgramContext* NiloLogParser::LogContext::program() {
 
 tree::TerminalNode* NiloLogParser::LogContext::CBRA() {
   return getToken(NiloLogParser::CBRA, 0);
+}
+
+tree::TerminalNode* NiloLogParser::LogContext::EOF() {
+  return getToken(NiloLogParser::EOF, 0);
 }
 
 NiloLogParser::InputContext* NiloLogParser::LogContext::input() {
@@ -167,7 +190,7 @@ void NiloLogParser::LogContext::exitRule(tree::ParseTreeListener *listener) {
 }
 
 
-antlrcpp::Any NiloLogParser::LogContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloLogParser::LogContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloLogVisitor*>(visitor))
     return parserVisitor->visitLog(this);
   else
@@ -176,7 +199,7 @@ antlrcpp::Any NiloLogParser::LogContext::accept(tree::ParseTreeVisitor *visitor)
 
 NiloLogParser::LogContext* NiloLogParser::log() {
   LogContext *_localctx = _tracker.createInstance<LogContext>(_ctx, getState());
-  enterRule(_localctx, 2, NiloLogParser::RuleLog);
+  enterRule(_localctx, 0, NiloLogParser::RuleLog);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -188,34 +211,32 @@ NiloLogParser::LogContext* NiloLogParser::log() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(11);
+    setState(6);
     match(NiloLogParser::SHOW);
-    setState(12);
+    setState(7);
     match(NiloLogParser::OPAR);
-    setState(13);
+    setState(8);
     match(NiloLogParser::PHASE);
-    setState(14);
+    setState(9);
     match(NiloLogParser::CPAR);
-    setState(15);
-    match(NiloLogParser::IN);
-    setState(16);
-    match(NiloLogParser::FORMAT);
-    setState(17);
+    setState(10);
     match(NiloLogParser::OBRA);
-    setState(19);
+    setState(12);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == NiloLogParser::ENTRY) {
-      setState(18);
+      setState(11);
       input();
     }
-    setState(21);
+    setState(14);
     match(NiloLogParser::ENTER);
-    setState(22);
+    setState(15);
     program();
-    setState(23);
+    setState(16);
     match(NiloLogParser::CBRA);
+    setState(17);
+    match(NiloLogParser::EOF);
    
   }
   catch (RecognitionException &e) {
@@ -303,7 +324,7 @@ void NiloLogParser::InputContext::exitRule(tree::ParseTreeListener *listener) {
 }
 
 
-antlrcpp::Any NiloLogParser::InputContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloLogParser::InputContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloLogVisitor*>(visitor))
     return parserVisitor->visitInput(this);
   else
@@ -312,7 +333,7 @@ antlrcpp::Any NiloLogParser::InputContext::accept(tree::ParseTreeVisitor *visito
 
 NiloLogParser::InputContext* NiloLogParser::input() {
   InputContext *_localctx = _tracker.createInstance<InputContext>(_ctx, getState());
-  enterRule(_localctx, 4, NiloLogParser::RuleInput);
+  enterRule(_localctx, 2, NiloLogParser::RuleInput);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -324,40 +345,35 @@ NiloLogParser::InputContext* NiloLogParser::input() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(25);
+    setState(19);
     match(NiloLogParser::ENTRY);
-    setState(26);
+    setState(20);
     match(NiloLogParser::COLON);
-    setState(27);
+    setState(21);
     match(NiloLogParser::OKEY);
-    setState(29); 
+    setState(23); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(28);
+      setState(22);
+      antlrcpp::downCast<InputContext *>(_localctx)->listValues = _input->LT(1);
       _la = _input->LA(1);
       if (!((((_la & ~ 0x3fULL) == 0) &&
-        ((1ULL << _la) & ((1ULL << NiloLogParser::STRING)
-        | (1ULL << NiloLogParser::BOOL)
-        | (1ULL << NiloLogParser::INT)
-        | (1ULL << NiloLogParser::FLOAT))) != 0))) {
-      _errHandler->recoverInline(this);
+        ((1ULL << _la) & 30) != 0))) {
+        antlrcpp::downCast<InputContext *>(_localctx)->listValues = _errHandler->recoverInline(this);
       }
       else {
         _errHandler->reportMatch(this);
         consume();
       }
-      setState(31); 
+      setState(25); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & ((1ULL << NiloLogParser::STRING)
-      | (1ULL << NiloLogParser::BOOL)
-      | (1ULL << NiloLogParser::INT)
-      | (1ULL << NiloLogParser::FLOAT))) != 0));
-    setState(33);
+      ((1ULL << _la) & 30) != 0));
+    setState(27);
     match(NiloLogParser::CKEY);
-    setState(34);
+    setState(28);
     match(NiloLogParser::ENTER);
    
   }
@@ -374,6 +390,14 @@ NiloLogParser::InputContext* NiloLogParser::input() {
 
 NiloLogParser::ProgramContext::ProgramContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloLogParser::ProgramContext::PROGRAM() {
+  return getToken(NiloLogParser::PROGRAM, 0);
+}
+
+tree::TerminalNode* NiloLogParser::ProgramContext::COLON() {
+  return getToken(NiloLogParser::COLON, 0);
 }
 
 tree::TerminalNode* NiloLogParser::ProgramContext::NILOCODE() {
@@ -402,7 +426,7 @@ void NiloLogParser::ProgramContext::exitRule(tree::ParseTreeListener *listener) 
 }
 
 
-antlrcpp::Any NiloLogParser::ProgramContext::accept(tree::ParseTreeVisitor *visitor) {
+std::any NiloLogParser::ProgramContext::accept(tree::ParseTreeVisitor *visitor) {
   if (auto parserVisitor = dynamic_cast<NiloLogVisitor*>(visitor))
     return parserVisitor->visitProgram(this);
   else
@@ -411,7 +435,7 @@ antlrcpp::Any NiloLogParser::ProgramContext::accept(tree::ParseTreeVisitor *visi
 
 NiloLogParser::ProgramContext* NiloLogParser::program() {
   ProgramContext *_localctx = _tracker.createInstance<ProgramContext>(_ctx, getState());
-  enterRule(_localctx, 6, NiloLogParser::RuleProgram);
+  enterRule(_localctx, 4, NiloLogParser::RuleProgram);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -422,9 +446,13 @@ NiloLogParser::ProgramContext* NiloLogParser::program() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(36);
+    setState(30);
+    match(NiloLogParser::PROGRAM);
+    setState(31);
+    match(NiloLogParser::COLON);
+    setState(32);
     match(NiloLogParser::NILOCODE);
-    setState(37);
+    setState(33);
     match(NiloLogParser::ENTER);
    
   }
@@ -437,91 +465,10 @@ NiloLogParser::ProgramContext* NiloLogParser::program() {
   return _localctx;
 }
 
-// Static vars and initialization.
-std::vector<dfa::DFA> NiloLogParser::_decisionToDFA;
-atn::PredictionContextCache NiloLogParser::_sharedContextCache;
-
-// We own the ATN which in turn owns the ATN states.
-atn::ATN NiloLogParser::_atn;
-std::vector<uint16_t> NiloLogParser::_serializedATN;
-
-std::vector<std::string> NiloLogParser::_ruleNames = {
-  "stmts", "log", "input", "program"
-};
-
-std::vector<std::string> NiloLogParser::_literalNames = {
-  "", "", "", "", "", "", "", "", "'exiba'", "'('", "')'", "'{'", "'}'", 
-  "'['", "']'", "'/*'", "'*/'", "'PDF'", "'PNG'", "'entrada'", "':'", "'em'", 
-  "'lexer'", "'parser'", "'representa\u00E7\u00E3o intermedi\u00E1ria'"
-};
-
-std::vector<std::string> NiloLogParser::_symbolicNames = {
-  "", "STRING", "BOOL", "INT", "FLOAT", "NILOCODE", "FORMAT", "PHASE", "SHOW", 
-  "OPAR", "CPAR", "OBRA", "CBRA", "OKEY", "CKEY", "OASTSLA", "CASTSLA", 
-  "PDF", "PNG", "ENTRY", "COLON", "IN", "LEXER", "PARSER", "IR", "TAB", 
-  "ENTER", "SPACE", "WHITESPACE"
-};
-
-dfa::Vocabulary NiloLogParser::_vocabulary(_literalNames, _symbolicNames);
-
-std::vector<std::string> NiloLogParser::_tokenNames;
-
-NiloLogParser::Initializer::Initializer() {
-	for (size_t i = 0; i < _symbolicNames.size(); ++i) {
-		std::string name = _vocabulary.getLiteralName(i);
-		if (name.empty()) {
-			name = _vocabulary.getSymbolicName(i);
-		}
-
-		if (name.empty()) {
-			_tokenNames.push_back("<INVALID>");
-		} else {
-      _tokenNames.push_back(name);
-    }
-	}
-
-  static const uint16_t serializedATNSegment0[] = {
-    0x3, 0x608b, 0xa72a, 0x8133, 0xb9ed, 0x417c, 0x3be7, 0x7786, 0x5964, 
-       0x3, 0x1e, 0x2a, 0x4, 0x2, 0x9, 0x2, 0x4, 0x3, 0x9, 0x3, 0x4, 0x4, 
-       0x9, 0x4, 0x4, 0x5, 0x9, 0x5, 0x3, 0x2, 0x3, 0x2, 0x3, 0x2, 0x3, 
-       0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 
-       0x3, 0x3, 0x5, 0x3, 0x16, 0xa, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 0x3, 
-       0x3, 0x3, 0x3, 0x4, 0x3, 0x4, 0x3, 0x4, 0x3, 0x4, 0x6, 0x4, 0x20, 
-       0xa, 0x4, 0xd, 0x4, 0xe, 0x4, 0x21, 0x3, 0x4, 0x3, 0x4, 0x3, 0x4, 
-       0x3, 0x5, 0x3, 0x5, 0x3, 0x5, 0x3, 0x5, 0x2, 0x2, 0x6, 0x2, 0x4, 
-       0x6, 0x8, 0x2, 0x3, 0x3, 0x2, 0x3, 0x6, 0x2, 0x27, 0x2, 0xa, 0x3, 
-       0x2, 0x2, 0x2, 0x4, 0xd, 0x3, 0x2, 0x2, 0x2, 0x6, 0x1b, 0x3, 0x2, 
-       0x2, 0x2, 0x8, 0x26, 0x3, 0x2, 0x2, 0x2, 0xa, 0xb, 0x5, 0x4, 0x3, 
-       0x2, 0xb, 0xc, 0x7, 0x2, 0x2, 0x3, 0xc, 0x3, 0x3, 0x2, 0x2, 0x2, 
-       0xd, 0xe, 0x7, 0xa, 0x2, 0x2, 0xe, 0xf, 0x7, 0xb, 0x2, 0x2, 0xf, 
-       0x10, 0x7, 0x9, 0x2, 0x2, 0x10, 0x11, 0x7, 0xc, 0x2, 0x2, 0x11, 0x12, 
-       0x7, 0x17, 0x2, 0x2, 0x12, 0x13, 0x7, 0x8, 0x2, 0x2, 0x13, 0x15, 
-       0x7, 0xd, 0x2, 0x2, 0x14, 0x16, 0x5, 0x6, 0x4, 0x2, 0x15, 0x14, 0x3, 
-       0x2, 0x2, 0x2, 0x15, 0x16, 0x3, 0x2, 0x2, 0x2, 0x16, 0x17, 0x3, 0x2, 
-       0x2, 0x2, 0x17, 0x18, 0x7, 0x1c, 0x2, 0x2, 0x18, 0x19, 0x5, 0x8, 
-       0x5, 0x2, 0x19, 0x1a, 0x7, 0xe, 0x2, 0x2, 0x1a, 0x5, 0x3, 0x2, 0x2, 
-       0x2, 0x1b, 0x1c, 0x7, 0x15, 0x2, 0x2, 0x1c, 0x1d, 0x7, 0x16, 0x2, 
-       0x2, 0x1d, 0x1f, 0x7, 0xf, 0x2, 0x2, 0x1e, 0x20, 0x9, 0x2, 0x2, 0x2, 
-       0x1f, 0x1e, 0x3, 0x2, 0x2, 0x2, 0x20, 0x21, 0x3, 0x2, 0x2, 0x2, 0x21, 
-       0x1f, 0x3, 0x2, 0x2, 0x2, 0x21, 0x22, 0x3, 0x2, 0x2, 0x2, 0x22, 0x23, 
-       0x3, 0x2, 0x2, 0x2, 0x23, 0x24, 0x7, 0x10, 0x2, 0x2, 0x24, 0x25, 
-       0x7, 0x1c, 0x2, 0x2, 0x25, 0x7, 0x3, 0x2, 0x2, 0x2, 0x26, 0x27, 0x7, 
-       0x7, 0x2, 0x2, 0x27, 0x28, 0x7, 0x1c, 0x2, 0x2, 0x28, 0x9, 0x3, 0x2, 
-       0x2, 0x2, 0x4, 0x15, 0x21, 
-  };
-
-  _serializedATN.insert(_serializedATN.end(), serializedATNSegment0,
-    serializedATNSegment0 + sizeof(serializedATNSegment0) / sizeof(serializedATNSegment0[0]));
-
-
-  atn::ATNDeserializer deserializer;
-  _atn = deserializer.deserialize(_serializedATN);
-
-  size_t count = _atn.getNumberOfDecisions();
-  _decisionToDFA.reserve(count);
-  for (size_t i = 0; i < count; i++) { 
-    _decisionToDFA.emplace_back(_atn.getDecisionState(i), i);
-  }
+void NiloLogParser::initialize() {
+#if ANTLR4_USE_THREAD_LOCAL_CACHE
+  nilologParserInitialize();
+#else
+  ::antlr4::internal::call_once(nilologParserOnceFlag, nilologParserInitialize);
+#endif
 }
-
-NiloLogParser::Initializer NiloLogParser::_init;

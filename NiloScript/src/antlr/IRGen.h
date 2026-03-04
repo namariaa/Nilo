@@ -92,6 +92,13 @@ class IRGen : public NiloScriptVisitor{
             out.flush();
         }
 
+    string getExecutable(){
+        std::string irString;
+        llvm::raw_string_ostream rso(irString);
+        Executable->print(rso, nullptr);
+        return rso.str();
+    }
+
     virtual std::any visitProgram(NiloScriptParser::ProgramContext *context) override {
         cout << "CHEGOU NO PROGRAM" << endl;
         for(NiloScriptParser::StmtContext *stm : context->stmt()){

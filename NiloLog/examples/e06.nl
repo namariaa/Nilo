@@ -1,4 +1,4 @@
-exiba (parser) em PDF {
+exiba (parser) {
     programa : /*
         x_y :inteiro = 6;
         caso ( x_y != 5 ) {

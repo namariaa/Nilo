@@ -1,4 +1,4 @@
-exiba (parser) em PDF {
+exiba (parser) {
     entrada : [8]
     programa : /*
         x :inteiro = pegaInteiro;

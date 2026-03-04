@@ -309,6 +309,150 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
+src/antlr/NiloLogBaseListener.o: src/antlr/NiloLogBaseListener.cpp.o
+.PHONY : src/antlr/NiloLogBaseListener.o
+
+# target to build an object file
+src/antlr/NiloLogBaseListener.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.o
+.PHONY : src/antlr/NiloLogBaseListener.cpp.o
+
+src/antlr/NiloLogBaseListener.i: src/antlr/NiloLogBaseListener.cpp.i
+.PHONY : src/antlr/NiloLogBaseListener.i
+
+# target to preprocess a source file
+src/antlr/NiloLogBaseListener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.i
+.PHONY : src/antlr/NiloLogBaseListener.cpp.i
+
+src/antlr/NiloLogBaseListener.s: src/antlr/NiloLogBaseListener.cpp.s
+.PHONY : src/antlr/NiloLogBaseListener.s
+
+# target to generate assembly for a file
+src/antlr/NiloLogBaseListener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogBaseListener.cpp.s
+.PHONY : src/antlr/NiloLogBaseListener.cpp.s
+
+src/antlr/NiloLogBaseVisitor.o: src/antlr/NiloLogBaseVisitor.cpp.o
+.PHONY : src/antlr/NiloLogBaseVisitor.o
+
+# target to build an object file
+src/antlr/NiloLogBaseVisitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.o
+.PHONY : src/antlr/NiloLogBaseVisitor.cpp.o
+
+src/antlr/NiloLogBaseVisitor.i: src/antlr/NiloLogBaseVisitor.cpp.i
+.PHONY : src/antlr/NiloLogBaseVisitor.i
+
+# target to preprocess a source file
+src/antlr/NiloLogBaseVisitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.i
+.PHONY : src/antlr/NiloLogBaseVisitor.cpp.i
+
+src/antlr/NiloLogBaseVisitor.s: src/antlr/NiloLogBaseVisitor.cpp.s
+.PHONY : src/antlr/NiloLogBaseVisitor.s
+
+# target to generate assembly for a file
+src/antlr/NiloLogBaseVisitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogBaseVisitor.cpp.s
+.PHONY : src/antlr/NiloLogBaseVisitor.cpp.s
+
+src/antlr/NiloLogLexer.o: src/antlr/NiloLogLexer.cpp.o
+.PHONY : src/antlr/NiloLogLexer.o
+
+# target to build an object file
+src/antlr/NiloLogLexer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.o
+.PHONY : src/antlr/NiloLogLexer.cpp.o
+
+src/antlr/NiloLogLexer.i: src/antlr/NiloLogLexer.cpp.i
+.PHONY : src/antlr/NiloLogLexer.i
+
+# target to preprocess a source file
+src/antlr/NiloLogLexer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.i
+.PHONY : src/antlr/NiloLogLexer.cpp.i
+
+src/antlr/NiloLogLexer.s: src/antlr/NiloLogLexer.cpp.s
+.PHONY : src/antlr/NiloLogLexer.s
+
+# target to generate assembly for a file
+src/antlr/NiloLogLexer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogLexer.cpp.s
+.PHONY : src/antlr/NiloLogLexer.cpp.s
+
+src/antlr/NiloLogListener.o: src/antlr/NiloLogListener.cpp.o
+.PHONY : src/antlr/NiloLogListener.o
+
+# target to build an object file
+src/antlr/NiloLogListener.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.o
+.PHONY : src/antlr/NiloLogListener.cpp.o
+
+src/antlr/NiloLogListener.i: src/antlr/NiloLogListener.cpp.i
+.PHONY : src/antlr/NiloLogListener.i
+
+# target to preprocess a source file
+src/antlr/NiloLogListener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.i
+.PHONY : src/antlr/NiloLogListener.cpp.i
+
+src/antlr/NiloLogListener.s: src/antlr/NiloLogListener.cpp.s
+.PHONY : src/antlr/NiloLogListener.s
+
+# target to generate assembly for a file
+src/antlr/NiloLogListener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogListener.cpp.s
+.PHONY : src/antlr/NiloLogListener.cpp.s
+
+src/antlr/NiloLogParser.o: src/antlr/NiloLogParser.cpp.o
+.PHONY : src/antlr/NiloLogParser.o
+
+# target to build an object file
+src/antlr/NiloLogParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.o
+.PHONY : src/antlr/NiloLogParser.cpp.o
+
+src/antlr/NiloLogParser.i: src/antlr/NiloLogParser.cpp.i
+.PHONY : src/antlr/NiloLogParser.i
+
+# target to preprocess a source file
+src/antlr/NiloLogParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.i
+.PHONY : src/antlr/NiloLogParser.cpp.i
+
+src/antlr/NiloLogParser.s: src/antlr/NiloLogParser.cpp.s
+.PHONY : src/antlr/NiloLogParser.s
+
+# target to generate assembly for a file
+src/antlr/NiloLogParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogParser.cpp.s
+.PHONY : src/antlr/NiloLogParser.cpp.s
+
+src/antlr/NiloLogVisitor.o: src/antlr/NiloLogVisitor.cpp.o
+.PHONY : src/antlr/NiloLogVisitor.o
+
+# target to build an object file
+src/antlr/NiloLogVisitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.o
+.PHONY : src/antlr/NiloLogVisitor.cpp.o
+
+src/antlr/NiloLogVisitor.i: src/antlr/NiloLogVisitor.cpp.i
+.PHONY : src/antlr/NiloLogVisitor.i
+
+# target to preprocess a source file
+src/antlr/NiloLogVisitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.i
+.PHONY : src/antlr/NiloLogVisitor.cpp.i
+
+src/antlr/NiloLogVisitor.s: src/antlr/NiloLogVisitor.cpp.s
+.PHONY : src/antlr/NiloLogVisitor.s
+
+# target to generate assembly for a file
+src/antlr/NiloLogVisitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nl.dir/build.make CMakeFiles/nl.dir/src/antlr/NiloLogVisitor.cpp.s
+.PHONY : src/antlr/NiloLogVisitor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -334,6 +478,24 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
+	@echo "... src/antlr/NiloLogBaseListener.o"
+	@echo "... src/antlr/NiloLogBaseListener.i"
+	@echo "... src/antlr/NiloLogBaseListener.s"
+	@echo "... src/antlr/NiloLogBaseVisitor.o"
+	@echo "... src/antlr/NiloLogBaseVisitor.i"
+	@echo "... src/antlr/NiloLogBaseVisitor.s"
+	@echo "... src/antlr/NiloLogLexer.o"
+	@echo "... src/antlr/NiloLogLexer.i"
+	@echo "... src/antlr/NiloLogLexer.s"
+	@echo "... src/antlr/NiloLogListener.o"
+	@echo "... src/antlr/NiloLogListener.i"
+	@echo "... src/antlr/NiloLogListener.s"
+	@echo "... src/antlr/NiloLogParser.o"
+	@echo "... src/antlr/NiloLogParser.i"
+	@echo "... src/antlr/NiloLogParser.s"
+	@echo "... src/antlr/NiloLogVisitor.o"
+	@echo "... src/antlr/NiloLogVisitor.i"
+	@echo "... src/antlr/NiloLogVisitor.s"
 .PHONY : help
 
 

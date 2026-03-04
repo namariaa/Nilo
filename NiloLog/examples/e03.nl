@@ -1,4 +1,4 @@
-exiba (representação intermediária) em PNG {
+exiba (representação intermediária) {
     programa : /*
         testeString1 :caracter = "IS FUNNY TEST STRING TYPE IN A PRINT";
         mostrarCaracteres(testeString1);
