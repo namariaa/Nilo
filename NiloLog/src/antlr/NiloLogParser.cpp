@@ -53,32 +53,31 @@ void nilologParserInitialize() {
 #endif
   auto staticData = std::make_unique<NiloLogParserStaticData>(
     std::vector<std::string>{
-      "stmts", "log", "input", "program"
+      "log", "input", "program"
     },
     std::vector<std::string>{
-      "", "", "", "", "", "", "", "", "'exiba'", "'('", "')'", "'{'", "'}'", 
-      "'['", "']'", "'/*'", "'*/'", "'PDF'", "'PNG'", "'entrada'", "':'", 
-      "'em'", "'lexer'", "'parser'", "'representa\\u00E7\\u00E3o intermedi\\u00E1ria'"
+      "", "", "", "", "", "", "", "'exiba'", "'('", "')'", "'{'", "'}'", 
+      "'['", "']'", "'/*'", "'*/'", "'entrada'", "'programa'", "':'", "'lexer'", 
+      "'parser'", "'representa\\u00E7\\u00E3o intermedi\\u00E1ria'"
     },
     std::vector<std::string>{
-      "", "STRING", "BOOL", "INT", "FLOAT", "NILOCODE", "FORMAT", "PHASE", 
-      "SHOW", "OPAR", "CPAR", "OBRA", "CBRA", "OKEY", "CKEY", "OASTSLA", 
-      "CASTSLA", "PDF", "PNG", "ENTRY", "COLON", "IN", "LEXER", "PARSER", 
-      "IR", "TAB", "ENTER", "SPACE", "WHITESPACE"
+      "", "STRING", "BOOL", "INT", "FLOAT", "NILOCODE", "PHASE", "SHOW", 
+      "OPAR", "CPAR", "OBRA", "CBRA", "OKEY", "CKEY", "OASTSLA", "CASTSLA", 
+      "ENTRY", "PROGRAM", "COLON", "LEXER", "PARSER", "IR", "TAB", "ENTER", 
+      "SPACE", "WHITESPACE"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,28,40,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,1,0,1,0,1,1,1,1,1,1,1,1,
-  	1,1,1,1,1,1,1,1,3,1,20,8,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,4,2,30,8,2,
-  	11,2,12,2,31,1,2,1,2,1,2,1,3,1,3,1,3,1,3,0,0,4,0,2,4,6,0,1,1,0,1,4,37,
-  	0,8,1,0,0,0,2,11,1,0,0,0,4,25,1,0,0,0,6,36,1,0,0,0,8,9,3,2,1,0,9,10,5,
-  	0,0,1,10,1,1,0,0,0,11,12,5,8,0,0,12,13,5,9,0,0,13,14,5,7,0,0,14,15,5,
-  	10,0,0,15,16,5,21,0,0,16,17,5,6,0,0,17,19,5,11,0,0,18,20,3,4,2,0,19,18,
-  	1,0,0,0,19,20,1,0,0,0,20,21,1,0,0,0,21,22,5,26,0,0,22,23,3,6,3,0,23,24,
-  	5,12,0,0,24,3,1,0,0,0,25,26,5,19,0,0,26,27,5,20,0,0,27,29,5,13,0,0,28,
-  	30,7,0,0,0,29,28,1,0,0,0,30,31,1,0,0,0,31,29,1,0,0,0,31,32,1,0,0,0,32,
-  	33,1,0,0,0,33,34,5,14,0,0,34,35,5,26,0,0,35,5,1,0,0,0,36,37,5,5,0,0,37,
-  	38,5,26,0,0,38,7,1,0,0,0,2,19,31
+  	4,1,25,36,2,0,7,0,2,1,7,1,2,2,7,2,1,0,1,0,1,0,1,0,1,0,1,0,3,0,13,8,0,
+  	1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,1,4,1,24,8,1,11,1,12,1,25,1,1,1,1,1,
+  	1,1,2,1,2,1,2,1,2,1,2,1,2,0,0,3,0,2,4,0,1,1,0,1,4,34,0,6,1,0,0,0,2,19,
+  	1,0,0,0,4,30,1,0,0,0,6,7,5,7,0,0,7,8,5,8,0,0,8,9,5,6,0,0,9,10,5,9,0,0,
+  	10,12,5,10,0,0,11,13,3,2,1,0,12,11,1,0,0,0,12,13,1,0,0,0,13,14,1,0,0,
+  	0,14,15,5,23,0,0,15,16,3,4,2,0,16,17,5,11,0,0,17,18,5,0,0,1,18,1,1,0,
+  	0,0,19,20,5,16,0,0,20,21,5,18,0,0,21,23,5,12,0,0,22,24,7,0,0,0,23,22,
+  	1,0,0,0,24,25,1,0,0,0,25,23,1,0,0,0,25,26,1,0,0,0,26,27,1,0,0,0,27,28,
+  	5,13,0,0,28,29,5,23,0,0,29,3,1,0,0,0,30,31,5,17,0,0,31,32,5,18,0,0,32,
+  	33,5,5,0,0,33,34,5,23,0,0,34,5,1,0,0,0,2,12,25
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -127,73 +126,6 @@ antlr4::atn::SerializedATNView NiloLogParser::getSerializedATN() const {
 }
 
 
-//----------------- StmtsContext ------------------------------------------------------------------
-
-NiloLogParser::StmtsContext::StmtsContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-NiloLogParser::LogContext* NiloLogParser::StmtsContext::log() {
-  return getRuleContext<NiloLogParser::LogContext>(0);
-}
-
-tree::TerminalNode* NiloLogParser::StmtsContext::EOF() {
-  return getToken(NiloLogParser::EOF, 0);
-}
-
-
-size_t NiloLogParser::StmtsContext::getRuleIndex() const {
-  return NiloLogParser::RuleStmts;
-}
-
-void NiloLogParser::StmtsContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloLogListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterStmts(this);
-}
-
-void NiloLogParser::StmtsContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<NiloLogListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitStmts(this);
-}
-
-
-std::any NiloLogParser::StmtsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<NiloLogVisitor*>(visitor))
-    return parserVisitor->visitStmts(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-NiloLogParser::StmtsContext* NiloLogParser::stmts() {
-  StmtsContext *_localctx = _tracker.createInstance<StmtsContext>(_ctx, getState());
-  enterRule(_localctx, 0, NiloLogParser::RuleStmts);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(8);
-    log();
-    setState(9);
-    match(NiloLogParser::EOF);
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
 //----------------- LogContext ------------------------------------------------------------------
 
 NiloLogParser::LogContext::LogContext(ParserRuleContext *parent, size_t invokingState)
@@ -216,14 +148,6 @@ tree::TerminalNode* NiloLogParser::LogContext::CPAR() {
   return getToken(NiloLogParser::CPAR, 0);
 }
 
-tree::TerminalNode* NiloLogParser::LogContext::IN() {
-  return getToken(NiloLogParser::IN, 0);
-}
-
-tree::TerminalNode* NiloLogParser::LogContext::FORMAT() {
-  return getToken(NiloLogParser::FORMAT, 0);
-}
-
 tree::TerminalNode* NiloLogParser::LogContext::OBRA() {
   return getToken(NiloLogParser::OBRA, 0);
 }
@@ -238,6 +162,10 @@ NiloLogParser::ProgramContext* NiloLogParser::LogContext::program() {
 
 tree::TerminalNode* NiloLogParser::LogContext::CBRA() {
   return getToken(NiloLogParser::CBRA, 0);
+}
+
+tree::TerminalNode* NiloLogParser::LogContext::EOF() {
+  return getToken(NiloLogParser::EOF, 0);
 }
 
 NiloLogParser::InputContext* NiloLogParser::LogContext::input() {
@@ -271,7 +199,7 @@ std::any NiloLogParser::LogContext::accept(tree::ParseTreeVisitor *visitor) {
 
 NiloLogParser::LogContext* NiloLogParser::log() {
   LogContext *_localctx = _tracker.createInstance<LogContext>(_ctx, getState());
-  enterRule(_localctx, 2, NiloLogParser::RuleLog);
+  enterRule(_localctx, 0, NiloLogParser::RuleLog);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -283,34 +211,32 @@ NiloLogParser::LogContext* NiloLogParser::log() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(11);
+    setState(6);
     match(NiloLogParser::SHOW);
-    setState(12);
+    setState(7);
     match(NiloLogParser::OPAR);
-    setState(13);
+    setState(8);
     match(NiloLogParser::PHASE);
-    setState(14);
+    setState(9);
     match(NiloLogParser::CPAR);
-    setState(15);
-    match(NiloLogParser::IN);
-    setState(16);
-    match(NiloLogParser::FORMAT);
-    setState(17);
+    setState(10);
     match(NiloLogParser::OBRA);
-    setState(19);
+    setState(12);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == NiloLogParser::ENTRY) {
-      setState(18);
+      setState(11);
       input();
     }
-    setState(21);
+    setState(14);
     match(NiloLogParser::ENTER);
-    setState(22);
+    setState(15);
     program();
-    setState(23);
+    setState(16);
     match(NiloLogParser::CBRA);
+    setState(17);
+    match(NiloLogParser::EOF);
    
   }
   catch (RecognitionException &e) {
@@ -407,7 +333,7 @@ std::any NiloLogParser::InputContext::accept(tree::ParseTreeVisitor *visitor) {
 
 NiloLogParser::InputContext* NiloLogParser::input() {
   InputContext *_localctx = _tracker.createInstance<InputContext>(_ctx, getState());
-  enterRule(_localctx, 4, NiloLogParser::RuleInput);
+  enterRule(_localctx, 2, NiloLogParser::RuleInput);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -419,34 +345,35 @@ NiloLogParser::InputContext* NiloLogParser::input() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(25);
+    setState(19);
     match(NiloLogParser::ENTRY);
-    setState(26);
+    setState(20);
     match(NiloLogParser::COLON);
-    setState(27);
+    setState(21);
     match(NiloLogParser::OKEY);
-    setState(29); 
+    setState(23); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(28);
+      setState(22);
+      antlrcpp::downCast<InputContext *>(_localctx)->listValues = _input->LT(1);
       _la = _input->LA(1);
       if (!((((_la & ~ 0x3fULL) == 0) &&
         ((1ULL << _la) & 30) != 0))) {
-      _errHandler->recoverInline(this);
+        antlrcpp::downCast<InputContext *>(_localctx)->listValues = _errHandler->recoverInline(this);
       }
       else {
         _errHandler->reportMatch(this);
         consume();
       }
-      setState(31); 
+      setState(25); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & 30) != 0));
-    setState(33);
+    setState(27);
     match(NiloLogParser::CKEY);
-    setState(34);
+    setState(28);
     match(NiloLogParser::ENTER);
    
   }
@@ -463,6 +390,14 @@ NiloLogParser::InputContext* NiloLogParser::input() {
 
 NiloLogParser::ProgramContext::ProgramContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NiloLogParser::ProgramContext::PROGRAM() {
+  return getToken(NiloLogParser::PROGRAM, 0);
+}
+
+tree::TerminalNode* NiloLogParser::ProgramContext::COLON() {
+  return getToken(NiloLogParser::COLON, 0);
 }
 
 tree::TerminalNode* NiloLogParser::ProgramContext::NILOCODE() {
@@ -500,7 +435,7 @@ std::any NiloLogParser::ProgramContext::accept(tree::ParseTreeVisitor *visitor) 
 
 NiloLogParser::ProgramContext* NiloLogParser::program() {
   ProgramContext *_localctx = _tracker.createInstance<ProgramContext>(_ctx, getState());
-  enterRule(_localctx, 6, NiloLogParser::RuleProgram);
+  enterRule(_localctx, 4, NiloLogParser::RuleProgram);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -511,9 +446,13 @@ NiloLogParser::ProgramContext* NiloLogParser::program() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(36);
+    setState(30);
+    match(NiloLogParser::PROGRAM);
+    setState(31);
+    match(NiloLogParser::COLON);
+    setState(32);
     match(NiloLogParser::NILOCODE);
-    setState(37);
+    setState(33);
     match(NiloLogParser::ENTER);
    
   }

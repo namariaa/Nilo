@@ -14,9 +14,6 @@
 class  NiloLogListener : public antlr4::tree::ParseTreeListener {
 public:
 
-  virtual void enterStmts(NiloLogParser::StmtsContext *ctx) = 0;
-  virtual void exitStmts(NiloLogParser::StmtsContext *ctx) = 0;
-
   virtual void enterLog(NiloLogParser::LogContext *ctx) = 0;
   virtual void exitLog(NiloLogParser::LogContext *ctx) = 0;
 

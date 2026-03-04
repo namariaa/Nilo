@@ -12,11 +12,10 @@
 class  NiloLogLexer : public antlr4::Lexer {
 public:
   enum {
-    STRING = 1, BOOL = 2, INT = 3, FLOAT = 4, NILOCODE = 5, FORMAT = 6, 
-    PHASE = 7, SHOW = 8, OPAR = 9, CPAR = 10, OBRA = 11, CBRA = 12, OKEY = 13, 
-    CKEY = 14, OASTSLA = 15, CASTSLA = 16, PDF = 17, PNG = 18, ENTRY = 19, 
-    COLON = 20, IN = 21, LEXER = 22, PARSER = 23, IR = 24, TAB = 25, ENTER = 26, 
-    SPACE = 27, WHITESPACE = 28
+    STRING = 1, BOOL = 2, INT = 3, FLOAT = 4, NILOCODE = 5, PHASE = 6, SHOW = 7, 
+    OPAR = 8, CPAR = 9, OBRA = 10, CBRA = 11, OKEY = 12, CKEY = 13, OASTSLA = 14, 
+    CASTSLA = 15, ENTRY = 16, PROGRAM = 17, COLON = 18, LEXER = 19, PARSER = 20, 
+    IR = 21, TAB = 22, ENTER = 23, SPACE = 24, WHITESPACE = 25
   };
 
   explicit NiloLogLexer(antlr4::CharStream *input);

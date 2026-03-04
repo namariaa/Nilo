@@ -1,4 +1,4 @@
-exiba (parser) em PDF {
+exiba (parser) {
     entrada : [1, 2]
     programa : /*
        funcionalidade soma (x :inteiro, y :inteiro) :inteiro {

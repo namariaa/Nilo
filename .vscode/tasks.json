@@ -71,7 +71,7 @@
         {
             "label": "run log",
             "type": "shell",
-            "command": "${workspaceFolder}/NiloLog/src/execute/ns ${workspaceFolder}/NiloLog/examples/e01.nl",
+            "command": "${workspaceFolder}/NiloLog/src/execute/nl ${workspaceFolder}/NiloLog/examples/e01.nl",
             "problemMatcher": []
         }
 

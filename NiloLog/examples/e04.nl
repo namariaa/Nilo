@@ -1,4 +1,4 @@
-exiba (parser) em PDF {
+exiba (parser) {
     programa : /*
         VARIABLE :inteiro = (6 * 1 - 7 / 1 + 3) ** 2;
         mostrarInteiro(VARIABLE);

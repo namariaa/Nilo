@@ -1,4 +1,4 @@
-exiba (lexer) em PNG {
+exiba (lexer) {
     programa : /*
         x_y :inteiro = 5;
         mostrarCaracteres("test before!!!!!!!!!!");

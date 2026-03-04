@@ -19,8 +19,6 @@ public:
   /**
    * Visit parse trees produced by NiloLogParser.
    */
-    virtual std::any visitStmts(NiloLogParser::StmtsContext *context) = 0;
-
     virtual std::any visitLog(NiloLogParser::LogContext *context) = 0;
 
     virtual std::any visitInput(NiloLogParser::InputContext *context) = 0;

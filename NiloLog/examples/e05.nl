@@ -1,4 +1,4 @@
-exiba (parser) em PDF {
+exiba (parser) {
     programa : /*
         :) Teste para dá erro por conta do 2.5 * 2 serem de tipos diferentes
 

@@ -15,10 +15,6 @@
 class  NiloLogBaseVisitor : public NiloLogVisitor {
 public:
 
-  virtual std::any visitStmts(NiloLogParser::StmtsContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitLog(NiloLogParser::LogContext *ctx) override {
     return visitChildren(ctx);
   }

@@ -12,15 +12,14 @@
 class  NiloLogParser : public antlr4::Parser {
 public:
   enum {
-    STRING = 1, BOOL = 2, INT = 3, FLOAT = 4, NILOCODE = 5, FORMAT = 6, 
-    PHASE = 7, SHOW = 8, OPAR = 9, CPAR = 10, OBRA = 11, CBRA = 12, OKEY = 13, 
-    CKEY = 14, OASTSLA = 15, CASTSLA = 16, PDF = 17, PNG = 18, ENTRY = 19, 
-    COLON = 20, IN = 21, LEXER = 22, PARSER = 23, IR = 24, TAB = 25, ENTER = 26, 
-    SPACE = 27, WHITESPACE = 28
+    STRING = 1, BOOL = 2, INT = 3, FLOAT = 4, NILOCODE = 5, PHASE = 6, SHOW = 7, 
+    OPAR = 8, CPAR = 9, OBRA = 10, CBRA = 11, OKEY = 12, CKEY = 13, OASTSLA = 14, 
+    CASTSLA = 15, ENTRY = 16, PROGRAM = 17, COLON = 18, LEXER = 19, PARSER = 20, 
+    IR = 21, TAB = 22, ENTER = 23, SPACE = 24, WHITESPACE = 25
   };
 
   enum {
-    RuleStmts = 0, RuleLog = 1, RuleInput = 2, RuleProgram = 3
+    RuleLog = 0, RuleInput = 1, RuleProgram = 2
   };
 
   explicit NiloLogParser(antlr4::TokenStream *input);
@@ -40,26 +39,9 @@ public:
   antlr4::atn::SerializedATNView getSerializedATN() const override;
 
 
-  class StmtsContext;
   class LogContext;
   class InputContext;
   class ProgramContext; 
-
-  class  StmtsContext : public antlr4::ParserRuleContext {
-  public:
-    StmtsContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    LogContext *log();
-    antlr4::tree::TerminalNode *EOF();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  StmtsContext* stmts();
 
   class  LogContext : public antlr4::ParserRuleContext {
   public:
@@ -69,12 +51,11 @@ public:
     antlr4::tree::TerminalNode *OPAR();
     antlr4::tree::TerminalNode *PHASE();
     antlr4::tree::TerminalNode *CPAR();
-    antlr4::tree::TerminalNode *IN();
-    antlr4::tree::TerminalNode *FORMAT();
     antlr4::tree::TerminalNode *OBRA();
     antlr4::tree::TerminalNode *ENTER();
     ProgramContext *program();
     antlr4::tree::TerminalNode *CBRA();
+    antlr4::tree::TerminalNode *EOF();
     InputContext *input();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -88,6 +69,7 @@ public:
 
   class  InputContext : public antlr4::ParserRuleContext {
   public:
+    antlr4::Token *listValues = nullptr;
     InputContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *ENTRY();
@@ -117,6 +99,8 @@ public:
   public:
     ProgramContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *PROGRAM();
+    antlr4::tree::TerminalNode *COLON();
     antlr4::tree::TerminalNode *NILOCODE();
     antlr4::tree::TerminalNode *ENTER();
 

@@ -16,9 +16,6 @@
 class  NiloLogBaseListener : public NiloLogListener {
 public:
 
-  virtual void enterStmts(NiloLogParser::StmtsContext * /*ctx*/) override { }
-  virtual void exitStmts(NiloLogParser::StmtsContext * /*ctx*/) override { }
-
   virtual void enterLog(NiloLogParser::LogContext * /*ctx*/) override { }
   virtual void exitLog(NiloLogParser::LogContext * /*ctx*/) override { }
 

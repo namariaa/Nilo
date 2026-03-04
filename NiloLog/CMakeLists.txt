@@ -55,6 +55,7 @@ add_definitions(${LLVM_DEFINITIONS})
 file(GLOB SOURCES
     src/Main.cpp
     src/antlr/NiloLog*.cpp  
+    src/*.cpp
 )
 
 # Cria o executável a partir dos fontes
@@ -69,7 +70,7 @@ llvm_map_components_to_libnames(LLVM_LIBS
     support
     irreader
     passes
-    native         # gera código nativo (x86/ARM/etc)
+    native         
 )
 
 target_link_libraries(nl PRIVATE ${LLVM_LIBS})

@@ -1,4 +1,4 @@
-exiba (lexer) em PDF {
+exiba (lexer) {
     programa : /*
         primeiro_teste : inteiro = 2 + 5 - 7;
         segundo_teste :inteiro = 2 + 8 - 7;
