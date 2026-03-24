@@ -2,9 +2,10 @@
 #include <fstream>
 #include <string>
 #include "antlr4-runtime.h"
-#include "./antlr/NiloScriptParser.h"
 #include "./antlr/NiloScriptLexer.h"
-#include "./antlr/IRGen.h"
+#include "./analysis/AST.h"
+#include "./analysis/IRGenAST.h"
+#include "./analysis/printAST.cpp"
 
 using namespace std;
 using namespace antlr4;
@@ -39,12 +40,22 @@ int main(int nArguments, const char *sourceCode[]){
     NiloScriptParser parser(&tokens);
 
     NiloScriptParser::ProgramContext* tree = parser.program();
+    std::cout << "PARSE TREE " << std::endl;
+    printParseTree(tree);
+
+    AST TreeAST;
+
+    auto program = TreeAST.ASTtree(tree);
+
+    printAST(program.get());
+    
+    IRGenAST(TreeAST.ASTtree(tree));
 
     // std::cout << tree->toStringTree() << std::endl;
 
     // printParseTree(tree);
     
-    IRGen visit(tree);
+    // IRGen visit(tree);
 
     return 0; 
 }

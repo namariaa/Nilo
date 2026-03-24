@@ -414,10 +414,13 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathTokenElement.h \
  /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathWildcardAnywhereElement.h \
  /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr4-cpp-runtime-4.13.2-source/runtime/src/tree/xpath/XPathWildcardElement.h \
- /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./antlr/NiloScriptParser.h \
  /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./antlr/NiloScriptLexer.h \
- /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./antlr/IRGen.h \
- /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./antlr/NiloScriptVisitor.h \
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/AST.h \
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/../antlr/NiloScriptVisitor.h \
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/../antlr/NiloScriptParser.h \
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/../analysis/tree.h \
+ /usr/include/c++/13/optional \
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/IRGenAST.h \
  /usr/include/c++/13/stdlib.h /usr/lib/llvm-19/include/llvm/ADT/APFloat.h \
  /usr/lib/llvm-19/include/llvm/ADT/APInt.h \
  /usr/lib/llvm-19/include/llvm/Support/Compiler.h \
@@ -425,7 +428,6 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /usr/lib/llvm-19/include/llvm/Support/MathExtras.h \
  /usr/lib/llvm-19/include/llvm/ADT/bit.h \
  /usr/lib/llvm-19/include/llvm/Support/float128.h \
- /usr/include/c++/13/optional \
  /usr/lib/llvm-19/include/llvm/ADT/ArrayRef.h \
  /usr/lib/llvm-19/include/llvm/ADT/Hashing.h \
  /usr/lib/llvm-19/include/llvm/Config/abi-breaking.h \
@@ -543,4 +545,4 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /usr/lib/llvm-19/include/llvm/Support/TypeName.h \
  /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
  /usr/include/c++/13/bits/list.tcc \
- /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./antlr/errorResponse.cpp
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/printAST.cpp

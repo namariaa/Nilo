@@ -32,6 +32,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
@@ -55,6 +56,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -97,6 +99,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
@@ -120,6 +123,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -163,6 +167,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
@@ -186,6 +191,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -228,6 +234,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -284,6 +291,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ar"
@@ -302,6 +310,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -336,6 +345,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ranlib"
@@ -354,6 +364,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -388,6 +399,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/strip"
@@ -406,6 +418,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -440,6 +453,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/ld"
@@ -458,6 +472,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -492,6 +507,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/nm"
@@ -510,6 +526,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -544,6 +561,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/objdump"
@@ -562,6 +580,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -596,6 +615,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/objcopy"
@@ -614,6 +634,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -648,6 +669,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/readelf"
@@ -666,6 +688,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -700,6 +723,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
@@ -715,6 +739,7 @@ events:
       - "/snap/bin/dlltool"
       - "/home/namaria/.cabal/bin/dlltool"
       - "/home/namaria/.ghcup/bin/dlltool"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/dlltool"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/dlltool"
     found: false
@@ -733,6 +758,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -767,6 +793,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     found: "/usr/bin/addr2line"
@@ -785,6 +812,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -819,6 +847,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
@@ -834,6 +863,7 @@ events:
       - "/snap/bin/tapi"
       - "/home/namaria/.cabal/bin/tapi"
       - "/home/namaria/.ghcup/bin/tapi"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/tapi"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/tapi"
     found: false
@@ -852,6 +882,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -889,6 +920,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
@@ -904,6 +936,7 @@ events:
       - "/snap/bin/gcc-ar-13.3"
       - "/home/namaria/.cabal/bin/gcc-ar-13.3"
       - "/home/namaria/.ghcup/bin/gcc-ar-13.3"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/gcc-ar-13.3"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-13.3"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-13.3"
     found: "/usr/bin/gcc-ar-13"
@@ -922,6 +955,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -959,6 +993,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
@@ -974,6 +1009,7 @@ events:
       - "/snap/bin/gcc-ranlib-13.3"
       - "/home/namaria/.cabal/bin/gcc-ranlib-13.3"
       - "/home/namaria/.ghcup/bin/gcc-ranlib-13.3"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/gcc-ranlib-13.3"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-13.3"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-13.3"
     found: "/usr/bin/gcc-ranlib-13"
@@ -992,6 +1028,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
   -
@@ -1003,8 +1040,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-J3epMD"
-      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-J3epMD"
+      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-heDiGo"
+      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-heDiGo"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1014,25 +1051,25 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-J3epMD'
+        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-heDiGo'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_80e82/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_80e82.dir/build.make CMakeFiles/cmTC_80e82.dir/build
-        gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-J3epMD'
-        Building CXX object CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ec736/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ec736.dir/build.make CMakeFiles/cmTC_ec736.dir/build
+        gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-heDiGo'
+        Building CXX object CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_80e82.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_80e82.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccZEWIY1.s
-        GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ec736.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ec736.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEVoC0K.s
+        GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -1051,35 +1088,35 @@ events:
          /usr/include/x86_64-linux-gnu
          /usr/include
         End of search list.
-        Compiler executable checksum: c81c05345ce537099dafd5580045814a
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_80e82.dir/'
-         as -v --64 -o CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccZEWIY1.s
+        Compiler executable checksum: 7896445e4990772fdae9dc0659a99266
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ec736.dir/'
+         as -v --64 -o CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEVoC0K.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_80e82
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80e82.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_ec736
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec736.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_80e82' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_80e82.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDw4CTD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_80e82 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ec736' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ec736.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfWhxbv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec736 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
         collect2 version 13.3.0
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDw4CTD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_80e82 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfWhxbv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec736 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Ubuntu) 2.42
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_80e82' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_80e82.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_80e82
-        gmake[1]: Leaving directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-J3epMD'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ec736' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ec736.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ec736
+        gmake[1]: Leaving directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-heDiGo'
         
       exitCode: 0
   -
@@ -1120,25 +1157,25 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-J3epMD']
+        ignore line: [Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-heDiGo']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_80e82/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_80e82.dir/build.make CMakeFiles/cmTC_80e82.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-J3epMD']
-        ignore line: [Building CXX object CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ec736/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ec736.dir/build.make CMakeFiles/cmTC_ec736.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-heDiGo']
+        ignore line: [Building CXX object CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_80e82.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_80e82.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccZEWIY1.s]
-        ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ec736.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ec736.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEVoC0K.s]
+        ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -1157,34 +1194,34 @@ events:
         ignore line: [ /usr/include/x86_64-linux-gnu]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_80e82.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccZEWIY1.s]
+        ignore line: [Compiler executable checksum: 7896445e4990772fdae9dc0659a99266]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ec736.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEVoC0K.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_80e82]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80e82.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_ec736]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec736.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_80e82' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_80e82.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDw4CTD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_80e82 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ec736' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_ec736.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfWhxbv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec736 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccDw4CTD.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccfWhxbv.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1202,7 +1239,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_80e82] ==> ignore
+          arg [cmTC_ec736] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -1215,7 +1252,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1226,7 +1263,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 13.3.0]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccDw4CTD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_80e82 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_80e82.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfWhxbv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec736 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_ec736.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -1298,6 +1335,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1350,6 +1388,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1421,6 +1460,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/bin/"
@@ -1453,6 +1493,7 @@ events:
       - "/snap/bin/gcc-ar-13.3"
       - "/home/namaria/.cabal/bin/gcc-ar-13.3"
       - "/home/namaria/.ghcup/bin/gcc-ar-13.3"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/gcc-ar-13.3"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ar-13.3"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ar-13.3"
       - "/usr/local/bin/gcc-ar-13.3"
@@ -1488,6 +1529,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1535,6 +1577,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/bin/"
@@ -1567,6 +1610,7 @@ events:
       - "/snap/bin/gcc-ranlib-13.3"
       - "/home/namaria/.cabal/bin/gcc-ranlib-13.3"
       - "/home/namaria/.ghcup/bin/gcc-ranlib-13.3"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/gcc-ranlib-13.3"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/gcc-ranlib-13.3"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/gcc-ranlib-13.3"
       - "/usr/local/bin/gcc-ranlib-13.3"
@@ -1602,6 +1646,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -1623,8 +1668,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-mP3K7Y"
-      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-mP3K7Y"
+      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-6SI0fR"
+      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-6SI0fR"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1634,25 +1679,25 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-mP3K7Y'
+        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-6SI0fR'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8ed2b/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_8ed2b.dir/build.make CMakeFiles/cmTC_8ed2b.dir/build
-        gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-mP3K7Y'
-        Building C object CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7a0b5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7a0b5.dir/build.make CMakeFiles/cmTC_7a0b5.dir/build
+        gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-6SI0fR'
+        Building C object CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8ed2b.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8ed2b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccf7AzRT.s
-        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7a0b5.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7a0b5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccxYvh3d.s
+        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -1667,35 +1712,35 @@ events:
          /usr/include/x86_64-linux-gnu
          /usr/include
         End of search list.
-        Compiler executable checksum: 38987c28e967c64056a6454abdef726e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8ed2b.dir/'
-         as -v --64 -o CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o /tmp/ccf7AzRT.s
+        Compiler executable checksum: b220a7f1a1f69970d969d254ad9ec166
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7a0b5.dir/'
+         as -v --64 -o CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o /tmp/ccxYvh3d.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_8ed2b
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ed2b.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_7a0b5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a0b5.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
         OFFLOAD_TARGET_DEFAULT=1
         Target: x86_64-linux-gnu
-        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
-        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8ed2b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8ed2b.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccALoLZH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8ed2b /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7a0b5' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7a0b5.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvcfXcb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7a0b5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
         collect2 version 13.3.0
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccALoLZH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8ed2b /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvcfXcb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7a0b5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Ubuntu) 2.42
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8ed2b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8ed2b.'
-        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o -o cmTC_8ed2b
-        gmake[1]: Leaving directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-mP3K7Y'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7a0b5' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7a0b5.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o -o cmTC_7a0b5
+        gmake[1]: Leaving directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-6SI0fR'
         
       exitCode: 0
   -
@@ -1730,25 +1775,25 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-mP3K7Y']
+        ignore line: [Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-6SI0fR']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8ed2b/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_8ed2b.dir/build.make CMakeFiles/cmTC_8ed2b.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-mP3K7Y']
-        ignore line: [Building C object CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7a0b5/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_7a0b5.dir/build.make CMakeFiles/cmTC_7a0b5.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-6SI0fR']
+        ignore line: [Building C object CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8ed2b.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_8ed2b.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccf7AzRT.s]
-        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7a0b5.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7a0b5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccxYvh3d.s]
+        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -1763,34 +1808,34 @@ events:
         ignore line: [ /usr/include/x86_64-linux-gnu]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8ed2b.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o /tmp/ccf7AzRT.s]
+        ignore line: [Compiler executable checksum: b220a7f1a1f69970d969d254ad9ec166]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7a0b5.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o /tmp/ccxYvh3d.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_8ed2b]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ed2b.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_7a0b5]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a0b5.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
         ignore line: [OFFLOAD_TARGET_DEFAULT=1]
         ignore line: [Target: x86_64-linux-gnu]
-        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8ed2b' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_8ed2b.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccALoLZH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8ed2b /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7a0b5' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7a0b5.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvcfXcb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7a0b5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccALoLZH.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccvcfXcb.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1808,7 +1853,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_8ed2b] ==> ignore
+          arg [cmTC_7a0b5] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -1821,7 +1866,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -1836,7 +1881,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 13.3.0]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccALoLZH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8ed2b /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_8ed2b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvcfXcb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7a0b5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_7a0b5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -1876,8 +1921,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-YFIMUR"
-      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-YFIMUR"
+      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-qmgVeK"
+      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-qmgVeK"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1887,17 +1932,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-YFIMUR'
+        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-qmgVeK'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8f668/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_8f668.dir/build.make CMakeFiles/cmTC_8f668.dir/build
-        gmake[1]: Entrando no diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-YFIMUR'
-        Building C object CMakeFiles/cmTC_8f668.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_8f668.dir/src.c.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-YFIMUR/src.c
-        Linking C executable cmTC_8f668
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f668.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_8f668.dir/src.c.o -o cmTC_8f668
-        gmake[1]: Saindo do diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-YFIMUR'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d039c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d039c.dir/build.make CMakeFiles/cmTC_d039c.dir/build
+        gmake[1]: Entrando no diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-qmgVeK'
+        Building C object CMakeFiles/cmTC_d039c.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d039c.dir/src.c.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-qmgVeK/src.c
+        Linking C executable cmTC_d039c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d039c.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_d039c.dir/src.c.o -o cmTC_d039c
+        gmake[1]: Saindo do diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-qmgVeK'
         
       exitCode: 0
   -
@@ -1932,6 +1977,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/include/x86_64-linux-gnu/"
@@ -1965,6 +2011,7 @@ events:
       - "/snap/bin/ffi.h"
       - "/home/namaria/.cabal/bin/ffi.h"
       - "/home/namaria/.ghcup/bin/ffi.h"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/ffi.h"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/ffi.h"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/ffi.h"
       - "/usr/local/include/x86_64-linux-gnu/ffi.h"
@@ -1986,6 +2033,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2032,6 +2080,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -2065,6 +2114,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -2086,6 +2136,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2132,6 +2183,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -2177,6 +2229,8 @@ events:
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
@@ -2203,6 +2257,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2228,8 +2283,8 @@ events:
     checks:
       - "Performing Test HAVE_FFI_CALL"
     directories:
-      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-bKborN"
-      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-bKborN"
+      source: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-NTWCyq"
+      binary: "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-NTWCyq"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -2239,17 +2294,17 @@ events:
       variable: "HAVE_FFI_CALL"
       cached: true
       stdout: |
-        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-bKborN'
+        Change Dir: '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-NTWCyq'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a3d59/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_a3d59.dir/build.make CMakeFiles/cmTC_a3d59.dir/build
-        gmake[1]: Entrando no diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-bKborN'
-        Building C object CMakeFiles/cmTC_a3d59.dir/src.c.o
-        /usr/bin/cc -DHAVE_FFI_CALL   -o CMakeFiles/cmTC_a3d59.dir/src.c.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-bKborN/src.c
-        Linking C executable cmTC_a3d59
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3d59.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_a3d59.dir/src.c.o -o cmTC_a3d59  /usr/lib/x86_64-linux-gnu/libffi.so
-        gmake[1]: Saindo do diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-bKborN'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8bb84/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8bb84.dir/build.make CMakeFiles/cmTC_8bb84.dir/build
+        gmake[1]: Entrando no diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-NTWCyq'
+        Building C object CMakeFiles/cmTC_8bb84.dir/src.c.o
+        /usr/bin/cc -DHAVE_FFI_CALL   -o CMakeFiles/cmTC_8bb84.dir/src.c.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-NTWCyq/src.c
+        Linking C executable cmTC_8bb84
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bb84.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_8bb84.dir/src.c.o -o cmTC_8bb84  /usr/lib/x86_64-linux-gnu/libffi.so
+        gmake[1]: Saindo do diretório '/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles/CMakeScratch/TryCompile-NTWCyq'
         
       exitCode: 0
   -
@@ -2286,6 +2341,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/bin/"
@@ -2330,6 +2386,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2374,6 +2431,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/include/x86_64-linux-gnu/"
@@ -2407,6 +2465,7 @@ events:
       - "/snap/bin/histedit.h"
       - "/home/namaria/.cabal/bin/histedit.h"
       - "/home/namaria/.ghcup/bin/histedit.h"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/histedit.h"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/histedit.h"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/histedit.h"
       - "/usr/local/include/x86_64-linux-gnu/histedit.h"
@@ -2443,6 +2502,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2489,6 +2549,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -2522,6 +2583,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -2558,6 +2620,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2616,6 +2679,8 @@ events:
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/include/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/include/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/include/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/include/"
@@ -2683,6 +2748,8 @@ events:
       - "/home/namaria/.cabal/bin/zlib.h"
       - "/home/namaria/.ghcup/bin/include/zlib.h"
       - "/home/namaria/.ghcup/bin/zlib.h"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/include/zlib.h"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/zlib.h"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/include/zlib.h"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/zlib.h"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/include/zlib.h"
@@ -2712,6 +2779,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -2777,6 +2845,8 @@ events:
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/lib/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/lib/"
@@ -3012,6 +3082,22 @@ events:
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
@@ -3116,6 +3202,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3182,6 +3269,8 @@ events:
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/lib/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/lib/"
@@ -3441,6 +3530,24 @@ events:
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/lib/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/lib/"
@@ -3835,6 +3942,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3881,6 +3989,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/include/x86_64-linux-gnu/"
@@ -3914,6 +4023,7 @@ events:
       - "/snap/bin/zstd.h"
       - "/home/namaria/.cabal/bin/zstd.h"
       - "/home/namaria/.ghcup/bin/zstd.h"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/zstd.h"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/zstd.h"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/zstd.h"
       - "/usr/local/include/x86_64-linux-gnu/zstd.h"
@@ -3936,6 +4046,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -3983,6 +4094,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -4016,6 +4128,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -4037,6 +4150,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4084,6 +4198,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -4117,6 +4232,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -4161,6 +4277,8 @@ events:
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
@@ -4187,6 +4305,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4242,6 +4361,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4304,6 +4424,8 @@ events:
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/libxml2/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/libxml2/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/libxml2/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/libxml2/"
@@ -4360,6 +4482,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4409,6 +4532,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -4445,6 +4569,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4491,6 +4616,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/bin/"
@@ -4523,6 +4649,7 @@ events:
       - "/snap/bin/xmllint"
       - "/home/namaria/.cabal/bin/xmllint"
       - "/home/namaria/.ghcup/bin/xmllint"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/xmllint"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/xmllint"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/xmllint"
       - "/usr/local/bin/xmllint"
@@ -4558,6 +4685,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4696,6 +4824,14 @@ events:
         mode: "config"
         reason: "no_exist"
       -
+        path: "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/CURLConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/curl-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
         path: "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/CURLConfig.cmake"
         mode: "config"
         reason: "no_exist"
@@ -4727,6 +4863,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4771,6 +4908,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/include/x86_64-linux-gnu/"
@@ -4804,6 +4942,7 @@ events:
       - "/snap/bin/curl/curl.h"
       - "/home/namaria/.cabal/bin/curl/curl.h"
       - "/home/namaria/.ghcup/bin/curl/curl.h"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/curl/curl.h"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/curl/curl.h"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/curl/curl.h"
       - "/usr/local/include/x86_64-linux-gnu/curl/curl.h"
@@ -4840,6 +4979,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -4891,6 +5031,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -4984,6 +5125,12 @@ events:
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
@@ -5120,6 +5267,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
@@ -5167,6 +5315,7 @@ events:
       - "/snap/bin/"
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
       - "/usr/local/lib/x86_64-linux-gnu/"
@@ -5212,6 +5361,8 @@ events:
       - "/home/namaria/.cabal/bin/"
       - "/home/namaria/.ghcup/bin/"
       - "/home/namaria/.ghcup/bin/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
+      - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts/"
@@ -5268,6 +5419,7 @@ events:
         - "/snap/bin"
         - "/home/namaria/.cabal/bin"
         - "/home/namaria/.ghcup/bin"
+        - "/home/namaria/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/home/namaria/.config/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/home/namaria/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
