@@ -4,4 +4,4 @@ x = 5;
 mostrarInteiro(x);
 
 
-:) O objetivo é testar atribuições sem tipo. Até a árvore vai funcionar mas posteriormente não 
+:) O objetivo é testar atribuições sem tipo. 

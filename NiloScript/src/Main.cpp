@@ -40,8 +40,6 @@ int main(int nArguments, const char *sourceCode[]){
     NiloScriptParser parser(&tokens);
 
     NiloScriptParser::ProgramContext* tree = parser.program();
-    std::cout << "PARSE TREE " << std::endl;
-    printParseTree(tree);
 
     AST TreeAST;
 

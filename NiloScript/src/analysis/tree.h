@@ -24,7 +24,8 @@ class StringType : public Expression {
 class VarType : public Expression {
     public:
         string value;
-        VarType(string& value) : value(value) {}
+        string type;
+        VarType(string& value, string& type) : value(value), type(type) {}
 };
 
 class IntType : public Expression {

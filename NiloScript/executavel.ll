@@ -14,15 +14,13 @@ target triple = "x86_64-unknown-linux-gnu"
 
 define i32 @main() {
 entrada:
-  %x = alloca i32, align 4
-  store i32 1, ptr %x, align 4
-  %y = alloca i32, align 4
-  store i32 2, ptr %y, align 4
-  %z = alloca i32, align 4
-  %var = load i32, ptr %x, align 4
-  %var1 = load i32, ptr %y, align 4
-  %multmp = mul i32 %var, %var1
-  store i32 %multmp, ptr %z, align 4
+  %teste_redefinir = alloca i32, align 4
+  store i32 5, ptr %teste_redefinir, align 4
+  %var = load i32, ptr %teste_redefinir, align 4
+  %0 = call i32 (ptr, ...) @printf(ptr @dPrint, i32 %var)
+  store i32 10, ptr %teste_redefinir, align 4
+  %var1 = load i32, ptr %teste_redefinir, align 4
+  %1 = call i32 (ptr, ...) @printf(ptr @dPrint, i32 %var1)
   ret i32 0
 }
 

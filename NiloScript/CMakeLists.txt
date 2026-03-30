@@ -55,6 +55,7 @@ add_definitions(${LLVM_DEFINITIONS})
 file(GLOB SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/Main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/antlr/NiloScript*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/analysis/symbolTable.cpp
 )
 
 # Cria o executável a partir dos fontes

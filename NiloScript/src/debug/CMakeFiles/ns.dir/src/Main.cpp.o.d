@@ -419,23 +419,22 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/../antlr/NiloScriptVisitor.h \
  /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/../antlr/NiloScriptParser.h \
  /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/../analysis/tree.h \
- /usr/include/c++/13/optional \
- /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/IRGenAST.h \
- /usr/include/c++/13/stdlib.h /usr/lib/llvm-19/include/llvm/ADT/APFloat.h \
- /usr/lib/llvm-19/include/llvm/ADT/APInt.h \
- /usr/lib/llvm-19/include/llvm/Support/Compiler.h \
- /usr/lib/llvm-19/include/llvm/Config/llvm-config.h \
- /usr/lib/llvm-19/include/llvm/Support/MathExtras.h \
- /usr/lib/llvm-19/include/llvm/ADT/bit.h \
- /usr/lib/llvm-19/include/llvm/Support/float128.h \
+ /usr/include/c++/13/optional /usr/include/c++/13/variant \
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/./symbolTable.h \
+ /usr/lib/llvm-19/include/llvm/IR/IRBuilder.h \
+ /usr/lib/llvm-19/include/llvm-c/Types.h \
+ /usr/lib/llvm-19/include/llvm-c/DataTypes.h /usr/include/inttypes.h \
+ /usr/lib/llvm-19/include/llvm-c/ExternC.h \
  /usr/lib/llvm-19/include/llvm/ADT/ArrayRef.h \
  /usr/lib/llvm-19/include/llvm/ADT/Hashing.h \
  /usr/lib/llvm-19/include/llvm/Config/abi-breaking.h \
  /usr/lib/llvm-19/include/llvm/Support/DataTypes.h \
- /usr/lib/llvm-19/include/llvm-c/DataTypes.h /usr/include/inttypes.h \
  /usr/lib/llvm-19/include/llvm/Support/ErrorHandling.h \
+ /usr/lib/llvm-19/include/llvm/Support/Compiler.h \
+ /usr/lib/llvm-19/include/llvm/Config/llvm-config.h \
  /usr/lib/llvm-19/include/llvm/Support/SwapByteOrder.h \
  /usr/lib/llvm-19/include/llvm/ADT/STLForwardCompat.h \
+ /usr/lib/llvm-19/include/llvm/ADT/bit.h \
  /usr/lib/llvm-19/include/llvm/Support/type_traits.h \
  /usr/lib/llvm-19/include/llvm/ADT/SmallVector.h \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
@@ -444,22 +443,17 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /usr/lib/llvm-19/include/llvm/ADT/STLFunctionalExtras.h \
  /usr/lib/llvm-19/include/llvm/ADT/iterator.h \
  /usr/lib/llvm-19/include/llvm/ADT/iterator_range.h \
- /usr/lib/llvm-19/include/llvm/ADT/FloatingPointMode.h \
- /usr/lib/llvm-19/include/llvm/ADT/BitmaskEnum.h \
- /usr/lib/llvm-19/include/llvm/ADT/StringSwitch.h \
  /usr/lib/llvm-19/include/llvm/ADT/StringRef.h \
  /usr/lib/llvm-19/include/llvm/ADT/DenseMapInfo.h \
- /usr/lib/llvm-19/include/llvm/Support/raw_ostream.h \
+ /usr/lib/llvm-19/include/llvm/ADT/Twine.h \
  /usr/lib/llvm-19/include/llvm/IR/BasicBlock.h \
- /usr/lib/llvm-19/include/llvm-c/Types.h \
- /usr/lib/llvm-19/include/llvm-c/ExternC.h \
  /usr/lib/llvm-19/include/llvm/ADT/DenseMap.h \
  /usr/lib/llvm-19/include/llvm/ADT/EpochTracker.h \
  /usr/lib/llvm-19/include/llvm/Support/AlignOf.h \
+ /usr/lib/llvm-19/include/llvm/Support/MathExtras.h \
  /usr/lib/llvm-19/include/llvm/Support/MemAlloc.h \
  /usr/lib/llvm-19/include/llvm/Support/ReverseIteration.h \
  /usr/lib/llvm-19/include/llvm/Support/PointerLikeTypeTraits.h \
- /usr/lib/llvm-19/include/llvm/ADT/Twine.h \
  /usr/lib/llvm-19/include/llvm/ADT/ilist.h \
  /usr/lib/llvm-19/include/llvm/ADT/simple_ilist.h \
  /usr/lib/llvm-19/include/llvm/ADT/ilist_base.h \
@@ -491,16 +485,18 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /usr/lib/llvm-19/include/llvm/IR/SymbolTableListTraits.h \
  /usr/lib/llvm-19/include/llvm/Support/AtomicOrdering.h \
  /usr/lib/llvm-19/include/llvm/IR/Instruction.def \
- /usr/lib/llvm-19/include/llvm/IR/Constants.h \
- /usr/lib/llvm-19/include/llvm/IR/ConstantRange.h \
+ /usr/lib/llvm-19/include/llvm/IR/ConstantFolder.h \
+ /usr/lib/llvm-19/include/llvm/IR/ConstantFold.h \
  /usr/lib/llvm-19/include/llvm/IR/InstrTypes.h \
  /usr/lib/llvm-19/include/llvm/ADT/Sequence.h \
  /usr/lib/llvm-19/include/llvm/ADT/StringMap.h \
  /usr/lib/llvm-19/include/llvm/ADT/StringMapEntry.h \
  /usr/lib/llvm-19/include/llvm/Support/AllocatorBase.h \
  /usr/lib/llvm-19/include/llvm/IR/Attributes.h \
+ /usr/lib/llvm-19/include/llvm/ADT/BitmaskEnum.h \
  /usr/lib/llvm-19/include/llvm/Support/CodeGen.h \
  /usr/lib/llvm-19/include/llvm/Support/ModRef.h \
+ /usr/lib/llvm-19/include/llvm/Support/raw_ostream.h \
  /usr/lib/llvm-19/include/llvm/IR/Attributes.inc \
  /usr/lib/llvm-19/include/llvm/IR/CallingConv.h \
  /usr/lib/llvm-19/include/llvm/IR/DerivedTypes.h \
@@ -513,12 +509,16 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /usr/lib/llvm-19/include/llvm/IR/GlobalObject.h \
  /usr/lib/llvm-19/include/llvm/IR/GlobalValue.h \
  /usr/lib/llvm-19/include/llvm/IR/OperandTraits.h \
+ /usr/lib/llvm-19/include/llvm/IR/Constants.h \
+ /usr/lib/llvm-19/include/llvm/ADT/APFloat.h \
+ /usr/lib/llvm-19/include/llvm/ADT/APInt.h \
+ /usr/lib/llvm-19/include/llvm/Support/float128.h \
+ /usr/lib/llvm-19/include/llvm/ADT/FloatingPointMode.h \
+ /usr/lib/llvm-19/include/llvm/ADT/StringSwitch.h \
+ /usr/lib/llvm-19/include/llvm/IR/ConstantRange.h \
  /usr/lib/llvm-19/include/llvm/IR/GEPNoWrapFlags.h \
  /usr/lib/llvm-19/include/llvm/IR/Intrinsics.h \
  /usr/lib/llvm-19/include/llvm/IR/IntrinsicEnums.inc \
- /usr/lib/llvm-19/include/llvm/IR/IRBuilder.h \
- /usr/lib/llvm-19/include/llvm/IR/ConstantFolder.h \
- /usr/lib/llvm-19/include/llvm/IR/ConstantFold.h \
  /usr/lib/llvm-19/include/llvm/IR/IRBuilderFolder.h \
  /usr/lib/llvm-19/include/llvm/IR/Operator.h \
  /usr/lib/llvm-19/include/llvm/ADT/MapVector.h \
@@ -530,7 +530,8 @@ CMakeFiles/ns.dir/src/Main.cpp.o: \
  /usr/lib/llvm-19/include/llvm/IR/CFG.h \
  /usr/lib/llvm-19/include/llvm/ADT/GraphTraits.h \
  /usr/lib/llvm-19/include/llvm/IR/ValueHandle.h \
- /usr/lib/llvm-19/include/llvm/IR/Module.h \
+ /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/./analysis/IRGenAST.h \
+ /usr/include/c++/13/stdlib.h /usr/lib/llvm-19/include/llvm/IR/Module.h \
  /usr/lib/llvm-19/include/llvm/IR/Comdat.h \
  /usr/lib/llvm-19/include/llvm/ADT/SmallPtrSet.h \
  /usr/lib/llvm-19/include/llvm/IR/GlobalAlias.h \

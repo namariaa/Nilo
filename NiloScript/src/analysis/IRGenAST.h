@@ -15,17 +15,16 @@
 #include "llvm/IR/Verifier.h"
 #include <map>
 #include "../antlr/NiloScriptParser.h"
+#include "./symbolTable.h"
 
 using namespace std;
 
 unique_ptr<llvm::LLVMContext> Conteiner = make_unique<llvm::LLVMContext>();
 unique_ptr<llvm::Module> Executable = make_unique<llvm::Module>("NiloScriptModule", *Conteiner);
 unique_ptr<llvm::IRBuilder<llvm::ConstantFolder>> Builder = make_unique<llvm::IRBuilder<llvm::ConstantFolder>>(*Conteiner);
-map<string,map<string,llvm::AllocaInst*>> SymbolTable;
 map<string, vector<string>> argsFunctions;
-string lastVar;
-llvm::Function *CurrentFunction;
 llvm::BasicBlock *CurrentBasicBlock;
+llvm::Function *CurrentFunction;
 string CurrentVar;
 map<string,int> CurrentVarSize;
 llvm::Value* dPrint;
@@ -51,6 +50,22 @@ llvm::Value* mountFunction(Function* context);
 llvm::Value* mountFunctionCall(FunctionCall* context);
 llvm::Value* mountList(List* context);
 llvm::Value* mountAcessList(AcessList* context);
+
+llvm::Type* returnType(string type){
+    if (type == "inteiro"){
+        return llvm::Type::getInt32Ty(*Conteiner);
+    }
+    else if (type == "flutuante"){
+        return llvm::Type::getFloatTy(*Conteiner);
+    }
+    else if (type == "caracter"){
+        return  llvm::Type::getInt8Ty(*Conteiner);
+    }
+    else if (type == "bool"){
+       return llvm::Type::getInt1Ty(*Conteiner);
+    }
+    return nullptr;
+}
 
 void IRGenAST(unique_ptr<Program> tree) {
     cout << "CHEGOU NO IR GEN" << endl;
@@ -114,7 +129,6 @@ llvm::Value* mountStmt(Statstatement* context) {
     
     if (stmName == "print"){
         Print* stm = dynamic_cast<Print*>(context->stmt.get());
-        cout << "AAAAAAAAAAAAAA" << endl;
         return mountPrint(stm);
     }
     else if (stmName == "assignment"){
@@ -178,9 +192,8 @@ llvm::Value* mountAssignment(Assignment* context) {
     }
     
     //Guardando na tabela para ser útil em momentos como input
-    string nameCurrentFunction = CurrentFunction->getName().str();
     if (context->type != "caracter"){
-        SymbolTable[nameCurrentFunction][var] = alloca;
+        SymbolTable[nameCurrentFunction][var].value = alloca;
     }
     CurrentVar = var;
     
@@ -218,8 +231,6 @@ llvm::Value* mountAssignment(Assignment* context) {
 
 llvm::Value* mountExpression(AssigExpression* context) {
     string var = context->var;
-    string nameCurrentFunction = CurrentFunction->getName().str();
-    llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
 
     lastVar = var;
     llvm::Value *value;
@@ -241,12 +252,13 @@ llvm::Value* mountExpression(AssigExpression* context) {
         value = dynamic_cast<llvm::Value *>(mountFunctionCall(v));
     }
 
-    llvm::Type* typeLoadTable = varInTable->getAllocatedType();
+    string typeInTable = SymbolTable[nameCurrentFunction][var].type;
+    llvm::Type* typeLoadTable = returnType(typeInTable);
     llvm::Type* newType = value->getType();
     llvm::Value* storeValue;
 
     if (typeLoadTable == newType){
-        storeValue = Builder->CreateStore(value,varInTable);
+        storeValue = Builder->CreateStore(value, SymbolTable[nameCurrentFunction][var].value);
     }
 
     //Armazenar variável no espaço que alocamos
@@ -255,17 +267,14 @@ llvm::Value* mountExpression(AssigExpression* context) {
 
 llvm::Value* mountTerm(Operation* context) {
     if (!context) {
-        cout << "TERM NULL" << endl;
         return nullptr;
     }
 
     Operation* vl = dynamic_cast<Operation*>(context->LHS.get());
     Operation* vr = dynamic_cast<Operation*>(context->RHS.get());
-    cout << "TERM ANTES " << context->LHS.get() << " " << context->RHS.get() << " " << context->operatorSign << endl;
     llvm::Value* lhs;
     llvm::Value* rhs;
 
-    cout << "TERM " << vl << " " << vr << endl;
     if (vl) {
         lhs = mountTerm(vl);
     }
@@ -390,17 +399,14 @@ llvm::Value* mountTypeSpecifier(Expression* context) {
         return value;
     }
     else if (variavel){
-        string nameCurrentFunction = CurrentFunction->getName().str();
         string var = variavel->value;
-        llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var];
-        cout << "NOME DA FUNÇÃO " << SymbolTable[nameCurrentFunction][var] << endl;
-        llvm::Type* type = SymbolTable[nameCurrentFunction][var]->getAllocatedType();
-
+        llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][var].value;
+        llvm::Type* type = returnType(variavel->type);
+        
         //Para casos especificos em que a variavel é uma string
         llvm::Value* variavel;
-        if (type->isArrayTy()){
+        if (type->isIntegerTy(8)){
             cout << "É STRING "  << endl;
-            string nameCurrentFunction = CurrentFunction->getName().str();
             llvm::Value* position = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0);
             llvm::Value* gep = Builder->CreateGEP(llvm::ArrayType::get(llvm::Type::getInt8Ty(*Conteiner), CurrentVarSize[var]), varInTable,{Builder->getInt32(0), position});
             variavel = gep;
@@ -417,9 +423,9 @@ llvm::Value* mountTypeSpecifier(Expression* context) {
         CurrentVarSize[CurrentVar] = text.size();
         
         //Alloca o array 
-        string nameCurrentFunction = CurrentFunction->getName().str();
         llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::ArrayType::get(llvm::Type::getInt8Ty(*Conteiner), text.size()),nullptr,CurrentVar); 
-        SymbolTable[nameCurrentFunction][CurrentVar] = alloca;
+        string typeInTable = SymbolTable[nameCurrentFunction][CurrentVar].type;
+        SymbolTable[nameCurrentFunction][CurrentVar].value = alloca;
         
         //Store dos elementos dpo array no espaço alocado
         //GetElementPtr (GEP) calcula o endereço de um elemento.
@@ -494,6 +500,7 @@ llvm::Value* mountPrint(Print* context) {
         else if (typeMostrar == "flutuante"){
             typePrint = fPrint;
             type = llvm::Type::getFloatTy(*Conteiner);
+            value = Builder->CreateFPExt(value, llvm::Type::getDoubleTy(*Conteiner)); //Pois C só dá bom se for double senão fica imprimindo 0.000
         }
         else if (typeMostrar == "caracter"){
             typePrint = sPrint;
@@ -530,8 +537,7 @@ llvm::Value* mountInput(Input* context) {
     }
     
     //Faz chamada de função
-    string nameCurrentFunction = CurrentFunction->getName().str();
-    llvm::Value* callScanf = Builder->CreateCall(scanf, { typeInput, SymbolTable[nameCurrentFunction][lastVar] });
+    llvm::Value* callScanf = Builder->CreateCall(scanf, { typeInput, SymbolTable[nameCurrentFunction][lastVar].value });
 
     return callScanf;
 }
@@ -685,6 +691,8 @@ llvm::Value* mountLoop(Loop* context) {
 llvm::Value* mountFunction(Function* context) {
     //Pega nome da função 
     string var = context->name;
+    string olFunction = nameCurrentFunction;
+    nameCurrentFunction = var;
 
     //Crio escopo da função e armazeno argumentos
     vector<llvm::Type*> params;
@@ -747,10 +755,6 @@ llvm::Value* mountFunction(Function* context) {
         string arg = context->argsNames[i];
         string type = context->argsTypes[i];
 
-        cout << "FUNÇÂO DO TIPO " << type << " " << arg << endl;
-        //Faz load
-        string nameCurrentFunction = CurrentFunction->getName().str();
-    
         //Aloca espaços de memória das variáveis da função
         llvm::AllocaInst* alloca;
         if (type == "inteiro"){
@@ -765,43 +769,41 @@ llvm::Value* mountFunction(Function* context) {
         else if (type == "booleano"){
             alloca = Builder->CreateAlloca(llvm::Type::getInt1Ty(*Conteiner),nullptr,arg);
         }
-        SymbolTable[var][arg] = alloca;
+        SymbolTable[var][arg].value = alloca;
     }
 
     //Fazer o store do argumentos 
-    cout << "SIZE " << CurrentFunction->arg_size() << endl;
     for (int i = 0; i < CurrentFunction->arg_size();i++){
         llvm::Value* ponteiroArg = &(*CurrentFunction->getArg(i));
-        llvm::Value* stroreValue = Builder->CreateStore(ponteiroArg, SymbolTable[var][argsFunctions[var][i]]);
+        llvm::Value* stroreValue = Builder->CreateStore(ponteiroArg, SymbolTable[var][argsFunctions[var][i]].value);
     }
-
     //Preenche o bloco atual e confere se não tem funções declaradas dentro de outras
     for (int i = 0; i < context->values.size(); i++) {
         mountStmt(context->values[i].get()); 
     }
-
     
-    VarType* returnValue = dynamic_cast<VarType*>(any_cast<Expression*>(context->value.get()));
-    Expression* returnValueExp = any_cast<Expression*>(context->value.get());
+    VarType* returnValue = nullptr;
+    Expression* returnValueExp = nullptr;
+    if (argumentType != "nada"){
+        returnValue = dynamic_cast<VarType*>(any_cast<Expression*>(context->value.get()));
+        returnValueExp = any_cast<Expression*>(context->value.get());
+    }
     
     // Armazena valor de retorno
     if (returnValue){
         string strValue = returnValue->value;
-        cout << "RETURN VALUE " << endl;
-
-        cout << "VAR NAME " << strValue << endl;
 
         if (context->returnType == "inteiro"){
-            valueReturn = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner),SymbolTable[var][strValue]);
+            valueReturn = Builder->CreateLoad(llvm::Type::getInt32Ty(*Conteiner),SymbolTable[var][strValue].value);
         }
         else if (context->returnType == "flutuante"){
-            valueReturn = Builder->CreateLoad(llvm::Type::getFloatTy(*Conteiner),SymbolTable[var][strValue]);
+            valueReturn = Builder->CreateLoad(llvm::Type::getFloatTy(*Conteiner),SymbolTable[var][strValue].value);
         }
         else if (context->returnType == "caracter"){
-            valueReturn = Builder->CreateLoad(llvm::Type::getInt8Ty(*Conteiner),SymbolTable[var][strValue]);
+            valueReturn = Builder->CreateLoad(llvm::Type::getInt8Ty(*Conteiner),SymbolTable[var][strValue].value);
         }
         else if (context->returnType == "bool"){
-            valueReturn = Builder->CreateLoad(llvm::Type::getInt1Ty(*Conteiner),SymbolTable[var][strValue]);
+            valueReturn = Builder->CreateLoad(llvm::Type::getInt1Ty(*Conteiner),SymbolTable[var][strValue].value);
         }
     } 
     else if (returnValueExp) {
@@ -810,6 +812,8 @@ llvm::Value* mountFunction(Function* context) {
     else {
         valueReturn;
     }
+
+    cout << "CRIOU  " << valueReturn << endl;
     
     //Adiciona retorno da função
     if (!returnValueExp){
@@ -823,6 +827,7 @@ llvm::Value* mountFunction(Function* context) {
     //Volta a função anterior e ao basic block antigo
     CurrentFunction = mainFunction;
     CurrentBasicBlock = currentBlock;
+    nameCurrentFunction = olFunction;
     Builder->SetInsertPoint(CurrentBasicBlock);
     return valueReturn;
 }
@@ -836,18 +841,18 @@ llvm::Value* mountFunctionCall(FunctionCall* context) {
     //Faz store nos endereços que já aloquei
     for (int i = 0; i < context->args.size(); i++){
         string arg = context->args[i];
-        string nameCurrentFunction = CurrentFunction->getName().str();
-
-        llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][arg];
+        cout << "CALL " << arg << endl;
         
         //Faz load
-        llvm::AllocaInst* varAlloca = SymbolTable[nameCurrentFunction][arg];
+        cout << "ALOCA " << SymbolTable[nameCurrentFunction][arg].value << endl;
+        llvm::AllocaInst* varAlloca = SymbolTable[nameCurrentFunction][arg].value;
         llvm::Type* varType = varAlloca->getAllocatedType();
         llvm::Value* loadedValue = Builder->CreateLoad(varType, varAlloca);
         
         //Salva parametro da função
         objectParams.push_back(loadedValue);
     }
+
 
     llvm::Value* store = Builder->CreateCall(functionCall, objectParams);
 
@@ -874,8 +879,7 @@ llvm::Value* mountList(List* context) {
     llvm::AllocaInst* alloca = Builder->CreateAlloca(llvm::ArrayType::get(elementsType, nElements),nullptr,var);
 
     //Armazena na tabela de simbolos
-    string nameCurrentFunction = CurrentFunction->getName().str();
-    SymbolTable[nameCurrentFunction][var] = alloca;
+    SymbolTable[nameCurrentFunction][var].value = alloca;
 
     
     //Store dos elementos dpo array no espaço alocado
@@ -907,15 +911,12 @@ llvm::Value* mountList(List* context) {
 
         addressArray = Builder->CreateGEP(llvm::ArrayType::get(elementsType, nElements), alloca, {llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), 0),index}, "endereco");
         store = Builder->CreateStore(value, addressArray);
-        cout << "VALUE LIST DEPOIS" << endl;
     }
     return store;
 }
 
 llvm::Value* mountAcessList(AcessList* context) {
-    cout << "ACESS LIST" << endl;
-    string nameCurrentFunction = CurrentFunction->getName().str();
-    llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][context->listName];
+    llvm::AllocaInst* varInTable = SymbolTable[nameCurrentFunction][context->listName].value;
     llvm::Type* typeLoadTable = varInTable->getAllocatedType();
     auto* arrayType = llvm::cast<llvm::ArrayType>(typeLoadTable);
     llvm::Type* elementsType;    
