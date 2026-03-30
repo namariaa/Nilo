@@ -519,7 +519,7 @@ class IRGen : public NiloScriptVisitor{
         }
         else if (context->FLOAT()){
             cout << "É FLOATTTTTTT" << endl;
-            llvm::Value* floatValue = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), context->FLOAT()->getText());
+            llvm::Value* floatValue = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), stof(context->FLOAT()->getText()));
             return floatValue;
         }
         else {
@@ -1040,7 +1040,7 @@ class IRGen : public NiloScriptVisitor{
                 value = llvm::ConstantInt::get(llvm::Type::getInt32Ty(*Conteiner), std::stoi(context->INT()[i -1]->getText()));
             }
             else if (context->RETURN_TYPE()->getText() == "flutuante"){
-                value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), context->FLOAT()[i - 1]->getText());
+                value = llvm::ConstantFP::get(llvm::Type::getFloatTy(*Conteiner), stof(context->FLOAT()[i - 1]->getText()));
             }
             else if (context->RETURN_TYPE()->getText() == "bool"){
                 if (context->BOOL()[i - 1]->getText() == "verdadeiro"){
