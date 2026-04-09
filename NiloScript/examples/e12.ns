@@ -9,3 +9,5 @@ mostrarFlutuante(segundo);
 valor3{2} :bool = [verdadeiro, falso];
 terceiro :bool = valor3[0];
 mostrarBool(terceiro);
+
+:) Response 2, 88.88, 1

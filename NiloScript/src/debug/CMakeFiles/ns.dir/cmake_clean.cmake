@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns.pdb"
   "CMakeFiles/ns.dir/src/Main.cpp.o"
   "CMakeFiles/ns.dir/src/Main.cpp.o.d"
+  "CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o"
+  "CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o.d"
   "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o"
   "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o.d"
   "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o"

@@ -86,10 +86,24 @@ CMakeFiles/ns.dir/src/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ns.dir/src/Main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/Main.cpp -o CMakeFiles/ns.dir/src/Main.cpp.s
 
+CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o: CMakeFiles/ns.dir/flags.make
+CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/analysis/symbolTable.cpp
+CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o: CMakeFiles/ns.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o -MF CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o.d -o CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/analysis/symbolTable.cpp
+
+CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/analysis/symbolTable.cpp > CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.i
+
+CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/analysis/symbolTable.cpp -o CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.s
+
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o: CMakeFiles/ns.dir/flags.make
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptBaseListener.cpp
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o: CMakeFiles/ns.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o -MF CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o.d -o CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptBaseListener.cpp
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.s: cmake_force
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o: CMakeFiles/ns.dir/flags.make
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptBaseVisitor.cpp
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o: CMakeFiles/ns.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o -MF CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o.d -o CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptBaseVisitor.cpp
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.s: cmake_force
 CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o: CMakeFiles/ns.dir/flags.make
 CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptLexer.cpp
 CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o: CMakeFiles/ns.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o -MF CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o.d -o CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptLexer.cpp
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.s: cmake_force
 CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o: CMakeFiles/ns.dir/flags.make
 CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptListener.cpp
 CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o: CMakeFiles/ns.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o -MF CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o.d -o CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptListener.cpp
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptListener.cpp.s: cmake_force
 CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o: CMakeFiles/ns.dir/flags.make
 CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptParser.cpp
 CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o: CMakeFiles/ns.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o -MF CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o.d -o CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptParser.cpp
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptParser.cpp.s: cmake_force
 CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: CMakeFiles/ns.dir/flags.make
 CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptVisitor.cpp
 CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o: CMakeFiles/ns.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o -MF CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o.d -o CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.o -c /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptVisitor.cpp
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.i: cmake_force
@@ -173,6 +187,7 @@ CMakeFiles/ns.dir/src/antlr/NiloScriptVisitor.cpp.s: cmake_force
 # Object files for target ns
 ns_OBJECTS = \
 "CMakeFiles/ns.dir/src/Main.cpp.o" \
+"CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o" \
 "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o" \
 "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o" \
 "CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o" \
@@ -184,6 +199,7 @@ ns_OBJECTS = \
 ns_EXTERNAL_OBJECTS =
 
 /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: CMakeFiles/ns.dir/src/Main.cpp.o
+/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o
 /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o
 /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o
 /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o
@@ -250,7 +266,7 @@ ns_EXTERNAL_OBJECTS =
 /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: /usr/lib/x86_64-linux-gnu/libz.so
 /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: /usr/lib/x86_64-linux-gnu/libzstd.so
 /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns: CMakeFiles/ns.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable /home/namaria/Gram-tica-com-ANTLR/NiloScript/src/execute/ns"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ns.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

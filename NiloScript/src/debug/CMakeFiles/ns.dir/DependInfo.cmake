@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/Main.cpp" "CMakeFiles/ns.dir/src/Main.cpp.o" "gcc" "CMakeFiles/ns.dir/src/Main.cpp.o.d"
+  "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/analysis/symbolTable.cpp" "CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o" "gcc" "CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o.d"
   "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptBaseListener.cpp" "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o" "gcc" "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o.d"
   "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptBaseVisitor.cpp" "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o" "gcc" "CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o.d"
   "/home/namaria/Gram-tica-com-ANTLR/NiloScript/src/antlr/NiloScriptLexer.cpp" "CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o" "gcc" "CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o.d"

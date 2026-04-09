@@ -7,3 +7,8 @@ exiba (lexer) {
         :) RESPONSE : 3
     */
 }
+
+
+exiba {
+    arquivo: main.ns 
+}

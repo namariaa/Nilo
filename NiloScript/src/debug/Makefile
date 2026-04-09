@@ -309,6 +309,30 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
+src/analysis/symbolTable.o: src/analysis/symbolTable.cpp.o
+.PHONY : src/analysis/symbolTable.o
+
+# target to build an object file
+src/analysis/symbolTable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o
+.PHONY : src/analysis/symbolTable.cpp.o
+
+src/analysis/symbolTable.i: src/analysis/symbolTable.cpp.i
+.PHONY : src/analysis/symbolTable.i
+
+# target to preprocess a source file
+src/analysis/symbolTable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.i
+.PHONY : src/analysis/symbolTable.cpp.i
+
+src/analysis/symbolTable.s: src/analysis/symbolTable.cpp.s
+.PHONY : src/analysis/symbolTable.s
+
+# target to generate assembly for a file
+src/analysis/symbolTable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ns.dir/build.make CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.s
+.PHONY : src/analysis/symbolTable.cpp.s
+
 src/antlr/NiloScriptBaseListener.o: src/antlr/NiloScriptBaseListener.cpp.o
 .PHONY : src/antlr/NiloScriptBaseListener.o
 
@@ -478,6 +502,9 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
+	@echo "... src/analysis/symbolTable.o"
+	@echo "... src/analysis/symbolTable.i"
+	@echo "... src/analysis/symbolTable.s"
 	@echo "... src/antlr/NiloScriptBaseListener.o"
 	@echo "... src/antlr/NiloScriptBaseListener.i"
 	@echo "... src/antlr/NiloScriptBaseListener.s"

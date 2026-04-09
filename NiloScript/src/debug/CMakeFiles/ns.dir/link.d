@@ -3,6 +3,7 @@
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o \
   CMakeFiles/ns.dir/src/Main.cpp.o \
+  CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o \
   CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o \
   CMakeFiles/ns.dir/src/antlr/NiloScriptBaseVisitor.cpp.o \
   CMakeFiles/ns.dir/src/antlr/NiloScriptLexer.cpp.o \
@@ -102,6 +103,8 @@
 /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o:
 
 CMakeFiles/ns.dir/src/Main.cpp.o:
+
+CMakeFiles/ns.dir/src/analysis/symbolTable.cpp.o:
 
 CMakeFiles/ns.dir/src/antlr/NiloScriptBaseListener.cpp.o:
 

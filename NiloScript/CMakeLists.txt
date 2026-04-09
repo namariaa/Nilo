@@ -53,8 +53,9 @@ add_definitions(${LLVM_DEFINITIONS})
 
 # Define os arquivos fontes do seu projeto
 file(GLOB SOURCES
-    src/Main.cpp
-    src/antlr/NiloScript*.cpp  
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/antlr/NiloScript*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/analysis/symbolTable.cpp
 )
 
 # Cria o executável a partir dos fontes
@@ -69,7 +70,7 @@ llvm_map_components_to_libnames(LLVM_LIBS
     support
     irreader
     passes
-    native         # gera código nativo (x86/ARM/etc)
+    native         
 )
 
 target_link_libraries(ns PRIVATE ${LLVM_LIBS})
