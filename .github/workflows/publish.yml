@@ -1,8 +1,14 @@
 name: publish-to-github-pages
+
 on:
   push:
-    branches:
-      - main
+    paths:
+      - "app/**"
+      - ".github/workflows/publish.yml"
+  pull_request:
+    paths:
+      - "app/**"
+      - ".github/workflows/publish.yml"
 
 permissions:
   contents: read
@@ -22,9 +28,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node.js, Cache dependencies and Install dependencies
-        uses: ./.github/workflows/setup-node
+        uses: ./.github/workflows/setup
 
-      - name: Setup Pages ⚙️
+      - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
