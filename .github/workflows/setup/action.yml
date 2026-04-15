@@ -1,5 +1,6 @@
-name: setup
-description: "Setup Node.js, Cache dependencies and Install dependencies 🔧"
+name: "Setup Node.js, Cache dependencies and Install dependencies"
+description: "Setup environment"
+
 runs:
   using: "composite"
   steps:
@@ -18,4 +19,4 @@ runs:
     - name: Install dependencies
       shell: bash
       if: steps.cache_dependencies.outputs.cache-hit != 'true'
-      run: pnpm ci
+      run: pnpm install
