@@ -1,16 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
+  basePath: "/Nilo",
   output: "export",
+  reactStrictMode: true,
 };
 
-module.exports = {
-  basePath: '/Nilo' ,
-  assetPrefix: '/Nilo/' ,
-  images: {
-    unoptimized: true, 
-  },
-  output: "export",
-};
+module.exports = nextConfig;
 
 export default nextConfig;
