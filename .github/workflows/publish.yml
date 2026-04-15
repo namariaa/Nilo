@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-     - name: Setup Node.js, Cache dependencies and Install dependencies
+      - name: Setup Node.js, Cache dependencies and Install dependencies
         uses: ./.github/workflows/setup
         with:
           working-directory: ./app
@@ -45,7 +45,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-          
 
   deploy:
     environment:
