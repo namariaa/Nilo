@@ -48,16 +48,18 @@ export default function Header(props: HeaderProps): React.ReactNode {
         left: 0,
         width: "100vw",
         height: {xs: "50px", md:"110px"},
+        backgroundColor: type !== "home" ? "#F2ECCA" : "#042B3A",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         px: 4,
-        marginTop:{xs:"24px"},
         zIndex: 2000,
       }}
     >
       <Box sx={{ display: "flex", alignItems: {xs: "center", md: "flex-start"}, paddingTop: "48px", width: {xs: "60px", md:"200px"}, height: {xs:"auto", md:"160px"}, position:"relative" }}>
+        <Link href="/Nilo" underline="none">
         <Image src={type === "home" ? niloWhite : nilo} alt="logo" fill/>
+        </Link>
       </Box>
 
       <Box
@@ -71,7 +73,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
           paddingTop: {xs: "16px", md:"64px"}
         }}
       >
-        <Link href="/" underline="none">
+        <Link href="/Nilo" underline="none">
           <Typography
             sx={styleFont}
           >
@@ -79,19 +81,11 @@ export default function Header(props: HeaderProps): React.ReactNode {
           </Typography>
         </Link>
 
-        <Link href="/nilo" underline="none">
+        <Link href="Nilo/nilo" underline="none">
           <Typography
             sx={styleFont}
           >
             NILO
-          </Typography>
-        </Link>
-
-        <Link href="/nilo-script" underline="none">
-          <Typography
-            sx={styleFont}
-          >
-            NILOSCRIPT DOC
           </Typography>
         </Link>
       </Box>

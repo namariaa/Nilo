@@ -6,7 +6,7 @@ import whaleDetail from "../../public/whaleDetail.svg";
 import logo from "../../public/nilo.svg";
 import Cards from "../components/Card";
 import Typography from "@mui/material/Typography";
-import DescriptionIcon from "@mui/icons-material/Description";
+import BookOnline from "@mui/icons-material/BookOnline";
 import whaleLogo from "../../public/logo-white.svg";
 import logoScript from "../../public/nilo-script.svg";
 import Header from "../components/Header";
@@ -109,10 +109,10 @@ export default function Home() {
               />
 
               <Cards
-                description="Consulte a documentação completa."
-                icon={<DescriptionIcon htmlColor="#042B3A" />}
-                label="Documentação"
-                link="/nilo"
+                description="Acesse o ambiente do sala de aula para visualizar todas as aulas e materias."
+                icon={<BookOnline htmlColor="#042B3A" />}
+                label="Google Classroom"
+                link="https://classroom.google.com/c/ODYwMTgxNDY0NTE5?cjc=ck22xenn"
               />
             </Box>
           </Box>
