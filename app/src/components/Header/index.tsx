@@ -26,7 +26,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
       height: "2px",
       bottom: -4,
       left: 0,
-      backgroundColor: type === "home" ? "#fff" : "#042B3A",
+      backgroundColor: type === "home" ? "#fff" : "#042b3a",
       transition: "width 0.3s ease",
     },
     "&:hover": {
@@ -47,8 +47,8 @@ export default function Header(props: HeaderProps): React.ReactNode {
         top: 0,
         left: 0,
         width: "100vw",
-        height: {xs: "50px", md:"110px"},
-        backgroundColor: type !== "home" ? "#F2ECCA" : "#042B3A",
+        height: {xs: "50px !important", md:"110px"},
+        backgroundColor: type !== "home" ? "#F2ECCA" : "rgba(4, 43, 58, 0.01)",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -81,6 +81,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
           </Typography>
         </Link>
 
+        {type === "home" && (
         <Link href="Nilo/nilo" underline="none">
           <Typography
             sx={styleFont}
@@ -88,6 +89,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
             NILO
           </Typography>
         </Link>
+        )}
       </Box>
     </Box>
   );
