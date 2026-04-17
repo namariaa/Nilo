@@ -81,8 +81,16 @@ export default function Header(props: HeaderProps): React.ReactNode {
           </Typography>
         </Link>
 
-        {type === "home" && (
+        {type === "home" ? (
         <Link href="Nilo/nilo" underline="none">
+          <Typography
+            sx={styleFont}
+          >
+            NILO
+          </Typography>
+        </Link>
+        ) : (
+          <Link href="" underline="none">
           <Typography
             sx={styleFont}
           >
