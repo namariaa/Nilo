@@ -32,40 +32,13 @@ mostrarInteiro(c);
 
 ---
 
-## Quick Start
+## Pré-requisitos
 
 ### Pré-requisitos
 
 <table> <tr> <td align="center"> <a href="https://www.antlr.org/" target="_blank"> <img src="https://www.svgrepo.com/show/373431/antlr.svg" alt="ANTLR Logo" width="80"/><br/> <strong>ANTLR4 (runtime C++)</strong> </a> </td> <td align="center"> <a href="https://en.cppreference.com/w/cpp" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Logo" width="80"/><br/> <strong>C++ 20</strong> </a> </td> <td align="center"> <a href="https://cmake.org/documentation/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Cmake.svg" alt="CMake Logo" width="80"/><br/> <strong>CMake ≥ 3.30</strong> </a> </td>
 <td align="center"> <a href="https://en.cppreference.com/w/cpp" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/LLVM_logo.png" alt="C++ Logo" width="80"/><br/> <strong>LLVM ≥ 19</strong> </a> </td>
 </tr> </table>
-
----
-
-### Build
-
-```bash
-mkdir -p src/debug
-cd src/debug
-
-cmake ../..
-make
-```
-
-### Executar exemplo
-
-```bash
-./ns ../../examples/e05.ns
-```
-
-### Gerar executável final
-
-Após gerar o arquivo .ll:
-
-```bash
-clang executavel.ll runtime.c -o program
-./program
-```
 
 ---
 

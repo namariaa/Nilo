@@ -15,11 +15,11 @@ Trecho do documento original:
 “Os estudantes do curso de Análise e Desenvolvimento de Sistemas do IFRN apresentam lacunas significativas na formação básica em linguagens de programação.”
 “Pretende‑se desenvolver uma linguagem com caráter educativo, denominada NiloScript, que pretende oferecer suporte didático e prático ao processo de aprendizagem.”
 
-## 2. Gramática (resumo)
+## 2. Gramática
 
 Gramática ANTLR (NiloScript) — regras principais e tokens.
 
-### 2.1 Regras do parser (selecionadas)
+### 2.1 Regras do parser
 
 - program : (stmt)+ EOF;
 - stmt : print SC | assignment SC | loop | inCase | function | functionCall SC | list SC | expression SC | COMMENT;
@@ -31,7 +31,7 @@ Gramática ANTLR (NiloScript) — regras principais e tokens.
 - list / acessList : list : VAR OBRA nElements=INT CBRA COLON RETURN_TYPE EQUAL OKEY valuesList ... CKEY;  
   acessList : VAR OKEY INT CKEY;
 
-### 2.2 Tokens e utilitários (selecionados)
+### 2.2 Tokens e utilitários
 
 - Operadores aritméticos: + - \* / % \*\*
 - Operadores relacionais: == != > < >= <=
@@ -114,45 +114,11 @@ enquanto (par == falso) {
 mostrarInteiro(x);
 ```
 
-## 4. Build e execução (Quickstart técnico)
-
-### 4.1 Pré‑requisitos
+## 4. Pré‑requisitos
 
 <table> <tr> <td align="center"> <a href="https://www.antlr.org/" target="_blank"> <img src="https://www.svgrepo.com/show/373431/antlr.svg" alt="ANTLR Logo" width="80"/><br/> <strong>ANTLR4 (runtime C++)</strong> </a> </td> <td align="center"> <a href="https://en.cppreference.com/w/cpp" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Logo" width="80"/><br/> <strong>C++ 20</strong> </a> </td> <td align="center"> <a href="https://cmake.org/documentation/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Cmake.svg" alt="CMake Logo" width="80"/><br/> <strong>CMake ≥ 3.30</strong> </a> </td>
 <td align="center"> <a href="https://en.cppreference.com/w/cpp" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/LLVM_logo.png" alt="C++ Logo" width="80"/><br/> <strong>LLVM ≥ 19</strong> </a> </td>
 </tr> </table>
-
-#### 4.2 Passos para compilar
-
-1. Configurar build
-
-```bash
-cd NiloScript/src/debug
-cmake ../..
-```
-
-2. Compilar
-
-```bash
-make
-```
-
-> O executável ns será gerado em src/execute.
-
-### 4.3 Executar um exemplo
-
-```bash
-./src/execute/ns ./examples/e05.ns
-```
-
-### 4.4 Gerar IR e compilar com clang
-
-Após a geração de IR (executavel.ll) pelo IRGenAST:
-
-```bash
-clang executavel.ll runtime.c -o program
-./program
-```
 
 ## 5. Arquivos e trechos importantes
 
@@ -233,29 +199,3 @@ NiloScript/<br>
   "options": { "cwd": "${workspaceFolder}/NiloScript/src/debug" }
 }
 ```
-
-## 8. Arquitetura do projeto (visão geral)
-
-Camadas
-
-Frontend
-
-ANTLR lexer/parser (src/antlr) → CST
-
-AST builder (src/analysis/AST.h) → AST
-
-Análise
-
-Tabela de símbolos (symbolTable.h/.cpp)
-
-Checagens semânticas e de tipos
-
-Geração de código
-
-IRGenAST → gera executavel.ll (LLVM IR)
-
-Runtime / Linkagem
-
-runtime.c + clang → binário final
-
-Fluxo: .ns → ANTLR → CST → AST → IRGen → executavel.ll → clang + runtime.c → executável
