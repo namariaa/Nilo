@@ -1,0 +1,32 @@
+name: "Setup Node.js, Cache dependencies and Install dependencies"
+description: "Setup environment"
+
+inputs:
+  working-directory:
+    required: true
+    default: "."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install pnpm
+      shell: bash
+      run: npm install -g pnpm
+
+    - name: Cache dependencies ⚡
+      id: cache_dependencies
+      uses: actions/cache@v3
+      with:
+        path: ${{ inputs.working-directory }}/node_modules
+        key: node-modules-${{ hashFiles(format('{0}/pnpm-lock.yaml', inputs.working-directory)) }}
+
+    - name: Install dependencies
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      if: steps.cache_dependencies.outputs.cache-hit != 'true'
+      run: pnpm install
