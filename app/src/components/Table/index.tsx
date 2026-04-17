@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
 
 interface TableProps {
-    rows: GridRowsProp[];
+    rows: GridRowsProp;
     columns: GridColDef[];
 }
 
