@@ -42,6 +42,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
   return (
     <Box
       component="header"
+      className="header"
       sx={{
         position: "fixed",
         top: 0,
@@ -62,7 +63,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
         </Link>
       </Box>
 
-      <Box
+      {/* <Box
         sx={{
           position: "absolute",
           left: "50%",
@@ -98,7 +99,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
           </Typography>
         </Link>
         )}
-      </Box>
+      </Box> */}
     </Box>
   );
 }

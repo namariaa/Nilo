@@ -1,19 +1,16 @@
 import Card from '@mui/material/Card';
-import { useRouter } from 'next/navigation'
 import CardHeader from "@mui/material/CardHeader";
-
+import Link from 'next/link';
 
 interface CardProps {
     icon: React.ReactNode;
     label: string;
     description: string;
-    link: string;
+    link?: string;
 }
 
 export default function Cards (props: CardProps): React.ReactNode {
     const {icon,label,link, description} = props;
-
-    const router = useRouter();
  
     return (
         <Card 
@@ -30,14 +27,32 @@ export default function Cards (props: CardProps): React.ReactNode {
                 },
             }}
         >
-            <CardHeader
-                avatar={
-                icon
-                }
-                title={label}
-                subheader={description}
-                onClick={() => {router.push(link)}}
-            />
+            {!link ? (
+                <Link href={"/processo.pdf"} 
+                download="Processo NILO.pdf"
+                >
+                <CardHeader
+                    avatar={
+                    icon
+                    }
+                    title={label}
+                    subheader={description}
+                />
+                </Link>
+            ) : (
+                <Link href={link} 
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                    <CardHeader
+                        avatar={
+                        icon
+                        }
+                        title={label}
+                        subheader={description}
+                    />
+                </Link>
+            )}
         </Card>
     )
 }
