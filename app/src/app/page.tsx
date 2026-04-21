@@ -32,7 +32,7 @@ export default function Home() {
           flexDirection: "column",
         }}
       >
-        <Box sx={{ position: "relative", height: { xs: 120, md: 200 } }}>          
+        <Box sx={{ position: "relative", height: { xs: 40, md: 200 } }}>          
           <Box
             sx={{
               position: "absolute",
@@ -54,7 +54,6 @@ export default function Home() {
             width: "100%",
             maxWidth: { xs: "100%", md: "1200px" },
             overflowX: "hidden",
-            mt: { xs: "48px", md: 0 },
           }}
         >
           <Box
@@ -98,7 +97,6 @@ export default function Home() {
                 description="Explore todas as etapas do processo NILO."
                 icon={<Image src={logo} alt="logo" width={40} />}
                 label="Processo NILO"
-                link="/nilo"
               />
 
               <Cards
