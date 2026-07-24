@@ -1,0 +1,142 @@
+{
+    "homePage":{
+        "description": "NILO is a structured process for programming language development, created to support students of Systems Analysis and Development (TADS). Through an iterative approach, the project enables the documentation, implementation, and validation of languages ​​designed to solve problems across various domains.",
+        "card-nilo-title": "NILO Process",
+        "card-nilo-subtitle": "Explore all steps of the NILO process.",
+        "card-nilo-github-title": "GitHub Nilo",
+        "card-nilo-github-subtitle": "Access the NiloScript repository.",
+        "card-nilo-classroom": "Google Classroom",
+        "card-nilo-classroom-subtitle": "Access the classroom environment to view all classes and materials."
+    },
+    "versionsPage": {
+        "breadcrumb-home": "Home",
+        "breadcrumb-current": "Process versions",
+        "title": "NILO process versions",
+        "description": "Select a version to preview the PDF, review the changes, and download the visible file.",
+        "version-select-label": "Process versions",
+        "version-1": "Version 1",
+        "version-2": "Version 2",
+        "version-3": "Version 3",
+        "preview-label": "Preview",
+        "download-button": "Download PDF",
+        "risks-button": "Risk recurrence table",
+        "changelog-title": "Changelog",
+        "changelog-subtitle": "Temporary data to be filled in later.",
+        "version-1-change-1": "Mock: initial version of the NILO process.",
+        "version-1-change-2": "Mock: base structure for the main steps and guidance.",
+        "version-1-change-3": "Mock: reference materials organized for consultation.",
+        "version-2-change-1": "Mock: adjusted step organization compared with the previous version.",
+        "version-2-change-2": "Mock: revised process descriptions and examples.",
+        "version-2-change-3": "Mock: added complementary notes for classroom use.",
+        "version-3-change-1": "Mock: refined the previous version with clarity improvements.",
+        "version-3-change-2": "Mock: updated artifacts and usage recommendations.",
+        "version-3-change-2-prefix": "Mock: updated",
+        "version-3-change-2-link": "artifacts",
+        "version-3-change-2-suffix": "and usage recommendations.",
+        "version-3-change-3": "Mock: final review of process validation points."
+    },
+    "risksPage": {
+        "breadcrumb-home": "Home",
+        "breadcrumb-versions": "Process versions",
+        "breadcrumb-current": "Risks",
+        "title": "Risk recurrence table",
+        "description": "Recurring risks identified in the process, with original excerpts and correction examples.",
+        "risk-table-problem": "Problem",
+        "risk-table-solution": "Solution",
+        "risk-table-page": "Page",
+        "risk-table-problem-excerpt": "Excerpt with the problem",
+        "risk-table-corrected-excerpt": "Excerpt after correction",
+        "risk-rows": {
+            "01": {
+                "problem": "Validation criteria described too broadly.",
+                "solution": "Detail the expected evidence and responsible people for each step.",
+                "problem-excerpt": "Validate the language with representative examples from the chosen domain.",
+                "corrected-excerpt": "Validate the language with domain examples, recording the input, expected output, responsible person, and execution evidence."
+            },
+            "02": {
+                "problem": "Risk of ambiguity in intermediate artifacts.",
+                "solution": "Standardize artifact names, format, and minimum criteria.",
+                "problem-excerpt": "Produce the artifacts needed to continue the implementation.",
+                "corrected-excerpt": "Produce the lexicon, grammar, code examples, and test cases with identification, version, and acceptance rule."
+            },
+            "03": {
+                "problem": "Dependence on manual review without traceable history.",
+                "solution": "Record the decision, reason for the change, and impact on the process.",
+                "problem-excerpt": "Review the critical points before delivering the final version.",
+                "corrected-excerpt": "Review critical points in a versioned checklist, indicating the decision, justification, impact, and person responsible for the correction."
+            },
+            "04": {
+                "problem": "No criteria for prioritizing changes between versions.",
+                "solution": "Classify impact, urgency, and dependencies before review.",
+                "problem-excerpt": "Select the adjustments needed for the next version of the process.",
+                "corrected-excerpt": "Select adjustments based on impact, urgency, technical dependencies, and evidence collected during validation."
+            },
+            "05": {
+                "problem": "Usage examples without coverage for invalid cases.",
+                "solution": "Include invalid inputs and expected responses in validation.",
+                "problem-excerpt": "Create examples to demonstrate how the language works.",
+                "corrected-excerpt": "Create valid and invalid examples, informing the expected output, error message, and related language rule."
+            },
+            "06": {
+                "problem": "People responsible for technical review are not defined.",
+                "solution": "Assign each step to a responsible person and acceptance deadline.",
+                "problem-excerpt": "Review the implementation before publishing the version.",
+                "corrected-excerpt": "Review the implementation with a responsible person, deadline, acceptance checklist, and record of the decision taken."
+            },
+            "07": {
+                "problem": "Grammar changes without reference to their impact on tests.",
+                "solution": "Relate each grammar change to the affected tests.",
+                "problem-excerpt": "Update the grammar according to the needs of the chosen domain.",
+                "corrected-excerpt": "Update the grammar by indicating changed rules, affected examples, and tests that need to be created or reviewed."
+            },
+            "08": {
+                "problem": "Deliverables described without an expected minimum format.",
+                "solution": "Define structure, required fields, and a filled-in example.",
+                "problem-excerpt": "Deliver the artifacts produced during the specification stage.",
+                "corrected-excerpt": "Deliver artifacts with identification, objective, version, author, date, required fields, and a filled-in example."
+            },
+            "09": {
+                "problem": "Feedback records without a link to performed changes.",
+                "solution": "Link feedback, decision, and corrected commit or version.",
+                "problem-excerpt": "Consider the feedback received during the presentation.",
+                "corrected-excerpt": "Record the feedback, decision taken, justification, corrected version, and evidence of the performed change."
+            },
+            "10": {
+                "problem": "Syntax validation separated from semantic validation.",
+                "solution": "Plan cases that exercise syntax and expected meaning.",
+                "problem-excerpt": "Validate whether the commands are accepted by the interpreter.",
+                "corrected-excerpt": "Validate accepted and rejected commands, checking syntax, expected meaning, and observed interpreter behavior."
+            },
+            "11": {
+                "problem": "Dependence on implicit group knowledge.",
+                "solution": "Document decisions and domain-specific concepts.",
+                "problem-excerpt": "Apply the rules defined by the group during implementation.",
+                "corrected-excerpt": "Apply documented rules, with a domain glossary, usage examples, and justification for specific decisions."
+            },
+            "12": {
+                "problem": "Risk of inconsistency between the PDF, examples, and implementation.",
+                "solution": "Create a final check crossing documentation and code.",
+                "problem-excerpt": "Update the documentation after completing the final adjustments.",
+                "corrected-excerpt": "Update documentation, examples, and implementation together, recording divergences found and corrections applied."
+            },
+            "13": {
+                "problem": "Acceptance criteria described only as free text.",
+                "solution": "Turn criteria into verifiable checklist items.",
+                "problem-excerpt": "The delivery must be aligned with the objectives defined at the beginning.",
+                "corrected-excerpt": "The delivery must comply with a checklist covering objectives, evidence, test cases, known limitations, and validation owner."
+            },
+            "14": {
+                "problem": "Versioning failures in auxiliary artifacts.",
+                "solution": "Version attachments, examples, and support materials together with the process.",
+                "problem-excerpt": "Provide the support files used during development.",
+                "corrected-excerpt": "Provide support files with version, date, source, relationship to the step, and compatibility with the published PDF."
+            },
+            "15": {
+                "problem": "Validation results without reproducible evidence.",
+                "solution": "Record environment, input, expected output, and obtained output.",
+                "problem-excerpt": "Present the results obtained during language validation.",
+                "corrected-excerpt": "Present results with environment, input used, expected output, obtained output, execution date, and responsible person."
+            }
+        }
+    }
+}

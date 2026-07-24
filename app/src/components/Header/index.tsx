@@ -1,65 +1,73 @@
 "use client";
 
 import Image from "next/image";
+import NextLink from "next/link";
 import niloWhite from "../../../public/nilo-white.svg";
 import nilo from "../../../public/nilo.svg";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 
 interface HeaderProps {
   type: "home" | "default";
+  fixed?: boolean;
+  logoFixed?: boolean;
 }
 
 export default function Header(props: HeaderProps): React.ReactNode {
-  const {type} = props;
-
-  const styleFont = {
-    fontFamily: "Roboto, sans-serif",
-    fontWeight: 700,
-    fontSize: { xs: "0.8rem", md: "1.4rem" },
-    color: type === "home" ? "#fff" : "#042B3A",
-    "&::after": {
-      content: '""',
-      position: "absolute",
-      width: "0%",
-      height: "2px",
-      bottom: -4,
-      left: 0,
-      backgroundColor: type === "home" ? "#fff" : "#042b3a",
-      transition: "width 0.3s ease",
-    },
-    "&:hover": {
-      transform: "translateY(-2px)",
-      opacity: 0.9,
-    },
-
-    "&:hover::after": {
-      width: "100%",
-    },
-  }
+  const { fixed = true, logoFixed = false, type } = props;
   
   return (
     <Box
       component="header"
       className="header"
       sx={{
-        position: "fixed",
+        position: fixed ? "fixed" : "relative",
         top: 0,
         left: 0,
-        width: "100vw",
+        boxSizing: "border-box",
+        width: "100%",
         height: {xs: "50px", md:"110px"},
-        backgroundColor: type !== "home" ? "#F2ECCA" : "#042b3a1c",
+        backgroundColor: fixed
+          ? type !== "home"
+            ? "#F2ECCA"
+            : "#042b3a1c"
+          : "transparent",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         px: 4,
-        zIndex: 2000,
+        pointerEvents: logoFixed ? "none" : "auto",
+        zIndex: fixed ? 2000 : 2200,
       }}
     >
-      <Box sx={{ display: "flex", alignItems: {xs: "center", md: "flex-start"}, paddingTop: "48px", width: {xs: "60px", md:"200px"}, height: {xs:"auto", md:"160px"}, position:"relative" }}>
-        <Link href="/Nilo" underline="none">
-        <Image src={type === "home" ? niloWhite : nilo} alt="logo" fill/>
+      <Box
+        sx={{
+          alignItems: { xs: "center", md: "flex-start" },
+          display: "flex",
+          height: logoFixed
+            ? { xs: "48px", md: "110px" }
+            : { xs: "48px", md: "160px" },
+          paddingTop: 0,
+          position: logoFixed ? "fixed" : "relative",
+          top: logoFixed ? 0 : undefined,
+          left: logoFixed ? { xs: 32, md: 32 } : undefined,
+          zIndex: logoFixed ? 2300 : undefined,
+          width: { xs: "60px", md: "200px" },
+          pointerEvents: "auto",
+        }}
+      >
+        <Link
+          component={NextLink}
+          href="/"
+          underline="none"
+          sx={{
+            display: "block",
+            height: "100%",
+            position: "relative",
+            width: "100%",
+          }}
+        >
+          <Image src={type === "home" ? niloWhite : nilo} alt="logo" fill />
         </Link>
       </Box>
 
@@ -74,7 +82,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
           paddingTop: {xs: "16px", md:"64px"}
         }}
       >
-        <Link href="/Nilo" underline="none">
+        <Link component={NextLink} href="/" underline="none">
           <Typography
             sx={styleFont}
           >
@@ -83,7 +91,7 @@ export default function Header(props: HeaderProps): React.ReactNode {
         </Link>
 
         {type === "home" ? (
-        <Link href="Nilo/nilo" underline="none">
+        <Link component={NextLink} href="/nilo" underline="none">
           <Typography
             sx={styleFont}
           >

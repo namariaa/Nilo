@@ -1,0 +1,142 @@
+{
+    "homePage": {
+        "description": "O NILO é um processo estruturado para o desenvolvimento de linguagens de programação, criado para apoiar estudantes de Análise e Desenvolvimento de Sistemas (TADS). De forma iterativa, o projeto permite documentar, implementar e validar linguagens voltadas à resolução de problemas em diferentes domínios.",
+        "card-nilo-title": "Processo NILO",
+        "card-nilo-subtitle": "Explore todas as etapas do processo NILO.",
+        "card-nilo-github-title": "GitHub Nilo",
+        "card-nilo-github-subtitle": "Acesse o repositório da NiloScript.",
+        "card-nilo-classroom": "Google Classroom",
+        "card-nilo-classroom-subtitle": "Acesse o ambiente do sala de aula para visualizar todas as aulas e materias."
+    },
+    "versionsPage": {
+        "breadcrumb-home": "Página Inicial",
+        "breadcrumb-current": "Versões do processo",
+        "title": "Versões do processo NILO",
+        "description": "Selecione uma versão para pré-visualizar o PDF, consultar as mudanças e baixar o arquivo exibido.",
+        "version-select-label": "Versões do processo",
+        "version-1": "Versão 1",
+        "version-2": "Versão 2",
+        "version-3": "Versão 3",
+        "preview-label": "Pré-visualização",
+        "download-button": "Baixar PDF",
+        "risks-button": "Tabela de reincidência de riscos",
+        "changelog-title": "Atualizações",
+        "changelog-subtitle": "Dados provisórios para preenchimento posterior.",
+        "version-1-change-1": "Mock: versão inicial do processo NILO.",
+        "version-1-change-2": "Mock: estrutura base das etapas e orientações principais.",
+        "version-1-change-3": "Mock: materiais de referência organizados para consulta.",
+        "version-2-change-1": "Mock: ajuste na organização das etapas em relação à versão anterior.",
+        "version-2-change-2": "Mock: revisão de descrições e exemplos do processo.",
+        "version-2-change-3": "Mock: inclusão de observações complementares para aplicação em sala.",
+        "version-3-change-1": "Mock: refinamento da versão anterior com melhorias de clareza.",
+        "version-3-change-2": "Mock: atualização dos artefatos e recomendações de uso.",
+        "version-3-change-2-prefix": "Mock: atualização dos",
+        "version-3-change-2-link": "artefatos",
+        "version-3-change-2-suffix": "e recomendações de uso.",
+        "version-3-change-3": "Mock: revisão final dos pontos de validação do processo."
+    },
+    "risksPage": {
+        "breadcrumb-home": "Página Inicial",
+        "breadcrumb-versions": "Versões do processo",
+        "breadcrumb-current": "Riscos",
+        "title": "Tabela de reincidência de riscos",
+        "description": "Riscos recorrentes identificados no processo, com trechos originais e exemplos de correção.",
+        "risk-table-problem": "Problema",
+        "risk-table-solution": "Solução",
+        "risk-table-page": "Página",
+        "risk-table-problem-excerpt": "Trecho com o problema",
+        "risk-table-corrected-excerpt": "Trecho após correção",
+        "risk-rows": {
+            "01": {
+                "problem": "Critérios de validação descritos de forma ampla.",
+                "solution": "Detalhar evidências esperadas e responsáveis por etapa.",
+                "problem-excerpt": "Validar a linguagem com exemplos representativos do domínio escolhido.",
+                "corrected-excerpt": "Validar a linguagem com exemplos do domínio, registrando entrada, saída esperada, responsável e evidência da execução."
+            },
+            "02": {
+                "problem": "Risco de ambiguidade nos artefatos intermediários.",
+                "solution": "Padronizar nomes, formato e critérios mínimos dos artefatos.",
+                "problem-excerpt": "Produzir os artefatos necessários para continuidade da implementação.",
+                "corrected-excerpt": "Produzir léxico, gramática, exemplos de código e casos de teste com identificação, versão e regra de aceite."
+            },
+            "03": {
+                "problem": "Dependência de revisão manual sem histórico rastreável.",
+                "solution": "Registrar decisão, motivo da alteração e impacto no processo.",
+                "problem-excerpt": "Revisar os pontos críticos antes da entrega da versão final.",
+                "corrected-excerpt": "Revisar pontos críticos em checklist versionado, indicando decisão, justificativa, impacto e responsável pela correção."
+            },
+            "04": {
+                "problem": "Ausência de critérios para priorizar mudanças entre versões.",
+                "solution": "Classificar impacto, urgência e dependências antes da revisão.",
+                "problem-excerpt": "Selecionar ajustes necessários para a próxima versão do processo.",
+                "corrected-excerpt": "Selecionar ajustes com base em impacto, urgência, dependências técnicas e evidências coletadas durante a validação."
+            },
+            "05": {
+                "problem": "Exemplos de uso sem cobertura de casos inválidos.",
+                "solution": "Incluir entradas inválidas e respostas esperadas na validação.",
+                "problem-excerpt": "Criar exemplos para demonstrar o funcionamento da linguagem.",
+                "corrected-excerpt": "Criar exemplos válidos e inválidos, informando saída esperada, mensagem de erro e regra de linguagem relacionada."
+            },
+            "06": {
+                "problem": "Responsáveis por revisão técnica não definidos.",
+                "solution": "Associar cada etapa a um responsável e prazo de aceite.",
+                "problem-excerpt": "Revisar a implementação antes da publicação da versão.",
+                "corrected-excerpt": "Revisar a implementação com responsável, prazo, checklist de aceite e registro da decisão tomada."
+            },
+            "07": {
+                "problem": "Mudanças de gramática sem referência ao impacto nos testes.",
+                "solution": "Relacionar cada alteração gramatical aos testes afetados.",
+                "problem-excerpt": "Atualizar a gramática conforme a necessidade do domínio escolhido.",
+                "corrected-excerpt": "Atualizar a gramática indicando regras alteradas, exemplos afetados e testes que precisam ser criados ou revisados."
+            },
+            "08": {
+                "problem": "Descrição de entregáveis sem formato mínimo esperado.",
+                "solution": "Definir estrutura, campos obrigatórios e exemplo de preenchimento.",
+                "problem-excerpt": "Entregar os artefatos produzidos durante a etapa de especificação.",
+                "corrected-excerpt": "Entregar artefatos com identificação, objetivo, versão, autor, data, campos obrigatórios e exemplo de preenchimento."
+            },
+            "09": {
+                "problem": "Registro de feedback sem vínculo com alterações realizadas.",
+                "solution": "Vincular feedback, decisão e commit ou versão corrigida.",
+                "problem-excerpt": "Considerar os feedbacks recebidos durante a apresentação.",
+                "corrected-excerpt": "Registrar feedback, decisão tomada, justificativa, versão corrigida e evidência da alteração realizada."
+            },
+            "10": {
+                "problem": "Validação de sintaxe separada da validação semântica.",
+                "solution": "Planejar casos que exercitem sintaxe e significado esperado.",
+                "problem-excerpt": "Validar se os comandos são aceitos pelo interpretador.",
+                "corrected-excerpt": "Validar comandos aceitos e recusados, conferindo sintaxe, significado esperado e comportamento observado no interpretador."
+            },
+            "11": {
+                "problem": "Dependência de conhecimento implícito do grupo.",
+                "solution": "Documentar decisões e conceitos específicos do domínio.",
+                "problem-excerpt": "Aplicar as regras definidas pelo grupo durante a implementação.",
+                "corrected-excerpt": "Aplicar regras documentadas, com glossário do domínio, exemplos de uso e justificativa para decisões específicas."
+            },
+            "12": {
+                "problem": "Risco de inconsistência entre PDF, exemplos e implementação.",
+                "solution": "Criar uma conferência final cruzando documentação e código.",
+                "problem-excerpt": "Atualizar a documentação após concluir os ajustes finais.",
+                "corrected-excerpt": "Atualizar documentação, exemplos e implementação em conjunto, registrando divergências encontradas e correções aplicadas."
+            },
+            "13": {
+                "problem": "Critérios de aceite descritos apenas em texto livre.",
+                "solution": "Transformar critérios em itens verificáveis de checklist.",
+                "problem-excerpt": "A entrega deve estar adequada aos objetivos definidos no início.",
+                "corrected-excerpt": "A entrega deve cumprir checklist com objetivos, evidências, casos de teste, limitações conhecidas e responsável pela validação."
+            },
+            "14": {
+                "problem": "Falhas de versionamento em artefatos auxiliares.",
+                "solution": "Versionar anexos, exemplos e materiais de apoio junto ao processo.",
+                "problem-excerpt": "Disponibilizar os arquivos de apoio usados no desenvolvimento.",
+                "corrected-excerpt": "Disponibilizar arquivos de apoio com versão, data, origem, relação com a etapa e compatibilidade com o PDF publicado."
+            },
+            "15": {
+                "problem": "Resultados de validação sem evidência reproduzível.",
+                "solution": "Registrar ambiente, entrada, saída esperada e saída obtida.",
+                "problem-excerpt": "Apresentar os resultados obtidos durante a validação da linguagem.",
+                "corrected-excerpt": "Apresentar resultados com ambiente, entrada usada, saída esperada, saída obtida, data de execução e responsável."
+            }
+        }
+    }
+}
