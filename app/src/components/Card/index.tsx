@@ -1,6 +1,6 @@
 import Card from '@mui/material/Card';
 import CardHeader from "@mui/material/CardHeader";
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 interface CardProps {
     icon: React.ReactNode;
@@ -11,6 +11,7 @@ interface CardProps {
 
 export default function Cards (props: CardProps): React.ReactNode {
     const {icon,label,link, description} = props;
+    const isExternalLink = link?.startsWith("http");
  
     return (
         <Card 
@@ -27,22 +28,12 @@ export default function Cards (props: CardProps): React.ReactNode {
                 },
             }}
         >
-            {!link ? (
-                <Link href={"/processo.pdf"} 
-                download="Processo NILO.pdf"
-                >
-                <CardHeader
-                    avatar={
-                    icon
-                    }
-                    title={label}
-                    subheader={description}
-                />
-                </Link>
-            ) : (
-                <Link href={link} 
-                target="_blank"
-                rel="noopener noreferrer"
+            {link ? (
+                <NextLink
+                    href={link}
+                    target={isExternalLink ? "_blank" : undefined}
+                    rel={isExternalLink ? "noopener noreferrer" : undefined}
+                    prefetch={isExternalLink ? false : undefined}
                 >
                     <CardHeader
                         avatar={
@@ -51,7 +42,15 @@ export default function Cards (props: CardProps): React.ReactNode {
                         title={label}
                         subheader={description}
                     />
-                </Link>
+                </NextLink>
+            ) : (
+                <CardHeader
+                    avatar={
+                    icon
+                    }
+                    title={label}
+                    subheader={description}
+                />
             )}
         </Card>
     )

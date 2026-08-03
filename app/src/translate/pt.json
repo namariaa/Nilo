@@ -1,0 +1,294 @@
+{
+    "homePage": {
+        "description": "O NILO é um modelo de processo estruturado para o desenvolvimento de linguagens de programação, criado para apoiar estudantes de Análise e Desenvolvimento de Sistemas (TADS). De forma iterativa, o projeto permite documentar, implementar e validar linguagens voltadas à resolução de problemas em diferentes domínios.",
+        "card-nilo-title": "Modelo de Processo NILO",
+        "card-nilo-subtitle": "Explore todas as etapas do modelo de processo NILO.",
+        "card-nilo-github-title": "GitHub NiloScript",
+        "card-nilo-github-subtitle": "Acesse o repositório da linguagem NiloScript.",
+        "card-nilo-classroom": "Google Classroom",
+        "card-nilo-classroom-subtitle": "Acesse o ambiente do sala de aula para visualizar todas as aulas e materias."
+    },
+    "versionsPage": {
+        "breadcrumb-home": "Página Inicial",
+        "breadcrumb-current": "Versões do modelo de processo",
+        "title": "Versões do modelo de processo NILO",
+        "description": "Selecione uma versão para pré-visualizar o PDF, consultar as mudanças e baixar o arquivo exibido.",
+        "version-select-label": "Versões do processo",
+        "version-1": "Versão 1",
+        "version-2": "Versão 2",
+        "version-3": "Versão 3",
+        "version-4": "Versão 4",
+        "preview-label": "Pré-visualização",
+        "download-button": "Baixar PDF",
+        "risks-button": "Tabela de reincidência de problemas",
+        "changelog-title": "Atualizações",
+        "changelog-subtitle": "Principais melhorias e correções aplicadas em cada versão.",
+        "version-1-change-1": "Aplicação de formatação justificada em todos os parágrafos segundo padrão ABNT.",
+        "version-1-change-2": "Detalhamento da explicação visual do conceito de 'entrada' na Figura 01.",
+        "version-1-change-3": "Inclusão de explicação teórica sobre símbolos terminais em gramáticas.",
+        "version-1-change-4": "Correção na numeração e referenciamento cruzado de figuras.",
+        "version-1-change-5": "Reorganização visual e hierárquica do exemplo da Figura 10.",
+        "version-2-change-1": "Padronização gramatical do termo 'tradução' em substituição a 'translação'.",
+        "version-2-change-2": "Ajuste estrutural no Quadro 01 para formatação adequada de 'interpretação'.",
+        "version-2-change-3": "Reestruturação da sequência de explicação (alfabeto, gramática e conceitos).",
+        "version-2-change-4": "Adequação da Figura 06 para exibir apenas tokens do analisador léxico.",
+        "version-2-change-5": "Padronização conceitual do termo 'modelo de processo' ao longo do texto.",
+        "version-3-change-1": "Esclarecimento da explicação referente às linhas de código ignoradas no processamento.",
+        "version-3-change-2": "Adequação da largura do Quadro 09 para melhor visualização dos exemplos.",
+        "version-3-change-3": "Explicação sobre a flexibilidade de componentes no ambiente de trabalho.",
+        "version-3-change-4": "Remoção de ambiguidade quanto à recomendação da primeira linguagem desenvolvida.",
+        "version-3-change-5": "Explicitação do motivo exato do erro de compilação gerado na Figura 33.",
+        "version-4-change-1": "Mapeamento da especificação da gramática como artefato da fase de definição.",
+        "version-4-change-2": "Atualização do nome do artefato de codificação para 'compilador/interpretador'.",
+        "version-4-change-3": "Adição de figura síntese com os artefatos da fase de teste.",
+        "version-4-change-4": "Inclusão formal de casos de teste como artefato da fase de teste.",
+        "version-4-change-5": "Adição do exemplo de documento de gestão de defeitos na fase de teste."
+    },
+    "risksPage": {
+        "breadcrumb-home": "Página Inicial",
+        "breadcrumb-versions": "Versões do processo",
+        "breadcrumb-current": "Riscos",
+        "title": "Tabela de reincidência de riscos",
+        "description": "Riscos recorrentes identificados no processo, com trechos originais e exemplos de correção.",
+        "risk-table-problem": "Problema",
+        "risk-table-solution": "Solução",
+        "risk-table-page": "Página",
+        "risk-table-type": "Tipo do erro",
+        "risk-rows": {
+            "01": {
+                "problem": "Nem todos os parágrafos estavam com texto justificado, fugindo assim do padrão ABNT.",
+                "solution": "Aplicar formatação justificado em todos os parágrafos ao longo do texto.",
+                "page": "2, 8, 13, 38",
+                "type": "Estrutural"
+            },
+            "02": {
+                "problem": "Erro na construção de uma frase pelo uso incorreto de singular e plural.",
+                "solution": "Tornar a palavra “algoritmos” em “algoritmo” e a palavra “intermediários” em “intermediário”.",
+                "page": "2",
+                "type": "Construção gramatical"
+            },
+            "03": {
+                "problem": "Pela explicação muito enxuta da Figura 01 o usuário não conseguiu compreender o que o nome “entrada” na imagem queria dizer.",
+                "solution": "Alteração da explicação da imagem deixando mais explícito o significado da palavra “entrada”.",
+                "page": "3",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "04": {
+                "problem": "Falta de padrão do nome “código-fonte” que em alguns lugares é encontrado sem o hífen.",
+                "solution": "Padronizar com a utilização do hífen.",
+                "page": "-",
+                "type": "Construção gramatical"
+            },
+            "05": {
+                "problem": "Na Figura 04 a palavra “inteiro” está escrita errado.",
+                "solution": "Consertar a escrita da imagem original e substituí-la no processo.",
+                "page": "7",
+                "type": "Construção gramatical"
+            },
+            "06": {
+                "problem": "A ausência do artigo “a” na escrita de um parágrafo prejudicou o entendimento imediato dela.",
+                "solution": "Adicionar artigo “a”.",
+                "page": "7",
+                "type": "Construção gramatical"
+            },
+            "07": {
+                "problem": "A ausência de explicação sobre o que é um terminal em uma gramática prejudicou o entendimento.",
+                "solution": "Adicionar uma explicação sobre o que é um símbolo terminal.",
+                "page": "6",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "08": {
+                "problem": "A Figura 07 está incorretamente referenciada como Figura 05.",
+                "solution": "Consertar a numeração das figuras.",
+                "page": "10",
+                "type": "Estrutural"
+            },
+            "09": {
+                "problem": "A preposição “de” está sendo usado de forma incorreta na frase.",
+                "solution": "Mudar de “de” para “da”.",
+                "page": "11",
+                "type": "Construção gramatical"
+            },
+            "10": {
+                "problem": "Repetição de conectivo “por fim” deixou leitura menos fluída.",
+                "solution": "Substituição de um dos “por fim” por “portanto”.",
+                "page": "11",
+                "type": "Construção gramatical"
+            },
+            "11": {
+                "problem": "A CST foi citada durante a análise sintática sem uma explicação do seu significado.",
+                "solution": "Retirar utilização do termo.",
+                "page": "9",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "12": {
+                "problem": "Uso de uma conjunção que prejudica o sentido da frase.",
+                "solution": "Mudar a conjunção por um conectivo.",
+                "page": "12",
+                "type": "Construção gramatical"
+            },
+            "13": {
+                "problem": "A Figura 10 está organizada de forma a não respeitar de forma clara a hierarquia.",
+                "solution": "Mudar o exemplo e melhorar visualização da hierarquia.",
+                "page": "14",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "14": {
+                "problem": "O uso de “translação” no lugar de “tradução” causou confusão no entendimento.",
+                "solution": "Utilizar apenas o termo “tradução”.",
+                "page": "2, 3, 4, 8",
+                "type": "Construção gramatical"
+            },
+            "15": {
+                "problem": "Utilização do termo “detalhada” e de “forma detalhada” na mesma frase tornou-a menos fluída.",
+                "solution": "Reescrever a frase para: “[...] iremos aprofundar cada uma delas com o propósito de compreender melhor.”",
+                "page": "2",
+                "type": "Construção gramatical"
+            },
+            "16": {
+                "problem": "No Quadro 01 o nome “interpretação” está mal formatado.",
+                "solution": "Conceder mais espaço para a coluna “métodos de tradução” para que assim a palavra “interpretação” ganhe uma melhor formatação.",
+                "page": "5",
+                "type": "Estrutural"
+            },
+            "17": {
+                "problem": "A hierarquia da informação durante a explicação da gramática não se mostrou fluída e clara.",
+                "solution": "Explicar primeiramente o que é um alfabeto depois seguir explicando a gramática e seus conceitos para que assim venha o exemplo.",
+                "page": "5, 6, 7",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "18": {
+                "problem": "A Figura 03 não está completamente fidedigna a explicação pois o “return_type” é colocado como um não terminal na explicação.",
+                "solution": "Mudar a explicação para que assim ela fique de acordo com a Figura 03.",
+                "page": "6",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "19": {
+                "problem": "A Figura 06 está organizada de tal forma que subentende-se que os tokens são gerados da gramática.",
+                "solution": "Apresentar apenas os tokens gerados a partir do analisador léxico.",
+                "page": "9",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "20": {
+                "problem": "A referência de “Lima ( 2022)” possui um espaço em branco a mais entre o parênteses e o 2022.",
+                "solution": "Retirar o espaço em branco extra.",
+                "page": "12",
+                "type": "Estrutural"
+            },
+            "21": {
+                "problem": "A Figura 17 está com um ícone desnecessário que não acrescenta na imagem.",
+                "solution": "Retirar o ícone de rosto sorrindo.",
+                "page": "24",
+                "type": "Estrutural"
+            },
+            "22": {
+                "problem": "Notou-se, pela autora do NILO, que a utilização do termo “processo” não se mostrou correto, sendo mais adequada a utilização de “modelo de processo”.",
+                "solution": "Substituir locais que utilizam “processo” para “modelo de processo”, “modelo” ou “NILO”.",
+                "page": "1, 2, 17, 19, 20, 53, 54",
+                "type": "Estrutural"
+            },
+            "23": {
+                "problem": "A palavra “listar” em “[...] nome de variáveis, listar e funções” deveria ser “listas”.",
+                "solution": "Substituir “listar” por “listas”.",
+                "page": "27",
+                "type": "Construção gramatical"
+            },
+            "24": {
+                "problem": "O uso do termo “comentada” se aproxima muito de um linguajar técnico quando se refere às linguagens de programação em específico.",
+                "solution": "Reescrever a frase para: “Indica que aquela linha de código será ignorada durante o seu processamento.”",
+                "page": "29",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "25": {
+                "problem": "O Quadro 9 está muito estreito, o que prejudica a visualização dos exemplos.",
+                "solution": "Aumentar a largura do Quadro 9.",
+                "page": "30, 31",
+                "type": "Estrutural"
+            },
+            "26": {
+                "problem": "No Quadro 13 um participante não compreendeu o que seria “manter a linguagem após ela ser entregue”.",
+                "solution": "Reescrever para: “[...] manter a linguagem após a produção de sua versão inicial.”",
+                "page": "36",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "27": {
+                "problem": "O fato que novos componentes presentes no ambiente de trabalho, representado no Quadro 14, podem ser adicionados não está claro.",
+                "solution": "Deixar explícito que apesar de o exemplo do Quadro 14 ser simples a mudança dos componentes é flexível e podem ser mais complexas.",
+                "page": "36, 37",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "28": {
+                "problem": "A frase “seja o primeiro” ao se referir do projeto de linguagem se tornou ambíguo, podendo significar o primeiro compilador similar ao do NiloScript ou a primeira linguagem a ser desenvolvida pelo leitor.",
+                "solution": "Reescrever a frase para: “[...] recomendada caso a linguagem a ser desenvolvida seja a primeira que o utilizador esteja produzindo…”",
+                "page": "41",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "29": {
+                "problem": "A explicação da Figura 26 não está fluída sendo difícil de compreender.",
+                "solution": "Reescrever a frase de forma que fique mais fácil compreender cada composição das produções da gramática exemplo.",
+                "page": "42",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "30": {
+                "problem": "Durante a explicação do Quadro 15 é referenciada a Figura 15 erroneamente.",
+                "solution": "Referenciar corretamente o Quadro 15 como quadro e não figura.",
+                "page": "44",
+                "type": "Estrutural"
+            },
+            "31": {
+                "problem": "A frase “maior controle no fluxo e melhor a depuração” não está fluida.",
+                "solution": "Reescrever para: “[...] com o objetivo de possuir maior controle no fluxo e de facilitar a depuração…“.",
+                "page": "53",
+                "type": "Construção gramatical"
+            },
+            "32": {
+                "problem": "A Figura 33 não deixa explícito o por que houve erro no código.",
+                "solution": "Na Figura 33 explicitar o motivo exato do erro gerado pelo compilador.",
+                "page": "53",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "33": {
+                "problem": "A especificação da gramática ser indicada apenas na codificação se mostrou uma inconsistência técnica com a produção padrão de processadores de linguagem.",
+                "solution": "Mover a especificação da gramática como artefato da fase de definição.",
+                "page": "-",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "34": {
+                "problem": "A utilização do termo “compilador” como nome do artefato da codificação não se mostrou abrangente.",
+                "solution": "Mudar o nome do artefato de “compilador” para “compilador/interpretador”.",
+                "page": "40",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "35": {
+                "problem": "Todas as fases possuem uma figura que resume todos os artefatos sugeridos nela, menos a fase de teste.",
+                "solution": "Adicionar uma figura, similar às apresentadas nas fases anteriores, que apresente os artefatos a serem produzidos na fase de teste.",
+                "page": "49",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "36": {
+                "problem": "Apenas a produção de códigos-fonte não parecem úteis, por isso deve ser indicado algo a mais para ser realizado com esses testes.",
+                "solution": "Adicionar casos de testes como artefato da fase de teste.",
+                "page": "50",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "37": {
+                "problem": "O nome “diagrama de arquitetura do projeto” não caracteriza bem o que deve ser representado no diagrama.",
+                "solution": "Mudar o nome do componente para diagrama de componentes do projeto.",
+                "page": "33, 35",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "38": {
+                "problem": "Não há uma exemplificação de um documento de gestão de defeito.",
+                "solution": "Adicionar um exemplo de documento de gestão de defeito com o NiloScript na fase de teste.",
+                "page": "51",
+                "type": "Incremento/Melhoria na explicação"
+            },
+            "39": {
+                "problem": "Citações e seções não estão seguindo corretamente as regras ABNT.",
+                "solution": "Colocar citações todas com a primeira letra maiúscula e o restante em minúsculo e tirar a indentação das seções.",
+                "page": "Todas",
+                "type": "Estrutural"
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@
 
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import MuiLink from "@mui/material/Link";
+import NextLink from "next/link";
 import Typography from "@mui/material/Typography";
 
 interface crumb {
@@ -22,6 +23,7 @@ export default function BreadCrumb (props: BreadCrumbProps): React.ReactNode {
     {childrens.map((crumb: crumb) => {
       if (crumb.link){
         return <MuiLink
+              component={NextLink}
               href={crumb.link}
               color="inherit"
               key={crumb.label}
