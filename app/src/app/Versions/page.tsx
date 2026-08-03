@@ -24,7 +24,7 @@ import usePersistedLocale from "@/src/hooks/usePersistedLocale";
 import enMessages from "../../translate/en.json";
 import ptMessages from "../../translate/pt.json";
 
-type VersionId = "v1" | "v2" | "v3";
+type VersionId = "v1_1" | "v1_2" | "v1_3" | "v1_4";
 const BASE_PATH = "/Nilo";
 
 const messages = {
@@ -33,7 +33,26 @@ const messages = {
 };
 
 const riskLinksByChangeKey: Partial<Record<string, string>> = {
-  "version-3-change-2": "12",
+  "version-1-change-1": "01",
+  "version-1-change-2": "03",
+  "version-1-change-3": "07",
+  "version-1-change-4": "08",
+  "version-1-change-5": "13",
+  "version-2-change-1": "14",
+  "version-2-change-2": "16",
+  "version-2-change-3": "17",
+  "version-2-change-4": "19",
+  "version-2-change-5": "22",
+  "version-3-change-1": "24",
+  "version-3-change-2": "25",
+  "version-3-change-3": "27",
+  "version-3-change-4": "28",
+  "version-3-change-5": "32",
+  "version-4-change-1": "33",
+  "version-4-change-2": "34",
+  "version-4-change-3": "35",
+  "version-4-change-4": "36",
+  "version-4-change-5": "38",
 };
 
 const processVersions: Array<{
@@ -44,25 +63,56 @@ const processVersions: Array<{
   changelogKeys: string[];
 }> = [
   {
-    id: "v1",
+    id: "v1_1",
     labelKey: "version-1",
     fileName: "Processo NILO - Versão 1.pdf",
     pdfPath: "processo.pdf",
-    changelogKeys: ["version-1-change-1", "version-1-change-2", "version-1-change-3"],
+    changelogKeys: [
+      "version-1-change-1",
+      "version-1-change-2",
+      "version-1-change-3",
+      "version-1-change-4",
+      "version-1-change-5",
+    ],
   },
   {
-    id: "v2",
+    id: "v1_2",
     labelKey: "version-2",
     fileName: "Processo NILO - Versão 2.pdf",
     pdfPath: "processo-v2.pdf",
-    changelogKeys: ["version-2-change-1", "version-2-change-2", "version-2-change-3"],
+    changelogKeys: [
+      "version-2-change-1",
+      "version-2-change-2",
+      "version-2-change-3",
+      "version-2-change-4",
+      "version-2-change-5",
+    ],
   },
   {
-    id: "v3",
+    id: "v1_3",
     labelKey: "version-3",
     fileName: "Processo NILO - Versão 3.pdf",
     pdfPath: "processo-v3.pdf",
-    changelogKeys: ["version-3-change-1", "version-3-change-2", "version-3-change-3"],
+    changelogKeys: [
+      "version-3-change-1",
+      "version-3-change-2",
+      "version-3-change-3",
+      "version-3-change-4",
+      "version-3-change-5",
+    ],
+  },
+  {
+    id: "v1_4",
+    labelKey: "version-4",
+    fileName: "Processo NILO - Versão 4.pdf",
+    pdfPath: "processo-v4.pdf",
+    changelogKeys: [
+      "version-4-change-1",
+      "version-4-change-2",
+      "version-4-change-3",
+      "version-4-change-4",
+      "version-4-change-5",
+    ],
   },
 ];
 
@@ -90,7 +140,7 @@ function VersionsContent({
   onLocaleChange,
 }: VersionsContentProps): React.ReactNode {
   const t = useTranslations("versionsPage");
-  const [selectedVersionId, setSelectedVersionId] = useState<VersionId>("v3");
+  const [selectedVersionId, setSelectedVersionId] = useState<VersionId>("v1_4");
   const selectedVersion = useMemo(
     () =>
       processVersions.find((version) => version.id === selectedVersionId) ??
@@ -105,33 +155,33 @@ function VersionsContent({
 
   function renderChangelogItem(changeKey: string) {
     const riskCode = riskLinksByChangeKey[changeKey];
+    const textContent = t(changeKey);
 
     if (!riskCode) {
-      return t(changeKey);
+      return textContent;
     }
 
     return (
-      <>
-        {t("version-3-change-2-prefix")}{" "}
-        <Link
-          component={NextLink}
-          href={{ pathname: "/Risks", query: { risk: riskCode } }}
-          sx={{
-            color: "#06455D",
-            cursor: "pointer",
-            font: "inherit",
-            fontWeight: 700,
-            p: 0,
-            textDecorationColor: "rgba(6, 69, 93, 0.42)",
-            verticalAlign: "baseline",
-          }}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {t("version-3-change-2-link")}
-        </Link>{" "}
-        {t("version-3-change-2-suffix")}
-      </>
+      <Link
+        component={NextLink}
+        href={{ pathname: "/Risks", query: { risk: riskCode } }}
+        sx={{
+          color: "#06455D",
+          cursor: "pointer",
+          font: "inherit",
+          fontWeight: 500,
+          textDecoration: "underline",
+          textDecorationColor: "rgba(6, 69, 93, 0.42)",
+          "&:hover": {
+            color: "#042B3A",
+            textDecorationColor: "#042B3A",
+          },
+        }}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {textContent}
+      </Link>
     );
   }
 

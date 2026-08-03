@@ -8,7 +8,6 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import { SelectChangeEvent } from "@mui/material/Select";
-import Stack from "@mui/material/Stack";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -77,7 +76,7 @@ function RisksContent({
 
   return (
     <>
-      <Header type="default" fixed={false} logoFixed />
+      <Header type="default" fixed={false} />
       <Box
         sx={{
           position: "fixed",
@@ -155,8 +154,7 @@ function RisksContent({
                     t("risk-table-problem"),
                     t("risk-table-solution"),
                     t("risk-table-page"),
-                    t("risk-table-problem-excerpt"),
-                    t("risk-table-corrected-excerpt"),
+                    t("risk-table-type"),
                   ].map((column) => (
                     <TableCell
                       key={column}
@@ -212,10 +210,7 @@ function RisksContent({
                         {row.page}
                       </TableCell>
                       <TableCell sx={{ ...highlightedCellSx, verticalAlign: "top" }}>
-                        {t(`risk-rows.${row.code}.problem-excerpt`)}
-                      </TableCell>
-                      <TableCell sx={{ ...highlightedCellSx, verticalAlign: "top" }}>
-                        {t(`risk-rows.${row.code}.corrected-excerpt`)}
+                        {t(`risk-rows.${row.code}.type`)}
                       </TableCell>
                     </TableRow>
                   );
