@@ -47,7 +47,7 @@
     "risksPage": {
         "breadcrumb-home": "Página Inicial",
         "breadcrumb-versions": "Versões do processo",
-        "breadcrumb-current": "Riscos",
+        "breadcrumb-current": "Problemas",
         "title": "Tabela de reincidência de riscos",
         "description": "Riscos recorrentes identificados no processo, com trechos originais e exemplos de correção.",
         "risk-table-problem": "Problema",
